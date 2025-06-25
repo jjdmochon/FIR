@@ -44,12 +44,26 @@
 <body class="bg-gray-100 text-gray-800 flex items-center justify-center min-h-screen p-4 no-select">
 
     <div class="w-full max-w-2xl mx-auto">
-        <header class="text-center mb-6">
-            <h1 class="text-3xl font-bold text-blue-600">Flashcards FIR 2023</h1>
-            <p class="text-gray-600">Examen Versión 0</p>
-        </header>
+        <div id="start-screen" class="text-center">
+            <header class="text-center mb-6">
+                <h1 class="text-3xl font-bold text-blue-600">Flashcards FIR 2023</h1>
+                <p class="text-gray-600">Examen Versión 0</p>
+            </header>
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <h2 class="text-2xl font-semibold mb-6">¿Cómo quieres empezar?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <button id="start-ordered-btn" class="w-full bg-blue-600 text-white font-semibold py-3 px-4 rounded-lg shadow hover:bg-blue-700 transition-colors">Empezar desde la Pregunta 1</button>
+                    <button id="start-random-btn" class="w-full bg-purple-600 text-white font-semibold py-3 px-4 rounded-lg shadow hover:bg-purple-700 transition-colors">Empezar en Orden Aleatorio</button>
+                </div>
+            </div>
+        </div>
 
-        <main id="flashcard-container" class="bg-white rounded-2xl shadow-lg p-6 md:p-8 mb-4">
+        <div id="quiz-container" class="hidden">
+            <header class="text-center mb-6">
+                <h1 class="text-3xl font-bold text-blue-600">Flashcards FIR 2023</h1>
+                <p class="text-gray-600">Examen Versión 0</p>
+            </header>
+            <main id="flashcard-container" class="bg-white rounded-2xl shadow-lg p-6 md:p-8 mb-4">
             <!-- Progress and Question Header -->
             <div class="flex justify-between items-center mb-4">
                 <span id="progress-indicator" class="text-sm font-medium text-gray-500"></span>
@@ -59,7 +73,7 @@
             <!-- Question Text -->
             <div id="question-area" class="mb-6 min-h-[100px]">
                 <p id="question-text" class="text-lg leading-relaxed"></p>
-                <div id="image-placeholder" class="mt-4 text-center text-gray-500 italic hidden"></div>
+                <div id="image-placeholder" class="mt-4 text-center hidden"></div>
             </div>
 
             <!-- Options -->
@@ -69,16 +83,17 @@
 
             <!-- Feedback Message -->
             <div id="feedback-message" class="mt-6 text-center font-bold text-xl h-8"></div>
-        </main>
+            </main>
 
-        <footer class="grid grid-cols-2 md:grid-cols-5 gap-3">
-            <button id="prev-btn" class="w-full bg-white text-gray-700 font-semibold py-3 px-4 rounded-lg shadow hover:bg-gray-200 transition-colors">Anterior</button>
-            <button id="next-btn" class="w-full bg-blue-600 text-white font-semibold py-3 px-4 rounded-lg shadow hover:bg-blue-700 transition-colors col-span-2 md:col-span-1">Siguiente</button>
-            <button id="show-answer-btn" class="w-full bg-yellow-400 text-yellow-900 font-semibold py-3 px-4 rounded-lg shadow hover:bg-yellow-500 transition-colors">Ver Respuesta</button>
-            <button id="random-btn" class="w-full bg-purple-600 text-white font-semibold py-3 px-4 rounded-lg shadow hover:bg-purple-700 transition-colors">Aleatoria</button>
-            <button id="reset-btn" class="w-full bg-red-500 text-white font-semibold py-3 px-4 rounded-lg shadow hover:bg-red-600 transition-colors md:col-start-5">Reiniciar</button>
-        </footer>
-         <p id="questions-note" class="text-center text-xs text-gray-400 mt-4"></p>
+            <footer class="grid grid-cols-2 md:grid-cols-5 gap-3">
+                <button id="prev-btn" class="w-full bg-white text-gray-700 font-semibold py-3 px-4 rounded-lg shadow hover:bg-gray-200 transition-colors">Anterior</button>
+                <button id="next-btn" class="w-full bg-blue-600 text-white font-semibold py-3 px-4 rounded-lg shadow hover:bg-blue-700 transition-colors col-span-2 md:col-span-1">Siguiente</button>
+                <button id="show-answer-btn" class="w-full bg-yellow-400 text-yellow-900 font-semibold py-3 px-4 rounded-lg shadow hover:bg-yellow-500 transition-colors">Ver Respuesta</button>
+                <button id="random-btn" class="w-full bg-purple-600 text-white font-semibold py-3 px-4 rounded-lg shadow hover:bg-purple-700 transition-colors">Aleatoria</button>
+                <button id="reset-btn" class="w-full bg-red-500 text-white font-semibold py-3 px-4 rounded-lg shadow hover:bg-red-600 transition-colors md:col-start-5">Reiniciar</button>
+            </footer>
+             <p id="questions-note" class="text-center text-xs text-gray-400 mt-4"></p>
+        </div>
     </div>
 
     <script>
@@ -1440,6 +1455,11 @@
             const scoreEl = document.getElementById('score');
             const questionsNoteEl = document.getElementById('questions-note');
             
+            const startScreenEl = document.getElementById('start-screen');
+            const quizContainerEl = document.getElementById('quiz-container');
+            const startOrderedBtn = document.getElementById('start-ordered-btn');
+            const startRandomBtn = document.getElementById('start-random-btn');
+            
             const prevBtn = document.getElementById('prev-btn');
             const nextBtn = document.getElementById('next-btn');
             const showAnswerBtn = document.getElementById('show-answer-btn');
@@ -1454,6 +1474,19 @@
                 }
             }
 
+            function startQuiz(isRandom) {
+                startScreenEl.classList.add('hidden');
+                quizContainerEl.classList.remove('hidden');
+                
+                currentQuestionIndex = 0;
+                score = { correct: 0, incorrect: 0 };
+                questionsOrder = firExamData.map((_, index) => index);
+                if (isRandom) {
+                    shuffleArray(questionsOrder);
+                }
+                displayQuestion();
+            }
+
             function displayQuestion() {
                 answered = false;
                 const questionIndexInOriginalArray = questionsOrder[currentQuestionIndex];
@@ -1461,8 +1494,13 @@
                 
                 questionTextEl.textContent = `${question.id}. ${question.question}`;
 
+                imagePlaceholderEl.innerHTML = ''; // Clear previous image/text
                 if (question.hasImage) {
-                    imagePlaceholderEl.textContent = `[La pregunta original incluye una imagen o estructura química]`;
+                    const img = document.createElement('img');
+                    img.src = `images/${question.id}.jpg`;
+                    img.alt = `Imagen para la pregunta ${question.id}`;
+                    img.className = 'mx-auto my-4 max-w-full h-auto rounded-lg shadow-md';
+                    imagePlaceholderEl.appendChild(img);
                     imagePlaceholderEl.classList.remove('hidden');
                 } else {
                     imagePlaceholderEl.classList.add('hidden');
@@ -1561,14 +1599,16 @@
             }
 
             function reset() {
-                currentQuestionIndex = 0;
+                quizContainerEl.classList.add('hidden');
+                startScreenEl.classList.remove('hidden');
+                // Reset score for the next session
                 score = { correct: 0, incorrect: 0 };
-                questionsOrder = firExamData.map((_, index) => index);
-                shuffleArray(questionsOrder);
-                displayQuestion();
+                updateScore();
             }
 
             // --- EVENT LISTENERS ---
+            startOrderedBtn.addEventListener('click', () => startQuiz(false));
+            startRandomBtn.addEventListener('click', () => startQuiz(true));
             nextBtn.addEventListener('click', goToNext);
             prevBtn.addEventListener('click', goToPrev);
             showAnswerBtn.addEventListener('click', showAnswer);
@@ -1577,7 +1617,6 @@
 
             // --- INITIALIZATION ---
             questionsNoteEl.textContent = `Nota: Se ha incluido una selección de ${firExamData.length} preguntas del examen original para esta demostración.`;
-            reset(); // Shuffle and show the first question on load
         });
     </script>
 </body>
