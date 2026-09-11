@@ -254,15 +254,15 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[4.25rem] py-2.5 flex items-center justify-between gap-3 lg:gap-4">
       
       <!-- Logo & Título Institucional (Clic vuelve a Home) -->
-      <a href="#/home" id="nav-brand-link" class="flex items-center gap-3 cursor-pointer group select-none shrink-0">
-        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-[12px] bg-gradient-to-br from-[#1e3a8a] to-[#0d9488] text-white flex items-center justify-center font-black text-lg sm:text-xl shadow-md border border-white/20 tracking-wider transition-transform group-hover:scale-105 shrink-0">
+      <div class="flex items-center gap-3 select-none shrink-0">
+        <a href="#/home" id="nav-brand-link" class="w-10 h-10 sm:w-11 sm:h-11 rounded-[12px] bg-gradient-to-br from-[#1e3a8a] to-[#0d9488] text-white flex items-center justify-center font-black text-lg sm:text-xl shadow-md border border-white/20 tracking-wider transition-transform hover:scale-105 shrink-0 cursor-pointer" title="Ir al Inicio">
           FIR
-        </div>
+        </a>
         <div class="flex flex-col justify-center">
           <div class="flex items-center gap-2">
-            <span class="text-base sm:text-lg font-black text-[#1e3a8a] dark:text-white tracking-tight leading-none whitespace-nowrap">
+            <a href="#/home" class="text-base sm:text-lg font-black text-[#1e3a8a] dark:text-white tracking-tight leading-none whitespace-nowrap hover:opacity-90 transition-opacity">
               Simulador Oficial FIR
-            </span>
+            </a>
             <span class="whitespace-nowrap font-mono text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded-full bg-[#0d9488]/10 text-[#0d9488] dark:bg-[#2dd4bf]/20 dark:text-[#2dd4bf] border border-[#0d9488]/30 shrink-0">
               2020–2025
             </span>
@@ -271,10 +271,10 @@
             </span>
           </div>
           <p class="text-[11px] text-[#64748b] dark:text-[#94a3b8] font-semibold hidden md:block whitespace-nowrap mt-1 leading-none">
-            Facultad de Farmacia · Universidad de Granada & Nexus Lab
+            Facultad de Farmacia · Universidad de Granada & <a href="https://nexus-lab-team.netlify.app/edu/" target="_blank" rel="noopener noreferrer" class="text-[#0d9488] dark:text-[#2dd4bf] font-bold hover:underline inline-flex items-center gap-0.5" title="Visitar Nexus Lab Educación">Nexus Lab <svg class="w-2.5 h-2.5 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></a>
           </p>
         </div>
-      </a>
+      </div>
 
       <!-- Botones de Navegación & Control -->
       <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
@@ -292,11 +292,8 @@
           <span id="nav-history-badge" class="hidden ml-0.5 px-1.5 py-0.2 rounded-full text-[10px] font-mono font-bold bg-[#1e3a8a] text-white dark:bg-[#2dd4bf] dark:text-slate-900">0</span>
         </a>
 
-        <!-- Botón Telemetría / Configuración Prof. Juanjo -->
-        <button id="nav-telemetry-btn" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-[8px] bg-[#0d9488]/10 hover:bg-[#0d9488]/20 dark:bg-[#0d9488]/20 dark:hover:bg-[#0d9488]/30 text-[#0f766e] dark:text-[#2dd4bf] font-bold text-xs transition-all border border-[#0d9488]/20 whitespace-nowrap cursor-pointer" title="Configuración de Telemetría (Prof. Juanjo)">
-          <svg class="w-4 h-4 text-[#0d9488] dark:text-[#2dd4bf]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-          <span class="hidden xl:inline">Telemetría</span>
-        </button>
+        <!-- Botón Telemetría Oculto del Navbar Público (Se mantiene ID para compatibilidad de script) -->
+        <button id="nav-telemetry-btn" class="hidden"></button>
 
         <!-- Selector de Convocatoria (Visible en vista de examen) -->
         <div id="nav-exam-controls" class="hidden items-center gap-2">
@@ -353,7 +350,7 @@
         <!-- Badge Institucional Superior -->
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1e3a8a]/10 text-[#1e3a8a] dark:bg-[#2dd4bf]/20 dark:text-[#2dd4bf] font-mono text-xs font-bold border border-[#1e3a8a]/20 dark:border-[#2dd4bf]/30 mb-4 shadow-xs">
           <span class="w-2 h-2 rounded-full bg-[#0d9488] dark:bg-[#2dd4bf] animate-pulse"></span>
-          Facultad de Farmacia · Universidad de Granada & Nexus Lab
+          Facultad de Farmacia · Universidad de Granada & <a href="https://nexus-lab-team.netlify.app/edu/" target="_blank" rel="noopener noreferrer" class="hover:underline font-extrabold text-[#0d9488] dark:text-[#2dd4bf] inline-flex items-center gap-1">Nexus Lab <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></a>
         </div>
 
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1e3a8a] dark:text-white tracking-tight leading-tight mb-3">
@@ -370,7 +367,7 @@
           </div>
           <div>
             <p class="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-100">
-              Plataforma preparada por Nexus Lab en colaboración con el Prof. Juan J. Díaz Mochón de la Facultad de Farmacia de la Universidad de Granada.
+              Plataforma preparada por <a href="https://nexus-lab-team.netlify.app/edu/" target="_blank" rel="noopener noreferrer" class="text-[#0d9488] dark:text-[#2dd4bf] font-extrabold hover:underline inline-flex items-center gap-1">Nexus Lab <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></a> en colaboración con el Prof. Juan J. Díaz Mochón de la Facultad de Farmacia de la Universidad de Granada.
             </p>
             <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
               Material docente oficial y software interactivo para el alumnado y aspirantes FIR.
@@ -828,11 +825,14 @@
     <footer class="mt-auto border-t border-[#1e3a8a]/10 dark:border-[#1c2b4c] bg-white dark:bg-[#131d33] py-6">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
         <div>
-          Facultad de Farmacia · Universidad de Granada · Prof. Juan J. Díaz Mochón & Nexus Lab
+          Facultad de Farmacia · Universidad de Granada · Prof. Juan J. Díaz Mochón & <a href="https://nexus-lab-team.netlify.app/edu/" target="_blank" rel="noopener noreferrer" class="text-[#0d9488] dark:text-[#2dd4bf] font-bold hover:underline inline-flex items-center gap-1">Nexus Lab <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></a>
         </div>
         <div class="flex items-center gap-4">
           <a href="#/historial" class="hover:text-[#1e3a8a] dark:hover:text-[#2dd4bf] transition-colors">Historial</a>
-          <button onclick="document.getElementById('nav-telemetry-btn').click()" class="hover:text-[#1e3a8a] dark:hover:text-[#2dd4bf] transition-colors cursor-pointer">Telemetría</button>
+          <button id="footer-admin-btn" class="hover:text-[#1e3a8a] dark:hover:text-[#2dd4bf] transition-colors cursor-pointer flex items-center gap-1">
+            <svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+            Acceso Docente
+          </button>
           <span>Baremo Oficial Sanidad (+3 / -1 / 0)</span>
         </div>
       </div>
@@ -1255,6 +1255,17 @@
         </button>
       </div>
 
+      <!-- Nota de Seguridad y Arquitectura Global -->
+      <div class="mb-5 p-3.5 rounded-[12px] bg-amber-500/10 border border-amber-500/20 text-slate-700 dark:text-slate-300 text-xs leading-relaxed">
+        <div class="flex items-center gap-2 font-bold text-amber-800 dark:text-amber-300 mb-1">
+          <svg class="w-4 h-4 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+          Seguridad y Control de Acceso Docente:
+        </div>
+        <p class="text-[11px] text-slate-600 dark:text-slate-300">
+          Los estudiantes <strong>no tienen acceso</strong> a este panel ni pueden alterar tu telemetría (el acceso desde el pie de página está blindado por clave docente PIN). Para que los intentos de todos los estudiantes a nivel global se sincronicen silenciosamente en tu Google Sheet, define la URL en <code>DEFAULT_GLOBAL_WEBHOOK_URL</code> en <code>index.html</code>. El campo inferior sirve para sobrescribirla localmente en este navegador para pruebas.
+        </p>
+      </div>
+
       <!-- Sección 1: Webhook de Google Apps Script -->
       <div class="mb-6 bg-[#1e3a8a]/5 dark:bg-[#1c2b4c]/50 p-4 rounded-[12px] border border-[#1e3a8a]/10 dark:border-[#2dd4bf]/20">
         <label for="webhook-url-input" class="block font-bold text-xs text-slate-800 dark:text-slate-100 mb-1">
@@ -1343,7 +1354,7 @@
           UNIVERSIDAD DE GRANADA · FACULTAD DE FARMACIA
         </h1>
         <p style="font-size: 13px; color: #475569; margin: 4px 0 0 0; font-weight: 600;">
-          Simulador Oficial de Exámenes FIR | Plataforma Docente Nexus Lab
+          Simulador Oficial de Exámenes FIR | Plataforma Docente Nexus Lab (https://nexus-lab-team.netlify.app/edu/)
         </p>
       </div>
       <div style="text-align: right; font-family: monospace; font-size: 12px; color: #64748b;">
@@ -1396,7 +1407,7 @@
 
     <div style="font-size: 11px; color: #64748b; line-height: 1.5; border-top: 1px solid #e2e8f0; padding-top: 12px;">
       <p style="margin: 0 0 6px 0;">
-        <strong>Nota informativa:</strong> Este informe acredita la realización de la prueba en la plataforma del Simulador Oficial FIR desarrollada por Nexus Lab en colaboración con el Prof. Juan J. Díaz Mochón de la Facultad de Farmacia de la Universidad de Granada.
+        <strong>Nota informativa:</strong> Este informe acredita la realización de la prueba en la plataforma del Simulador Oficial FIR desarrollada por Nexus Lab (https://nexus-lab-team.netlify.app/edu/) en colaboración con el Prof. Juan J. Díaz Mochón de la Facultad de Farmacia de la Universidad de Granada.
       </p>
       <p style="margin: 0;">
         El baremo aplicado (+3 / -1 / 0) reproduce fielmente la corrección del Ministerio de Sanidad del Gobierno de España.
@@ -1531,6 +1542,7 @@
       const telemetryCloseBtn = document.getElementById('telemetry-close-btn');
       const telemetryCloseBtnFooter = document.getElementById('telemetry-close-btn-footer');
       const navTelemetryBtn = document.getElementById('nav-telemetry-btn');
+      const footerAdminBtn = document.getElementById('footer-admin-btn');
       const webhookUrlInput = document.getElementById('webhook-url-input');
       const saveWebhookBtn = document.getElementById('save-webhook-btn');
       const testWebhookBtn = document.getElementById('test-webhook-btn');
@@ -1538,6 +1550,11 @@
       const ga4IdInput = document.getElementById('ga4-id-input');
       const saveGa4Btn = document.getElementById('save-ga4-btn');
       const copyGasCodeBtn = document.getElementById('copy-gas-code-btn');
+
+      // --- CONFIGURACIÓN GLOBAL DE TELEMETRÍA (PROF. JUANJO) ---
+      // Pega aquí la URL de tu Webhook de Google Apps Script para que todos los simulacros
+      // realizados por alumnos a nivel global reporten automáticamente a tu Google Sheet.
+      const DEFAULT_GLOBAL_WEBHOOK_URL = '';
 
       // --- GESTIÓN DE TEMA (DARK / LIGHT) ---
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -2403,12 +2420,33 @@
       }
 
       // --- MODAL Y TELEMETRÍA (PROF. JUANJO) ---
-      navTelemetryBtn.addEventListener('click', () => {
-        webhookUrlInput.value = localStorage.getItem('fir_telemetry_webhook_url') || '';
+      function checkAdminAccess() {
+        if (sessionStorage.getItem('fir_admin_auth') === 'true') return true;
+        const pin = prompt('Panel de Telemetría Docente (Prof. Juanjo Díaz Mochón):\nIntroduce la clave de administración:');
+        if (pin === '2026' || pin === 'nexus') {
+          sessionStorage.setItem('fir_admin_auth', 'true');
+          return true;
+        }
+        if (pin !== null) {
+          alert('Clave de administración incorrecta. Acceso restringido.');
+        }
+        return false;
+      }
+
+      function openTelemetryModal() {
+        if (!checkAdminAccess()) return;
+        webhookUrlInput.value = localStorage.getItem('fir_telemetry_webhook_url') || DEFAULT_GLOBAL_WEBHOOK_URL;
         ga4IdInput.value = localStorage.getItem('fir_ga4_id') || '';
         webhookStatusMsg.classList.add('hidden');
         telemetryModal.classList.remove('hidden');
-      });
+      }
+
+      if (footerAdminBtn) {
+        footerAdminBtn.addEventListener('click', openTelemetryModal);
+      }
+      if (navTelemetryBtn) {
+        navTelemetryBtn.addEventListener('click', openTelemetryModal);
+      }
 
       telemetryCloseBtn.addEventListener('click', () => telemetryModal.classList.add('hidden'));
       telemetryCloseBtnFooter.addEventListener('click', () => telemetryModal.classList.add('hidden'));
@@ -2500,10 +2538,10 @@
       });
 
       function dispatchTelemetry(payload) {
-        const webhookUrl = localStorage.getItem('fir_telemetry_webhook_url');
-        if (webhookUrl) {
+        const webhookUrl = localStorage.getItem('fir_telemetry_webhook_url') || DEFAULT_GLOBAL_WEBHOOK_URL;
+        if (webhookUrl && webhookUrl.trim().startsWith('http')) {
           try {
-            fetch(webhookUrl, {
+            fetch(webhookUrl.trim(), {
               method: 'POST',
               mode: 'no-cors',
               headers: { 'Content-Type': 'application/json' },
