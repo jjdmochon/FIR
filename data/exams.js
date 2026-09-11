@@ -1,4 +1,4 @@
-window.FIR_EXAMS_DATA = {
+const _fir_data = {
   "2020": [
     {
       "id": 1,
@@ -14832,3 +14832,10 @@ window.FIR_EXAMS_DATA = {
     }
   ]
 };
+
+if (typeof window !== "undefined") {
+  window.FIR_EXAMS_DATA = _fir_data;
+}
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = _fir_data;
+}
