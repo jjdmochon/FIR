@@ -1,0 +1,2522 @@
+[
+  {
+    "id": 1,
+    "question": "¿Qué ventaja tiene el empleo de aciloximetilésteres en lugar de ésteres simples en el diseño de profármacos de ácidos carboxílicos?:",
+    "options": [
+      "Disminuye la velocidad de hidrólisis.",
+      "Aumenta la estabilidad del profármaco.",
+      "El grupo éster externo es más accesible al centro activo de las esterasas.",
+      "Facilita la bioactivación selectiva en el lugar de acción."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 2,
+    "question": "¿Qué inconveniente presenta el empleo de bases de Mannich como profármacos de amidas?:",
+    "options": [
+      "Son inestables in vitro.",
+      "Aumentan excesivamente la lipofilia.",
+      "Son demasiado estables in vivo.",
+      "Forman con facilidad redes cristalinas muy estables."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 3,
+    "question": "¿Cuál de los siguientes sustituyentes presentes en la estructura de los antagonistas de los receptores de angiotensina II es ácido y aporta lipofilia?:",
+    "options": [
+      "Bifenilo.",
+      "Hidroximetilo.",
+      "Tetrazol.",
+      "n-Butilo."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 4,
+    "question": "¿Qué papel desempeñan los fragmentos de beta-hidroxicarbonilo de las antraciclinas en su actividad biológica?:",
+    "options": [
+      "Establecen enlaces covalentes con el ADN.",
+      "Establecen enlaces de hidrógeno con la topoisomerasa I.",
+      "Fijan la conformación activa a través de enlaces de hidrógeno intramoleculares.",
+      "Forman quelatos con el Fe3+ favoreciendo la formación de radicales hidroxilo."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 5,
+    "question": "¿Qué consecuencia tiene el cambio de posición de uno de los grupos hidroxilo del anillo de catecol en los derivados de ariletanolamina que actúan en los receptores adrenérgicos?:",
+    "options": [
+      "Se favorece la degradación por la catecol-O-metil-transferasa.",
+      "Se pierde actividad al disminuir la analogía con el ligando endógeno.",
+      "Aumenta la estabilidad metabólica.",
+      "Se favorece la degradación por monoamino oxidasas."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 6,
+    "question": "El catión metildiazonio es un metabolito activo de:",
+    "options": [
+      "Procarbazina.",
+      "Ciclofosfamida.",
+      "Mecloretamina.",
+      "Busulfán."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 7,
+    "question": "¿Cuál de los siguientes fármacos se considera un inhibidor suicida?:",
+    "options": [
+      "Lopinavir.",
+      "Captopril.",
+      "Selegilina.",
+      "Rivastigmina."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 8,
+    "question": "¿Cuál de las siguientes reacciones metabólicas de fase II NO conduce a un metabolito de mayor polaridad?:",
+    "options": [
+      "Glucuronidación.",
+      "Acetilación.",
+      "Conjugación con sulfato.",
+      "Conjugación con glutatión."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 9,
+    "question": "Un método general para obtener derivados del ácido barbitúrico consiste en la reacción entre:",
+    "options": [
+      "Fenilhidrazina y un compuesto carbonílico enolizable.",
+      "Una 1,3-diamina y carbonato de etilo.",
+      "Acetilacetato de etilo, amoniaco y aldehídos aromáticos.",
+      "Un éster malónico convenientemente sustituido y urea."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 10,
+    "question": "Las sulfonilureas ejercen su efecto hipoglucemiante al interaccionar con:",
+    "options": [
+      "Canales de calcio dependientes de potencial.",
+      "Canales de sodio dependientes de potencial.",
+      "Bombas iónicas dependientes de ATP.",
+      "Canales de potasio dependientes de ATP."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 11,
+    "question": "La síntesis de péptidos a partir de un aminoácido anclado sobre un soporte polimérico insoluble en el medio de reacción se denomina síntesis de:",
+    "options": [
+      "Hantzsch.",
+      "Corey.",
+      "Merrifield.",
+      "Skraup."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 12,
+    "question": "La toxicidad del paracetamol [N-(4-hidroxifenil)acetamida] a dosis elevadas, se debe a la formación de un metabolito altamente electrófilo. ¿De qué naturaleza química es este metabolito?:",
+    "options": [
+      "Epóxido.",
+      "Catión aziridinio.",
+      "Iminoquinona.",
+      "Isocianato."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 13,
+    "question": "En las relaciones cuantitativas entre la estructura química y la actividad biológica, el parámetro de Hammett se relaciona con:",
+    "options": [
+      "La lipofilia de la molécula.",
+      "El efecto estérico de los sustituyentes.",
+      "La fracción de fármaco que alcanza la diana.",
+      "El efecto electrónico de los sustituyentes."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 14,
+    "question": "El carbacol es un análogo de acetilcolina que tiene en su estructura un grupo carbamato en lugar del grupo éster. ¿Qué consecuencias tiene esta sustitución?:",
+    "options": [
+      "El carbacol se hidroliza en medio ácido con mayor facilidad que la acetilcolina debido a la presencia del grupo carbamato.",
+      "El grupo carbamato confiere al carbacol estabilidad química y metabólica.",
+      "El grupo carbamato permite incrementar la afinidad por el receptor a través de una interacción π-π.",
+      "La sustitución bioisostérica del metilo por el grupo amino en el carbacol incrementa el efecto estérico, aumentando la afinidad por su diana terapéutica."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 15,
+    "question": "¿Cuál de las siguientes características estructurales es típica de los agentes alquilantes pertenecientes al grupo de las mostazas nitrogenadas?:",
+    "options": [
+      "La presencia de grupos capaces de formar enlaces de hidrógeno.",
+      "La presencia de un grupo capaz de formar un catión aziridinio.",
+      "La presencia de una cadena peptídica corta y cargada positivamente.",
+      "La presencia de una estructura aromática plana y pobre en electrones."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 16,
+    "question": "Para el diseño de los antídotos frente a los gases neurotóxicos sarín y tabún, se utilizó la siguiente estrategia:",
+    "options": [
+      "Diseñar compuestos derivados de hidroxilamina capaces de hidrolizar la posición fosforilada en la acetilcolinesterasa y reactivar así la enzima rápidamente.",
+      "Diseñar compuestos derivados de hidroxilamina capaces de hidrolizar el residuo acetilado en la acetilcolinesterasa y reactivar así la enzima de forma controlada.",
+      "Diseñar compuestos derivados de hidroxicloroquina que debido a su elevada electrofilia son capaces de hidrolizar el residuo carbamoilado en la acetilcolinesterasa reactivando rápidamente la enzima.",
+      "Diseñar compuestos derivados de hidrazina capaces de hidrolizar la posición carbamoilada en la acetilcolinesterasa y reactivar la enzima rápidamente."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 17,
+    "question": "La anfotericina B es un antifúngico que pertenece al siguiente grupo:",
+    "options": [
+      "Polienos.",
+      "Triazoles.",
+      "Candinas.",
+      "Sulfamidas."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 18,
+    "question": "Respecto a los hongos Mucorales:",
+    "options": [
+      "Son sensibles a voriconazol.",
+      "Causan infecciones diagnosticables mediante la detección de ß-1-3-D-glucano.",
+      "Causan infección sinusal, rino-órbito-cerebral, broncopulmonar, cutánea o diseminada.",
+      "Tienen afinidad por tejidos queratinizados."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 19,
+    "question": "¿Qué mecanismo es responsable de la resistencia a las quinolonas?:",
+    "options": [
+      "Presencia de mutaciones cromosómicas en los genes de la ADN girasa y de la topoisomerasa de tipo IV.",
+      "Modificación enzimática de la quinolona mediada por acetiltransferasas.",
+      "Adquisición de una ß-lactamasa que hidroliza al fármaco.",
+      "Metilación del ARNr 23S, impidiendo la unión del antibiótico."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 20,
+    "question": "¿Cuál de los siguientes enunciados respecto a la toxina leucocidina Panton-Valentine de Staphylococcus aureus es INCORRECTO?:",
+    "options": [
+      "Se identifica en la mayoría de cepas de S. aureus resistentes a meticilina asociadas a infecciones comunitarias.",
+      "Es causante de cuadros cutáneos graves.",
+      "Es una citotoxina.",
+      "Se relaciona con intoxicaciones alimentarias."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 21,
+    "question": "¿Cuál es la respuesta correcta respecto a Staphylococcus saprophyticus?:",
+    "options": [
+      "Produce infecciones del aparato genitourinario en mujeres jóvenes.",
+      "Es sensible a fosfomicina.",
+      "Es sensible a novobiocina.",
+      "Es un estafilococo coagulasa-positivo."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 22,
+    "question": "¿Cuál de las siguientes bacterias es un bacilo gram-negativo que NO crece en agar MacConkey, es oxidasa positiva y está implicada en infecciones de heridas tras mordedura de animales?:",
+    "options": [
+      "Pasteurella multocida.",
+      "Francisella tularensis.",
+      "Neisseria gonorrhoeae.",
+      "Enterobacter cloacae."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 23,
+    "question": "¿Cuál es la respuesta INCORRECTA respecto a las infecciones causadas por Legionella pneumophila?:",
+    "options": [
+      "Son asintomáticas con relativa frecuencia.",
+      "La infección sintomática se presenta en una de las siguientes formas: fiebre de Pontiac o enfermedad de los legionarios.",
+      "El tratamiento de elección son los macrólidos o las fluoroquinolonas.",
+      "La fiebre de Pontiac se asocia con enfermedad pulmonar de base."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 24,
+    "question": "¿Cuál de las siguientes bacterias NO pertenece al denominado grupo HACEK?:",
+    "options": [
+      "Achromobacter xylosoxidans.",
+      "Cardiobacterium hominis.",
+      "Kingella kingae.",
+      "Eikenella corrodens."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 25,
+    "question": "¿Cuál de las siguientes características fenotípicas supone una identificación presuntiva de Streptococcus pneumoniae?:",
+    "options": [
+      "ß-Hemólisis en agar sangre, sensibilidad a la optoquina, prueba de solubilidad en bilis positiva.",
+      "ß-Hemólisis en agar sangre, resistencia a la optoquina, prueba de solubilidad en bilis negativa.",
+      "a-Hemólisis en agar sangre, sensibilidad a la optoquina, prueba de solubilidad en bilis positiva.",
+      "a-Hemólisis en agar sangre, resistencia a la optoquina, prueba de solubilidad en bilis positiva."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 26,
+    "question": "Avibactam es un inhibidor de ß-lactamasas con la EXCEPCIÓN de:",
+    "options": [
+      "B-Lactamasa de espectro extendido (BLEE).",
+      "ß-Lactamasa de clase C (ampC).",
+      "Carbapenemasa de tipo metalobetalactamasa.",
+      "Carbapenemasa de clase D (OXA-48)."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 27,
+    "question": "Señale la opción correcta respecto a microorganismo, enfermedad que causa y vector transmisor:",
+    "options": [
+      "Coxiella burnetii, Fiebre Q, Ixodes spp.",
+      "Bartonella bacilliformis, Fiebre de Oroya, Hyalomma spp.",
+      "Borrelia burgdorferi, Enfermedad de Lyme, Aedes spp.",
+      "Rickettsia conorii, Fiebre botonosa mediterránea, Rhipicephalus spp."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 28,
+    "question": "¿Cuál de las siguientes afirmaciones respecto a la peste es correcta?:",
+    "options": [
+      "El microorganismo causal de la peste bubónica es Yersinia enterocolitica serotipo 03.",
+      "Se transmite desde las ratas a los humanos mediante la picadura de pulgas del género Xenopsylla.",
+      "El periodo de incubación es de 30 a 60 días.",
+      "Sólo debe administrarse tratamiento en pacientes inmunodeprimidos, siendo vancomicina intravenosa el fármaco de elección."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 29,
+    "question": "¿Cuál de las siguientes opciones es INCORRECTA sobre la enfermedad zoonótica tularemia?:",
+    "options": [
+      "El diagnóstico de laboratorio se basa principalmente en el cultivo y frotis de lesiones.",
+      "Los lagomorfos y los roedores son importantes reservorios animales.",
+      "Está causada por Francisella tularensis, cocobacilo gramnegativo.",
+      "Estreptomicina y gentamicina son fármacos de elección para todas las formas de tularemia grave, excepto meningitis."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 30,
+    "question": "¿Cuál de las siguientes afirmaciones con respecto a la \"fiebre Q\" es INCORRECTA?:",
+    "options": [
+      "Se presenta como enfermedad febril autolimitada, neumonía, endocarditis o hepatitis.",
+      "El tratamiento de la endocarditis debe hacerse con doxiciclina durante 14 días.",
+      "Es una zoonosis que se adquiere por inhalación o, con menos frecuencia, por ingestión de leche no pasteurizada.",
+      "Para el diagnóstico de “fiebre Q\" aguda se pueden utilizar técnicas de amplificación de ácidos nucleicos a partir de muestras clínicas (sangre, válvulas cardíacas o líquido articular)."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 31,
+    "question": "La colistina es un antibiótico de la familia de las polimixinas. ¿Cuál de las siguientes características es correcta?:",
+    "options": [
+      "Las únicas formulaciones disponibles se administran por vía intravenosa y vía tópica.",
+      "Las polimixinas son activas frente a bacilos gramnegativos como P. aeruginosa, A. baumannii y las especies de Proteus.",
+      "Entre los efectos secundarios más frecuentes destacan la hepatotoxicidad y la neurotoxicidad irreversible, relacionada con la dosis.",
+      "La resistencia mediada por plásmidos se debe a la enzima MCR-1."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 32,
+    "question": "¿Cuál de los siguientes fármacos NO se utiliza para el tratamiento de la infección causada por Clostridioides difficile o presencia de sus recurrencias?:",
+    "options": [
+      "Fidaxomicina.",
+      "Vancomicina vía oral.",
+      "Clindamicina.",
+      "Bezlotoxumab."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 33,
+    "question": "¿Cuál es el medio de cultivo microbiológico habitual para el diagnóstico de \"tos ferina\" a partir de muestras respiratorias?:",
+    "options": [
+      "Bordet-Gengou.",
+      "Löwenstein-Jensen.",
+      "BCYE.",
+      "Thayer-Martin."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 34,
+    "question": "¿Cuál de las siguientes afirmaciones sobre Haemophilus influenzae es INCORRECTA?:",
+    "options": [
+      "Es un cocobacilo gramnegativo.",
+      "Crece en agar MacConkey.",
+      "Existen seis serotipos capsulares.",
+      "El mecanismo de resistencia a las penicilinas más frecuente es la producción de ß-lactamasas."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 35,
+    "question": "Una paciente de 48 años acude al Servicio de Urgencias de su hospital por presentar un cuadro de fiebre y dolor en hipocondrio derecho. Refiere consumo de verdura cruda en el Altiplano boliviano en su último viaje. ¿Qué patología es compatible con este cuadro clínico?:",
+    "options": [
+      "Hidatidosis alveolar.",
+      "Distomatosis hepática.",
+      "Linfangitis aguda.",
+      "Clonorquiasis."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 36,
+    "question": "¿Cuál de los siguientes enunciados es INCORRECTO en relación al Síndrome de Katayama?:",
+    "options": [
+      "Es un cuadro clínico causado por Schistosoma spp.",
+      "Sus manifestaciones clínicas más frecuentes son fiebre, erupción, hepatoesplenomegalia, broncoespasmo y eosinofilia.",
+      "La detección de huevos del parásito en heces es una herramienta diagnóstica muy sensible en la fase aguda.",
+      "Para su tratamiento se emplean prazicuantel y corticoides."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 37,
+    "question": "¿Cuál de los siguientes parásitos es de relevancia epidemiológica por su alta prevalencia entre la población infantil y causa una Enfermedad de Declaración Obligatoria?:",
+    "options": [
+      "Entamoeba coli.",
+      "Trichinella spiralis.",
+      "Echinococcus granulosus.",
+      "Giardia lamblia."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 38,
+    "question": "¿Para qué sirve el planteamiento matemático de Heckel?:",
+    "options": [
+      "Para analizar el comportamiento de materiales sólidos durante el proceso de compresión.",
+      "Para determinar la distribución bicompartimental para fármacos poco solubles.",
+      "Para determinar la viscosidad aparente en semisólidos con propiedades reopécticas.",
+      "Para calcular la velocidad de disolución en función del tamaño de partícula y del área superficial."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 39,
+    "question": "¿Qué relación existe entre el potencial Z y la floculación controlada de suspensiones?:",
+    "options": [
+      "La floculación controlada consiste en la incorporación de sustancias quelantes como el EDTA que actúan como floculantes, lo que no guarda relación con el potencial Z.",
+      "La floculación controlada consiste en la adición de electrolitos para modificar el potencial Z y con ello el grado de floculación.",
+      "La floculación controlada consiste en la modificación del tamaño de partícula para modificar el grado de floculación, no el potencial Z.",
+      "La floculación controlada se realiza incorporando agentes viscosizantes que modifican las propiedades reológicas de las suspensiones y el potencial Z."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 40,
+    "question": "¿Es obligatorio realizar el ensayo de resistencia a la fractura en comprimidos según la Farmacopea Española?:",
+    "options": [
+      "Sí. Está descrito como un ensayo obligatorio sobre lote final para comprobar su resistencia mecánica.",
+      "No. Está descrito como uno de los posibles ensayos para comprobar la resistencia mecánica de los comprimidos.",
+      "Sí, pero sólo en aquellos comprimidos destinados a su posterior recubrimiento y debe expresarse como valor mínimo.",
+      "No. Es un ensayo recomendable para comprobar la resistencia mecánica de los comprimidos, pero no es un ensayo oficial descrito en la Farmacopea."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 41,
+    "question": "Indique cuál es el nombre del método industrial de fabricación de cápsulas gelatinosas blandas:",
+    "options": [
+      "Método de Higuchi.",
+      "Método de Hausner.",
+      "Método de Scherer.",
+      "Método de Atkinson."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 42,
+    "question": "¿Para qué se utiliza el ensayo de endotoxinas bacterianas?:",
+    "options": [
+      "Para determinar la toxicidad de preparados farmacéuticos debido a bacterias anaerobias.",
+      "Para detectar la posible contaminación de formulaciones farmacéuticas con pirógenos.",
+      "Para detectar una posible contaminación de un preparado farmacéutico con bacterias Gram+.",
+      "Para estimar el grado de toxicidad que pueda tener la contaminación de un preparado farmacéutico con una cierta especie bacteriana."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 43,
+    "question": "El diámetro equivalente de Stokes de una partícula se define como:",
+    "options": [
+      "El diámetro de una esfera de igual densidad que la partícula que sedimenta a la misma velocidad que la partícula.",
+      "El diámetro de una esfera que tiene la misma superficie que la partícula.",
+      "El diámetro de una esfera que tiene el mismo volumen que la partícula.",
+      "El diámetro de una esfera que produce la misma variación en la resistencia eléctrica de la corriente que circula entre dos electrodos cuando se realiza la medida en el contador Coulter."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 44,
+    "question": "En el proceso de desecación, si la presión de vapor de agua en el sólido es mayor que en el aire:",
+    "options": [
+      "Se producirá transferencia neta de vapor de agua del sólido al aire hasta que se igualen las presiones.",
+      "Se producirá transferencia de vapor de agua del aire al sólido que adquirirá un mayor contenido de humedad.",
+      "No se producirá transferencia de vapor de agua del aire al sólido y ambas se mantendrán en equilibrio dinámico.",
+      "Se producirá transferencia de vapor de agua del sólido al aire cuando la humedad relativa del gas sea del 100%."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 45,
+    "question": "La visión en profundidad permite determinar las posiciones relativas de los objetos. El fenómeno que consiste en la percepción de esta profundidad, obtenida a partir de las disparidades retinianas que aparecen como consecuencia de la separación horizontal de los globos oculares, se denomina:",
+    "options": [
+      "Estereopsis.",
+      "Amaurosis.",
+      "Estrabismo.",
+      "Ambliopía."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 46,
+    "question": "¿Cómo se denomina el efecto de la unión del oxígeno con la hemoglobina que produce el desplazamiento del dióxido de carbono hacia la sangre?:",
+    "options": [
+      "Efecto Haldane.",
+      "Efecto Bohr.",
+      "Efecto Doppler.",
+      "Efecto Venturi."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 47,
+    "question": "¿Cuáles son los órganos sensitivos del laberinto membranoso que se encuentran en el aparato vestibular y detectan la orientación de la cabeza con respecto a la gravedad?:",
+    "options": [
+      "Máculas del utrículo y del sáculo.",
+      "Conductos cocleares.",
+      "Conductos endolinfáticos.",
+      "Órganos tendinosos de Golgi."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 48,
+    "question": "¿En qué lugar se produce la secreción de la colecistoquinina (CCK)?:",
+    "options": [
+      "Células G del estómago.",
+      "Células S del duodeno.",
+      "Células I del duodeno y del yeyuno.",
+      "Células K del intestino grueso."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 49,
+    "question": "¿Cuál de las siguientes fases del electrocardiograma corresponde a la repolarización de los ventrículos?:",
+    "options": [
+      "Complejo QRS.",
+      "Onda T.",
+      "Intervalo PR.",
+      "Intervalo QT."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 50,
+    "question": "¿Cuál de los siguientes fenómenos NO está asociado a un desplazamiento hacia la derecha de la curva de disociación de oxígeno-hemoglobina?:",
+    "options": [
+      "Aumento del 2,3-DPG.",
+      "Disminución de la temperatura.",
+      "Aumento de la pCO2.",
+      "Disminución del pH."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 51,
+    "question": "Señale la respuesta INCORRECTA respecto a la gastrina:",
+    "options": [
+      "Estimula la secreción de ácido gástrico por las células parietales.",
+      "Estimula la secreción de pepsinógeno por las células principales.",
+      "Es secretada por las células M del antro y las células K del duodeno y yeyuno.",
+      "Mantiene la estructura de la mucosa gástrica."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 52,
+    "question": "El cociente entre el trabajo y el gasto de energía química total (consumo de oxígeno) se denomina eficiencia de la contracción cardíaca y sus valores normales están entre:",
+    "options": [
+      "5-10%.",
+      "20-25%.",
+      "45-50%.",
+      ">60%."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 53,
+    "question": "De las siguientes células de sostén, señale cuál NO pertenece al sistema nervioso central:",
+    "options": [
+      "Células de Schwann.",
+      "Astrocitos.",
+      "Microglía.",
+      "Oligodendrocitos."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 54,
+    "question": "Existe un neurotransmisor que al estimularse el receptor postsináptico se sintetiza casi al instante mediante activación enzimática y, a continuación, difunde fuera de los terminales presinápticos durante unos segundos en lugar de ser liberado en paquetes vesiculares. Señale cuál es:",
+    "options": [
+      "Ácido y-aminobutírico (GABA).",
+      "Acetilcolina.",
+      "Óxido nítrico.",
+      "Dopamina."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 55,
+    "question": "El túbulo colector cortical cumple tres funciones fundamentales para la regulación del medio interno: absorción de Na+, secreción de K+ y secreción de H+/formación de HCO3-. Ésta última función se lleva a cabo en un tipo de células que se denominan:",
+    "options": [
+      "Células principales.",
+      "Células yuxtaglomerulares.",
+      "Células corticales.",
+      "Células intercaladas."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 56,
+    "question": "Fisiológicamente, la hormona paratiroidea (PTH):",
+    "options": [
+      "Inhibe la reabsorción de calcio en los riñones.",
+      "Estimula la reabsorción de fosfato en los riñones.",
+      "Estimula la resorción de calcio y fosfato en el hueso.",
+      "Inhibe la resorción de calcio y fósforo en el hueso."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 57,
+    "question": "En la pared de los primeros centímetros del duodeno, especialmente entre el píloro gástrico y la ampolla de Vater, existe un amplio conjunto de glándulas mucosas que secretan moco. Estas glándulas reciben el nombre de:",
+    "options": [
+      "Lieberkühn.",
+      "Paneth.",
+      "Brunner.",
+      "Oxíntica."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 58,
+    "question": "En el control hipotalámico de la alimentación existen dos tipos de neuronas: 1) las neuronas proopiomelanocortina (POMC) que producen la hormona estimulante a de los melanocitos a-MSH) y el transcrito regulado por la cocaína y la anfetamina (CART) y 2) las neuronas que producen la proteína relacionada con el gen Agouti (AGRP) y el neuropéptido Y (NPY). Señale qué hormona activa las neuronas AGRP-NPY estimulando la ingesta:",
+    "options": [
+      "Leptina.",
+      "Insulina.",
+      "Grelina.",
+      "Colecistoquinina."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 59,
+    "question": "Los factores fisiológicos más importantes que regulan la secreción de la hormona antidiurética (ADH) desde la neurohipófisis son la regulación osmótica y hemodinámica. Adicionalmente, existen otros factores que afectan a la secreción de esta hormona. Señale el factor desencadenante de su secreción:",
+    "options": [
+      "Consumo de alcohol.",
+      "Náuseas.",
+      "Descenso de la osmolaridad plasmática.",
+      "Aumento del volumen plasmático."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 60,
+    "question": "Con respecto a la serie granulocítica, indique cuál de estas células es la más madura:",
+    "options": [
+      "Mielocito.",
+      "Metamielocito.",
+      "Mieloblasto.",
+      "Promielocito."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 61,
+    "question": "¿Cuál de las siguientes alteraciones morfológicas se buscará en primer lugar en el frotis de un paciente que acude a urgencias con deterioro neurológico y plaquetas por debajo de 100.000/μL?:",
+    "options": [
+      "Esferocitos.",
+      "Esquistocitos.",
+      "Acantocitos.",
+      "Equinocitos."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 62,
+    "question": "El test de Coombs directo es una prueba diagnóstica clave en:",
+    "options": [
+      "Anemia hemolítica del recién nacido utilizando sangre materna.",
+      "Anemia hemolítica adquirida de origen inmune.",
+      "Anemia hemolítica de causa no inmune.",
+      "Anemia no hemolítica."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 63,
+    "question": "Indique el grupo sanguíneo del sistema ABO considerado como receptor universal:",
+    "options": [
+      "Grupo AB.",
+      "Grupo A.",
+      "Grupo 0.",
+      "Grupo B."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 64,
+    "question": "¿Qué hallazgo esperaría encontrar típicamente en una leucemia mieloide aguda tipo M3 clásica?:",
+    "options": [
+      "Leucopenia.",
+      "Neutrofilia.",
+      "Trombocitosis.",
+      "Poliglobulia."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 65,
+    "question": "Indique cuál de los siguientes NO es un hallazgo de laboratorio en el mieloma múltiple:",
+    "options": [
+      "Hipocalcemia.",
+      "Proteinuria de Bence-Jones.",
+      "Anemia.",
+      "Hiperproteinemia."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 66,
+    "question": "Indique cuál de los siguientes parámetros descarta la existencia de trombosis si su valor está dentro de la normalidad:",
+    "options": [
+      "Proteína C.",
+      "D-dímero.",
+      "Antitrombina III.",
+      "Proteína S."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 67,
+    "question": "Los pacientes con enfermedad de Addison:",
+    "options": [
+      "Fallecen a edad temprana por sobreestimulación hormonal sistémica.",
+      "No sintetizan cantidades adecuadas de hormonas suprarrenales.",
+      "Sintetizan niveles anormales de prolactina.",
+      "Se diagnostican inicialmente por presentar un trastorno óseo."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 68,
+    "question": "La miastenia gravis o grave se asocia con:",
+    "options": [
+      "Disminución de la producción de acetilcolina en las terminaciones nerviosas.",
+      "Disminución de la miosina.",
+      "Déficit de troponina C.",
+      "Disminución de la transmisión en la unión mioneuronal."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 69,
+    "question": "En las patologías neurológicas asociadas a depósitos de cuerpos de Lewy, éstos están formados por:",
+    "options": [
+      "Proteína tau.",
+      "a-Sinucleína.",
+      "ß-Sinucleína.",
+      "Amiloide ß."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 70,
+    "question": "Señale cuál de los siguientes neurotransmisores se encuentra más frecuentemente alterado en la enfermedad de Parkinson:",
+    "options": [
+      "Noradrenalina.",
+      "Dopamina.",
+      "Serotonina.",
+      "Acetilcolina."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 71,
+    "question": "Ante una situación donde el bombeo cardiaco es insuficiente, el sistema cardiovascular tiene una serie de mecanismos compensadores. Indique cuáles de los siguientes NO forman parte de esos mecanismos:",
+    "options": [
+      "Aumento de la actividad del sistema simpático.",
+      "Aumento del sistema renina-angiotensina-aldosterona.",
+      "Aumento del gasto cardiaco mediante el mecanismo de Frank-Starling.",
+      "Disminución de la angiogénesis."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 72,
+    "question": "Señale el enunciado correcto sobre el cambio genético frecuentemente asociado a la leucemia promielocítica aguda:",
+    "options": [
+      "Se trata de una mutación puntual.",
+      "La oncoproteína resultante de dicho cambio genético es una tirosina cinasa hiperactiva.",
+      "Consiste en un gen de fusión entre TMPRSS2 y ETS.",
+      "Afecta al gen del receptor de ácido retinoico α."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 73,
+    "question": "Respecto a la enzima glucosa-6-fosfato deshidrogenasa (G6PD) y la anemia hemolítica producida por su deficiencia, señale lo correcto:",
+    "options": [
+      "La G6PD reduce el dinucleótido de nicotinamida adenina (NAD) a NADH.",
+      "La deficiencia de G6PD tiene una herencia autosómica recesiva.",
+      "Las variantes de G6PD asociadas a hemólisis provocan errores de plegamiento de la proteína, haciéndola más susceptible a la degradación proteolítica.",
+      "La actividad de G6PD impide que el glutatión reducido se oxide."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 74,
+    "question": "Las mutaciones del gen de von Hippel-Lindau (VHL) se relacionan con ciertos carcinomas de células renales y con otros tumores y proliferaciones. Señale lo INCORRECTO sobre estas mutaciones:",
+    "options": [
+      "Impiden la degradación del factor inducible por hipoxia-la en condiciones normóxicas.",
+      "Impiden la ubiquitinación del factor inducible por hipoxia-la en condiciones normóxicas.",
+      "Son mutaciones con ganancia de función.",
+      "Se asocian con un aumento de la síntesis de factores de crecimiento angiogénicos."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 75,
+    "question": "¿Cuál de los siguientes elementos químicos está relacionado con la generación de radicales libres en el organismo mediante la reacción de Fenton?:",
+    "options": [
+      "Hierro.",
+      "Selenio.",
+      "Zinc.",
+      "Cloro."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 76,
+    "question": "En ciertas infecciones crónicas y neoplasias aparece caquexia, un estado patológico caracterizado por pérdida de peso y anorexia al que contribuye la producción continuada de una citoquina. Indique cuál:",
+    "options": [
+      "Interferón γ.",
+      "Factor de crecimiento transformante ß.",
+      "Interleucina-10.",
+      "Factor de necrosis tumoral a."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 77,
+    "question": "¿Cuál de las siguientes afirmaciones sobre la deficiencia de 21ß-hidroxilasa en la corteza suprarrenal es INCORRECTA?:",
+    "options": [
+      "Produce hiperplasia suprarrenocortical.",
+      "Se reducen las concentraciones urinarias de 17-cetosteroides.",
+      "Cursa con hipocortisolismo.",
+      "Se reduce la producción suprarrenal de mineralocorticoides."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 78,
+    "question": "Referente al factor V de Leiden, que consiste en una mutación del factor V de la coagulación, señale lo correcto:",
+    "options": [
+      "Es resistente a la inactivación por el complejo proteína C activada/proteína S.",
+      "Sigue un patrón de herencia ligado al sexo.",
+      "Reduce el requerimiento de calcio preciso para la coagulación sanguínea.",
+      "Aumenta el riesgo de trombosis arterial, pero no el de trombosis venosa profunda."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 79,
+    "question": "¿Qué fármaco inhibidor de la enzima fosfodiesterasa 4 se utiliza en el tratamiento de la psoriasis?:",
+    "options": [
+      "Roflumilast.",
+      "Tildrakizumab.",
+      "Apremilast.",
+      "Montelukast."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 80,
+    "question": "En un paciente con enfermedad inflamatoria intestinal, ¿con qué inmunomodulador se recomienda la determinación de la actividad de la enzima tiopurina metiltransferasa (TPMT)?:",
+    "options": [
+      "Mesalazina.",
+      "Vedolizumab.",
+      "Azatioprina.",
+      "Olsalazina."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 81,
+    "question": "Señale la afirmación correcta en relación al tratamiento de la esclerosis lateral amiotrófica:",
+    "options": [
+      "Natalizumab es el medicamento de elección por su adecuado perfil de seguridad y eficacia.",
+      "Riluzol es un fármaco que disminuye la liberación de glutamato.",
+      "No existe comercializado ningún fármaco, siendo necesario el uso de fármacos en investigación.",
+      "Acetato de glatirámero es el tratamiento de elección por su alta biodisponibilidad oral y su perfil de seguridad."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 82,
+    "question": "Señale la respuesta INCORRECTA en relación con el tratamiento con eritropoyetina en insuficiencia renal crónica:",
+    "options": [
+      "La respuesta al tratamiento con eritropoyetina depende de la disponibilidad de hierro de los pacientes.",
+      "El efecto colateral más frecuente durante el tratamiento con eritropoyetina es la hipotensión.",
+      "Existen presentaciones de eritropoyetina disponibles tanto para la administración subcutánea como intravenosa.",
+      "Se prefiere la administración subcutánea porque la absorción es más lenta y se reduce así la dosis de eritropoyetina necesaria."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 83,
+    "question": "En relación a los fármacos indicados en esclerosis múltiple, ¿qué asociación fármaco - diana molecular es INCORRECTA?:",
+    "options": [
+      "Fingolimod - modulador del receptor de la esfingosina 1-fosfato (S1P).",
+      "Alemtuzumab – anticuerpo monoclonal frente a CD52.",
+      "Ocrelizumab – anticuerpo monoclonal frente a CD20.",
+      "Natalizumab - anticuerpo monoclonal frente al receptor de IL-2."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 84,
+    "question": "¿Qué grupo de fármacos puede producir como reacción adversa trastornos del control de impulsos como adicción al juego?:",
+    "options": [
+      "Agonistas dopaminérgicos.",
+      "Inhibidores de la acetilcolinesterasa.",
+      "Antagonistas del N-metil-D-aspartato (NMDA).",
+      "Inhibidores de la monoamino oxidasa (MAO) A."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 85,
+    "question": "Referente a los fármacos para la artritis reumatoide, ¿qué relación fármaco -diana molecular es INCORRECTA?:",
+    "options": [
+      "Rituximab - anticuerpo monoclonal frente a CD20 de linfocitos B.",
+      "Abatacept - proteína de fusión frente al TNF-α.",
+      "Tocilizumab - anticuerpo monoclonal frente al receptor IL-6.",
+      "Tofacitinib - inhibidor selectivo de Janus Kinasa (JAK)."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 86,
+    "question": "¿Cuál de los siguientes antipsicóticos tiene indicación en el manejo de la agitación y/o agresividad en la enfermedad de Alzheimer?:",
+    "options": [
+      "Sulpirida.",
+      "Risperidona.",
+      "Clozapina.",
+      "Zuclopentixol."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 87,
+    "question": "¿Cuál de las siguientes afirmaciones sobre omeprazol es INCORRECTA?:",
+    "options": [
+      "Se recomienda tomar en ayunas.",
+      "Puede causar hipermagnesemia en tratamientos de larga duración.",
+      "Puede disminuir la absorción de vitamina B12.",
+      "La máxima inhibición ácida se consigue a los 3-4 días de tratamiento."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 88,
+    "question": "En pacientes en tratamiento para el control de la dislipemia es INCORRECTO que:",
+    "options": [
+      "Los fibratos potencian el efecto de los anticoagulantes orales.",
+      "La combinación de fibratos y estatinas incrementa el riesgo de rabdomiólisis.",
+      "Las estatinas son el fármaco de elección en el tratamiento de las dislipemias en embarazadas.",
+      "La combinación de fluconazol y atorvastatina puede incrementar las concentraciones de atorvastatina."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 89,
+    "question": "En un paciente de 51 años con diagnóstico reciente de hiperplasia benigna de próstata, ¿cuál de los siguientes grupos de fármacos sería de elección?:",
+    "options": [
+      "Antagonistas a-1 adrenérgicos.",
+      "Inhibidores de la fosfodiesterasa 5.",
+      "Inhibidores de la 17 a-hidroxilasa.",
+      "Análogos de prostaglandinas E1."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 90,
+    "question": "¿Cuál de las siguientes afirmaciones sobre antiepilépticos es verdadera?:",
+    "options": [
+      "El ácido valproico es un inductor enzimático.",
+      "Topiramato se usa en el tratamiento del Síndrome de Lennox - Gastaut.",
+      "Levetiracetam es uno de los antiepilépticos más teratógenos.",
+      "Litio es el fármaco de elección en el tratamiento de las ausencias."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 91,
+    "question": "Señale de las siguientes asociaciones la que es INCORRECTA:",
+    "options": [
+      "Furosemida – hipocalcemia.",
+      "Aliskirén – hiperpotasemia.",
+      "Captopril – hipopotasemia.",
+      "Hidroclorotiazida – hipercalcemia."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 92,
+    "question": "¿Cuál de los siguientes emparejamientos entre marcador molecular y fármaco es INCORRECTO?:",
+    "options": [
+      "Mutación V600 del gen BRAFV – Dabrafenib.",
+      "Reordenamiento del gen de fusión entre EML4 y ALK – Crizotinib.",
+      "Mutación del gen KRAS – Cetuximab.",
+      "Mutación L858R del gen EGFR – Gefitinib."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 93,
+    "question": "Indique la respuesta INCORRECTA:",
+    "options": [
+      "La neuropatía periférica es el efecto adverso más frecuente de irinotecán.",
+      "Cisplatino produce ototoxicidad como efecto adverso.",
+      "Paclitaxel es eficaz en cáncer de ovario y en cáncer de pulmón.",
+      "Leucovorin se utiliza para reducir la toxicidad de metotrexato."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 94,
+    "question": "¿Cuál de los siguientes agonistas de receptores dopaminérgicos NO se emplea en el tratamiento del síndrome de piernas inquietas?:",
+    "options": [
+      "Ropinirol.",
+      "Pramipexol.",
+      "Rotigotina.",
+      "Cabergolina."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 95,
+    "question": "En relación con las enfermedades cardiovasculares, ¿cuál es la opción INCORRECTA?:",
+    "options": [
+      "La utilización de fármacos que aumentan la precarga es la opción más adecuada para el tratamiento de la insuficiencia cardiaca.",
+      "La hipertensión arterial puede ser causa de insuficiencia cardiaca.",
+      "La cardiopatía isquémica puede ser causa de arritmias.",
+      "La modulación del sistema nervioso simpático y del sistema renina-angiotensina-aldosterona es una opción frecuente para el tratamiento de enfermedades cardiovasculares."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 96,
+    "question": "¿Cuál de los siguientes grupos farmacológicos se asocia comúnmente a L-DOPA para prevenir la conversión periférica de dicho fármaco a dopamina?:",
+    "options": [
+      "Inhibidores de la enzima monoamino oxidasa-A (MAO-A).",
+      "Inhibidores de la enzima dopa descarboxilasa (DDC).",
+      "Inhibidores de la catecol-O-metil transferasa (COMT).",
+      "Inhibidores de la enzima monoamino oxidasa-B (MAO-B)."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 97,
+    "question": "¿Cuál de los siguientes antiepilépticos sería de elección en un paciente que sufre de trastorno bipolar?:",
+    "options": [
+      "Fenitoína.",
+      "Topiramato.",
+      "Lamotrigina.",
+      "Pregabalina."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 98,
+    "question": "¿Cuál de las siguientes opciones respecto a los nitratos es INCORRECTA?:",
+    "options": [
+      "Sus efectos son dependientes de la presencia intacta y funcional del endotelio vascular.",
+      "Disminuyen la precarga.",
+      "Están indicados en cuadros de angina de pecho.",
+      "Se unen a receptores con actividad guanililciclasa."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 99,
+    "question": "En relación con la unión de fármacos a proteínas plasmáticas, señale la opción correcta:",
+    "options": [
+      "Los fármacos con un alto grado de unión a proteínas plasmáticas suelen tener volúmenes aparentes de distribución elevados.",
+      "La interacción entre los fármacos y la albúmina sérica es inespecífica.",
+      "La unión de los fármacos a las proteínas plasmáticas es un proceso saturable.",
+      "La unión de los fármacos a las proteínas plasmáticas no modifica la velocidad de distribución del fármaco."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 100,
+    "question": "En relación con los fármacos agonistas, señale la opción correcta:",
+    "options": [
+      "Un fármaco con actividad agonista parcial tiene una eficacia similar a la de un agonista puro.",
+      "Un agonista inverso se comporta como un antagonista cuando está en presencia de un agonista, pero produce por sí mismo un efecto opuesto al del agonista puro.",
+      "Un agonista parcial es menos potente que un agonista puro.",
+      "Los agonistas parciales no reducen la eficacia de los agonistas puros cuando se administran simultáneamente."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 101,
+    "question": "¿Qué subtipo de proteínas G regula la actividad de la fosfolipasa C?:",
+    "options": [
+      "Proteínas Gs.",
+      "Proteínas Gi.",
+      "Proteínas Go.",
+      "Proteínas Gq."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 102,
+    "question": "¿Cuál de los siguientes NO es un efecto característico de los fármacos parasimpaticolíticos o anticolinérgicos utilizados a dosis terapéuticas?:",
+    "options": [
+      "Disminución del peristaltismo intestinal.",
+      "Vasoconstricción.",
+      "Disminución de la secreción de saliva.",
+      "Midriasis."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 103,
+    "question": "La entacapona se utiliza como coadyuvante de la levodopa en el tratamiento de la enfermedad de Parkinson porque:",
+    "options": [
+      "Aumenta la concentración plasmática de levodopa.",
+      "Es un agonista dopaminérgico.",
+      "Es un inhibidor de la dopa descarboxilasa.",
+      "Es un IMAO-B, que aumenta la concentración de dopamina en el cerebro."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 104,
+    "question": "¿Cuál de las siguientes opciones es correcta respecto a los triptanes?:",
+    "options": [
+      "Bloquean los receptores 5-HT1B y 5-HT1D de serotonina.",
+      "Están indicados en la profilaxis de la migraña.",
+      "Solamente se pueden administrar por vía intranasal debido a su baja biodisponibilidad por vía oral.",
+      "Están contraindicados en pacientes con enfermedad cardiovascular."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 105,
+    "question": "Las fenotiazinas que se utilizan como antieméticos tienen el siguiente mecanismo de acción y lugar de acción:",
+    "options": [
+      "Son antagonistas de los receptores serotoninérgicos del tracto gastrointestinal.",
+      "Son agonistas dopaminérgicos D2 de la zona quimiorreceptora gatillo.",
+      "Son antagonistas dopaminérgicos de los receptores D2 de la zona quimiorreceptora gatillo.",
+      "Son agonistas parciales de los receptores de serotonina de la zona quimiorreceptora gatillo."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 106,
+    "question": "La podofilotoxina es un principio activo de naturaleza fenólica que se obtiene de las especies del género Podophyllum y que posee varios efectos farmacológicos. Entre las aplicaciones terapéuticas más importantes de este compuesto se encuentra el tratamiento de:",
+    "options": [
+      "Condilomas acuminados.",
+      "Trastornos digestivos.",
+      "Alteraciones hepáticas.",
+      "Neuralgias post-herpéticas."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 107,
+    "question": "Indique cuál de las siguientes afirmaciones es cierta:",
+    "options": [
+      "La raíz de Ruscus aculeatus contiene saponósidos triterpénicos tetracíclicos.",
+      "Los principios activos presentes en la raíz de Eleuterococcus senticosus son saponósidos triterpénicos pentacíclicos.",
+      "Aesculus hippocastanum contiene en su corteza mayoritariamente ß-aescina, un saponósido triterpénico pentacíclico.",
+      "Los principios activos de la raíz de Panax ginseng son saponinas esteroídicas."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 108,
+    "question": "En relación con el harpagofito, indique la respuesta correcta:",
+    "options": [
+      "Según se ha comprobado en ensayos clínicos, la mayor actividad se logra administrando los principios activos aislados frente a la droga entera.",
+      "La droga la constituye la corteza de Harpagophytum procumbens.",
+      "Destaca por sus propiedades antiinflamatorias.",
+      "Su principio activo, el harpagósido, es un secoiridoide."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 109,
+    "question": "En relación con los alcaloides del cornezuelo del centeno, indique la respuesta correcta:",
+    "options": [
+      "La nicergolina posee propiedades midriáticas.",
+      "Los alcaloides del grupo de la ergotoxina son los más empleados en terapéutica.",
+      "La ergocristina es una amida peptídica que se emplea en crisis aguda de migraña.",
+      "La ergometrina es la amida del ácido lisérgico y 2-aminopropanol."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 110,
+    "question": "Indique cuál de las siguientes afirmaciones es INCORRECTA:",
+    "options": [
+      "La artemisinina es una lactona sesquiterpénica empleada por su acción antipalúdica.",
+      "La capsaicina es un tetraterpeno que se emplea como colorante.",
+      "La camptotecina es un alcaloide quinolínico con acción antitumoral.",
+      "El taxol es un diterpeno con acción antitumoral."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 111,
+    "question": "Indique la veracidad o falsedad de las dos siguientes afirmaciones: Primera: El tratamiento farmacocinético no compartimental se aplica a los fármacos con comportamiento farmacocinético no lineal. Segunda: La constante de Michaelis-Menten de un fármaco es igual a la mitad de la velocidad máxima de biotransformación de dicho fármaco:",
+    "options": [
+      "Ambas afirmaciones son correctas.",
+      "La primera afirmación es correcta y la segunda afirmación es falsa.",
+      "La primera afirmación es falsa y la segunda afirmación es correcta.",
+      "Ambas afirmaciones son falsas."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 112,
+    "question": "Con relación a los regímenes de dosificación de fármacos con índice terapéutico alto (y por lo tanto bastante seguros) y con una semivida corta (entre 20 minutos y 3 horas), su frecuencia de administración con relación a su semivida debiera ser:",
+    "options": [
+      "3-6 veces su semivida.",
+      "2 veces su semivida.",
+      "1 semivida.",
+      "<1 semivida."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 113,
+    "question": "¿En cuál de las siguientes vías de administración parenteral de fármacos existe fase de absorción?:",
+    "options": [
+      "Intravenosa.",
+      "Intraarterial.",
+      "Intracardiaca.",
+      "Intramuscular."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 114,
+    "question": "¿Cuál de estas afirmaciones sobre la administración de fármacos por vía pulmonar es cierta?:",
+    "options": [
+      "La profundidad de penetración de las partículas administradas es inversamente proporcional al tamaño y densidad de las partículas.",
+      "La profundidad de penetración de las partículas administradas es directamente proporcional al ritmo respiratorio.",
+      "Tras esta administración se produce efecto de primer paso por metabolización hepática.",
+      "Tras esta administración la absorción es lenta."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 115,
+    "question": "¿Cuál de las siguientes afirmaciones es correcta en relación al volumen de distribución de un fármaco?:",
+    "options": [
+      "No puede ser superior al volumen de agua corporal de un individuo.",
+      "Depende de la fracción de fármaco libre en plasma y en tejidos.",
+      "No depende del coeficiente de reparto del fármaco.",
+      "Es elevado si el fármaco no se extravasa."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 116,
+    "question": "¿Qué parámetro de la gráfica concentración plasmática de fármaco – tiempo se emplea para calcular la biodisponibilidad en magnitud del fármaco, después de ser administrado por vía oral?:",
+    "options": [
+      "Concentración máxima (Cmax).",
+      "Concentración en equilibrio dinámico (Css).",
+      "La integral de la curva de concentración plasmática-tiempo.",
+      "El área bajo el primer tramo de la curva de concentración plasmática-tiempo."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 117,
+    "question": "En administración en perfusión intravenosa continua, para alcanzar el nivel de fármaco requerido de forma rápida mediante una administración en bolus, ¿de qué parámetros depende la dosis a administrar en bolus?:",
+    "options": [
+      "De la concentración de fármaco en equilibrio dinámico y del volumen de distribución.",
+      "Del volumen de distribución y de la semivida plasmática de eliminación.",
+      "Del área bajo la curva de niveles plasmáticos-tiempo.",
+      "De la concentración de fármaco en equilibrio dinámico y de la semivida plasmática de eliminación."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 118,
+    "question": "¿Cuál de estas situaciones representa el fenómeno flip-flop tras una administración extravasal de un fármaco que se distribuye de acuerdo a un modelo bicompartimental? (ka: constante de velocidad de absorción; a: constante de velocidad de disposición rápida; ß: constante de velocidad de disposición lenta):",
+    "options": [
+      "α > β > ka.",
+      "α > ka > β.",
+      "Κα > α > β.",
+      "ka > β > α."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 119,
+    "question": "¿Cuánto tarda un fármaco de características monocompartimentales administrado en bolus intravenoso en reducir su concentración plasmática a la octava parte de la concentración plasmática inicial?:",
+    "options": [
+      "Ocho semividas de eliminación.",
+      "Dos semividas de eliminación.",
+      "Tres semividas de eliminación.",
+      "Cuatro semividas de eliminación."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 120,
+    "question": "Un fármaco cuya cinética de eliminación es de orden uno, alcanza una concentración plasmática en estado estacionario de 40 mg/L cuando se administra con una velocidad de perfusión de 10 mg/h a un determinado paciente. ¿Cuál será la concentración de equilibrio que se alcanzará si se administra a una velocidad de 40 mg/h a ese mismo paciente?:",
+    "options": [
+      "10 mg/L.",
+      "40 mg/L.",
+      "80 mg/L.",
+      "160 mg/L."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 121,
+    "question": "¿Cuál de estos medicamentos puede ser objeto de una bioexención?:",
+    "options": [
+      "Comprimidos sublinguales de un vasodilatador coronario de clase III del Sistema de Clasificación Biofarmacéutico.",
+      "Parches transdérmicos de un antiparkinsoniano de clase III del Sistema de Clasificación Biofarmacéutico.",
+      "Comprimidos de liberación prolongada de un antipsicótico de clase I del Sistema de Clasificación Biofarmacéutico.",
+      "Comprimidos de liberación inmediata de un antihipertensivo de clase I del Sistema de Clasificación Biofarmacéutico."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 122,
+    "question": "En los eucariotas, la biosíntesis de los fosfolípidos no nitrogenados, como el fosfatidilinositol, se lleva a cabo por la condensación de:",
+    "options": [
+      "CDP-diacilglicerol e inositol.",
+      "Diacilglicerol e inositol.",
+      "Diacilglicerol y CDP-inositol.",
+      "CDP-diacilglicerol e inositol-fosfato."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 123,
+    "question": "Es correcto en relación a la ß-oxidación y lipogénesis del ácido palmítico (16:0):",
+    "options": [
+      "En la ß-oxidación los intermediarios están unidos a ACP, mientras que los intermediarios de la lipogénesis lo están al CoA.",
+      "El malonil-CoA sintetizado por la acetil-CoA carboxilasa, actúa como un inhibidor de la ß-oxidación.",
+      "La ß-cetoacil reductasa consume NADH, mientras que la 3-L-hidroxiacil-CoA deshidrogenasa consume NADPH.",
+      "En ambas rutas metabólicas, la última reacción está catalizada por la palmitoil tioesteresa."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 124,
+    "question": "El uso de piruvato como sustrato gluconeogénico se favorece cuando en la mitocondria, por efecto del acetil-CoA, se produce:",
+    "options": [
+      "La activación de la piruvato quinasa y la inhibición de la fosfoenolpiruvato carboxiquinasa.",
+      "La inhibición de la hexoquinasa y la activación de la malato deshidrogenasa.",
+      "La inhibición del complejo de la piruvato deshidrogenasa y la activación de la piruvato carboxilasa.",
+      "La activación de la lactato deshidrogenasa y la inhibición de la glucosa 6-fosfatasa."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 125,
+    "question": "Los complejos enzimáticos de la piruvato deshidrogenasa y de la a-cetoglutarato deshidrogenasa, tienen en común que:",
+    "options": [
+      "Catalizan una reacción de deshidrogenación del sustrato y la formación de una molécula de Acetil-CoA.",
+      "En presencia de un elevado cociente [NADH] / [NAD+], se potencia su actividad catalítica.",
+      "Catalizan la descarboxilación oxidativa del sustrato, mediante una reacción exergónica que genera una molécula de ATP.",
+      "Para completar la reacción que catalizan, necesitan de la participación de pirofosfato de tiamina, lipoato, coenzima A, FAD y NAD+."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 126,
+    "question": "Indique cuál de las siguientes asociaciones entre coenzima y reacción en la que participan es correcta:",
+    "options": [
+      "Coenzima A Reacciones de alquilación.",
+      "Pirofosfato de tiamina Reacciones de transferencia de grupos acilo.",
+      "Biocitina Reacciones de carboxilación.",
+      "Piridoxal fosfato Reacciones de transferencia de grupos aldehído."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 127,
+    "question": "En eucariotas, la reacción de la glicina con el succinil-CoA que conduce a la síntesis de 8-aminolevulinato, constituye la primera reacción de la biosíntesis de:",
+    "options": [
+      "Las prostaglandinas.",
+      "Los gangliósidos.",
+      "Las porfirinas.",
+      "Los plasmalógenos."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 128,
+    "question": "En una reacción catalizada enzimáticamente, la presencia de un inhibidor competitivo:",
+    "options": [
+      "Interacciona con el centro activo de la enzima, produciendo una disminución de la Vmax de la reacción.",
+      "Tras unirse al centro activo de la enzima, modifica la KM de la reacción (Km aparente) de la siguiente manera Km aparente = a KM.",
+      "No modifica la interacción entre la enzima y el sustrato, pero al unirse el inhibidor al complejo enzima-sustrato, distorsiona el centro activo impidiendo la transformación del sustrato.",
+      "Interacciona indistintamente con la enzima libre o con el complejo enzima-sustrato, produciendo la reducción de la Vmax y de la Км de la reacción."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 129,
+    "question": "Los agentes desacoplantes, como el 2,4-dinitrofenol, impiden la síntesis de ATP porque:",
+    "options": [
+      "Introducen H+ en la matriz mitocondrial, disipando el gradiente electroquímico generado por la cadena de transporte electrónico.",
+      "Interaccionan con el citocromo A, del complejo IV (citocromo C oxidasa) de la cadena respiratoria, bloqueando el flujo de electrones y la reducción del O2 mitocondrial.",
+      "Interaccionan con la subunidad F. de la ATP sintasa, impidiendo la formación del enlace fosfoanhídrido entre el ADP y el Pi.",
+      "Introducen electrones en la matriz mitocondrial, que producen la reducción parcial del O2 mitocondrial y la síntesis del radical superóxido."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 130,
+    "question": "Los aminoácidos cetogénicos se caracterizan porque su cadena hidrocarbonada se degrada hasta:",
+    "options": [
+      "Glutamato.",
+      "Propionil-CoA.",
+      "Succinil-CoA.",
+      "Acetil-CoA."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 131,
+    "question": "¿Qué tres enzimas catalizan reacciones irreversibles de la glucolisis muscular?:",
+    "options": [
+      "Aldolasa, gliceraldehído 3-fosfato deshidrogenasa y piruvato quinasa.",
+      "Hexoquinasa, fosfofructoquinasa-1 y piruvato quinasa.",
+      "Fosfoglicerato quinasa, enolasa y piruvato quinasa.",
+      "Glucoquinasa, fosfoglicerato quinasa y piruvato quinasa."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 132,
+    "question": "La molécula de hemoglobina cuyo ion ferroso (Fe2+) aparece oxidado a férrico (Fe3+) se denomina:",
+    "options": [
+      "Oxihemoglobina.",
+      "Hemoglobina S.",
+      "Metahemoglobina.",
+      "Hemoglobina reducida."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 133,
+    "question": "¿Cuál es la función metabólica de la fermentación?:",
+    "options": [
+      "Consumir CO2.",
+      "Generar productos de desecho que se puedan eliminar.",
+      "Convertir los azúcares en acetato y compuestos derivados de él.",
+      "Obtener NAD+ oxidado."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 134,
+    "question": "Los quilomicrones transportan lípidos desde:",
+    "options": [
+      "El hígado hacia los tejidos periféricos.",
+      "El intestino hacia los tejidos periféricos.",
+      "El intestino hacia el hígado.",
+      "Los tejidos periféricos hacia el hígado."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 135,
+    "question": "Es posible investigar de manera selectiva la línea hereditaria materna mediante marcadores en el:",
+    "options": [
+      "Pseudogén.",
+      "Centrómero.",
+      "ADN mitocondrial.",
+      "ARN de transferencia."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 136,
+    "question": "¿Cuál es la secuencia nucleotídica que está presente en el gen, pero NO en el ARN mensajero maduro?:",
+    "options": [
+      "Exón.",
+      "Promotor.",
+      "Intrón.",
+      "Intensificador."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 137,
+    "question": "En relación con las helicasas, ¿qué afirmación es cierta?:",
+    "options": [
+      "Son proteínas que producen alteraciones en la estructura cuaternaria del ARN.",
+      "Separan las dos hebras del ácido nucleico aprovechando la energía del ATP.",
+      "Se unen al ADN de cadena sencilla.",
+      "Su papel fundamental es el de ligar el ADN."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 138,
+    "question": "Un transposón o elemento genético transponible es:",
+    "options": [
+      "Un plásmido T4.",
+      "Un segmento de ADN que ha sufrido una mutación por desfase.",
+      "Un cósmido ligeramente modificado.",
+      "Una secuencia de ADN capaz de replicarse e insertar una copia en un lugar distinto del genoma."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 139,
+    "question": "La formación de un enlace disulfuro entre cadenas polipeptídicas es un ejemplo de estructura:",
+    "options": [
+      "Primaria.",
+      "Secundaria.",
+      "Terciaria.",
+      "Cuaternaria."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 140,
+    "question": "Las mutaciones sin sentido en el ADN codificante son sustituciones que:",
+    "options": [
+      "Producen una modificación en el marco de lectura de la proteína.",
+      "Modifican la especificidad del codón afectado a otro aminoácido.",
+      "Introducen codones de terminación en los genes.",
+      "Cambian un aminoácido por otro químicamente análogo."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 141,
+    "question": "En relación con los genes truncados, ¿qué respuesta es correcta?:",
+    "options": [
+      "Son copias incompletas del gen, por pérdida de una región situada en uno de los extremos (5' o 3').",
+      "Son genes que presentan poca homología en la secuencia de ADN.",
+      "Son las regiones repetitivas de los genes.",
+      "Son genes agrupados."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 142,
+    "question": "En el proceso de síntesis de una molécula de ADN recombinante:",
+    "options": [
+      "Se requiere de la unión de dos o más fragmentos de enzimas.",
+      "Pueden usarse como vectores de clonaje plásmidos, fagos y cromosomas de levadura.",
+      "El vector de clonaje puede ser tanto una molécula de ADN como de ARN.",
+      "El ADN recombinante es sinónimo de ADN complementario."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 143,
+    "question": "El mecanismo de reparación mismatch corrige errores del ADN introducidos por:",
+    "options": [
+      "Luz ultravioleta.",
+      "Desaminación.",
+      "Replicación del ADN.",
+      "Recombinación no homóloga."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 144,
+    "question": "¿Cuál de las siguientes magnitudes biológicas NO ve modificada su concentración con el ejercicio intenso?:",
+    "options": [
+      "Creatina cinasa.",
+      "Lactato deshidrogenasa.",
+      "Leucocitos.",
+      "Alanina aminotransferasa."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 145,
+    "question": "Indique la respuesta INCORRECTA en relación a los elementos traza:",
+    "options": [
+      "Una técnica habitual para su cuantificación es la espectrometría de absorción atómica.",
+      "La deficiencia de yodo produce hipertiroidismo.",
+      "Para las determinaciones del hierro, zinc y manganeso deben evitarse las muestras hemolizadas.",
+      "La deficiencia de zinc produce alteraciones inmunológicas, lesiones en la piel y alopecia."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 146,
+    "question": "Indique la respuesta INCORRECTA:",
+    "options": [
+      "En la diabetes insípida nefrogénica existe una hipernatremia hipovolémica.",
+      "En el síndrome de secreción inadecuada de hormona antidiurética se produce una hiponatremia.",
+      "Una causa de hipopotasemia es el hiperaldosteronismo.",
+      "En la insuficiencia renal aguda se produce hipopotasemia."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 147,
+    "question": "¿Cuál de los siguientes marcadores bioquímicos NO es de formación ósea?:",
+    "options": [
+      "Fosfatasa alcalina ósea.",
+      "Osteocalcina.",
+      "Piridolina.",
+      "Propéptido del colágeno tipo 1."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 148,
+    "question": "¿Cuál de las siguientes hormonas NO es contrarreguladora de la insulina?:",
+    "options": [
+      "Adrenalina.",
+      "Cortisol.",
+      "Lactógeno placentario.",
+      "Tirotropina."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 149,
+    "question": "¿Cuál de las siguientes apolipoproteínas tiene una estructura similar al plasminógeno pero sin su actividad enzimática?:",
+    "options": [
+      "Apo(a).",
+      "Apo E.",
+      "Apo AI.",
+      "Apo CII."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 150,
+    "question": "¿Con cuál de las volumetrías siguientes se relaciona el uso de las constantes de formación condicionales?:",
+    "options": [
+      "Ácido-base.",
+      "Precipitación.",
+      "Redox (oxidación-reducción).",
+      "Formación de complejos."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 151,
+    "question": "¿Cuál es la composición del reductor de Jones utilizado en las valoraciones de óxido-reducción?:",
+    "options": [
+      "Sulfato ferroso amónico.",
+      "Tiosulfato de sodio.",
+      "Cloruro de plata.",
+      "Zinc amalgamado."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 152,
+    "question": "¿Con qué patrón primario se realizaría la estandarización de una disolución de permanganato de potasio, para su uso en valoraciones de óxido reducción?:",
+    "options": [
+      "Oxalato de sodio.",
+      "Nitrato de amonio y cerio (IV).",
+      "Bismutato de sodio.",
+      "Sulfato de etilendiamina."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 153,
+    "question": "El pH de una disolución 0,01 M de dihidrógeno fosfato de sodio [pKa1 (H3PO4) = 2,15; pKa2 (H2PO4-) = 7,21; pKa3 (HPO4 2-) = 12,33]:",
+    "options": [
+      "Es menor de 3,0.",
+      "Está entre 3,0 y 7,0.",
+      "Está entre 7,0 y 9,0.",
+      "Es mayor de 9,0."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 154,
+    "question": "La sensibilidad de un método analítico se evalúa a partir de:",
+    "options": [
+      "El coeficiente de variación de una serie de medidas.",
+      "El error relativo de la medida.",
+      "La pendiente de la recta de calibrado.",
+      "La ordenada en el origen de la recta de calibrado."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 155,
+    "question": "En la determinación del Fe(II) con dicromato de potasio como reactivo titulador, para la detección del punto final de la valoración se utiliza:",
+    "options": [
+      "El indicador murexida, ya que posee propiedades redox.",
+      "Una pila electroquímica formada por un electrodo indicador de Fe y un electrodo de referencia.",
+      "Una pila electroquímica formada por un electrodo indicador de Pt y un electrodo de referencia.",
+      "El engrudo de almidón porque se une al reactivo titulador indicando el punto final."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 156,
+    "question": "La utilización de disolventes halogenados, como el diclorometano, para disolver un compuesto fluorescente produce:",
+    "options": [
+      "Un aumento de la señal de fluorescencia, porque aumenta la probabilidad de producirse un cruce entre sistemas.",
+      "Una disminución de la señal de fluorescencia, porque aumenta la probabilidad de producirse un cruce entre sistemas.",
+      "Un aumento de la señal de fluorescencia, porque aumenta la probabilidad de conversión externa.",
+      "Una disminución de la señal de fluorescencia, porque aumenta la probabilidad de relajación vibracional."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 157,
+    "question": "Atendiendo a la ecuación de Van Deemter, la altura equivalente del plato teórico aumenta cuando:",
+    "options": [
+      "Aumenta el diámetro de partícula de la fase estacionaria.",
+      "Disminuye el diámetro interno de la columna.",
+      "Disminuye el espesor del recubrimiento líquido en la fase estacionaria.",
+      "Aumenta el coeficiente de difusión del soluto en la fase estacionaria."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 158,
+    "question": "¿Cuál de los sistemas de ionización en espectrometría de masas utiliza iones gaseosos reactivos para lograr la obtención de iones?:",
+    "options": [
+      "Bombardeo por impacto de electrones.",
+      "Bombardeo por átomos rápidos.",
+      "MALDI (desorción/ionización por láser asistida con matriz).",
+      "Ionización química."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 159,
+    "question": "¿Cuál de los siguientes parámetros ondulatorios de una radiación electromagnética permanece siempre invariable, independientemente del medio de propagación?:",
+    "options": [
+      "Frecuencia.",
+      "Velocidad.",
+      "Número de onda.",
+      "Longitud de onda."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 160,
+    "question": "La fuente de acoplamiento inductivo en espectrometría de emisión atómica (ICP-AES), denominada antorcha, está formada por:",
+    "options": [
+      "Un tubo por el que fluye una corriente de argón.",
+      "Tres tubos concéntricos por los que fluyen corrientes de argón.",
+      "Un tubo por el que fluye una corriente de aire-hidrógeno.",
+      "Tres tubos concéntricos por los que fluyen corrientes de aire-hidrógeno."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 161,
+    "question": "Un aumento de la temperatura produce un ensanchamiento de las líneas espectrales en espectrometría atómica:",
+    "options": [
+      "Por efecto Doppler y por presión.",
+      "Por ensanchamiento natural y por efecto Doppler.",
+      "Por efecto Planck y por presión.",
+      "Por ensanchamiento natural y por efecto Planck."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 162,
+    "question": "Una valoración fotométrica se realizó a una longitud de onda en la que ni el analito ni el producto de la reacción son absorbentes y solo absorbe el titulador. En estas condiciones la absorbancia:",
+    "options": [
+      "Crece constantemente desde el inicio hasta el final de la valoración.",
+      "Solo crece después del punto de equivalencia.",
+      "Solo crece antes del punto de equivalencia.",
+      "No varía después del punto de equivalencia."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 163,
+    "question": "En un espectrómetro de infrarrojo (IR), el cloro molecular (Cl2):",
+    "options": [
+      "Genera una banda de absorción en la región de 1500 cm-1 que corresponde a la vibración de tensión.",
+      "Genera una banda de absorción en la región de 2500 cm-1 que corresponde a la vibración de flexión.",
+      "Genera una banda de absorción en la región de 4000 cm-1.",
+      "No se observa absorción en la región IR porque esta molécula carece de momento dipolar permanente."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 164,
+    "question": "En cromatografía de gases, una elución con rampa o gradiente de temperatura es la opción más adecuada para la resolución de analitos:",
+    "options": [
+      "Volátiles con puntos de ebullición muy diferentes.",
+      "Volátiles con puntos de ebullición muy semejantes.",
+      "Volátiles y no volátiles con puntos de ebullición muy diferentes.",
+      "Volátiles y no volátiles con puntos de ebullición muy semejantes."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 165,
+    "question": "¿Cuál de los siguientes detectores para cromatografía de líquidos es incompatible con el método de elución en gradiente?:",
+    "options": [
+      "Absorbancia.",
+      "Fluorescencia.",
+      "Electroquímico.",
+      "Índice de refracción."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 166,
+    "question": "Si se añade un soluto, sin carga y NO volátil, a un disolvente líquido puro formando una disolución ideal:",
+    "options": [
+      "La presión de vapor de la disolución no varía puesto que el soluto no es volátil.",
+      "Se produce una variación de la presión de vapor de la disolución que depende de la naturaleza del soluto.",
+      "Se produce un descenso de la presión de vapor de la disolución que no depende de la naturaleza del soluto.",
+      "Se produce un aumento en la presión de vapor de la disolución debido al incremento de la concentración."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 167,
+    "question": "Se prepararon disoluciones diluidas en el mismo disolvente de las siguientes sustancias NO volátiles: glucosa (C6H12O6), sacarosa (C12H22O11), maltotriosa (C18H32O16) y glicerol (C3H8O3). La concentración expresada en g/L es la misma para todas ellas. ¿Cuál es la que presenta menor temperatura de congelación?:",
+    "options": [
+      "Glucosa.",
+      "Sacarosa.",
+      "Maltotriosa.",
+      "Glicerol."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 168,
+    "question": "En un experimento a temperatura constante de estabilidad de un fármaco en disolución, se observa que el tiempo necesario para que la concentración del fármaco sea la mitad de la inicial (t1/2) es proporcional a la concentración inicial de éste [Ao] e inversamente proporcional a dos veces la constante cinética (2k), es decir, t1/2=[A0]/(2k). Puede deducirse que la cinética del proceso es:",
+    "options": [
+      "De orden cero.",
+      "De primer orden.",
+      "De segundo orden.",
+      "De tercer orden."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 169,
+    "question": "La energía interna (AU) de un proceso que se desarrolla a volumen constante en un sistema cerrado es:",
+    "options": [
+      "∆U=0.",
+      "∆U=qv+w.",
+      "∆U=qv.",
+      "∆U=ΔΗ."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 170,
+    "question": "El modelo de disolución diluida ideal, ley de Henry, aplicado a la solubilidad de gases en disolventes líquidos indica que:",
+    "options": [
+      "La solubilidad de un gas en un líquido es inversamente proporcional a la constante de Henry, Кн.",
+      "La solubilidad de un gas en un líquido es directamente proporcional a la constante de Henry, Кн.",
+      "La solubilidad de un gas en un líquido no depende de la presión, es constante.",
+      "La solubilidad de un gas es inversamente proporcional a la presión sobre la disolución."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 171,
+    "question": "¿Cuál es la afirmación correcta con respecto al riesgo de sufrir daño hepático grave tras una sobredosis de paracetamol?:",
+    "options": [
+      "Aumenta en pacientes con exceso de enzimas de sulfatación.",
+      "Aumenta en pacientes con inducción de citocromo P450.",
+      "Disminuye en pacientes con deficiencia de glutatión.",
+      "Aumenta en pacientes con inducción de enzimas de glucuronidación."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 172,
+    "question": "¿Qué tipo de neuronas se ven afectadas por el compuesto 1-metil-4-fenil-1,2,3,6 - tetrahidropiridina, conocido como MPTP?:",
+    "options": [
+      "Neuronas dopaminérgicas.",
+      "Neuronas glutamatérgicas.",
+      "Neuronas serotoninérgicas.",
+      "Neuronas colinérgicas."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 173,
+    "question": "¿Cuál de los siguientes ciclohexanos sustituidos tiene mayor preferencia por situar el sustituyente en posición ecuatorial en la conformación silla?:",
+    "options": [
+      "Metilciclohexano.",
+      "Ter-butilciclohexano.",
+      "Clorociclohexano.",
+      "Hidroxiciclohexano."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 174,
+    "question": "La formación de carbocationes como intermedios de reacción se produce en reacciones de:",
+    "options": [
+      "Sustitución nucleofílica bimolecular sobre derivados halogenados.",
+      "Adición nucleofílica a cetonas.",
+      "Adición tipo Michael.",
+      "Adición electrofílica a alquenos."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 175,
+    "question": "Indique cuál de las siguientes aminas sería la más básica:",
+    "options": [
+      "Anilina.",
+      "4-Metilanilina.",
+      "N,N-Dietilamina.",
+      "Metilamina."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 176,
+    "question": "Para la síntesis del aminoácido alanina, en su forma racémica, mediante un proceso de aminación reductora, ¿cuál de los ácidos que se indican ha de emplearse como material de partida?:",
+    "options": [
+      "Ácido 2-oxopropanoico.",
+      "Ácido 2-cloropropanoico.",
+      "Ácido 2-hidroxipropanoico.",
+      "Ácido 2-oxobutanoico."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 177,
+    "question": "¿Cuál de los siguientes alcoholes es más ácido?:",
+    "options": [
+      "Etanol.",
+      "2,2,2-Trifluoroetanol.",
+      "p-Clorofenol.",
+      "p-Aminofenol."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 178,
+    "question": "¿Qué compuesto presenta la mayor energía reticular?:",
+    "options": [
+      "MgF2",
+      "MgO.",
+      "Na2O.",
+      "NaF."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 179,
+    "question": "En los metales, la conductividad eléctrica:",
+    "options": [
+      "Aumenta al aumentar la temperatura.",
+      "Disminuye al aumentar la temperatura.",
+      "Es independiente de la temperatura.",
+      "No depende del número de electrones de valencia."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 180,
+    "question": "¿Cuál de las siguientes propuestas ordena las funciones orbitales según su capacidad de apantallamiento?:",
+    "options": [
+      "1s < 2s < 3s.",
+      "3s < 3p < 3d.",
+      "3s = 3p = 3d.",
+      "3s > 3p > 3d."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 181,
+    "question": "La estructura molecular del tetrafloruro de xenon (XeF4) es cuadrada plana, ¿qué esquema de hibridación es consistente con esta geometría?:",
+    "options": [
+      "sp³d.",
+      "sp³.",
+      "sp.",
+      "sp³d²."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 182,
+    "question": "¿Cuál de las siguientes afirmaciones es correcta?:",
+    "options": [
+      "Al disolver acetato de potasio en agua se produce una disminución del pH.",
+      "Al disolver nitrato de amonio en agua se produce una disminución del pH.",
+      "El NH3 es un ácido de Brönsted y un ácido de Lewis.",
+      "El BCl3 es un ácido de Lewis."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 183,
+    "question": "El diagrama de tallo y hoja es una:",
+    "options": [
+      "Clasificación botánica.",
+      "Distribución de medias y medianas obtenidas de distintos tamaños muestrales.",
+      "Distribución de frecuencias de una variable cuantitativa.",
+      "Distribución de frecuencias de datos categóricos."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 184,
+    "question": "En una distribución platicúrtica de valores de una variable cuantitativa, los valores:",
+    "options": [
+      "Se distribuyen según la Ley Normal.",
+      "Se acumulan en las colas en comparación con una distribución normal.",
+      "Se acumulan en el centro de la distribución en comparación con una distribución normal.",
+      "Se distribuyen siempre asimétricamente."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 185,
+    "question": "Señale cuál de las siguientes afirmaciones acerca de la dispersión en una serie de datos es cierta:",
+    "options": [
+      "La varianza es la raíz cuadrada de la desviación estándar.",
+      "La desviación estándar es la media de las diferencias entre cada valor de la variable y la media aritmética de la distribución de los valores.",
+      "La varianza es la media de las diferencias entre cada valor de la variable y la media aritmética de la distribución de los valores.",
+      "La varianza es la media de la suma de cuadrados de las diferencias entre cada valor de la variable y la media aritmética de la distribución de los valores."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 186,
+    "question": "Indique cuál de las siguientes afirmaciones acerca de los percentiles es verdadera:",
+    "options": [
+      "No son medidas de posición.",
+      "Los cuartiles son cada uno de los 4 valores de una variable que dividen la muestra ordenada en 4 grupos de igual tamaño.",
+      "Los cuartiles son cada uno de los 3 valores de una variable que dividen la muestra ordenada en 4 grupos de igual tamaño.",
+      "Los cuartiles son cada uno de los 4 valores de una variable que dividen la muestra ordenada en 3 grupos de igual tamaño."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 187,
+    "question": "¿Cuál de los siguientes NO es un ejemplo de acuerdo de riesgo compartido?:",
+    "options": [
+      "El precio al que la farmacia de un hospital adquiere el romiplostin disminuye un 20% si se supera la compra de 1.000 unidades anuales.",
+      "La farmacia de un hospital negocia un descuento del 40% en el precio del posaconazol de un determinado laboratorio.",
+      "Un laboratorio financia el tratamiento a partir del décimo ciclo de quimioterapia con su nuevo anticuerpo monoclonal para cáncer de mama.",
+      "El precio que se paga a un laboratorio por la compra de somatropina varía en función de la altura que crezca el paciente en un determinado tiempo."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 188,
+    "question": "¿Cuál de los siguientes principios activos NO tiene biosimilar?:",
+    "options": [
+      "Filgrastim.",
+      "Erlotinib.",
+      "Insulina glargina.",
+      "Enoxaparina."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 189,
+    "question": "¿Qué es cierto respecto al Nomenclátor oficial de la prestación farmacéutica?:",
+    "options": [
+      "Es el organismo encargado de otorgar a cada principio activo su Denominación Común Española (DOE).",
+      "Es la Base de Datos del Ministerio de Sanidad en materia de prestación farmacéutica en el Sistema Nacional de Salud.",
+      "Es el comité encargado de aceptar o denegar el nombre de fantasía como denominación del medicamento.",
+      "Es un departamento de la Agencia Española del Medicamento y Producto Sanitario (AEMPS) encargado de la evaluación de medicamento genéricos."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 190,
+    "question": "El diseño y ejecución de un ensayo clínico multicéntrico es complejo y requiere de la participación de múltiples actores. ¿Cuál de las siguientes afirmaciones es correcta?:",
+    "options": [
+      "El monitor no puede formar parte del equipo investigador.",
+      "El investigador principal es el individuo, empresa, institución u organización responsable de iniciar, gestionar y organizar la financiación de un ensayo clínico.",
+      "El manual del investigador es el documento donde se describen los objetivos, el diseño, la metodología, las consideraciones estadísticas y la organización de un ensayo clínico.",
+      "El monitor es la persona encargada de la realización del ensayo clínico en un centro de ensayos clínicos."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 191,
+    "question": "¿Cuál de las siguientes opciones es INCORRECTA en relación a los denominados medicamentos de terapia avanzada?:",
+    "options": [
+      "Esta denominación incluye a los medicamentos de terapia génica, medicamentos de terapia celular somática, los medicamentos o productos de ingeniería tisular y los medicamentos combinados de terapia avanzada.",
+      "Un medicamento de terapia avanzada de fabricación no industrial elaborado en una institución hospitalaria puede ser exportado a otros hospitales que lo soliciten sin necesidad de nuevas autorizaciones.",
+      "Un tejido para implante que no haya sido objeto de una manipulación sustancial y que se vaya a utilizar con la misma función esencial en donante y receptor no se consideraría una terapia avanzada a pesar de utilizar células.",
+      "La terapia de células T con receptores quiméricos de antígenos (CAR-T) es un ejemplo de medicamento de terapia avanzada."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 192,
+    "question": "El reconocimiento de antígenos propios es sinónimo de enfermedad autoinmune. Indique si esta afirmación es verdadera o falsa:",
+    "options": [
+      "Falsa, porque la enfermedad autoinmune solo se desencadena si se reconocen antígenos de patógenos que tienen mimetismo con antígenos propios.",
+      "Verdadera, porque nuestro repertorio de linfocitos T y B es autorreactivo y este es el único factor que se asocia a autoinmunidad.",
+      "Falsa, porque el reconocimiento se produce para mantener el pool de linfocitos T o B y se requieren factores adicionales para romper la tolerancia.",
+      "Verdadera, porque la autoinmunidad se desencadena siempre que hay reconocimiento de autoantígenos."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 193,
+    "question": "¿Qué moléculas intervendrán en el procesamiento y presentación de antígenos de un patógeno que entra en la célula presentadora de antígeno por la vía endocítica para inducir una buena respuesta inmune?:",
+    "options": [
+      "Cadena invariante, HLA-DM, TAP.",
+      "MHC de clase II, calreticulina, ERP57, CLIP.",
+      "CD4, cadena invariante, tapasina, calnexina, HLA-DR.",
+      "CLIP, HLA-DM, HLA-DQ."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 194,
+    "question": "¿Cuál es la respuesta correcta en relación a los mecanismos efectores de las inmunoglobulinas (Ig)?:",
+    "options": [
+      "Las IgGs ayudan a la transición de la respuesta innata a la adaptativa con la activación de la vía clásica del Sistema del Complemento y la lisis mediada por anticuerpos de las células NK.",
+      "La IgM es muy importante en la respuesta a bacterias porque al tener 10 sitios de unión posibles puede interaccionar con antígenos repetitivos.",
+      "Las IgGs, independientemente del isotipo, realizan las mismas funciones: activar el Sistema del Complemento y opsonizar antígenos para facilitar su fagocitosis.",
+      "La IgA es dimérica y su función es neutralizar las bacterias de la microbiota intestinal."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 195,
+    "question": "¿En cuál de las siguientes situaciones NO se activaría la vía clásica del Sistema del Complemento para inducir inflamación?:",
+    "options": [
+      "Bacteria gram positiva reconocida por IgM.",
+      "Bacteria gram negativa reconocida por IgA.",
+      "Bacteria gram positiva opsonizada con IgG.",
+      "Bacteria gram negativa opsonizada por Proteína C Reactiva."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 196,
+    "question": "¿Qué enunciado es una característica de las células T de memoria?:",
+    "options": [
+      "Son de proliferación constante sin antígeno y de reactividad aumentada a la exposición del antígeno.",
+      "Son quiescentes, de reactividad aumentada a la exposición del antígeno y por tanto responsables de la autoinmunidad.",
+      "Son quiescentes y de reactividad aumentada a la exposición del antígeno.",
+      "Son inmortales y activan a las células T vírgenes mediante la secreción de citoquinas."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 197,
+    "question": "¿Qué células sanguíneas circulantes se diferencian a macrófagos en los tejidos?:",
+    "options": [
+      "Neutrófilos.",
+      "Macrófagos inmaduros.",
+      "Monocitos.",
+      "Células mieloides progenitoras circulantes."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 198,
+    "question": "¿Cuál es la función principal del timo?:",
+    "options": [
+      "Es el órgano donde los linfocitos T senescentes van a morir.",
+      "Es el órgano donde residen los linfocitos de memoria hasta la senescencia.",
+      "Es el órgano donde se induce la activación de los linfocitos T específica para un antígeno.",
+      "Es el órgano donde se produce la maduración de los linfocitos T."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 199,
+    "question": "Las células dendríticas, durante una infección, tienen como funciones:",
+    "options": [
+      "Fagocitar microbios y erradicarlos, secretar citocinas inflamatorias (TNFa e IL-1) para fomentar la inflamación local.",
+      "Migrar desde el sitio de infección hasta el nódulo linfático para producir citoquinas anti-inflamatorias para activar a los linfocitos T.",
+      "Llevar desde el sitio de infección hasta el nódulo linfático a los antígenos para presentárselos a los linfocitos T.",
+      "Presentar antígenos a los linfocitos T en el sitio de infección."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 200,
+    "question": "¿Cuál es la función de los linfocitos CD4+ Th17?:",
+    "options": [
+      "Producir IL-1, IL-7 e inducir una respuesta inflamatoria.",
+      "Producir IL-1, IL-7 e inducir una respuesta antiinflamatoria.",
+      "Producir IL-17 e inducir una respuesta inflamatoria.",
+      "Producir IL-17 e inducir una respuesta antiinflamatoria."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 201,
+    "question": "De las siguientes estructuras fundamentales, ¿cuál seleccionaría para diseñar un agente ansiolítico?:",
+    "options": [
+      "Fenotiazina.",
+      "Dibenzo[b,f]azepina.",
+      "1,2-benzodiazepina.",
+      "1,4-benzodiazepina."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 202,
+    "question": "¿Cuál de las siguientes afirmaciones sobre Listeria monocytogenes es INCORRECTA?:",
+    "options": [
+      "Es un bacilo grampositivo.",
+      "Forma colonias catalasa y CAMP positivas.",
+      "No crece en hemocultivos.",
+      "Presenta resistencia intrínseca a la ceftriaxona."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 203,
+    "question": "La vía aferente del reflejo fotomotor comienza en los fotorreceptores retinianos y continúa por las fibras del nervio óptico hasta el pretectum, donde hacen sinapsis con neuronas, que después conectan con un núcleo denominado:",
+    "options": [
+      "Núcleo geniculado.",
+      "Núcleo de Edinger-Westphal.",
+      "Núcleo ciliespinal de Budge.",
+      "Núcleo de Deiters."
+    ],
+    "answer": 2,
+    "hasImage": false
+  },
+  {
+    "id": 204,
+    "question": "Una paciente de 70 años, durante un proceso quirúrgico, recibe tratamiento con heparina no fraccionada. A los 7 días del inicio del tratamiento presenta un recuento plaquetario de 87.000/μL (200.000 plaquetas/µL al inicio) ¿qué medida debe adoptarse?:",
+    "options": [
+      "Administrar sulfato de protamina.",
+      "Cambiar a heparina de bajo peso molecular.",
+      "Administrar un concentrado de plaquetas.",
+      "Suspender la heparina y administrar fondaparinux."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 205,
+    "question": "¿Cuál de las siguientes afirmaciones acerca de vancomicina es INCORRECTA?:",
+    "options": [
+      "Es un antibiótico del grupo de los lipopéptidos al igual que teicoplanina.",
+      "Se utiliza por vía oral en el tratamiento de las infecciones gastrointestinales por Clostridioides difficile.",
+      "Produce como efectos adversos exantemas, ototoxicidad y nefrotoxicidad.",
+      "Su mecanismo de acción es inhibir la síntesis de la pared celular bacteriana."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 206,
+    "question": "Señale, de entre los siguientes AINE, el fármaco que presenta una mayor selectividad por la COX-2:",
+    "options": [
+      "Acido acetil salicílico.",
+      "Ibuprofeno.",
+      "Naproxeno.",
+      "Diclofenaco."
+    ],
+    "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 207,
+    "question": "¿En cuál de estas vías de administración hay mayor pérdida por metabolización hepática?:",
+    "options": [
+      "Transpulmonar.",
+      "Percutánea.",
+      "Oral.",
+      "Rectal."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 208,
+    "question": "¿Cuál de las siguientes proteínas plasmáticas NO se suele observar en el proteinograma en suero?:",
+    "options": [
+      "Prealbúmina.",
+      "Haptoglobina.",
+      "Ferroxidasa.",
+      "Proteína transportadora de retinol."
+    ],
+    "answer": 1,
+    "hasImage": false
+  },
+  {
+    "id": 209,
+    "question": "Un espectro de masas es la representación de la abundancia relativa de los iones frente a:",
+    "options": [
+      "Carga de los iones.",
+      "Masa de los iones.",
+      "Relación masa/carga de los iones.",
+      "Relación carga/masa de los iones."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 210,
+    "question": "¿Qué antídoto se indica en una sobredosis por anticoagulantes del tipo de la warfarina?:",
+    "options": [
+      "Idarucizumab.",
+      "Flumazenilo.",
+      "Andexanet.",
+      "Vitamina K."
+    ],
+    "answer": 4,
+    "hasImage": false
+  }
+]
