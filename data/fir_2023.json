@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "question": "Teniendo en cuenta la relación estructura-actividad general de los agentes neurolépticos derivados de butirofenona, ¿cuál de las modificaciones propuestas conduciría a compuestos más activos?:",
+    "question": "Teniendo en cuenta la relación estructuraactividad general de los agentes neurolépticos derivados de butirofenona, ¿cuál de las modificaciones propuestas conduciría a compuestos más activos?:",
     "options": [
       "Sustitución del grupo carbonilo B por un tiocarbonilo.",
       "Eliminación del átomo de flúor en el anillo aromático A.",
@@ -9,22 +9,11 @@
       "Alargamiento de la cadena C."
     ],
     "answer": 3,
-    "hasImage": true
+    "hasImage": true,
+    "image": "FIR2023/images/1.JPG"
   },
   {
     "id": 2,
-    "question": "La hidrólisis de la amida en la posición 7 de la cefalosporina C permite obtener el ácido 7-aminocefalosporánico (7-ACA). Para ello, una vez protegido el grupo ácido carboxílico de la cefalosporina, se trata con pentacloruro de fósforo y después con metanol. ¿En qué grupo sensible a la hidrólisis se ha convertido la amida de la posición 7?:",
-    "options": [
-      "Enamina.",
-      "Cloruro de ácido.",
-      "Hemiacetal.",
-      "Iminoéter."
-    ],
-    "answer": 2,
-    "hasImage": false
-  },
-  {
-    "id": 3,
     "question": "La siguiente reacción es un proceso de semisíntesis para la obtención de derivados de bases nitrogenadas. ¿Qué producto resultará de la siguiente secuencia de reacciones?:",
     "options": [
       "Adenina.",
@@ -32,8 +21,21 @@
       "8-amino-9H-purina.",
       "2-amino-9H-purin-8-ol."
     ],
+    "answer": 2,
+    "hasImage": true,
+    "image": "FIR2023/images/2.JPG"
+  },
+  {
+    "id": 3,
+    "question": "¿Qué representa el símbolo 𝝅 (pi) en una ecuación QSAR (Quantitative Structure Activity Relationship) de tipo Hansch-Fujita?:",
+    "options": [
+      "El coeficiente de partición octanol/agua de la molécula.",
+      "Los efectos electrónicos de un sustituyente.",
+      "Los efectos estéricos de un sustituyente.",
+      "La constante de hidrofobicidad de un sustituyente."
+    ],
     "answer": 4,
-    "hasImage": true
+    "hasImage": false
   },
   {
     "id": 4,
@@ -61,7 +63,7 @@
   },
   {
     "id": 6,
-    "question": "¿Qué efecto tiene en la actividad de las 1,4-benzodiazepinas la presencia de un grupo hidroxilo en la posición C-3, frente a su análogo sin hidroxilar?:",
+    "question": "¿Qué efecto tiene en la actividad de las 1,4benzodiazepinas la presencia de un grupo hidroxilo en la posición C-3, frente a su análogo sin hidroxilar?:",
     "options": [
       "Conduce a compuestos que se eliminan más rápidamente.",
       "Conduce a compuestos de vida media más larga.",
@@ -85,12 +87,12 @@
   },
   {
     "id": 8,
-    "question": "¿Qué representa el símbolo π (pi) en una ecuación QSAR (Quantitative Structure Activity Relationship) de tipo Hansch-Fujita?:",
+    "question": "La hidrólisis de la amida en la posición 7 de la cefalosporina C permite obtener el ácido 7aminocefalosporánico (7-ACA). Para ello, una vez protegido el grupo ácido carboxílico de la cefalosporina, se trata con pentacloruro de fósforo y después con metanol. ¿En qué grupo sensible a la hidrólisis se ha convertido la amida de la posición 7?:",
     "options": [
-      "El coeficiente de partición octanol/agua de la molécula.",
-      "Los efectos electrónicos de un sustituyente.",
-      "Los efectos estéricos de un sustituyente.",
-      "La constante de hidrofobicidad de un sustituyente."
+      "Enamina.",
+      "Cloruro de ácido.",
+      "Hemiacetal.",
+      "Iminoéter."
     ],
     "answer": 4,
     "hasImage": false
@@ -105,7 +107,8 @@
       "Reducción del anillo de quinona."
     ],
     "answer": 4,
-    "hasImage": true
+    "hasImage": true,
+    "image": "FIR2023/images/9.JPG"
   },
   {
     "id": 10,
@@ -117,7 +120,8 @@
       "Es un análogo de acción corta porque la cadena voluminosa dificulta su unión al receptor."
     ],
     "answer": 2,
-    "hasImage": true
+    "hasImage": true,
+    "image": "FIR2023/images/10.JPG"
   },
   {
     "id": 11,
@@ -189,13 +193,14 @@
       "Es un antagonista de receptores de ADP."
     ],
     "answer": 3,
-    "hasImage": true
+    "hasImage": true,
+    "image": "FIR2023/images/16.JPG"
   },
   {
     "id": 17,
     "question": "¿Cuál de las siguientes manipulaciones estructurales incrementa la acción anabólica de las hormonas masculinas?:",
     "options": [
-      "Introducción de un hidroxilo en la posición 11B.",
+      "Introducción de un hidroxilo en la posición 11β.",
       "Sustitución del carbono 2 por oxígeno.",
       "Aromatización del anillo A.",
       "Introducción de un metilo en la posición 16α."
@@ -265,6 +270,18 @@
   },
   {
     "id": 23,
+    "question": "¿Cuál de las infecciones causadas por uno de los siguientes microorganismos NO puede tratarse con penicilina?:",
+    "options": [
+      "Treponema pallidum.",
+      "Streptococcus pyogenes.",
+      "Mycoplasma pneumoniae.",
+      "Streptococcus agalactiae."
+    ],
+    "answer": 3,
+    "hasImage": false
+  },
+  {
+    "id": 24,
     "question": "En relación con la sífilis, señale la respuesta FALSA:",
     "options": [
       "El tratamiento de elección es colistina.",
@@ -276,20 +293,8 @@
     "hasImage": false
   },
   {
-    "id": 24,
-    "question": "¿Cuál de las siguientes especies NO pertenece al complejo Enterobacter cloacae?:",
-    "options": [
-      "Enterobacter asburiae.",
-      "Enterobacter bugandensis.",
-      "Enterobacter kobei.",
-      "Enterobacter hormaechei."
-    ],
-    "answer": 1,
-    "hasImage": false
-  },
-  {
     "id": 25,
-    "question": "En el cultivo de una muestra de líquido cefalorraquídeo, tras 24 horas de incubación a 35°C...¿Cuál sería el microorganismo más probable?:",
+    "question": "En el cultivo de una muestra de líquido cefalorraquídeo, tras 24 horas de incubación a 35 ºC, se observa crecimiento en agar chocolate y en agar sangre, pero no en agar MacConkey. Las colonias crecidas son mucosas, alfa-hemolíticas, catalasa negativa, y presentan sensibilidad a la optoquina. ¿Cuál sería el microorganismo más probable?:",
     "options": [
       "Streptococcus pneumoniae.",
       "Klebsiella pneumoniae.",
@@ -328,7 +333,7 @@
     "question": "¿Cuál de las siguientes especies NO pertenece al complejo Enterobacter cloacae?:",
     "options": [
       "Enterobacter asburiae.",
-      "Enterobacter bugandensis.",
+      "Enterobacter bugandensis. (--FARMACIA-0--5/28)",
       "Enterobacter kobei.",
       "Enterobacter hormaechei."
     ],
@@ -376,7 +381,7 @@
     "question": "¿Cuál de las siguientes afirmaciones es correcta con respecto a Listeria monocytogenes?:",
     "options": [
       "Son bacilos gramnegativos.",
-      "En agar sangre de cordero muestran ß-hemólisis.",
+      "En agar sangre de cordero muestran βhemólisis.",
       "Son anaerobios estrictos.",
       "Da positiva la prueba de la oxidasa."
     ],
@@ -385,18 +390,6 @@
   },
   {
     "id": 33,
-    "question": "¿Qué factor (o factores) requiere Haemophilus influenzae para crecer en cultivo?:",
-    "options": [
-      "Factores V y X.",
-      "Factores V y IX.",
-      "Factores IX y X.",
-      "Sólo factor V."
-    ],
-    "answer": 4,
-    "hasImage": false
-  },
-  {
-    "id": 34,
     "question": "¿Cuál de los siguientes métodos empleados para estudiar la susceptibilidad de un microorganismo frente a un antimicrobiano NO es un método cuantitativo?:",
     "options": [
       "Microdilución en caldo.",
@@ -405,6 +398,18 @@
       "Método de Kirby-Bauer."
     ],
     "answer": 4,
+    "hasImage": false
+  },
+  {
+    "id": 34,
+    "question": "¿Qué factor (o factores) requiere Haemophilus influenzae para crecer en cultivo?:",
+    "options": [
+      "Factores V y X.",
+      "Factores V y IX.",
+      "Factores IX y X.",
+      "Sólo factor V."
+    ],
+    "answer": 1,
     "hasImage": false
   },
   {
@@ -457,19 +462,19 @@
   },
   {
     "id": 39,
-    "question": "Paciente de 32 años, esplenectomizado, VIH positivo acude a urgencias por fiebre de 40°C... En el frotis de sangre periférica se observa la presencia de un microorganismo intraeritrocitario formando una imagen en forma de cruz... ¿A qué enfermedad corresponde?:",
+    "question": "Paciente de 32 años, esplenectomizado, VIH positivo acude a urgencias por fiebre de 40ºC, cefalea y artralgias intensas de 72 horas de evolución. Refiere picadura de garrapatas. En el frotis de sangre periférica se observa la presencia de un microorganismo intraeritrocitario formando una imagen en forma de cruz (tétrada en la división del microorganismo) que resulta patognomónica. ¿A qué enfermedad corresponde?:",
     "options": [
       "Enfermedad de Lyme.",
       "Babesiosis.",
       "Ehrlichiosis.",
-      "Anaplasmosis granulocítica humana."
+      "Anaplasmosis granulocítica humana. (--FARMACIA-0--6/28)"
     ],
     "answer": 2,
     "hasImage": false
   },
   {
     "id": 40,
-    "question": "Paciente de 50 años procedente de Guinea Ecuatorial con dolor abdominal y diarrea de 8 días de evolución. En el estudio parasitológico se observan trofozoitos de Dientamoeba fragilis... ¿Cuál sería el tratamiento de elección?:",
+    "question": "Paciente de 50 años procedente de Guinea Ecuatorial con dolor abdominal y diarrea de 8 días de evolución. En el estudio parasitológico se observan trofozoítos de Dientamoeba fragilis. No se aísla ningún otro patógeno. ¿Cuál sería el tratamiento de elección?:",
     "options": [
       "Exclusivamente sintomático, no se recomienda en estos casos el uso de antimicrobianos.",
       "Paromomicina 500 mg/8h oral.",
@@ -510,7 +515,7 @@
       "No. En ningún caso. El potencial efecto abrasivo de las mezclas pulverulentas es incompatible con la piel dañada.",
       "Sí, pero sólo si el preparado final es estéril.",
       "Sí, pero sólo si se presentan en envases presurizados adaptados para la aplicación cutánea.",
-      "Si, siempre que el preparado posea propiedades bactericidas o bacteriostáticas contrastadas o incluya un conservante adecuado."
+      "Sí, siempre que el preparado posea propiedades bactericidas o bacteriostáticas contrastadas o incluya un conservante adecuado."
     ],
     "answer": 2,
     "hasImage": false
@@ -519,10 +524,10 @@
     "id": 44,
     "question": "¿Cuál de los siguientes métodos es eficaz para la despirogenación de material de acondicionamiento primario constituyendo el método de referencia descrito en la Farmacopea Europea?:",
     "options": [
-      "Tratamiento por calor seco en condiciones mínimas de temperatura y tiempo de exposición de 180°C durante 3 horas.",
-      "Tratamiento por calor húmedo en condiciones mínimas de temperatura y tiempo de exposición de 250°C durante 5 horas.",
-      "Tratamiento por calor húmedo en condiciones mínimas de temperatura y tiempo de exposición de 180°C durante 3 horas.",
-      "Tratamiento por calor seco en condiciones mínimas de temperatura y tiempo de exposición de 250°C durante 5 horas."
+      "Tratamiento por calor seco en condiciones mínimas de temperatura y tiempo de exposición de 180ºC durante 3 horas.",
+      "Tratamiento por calor húmedo en condiciones mínimas de temperatura y tiempo de exposición de 250ºC durante 5 horas.",
+      "Tratamiento por calor húmedo en condiciones mínimas de temperatura y tiempo de exposición de 180ºC durante 3 horas.",
+      "Tratamiento por calor seco en condiciones mínimas de temperatura y tiempo de exposición de 250ºC durante 5 horas."
     ],
     "answer": 1,
     "hasImage": false
@@ -531,10 +536,10 @@
     "id": 45,
     "question": "Los sistemas dispersos se componen de una sustancia dispersada en un medio dispersante. El aerosol niebla consiste en un sistema disperso coloidal con la siguiente composición:",
     "options": [
-      "Sustancia dispersada gas; medio dispersante - líquido.",
-      "Sustancia dispersada sólido; medio dispersante - líquido.",
-      "Sustancia dispersada líquido; medio dispersante - gas.",
-      "Sustancia dispersada gas; medio dispersante - sólido."
+      "Sustancia dispersada – gas; medio dispersante - líquido.",
+      "Sustancia dispersada – sólido; medio dispersante - líquido.",
+      "Sustancia dispersada – líquido; medio dispersante - gas.",
+      "Sustancia dispersada – gas; medio dispersante – sólido."
     ],
     "answer": 3,
     "hasImage": false
@@ -546,7 +551,7 @@
       "El signo de la emulsión se selecciona en función de la vía de administración y, en general, de la aplicación a la que se destina.",
       "Las emulsiones O/A producen cierto efecto oclusivo y disminuyen la evaporación del agua, por lo que son más eficaces para mantener la hidratación de la piel que las A/O.",
       "Las emulsiones O/A permiten la incorporación de aromatizantes en la fase acuosa para mejorar sus características organolépticas.",
-      "Las emulsiones destinadas a su administración por vía intramuscular pueden ser de tipo A/O y O/A."
+      "Las emulsiones destinadas a su administración por vía intramuscular pueden ser de tipo A/O y O/A. (--FARMACIA-0--7/28)"
     ],
     "answer": 2,
     "hasImage": false
@@ -577,19 +582,19 @@
   },
   {
     "id": 49,
-    "question": "Señale la continuación de la secuencia que sucede en el proceso de fototransducción del ojo (Luz -> Rodopsina -> Transducina -> GMPc fosfosdiesterasa -> ...):",
+    "question": "Señale la continuación de la secuencia que sucede en el proceso de fototransducción del ojo (Luz  Rodopsina  Transducina  GMPc fosfosdiesteresa …):",
     "options": [
-      "Cierre de canales de K+ -> Despolarización.",
-      "Apertura de canales de Na+ -> Hiperpolarización.",
-      "Apertura de canales de Na+ -> Despolarización.",
-      "Cierre de canales de Na+ -> Hiperpolarización."
+      "Cierre de canales de K+  Despolarización.",
+      "Apertura de canales de Na+  Hiperpolarización.",
+      "Apertura de canales de Na+  Despolarización.",
+      "Cierre de canales de Na+  Hiperpolarización."
     ],
     "answer": 4,
     "hasImage": false
   },
   {
     "id": 50,
-    "question": "La velocidad del flujo sanguíneo es directamente proporcional a la cuarta potencia del radio del vaso... Esta afirmación viene determinada por la ecuación o ley de:",
+    "question": "La velocidad del flujo sanguíneo es directamente proporcional a la cuarta potencia del radio del vaso, lo que significa que, a mayor grosor, mayor flujo de sangre. Esta afirmación viene determinada por la ecuación o ley de:",
     "options": [
       "Fick.",
       "Frank-Starling.",
@@ -628,7 +633,7 @@
     "question": "¿En la maduración eritroide, cuál de las siguientes células se encuentra entre el eritroblasto policromático y el reticulocito?:",
     "options": [
       "Proeritroblasto.",
-      "Hematie.",
+      "Hematíe.",
       "Eritroblasto ortocromático.",
       "Eritroblasto basófilo."
     ],
@@ -654,7 +659,7 @@
       "Aumento de la temperatura.",
       "Aumento de pH.",
       "Disminución de CO2.",
-      "Disminución de la concentración de 2,3-di-fosfoglicerato (2,3-DPG)."
+      "Disminución de la concentración de 2,3di-fosfoglicerato (2,3-DPG)."
     ],
     "answer": 1,
     "hasImage": false
@@ -678,7 +683,7 @@
       "Proteína de unión de testosterona (TBP).",
       "Proteína de unión a andrógenos (ABP).",
       "Proteína granular acrosómica (AGP).",
-      "Proteína de unión meiótica (MBP)."
+      "Proteína de unión meiótica (MBP). (--FARMACIA-0--8/28)"
     ],
     "answer": 2,
     "hasImage": false
@@ -784,7 +789,7 @@
     "question": "Señale la opción correcta sobre el síndrome de HELLP:",
     "options": [
       "Es un síndrome que cursa con neutropenia, pero no con hemólisis.",
-      "Su etiologia se debe a una disfunción endotelial.",
+      "Su etiología se debe a una disfunción endotelial.",
       "Los pacientes presentan una trombocitosis marcada.",
       "Se ven afectados diversos órganos, como los pulmones o el corazón, pero no suele afectar al hígado."
     ],
@@ -805,11 +810,11 @@
   },
   {
     "id": 68,
-    "question": "Señale la respuesta correcta en relación con el caso de un paciente que presenta unos niveles de potasio de 6.5 mEq/L (valores de referencia: 3,5-5 mEq/L):",
+    "question": "Señale la respuesta correcta en relación con el caso de un paciente que presenta unos niveles de potasio de 6,5 mEq/L (valores de referencia: 3,5-5 mEq/L):",
     "options": [
       "El ciclosilicato de sodio y zirconio, que favorece la excreción del catión, es un intercambiador de potasio muy selectivo empleado en hiperpotasemias.",
       "A diferencia de las hipopotasemias, el uso de gluconato cálcico no tendría interés, al no contrarrestar el calcio los efectos sobre las membranas celulares causados por el potasio.",
-      "La insulina es un fármaco que se usa para reducir el potasio de forma muy segura, ya que cuando este es superior a 5 mEq/L, no presenta efecto hipoglucemiante.",
+      "La insulina es un fármaco que se usa para reducir el potasio de forma muy segura, ya que cuando este es superior a 5 mEq/L, no presenta efecto hipoglucemiante. (--FARMACIA-0--9/28)",
       "El uso de betabloqueantes resulta de interés en pacientes con potasio elevado, disminuyendo su concentración plasmática al favorecer su penetración en el citoplasma de las células."
     ],
     "answer": 1,
@@ -832,7 +837,7 @@
     "question": "BS es una mujer de 71 años que acude a la consulta de atención farmacéutica por estar utilizando alectinib para tratar su cáncer de pulmón estadio IV. ¿Cuál de las siguientes afirmaciones es cierta?:",
     "options": [
       "Lo más probable es que esté usando alectinib porque presente una mutación en el exón 19 o 21 del gen EGFR.",
-      "La mutación 'driver' de esta paciente se suele asociar a personas no fumadoras.",
+      "La mutación “driver” de esta paciente se suele asociar a personas no fumadoras.",
       "Como es un cáncer de pulmón estadio IV, el enfoque óptimo del tratamiento para lograr la completa curación de la enfermedad es realizar una resección pulmonar del tumor.",
       "Si presentara un un cáncer de pulmón de tipo escamoso, correspondería a un subtipo de cáncer de pulmón microcítico."
     ],
@@ -880,7 +885,7 @@
     "question": "Señale la respuesta correcta respecto a la encefalopatía de Wernicke:",
     "options": [
       "Se produce debido al déficit de vitamina B3 en pacientes alcohólicos.",
-      "Es una fase más avanzada, irreversible y prolongada del sindrome de Korsakoff, el cual es una fase aguda que la precede.",
+      "Es una fase más avanzada, irreversible y prolongada del síndrome de Korsakoff, el cual es una fase aguda que la precede.",
       "Ante la sospecha de esta encefalopatía, lo primero que se recomienda es administrar suero glucosado, y, una vez finalizado, las vitaminas correspondientes.",
       "Estar sometido a sesiones de hemodiálisis intermitente supone un factor de riesgo de padecerla."
     ],
@@ -889,12 +894,12 @@
   },
   {
     "id": 75,
-    "question": "La hipofosfatemia ligada al cromosoma X es una enfermedad rara en la cual existen mutaciones que inducen la producción excesiva y descontrolada del factor de crecimiento de fibroblastos 23. Sabiendo esto, ¿qué afirmación es correcta?:",
+    "question": "La hipofosfatemia ligada al cromosoma X es una enfermedad rara en la cual existen mutaciones que inducen la producción excesiva y descontrolada del factor de crecimiento de fibroblastos 23. Sabiendo que este factor reduce la expresión de los transportadores encargados de la reabsorción de fósforo en diversas localizaciones del organismo, y que reduce la expresión de la hidroxilasa renal de la vitamina D, ¿qué afirmación es correcta?:",
     "options": [
       "La aparición de esta enfermedad en la niñez provoca osteoporosis como principal manifestación ósea.",
       "Una de las complicaciones que pueden surgir de su tratamiento con dosis elevadas de sales de fosfato y de calcitriol es la nefrocalcinosis.",
       "Debe administrarse colecalciferol como forma preferente de vitamina D para compensar el déficit de fosfato.",
-      "Una estrategia de tratamiento para compensar una hipofosfatemia refractaria a las medidas iniciales, es añadir al tratamiento dosis altas de sales de calcio."
+      "Una estrategia de tratamiento para compensar una hipofosfatemia refractaria a las (--FARMACIA-0--10/28) medidas iniciales, es añadir al tratamiento dosis altas de sales de calcio."
     ],
     "answer": 2,
     "hasImage": false
@@ -904,8 +909,8 @@
     "question": "Acerca del cáncer de mama, señale la opción correcta:",
     "options": [
       "Una paciente con un tumor que mide más de 50 mm, pero no se ha diseminado a los ganglios linfáticos axilares presenta un estadio IV.",
-      "La hormonoterapia adyuvante con tamoxifeno o inhibidores de la aromatasa está indicada en pacientes premenopausicas, pero no posmenopáusicas, ya que en este segundo grupo la producción de estrógenos es mínima.",
-      "El subtipo luminal tiende a presentar niveles altos de expresión de receptores de estrógenos y/o de progesterona, pero no una sobreexpresión de la proteína HER2.",
+      "La hormonoterapia adyuvante con tamoxifeno o inhibidores de la aromatasa está indicada en pacientes premenopáusicas, pero no posmenopáusicas, ya que en este segundo grupo la producción de estrógenos es mínima.",
+      "El subtipo luminal tiende a presentar niveles altos de expresión de receptores de estrógenos y/o de progesterona, pero no una sobreexpresión de la proteína HER2 (receptor-2 de factor de crecimiento epidérmico humano).",
       "Las mutaciones BRCA1 y BRCA2 son patognomónicas del cáncer de mama."
     ],
     "answer": 3,
@@ -930,7 +935,7 @@
       "Anemia que pudiese requerir necesidad de transfusión.",
       "Desnutrición grave por malabsorción.",
       "Elevación muy marcada de la procalcitonina en las heces.",
-      "Formación de fistulas perianales."
+      "Formación de fístulas perianales."
     ],
     "answer": 1,
     "hasImage": false
@@ -949,7 +954,7 @@
   },
   {
     "id": 80,
-    "question": "Un paciente de 8 años y 30 kg de peso ingresa en la unidad de infecciosas con fiebre... ¿Cuál sería el volumen a administrar, así como el ritmo de infusión según el método de Holliday-Segar?:",
+    "question": "Un paciente de 8 años y 30 kg de peso ingresa en la unidad de infecciosas con fiebre de 38 ºC y sospecha de bacteriemia generalizada. No tolera vía oral, por lo que se le prescribe sueroterapia de mantenimiento. ¿Cuál sería el volumen a administrar, así como el ritmo de infusión según el método de Holliday-Segar?: Volumen diario de mantenimiento: Peso 0-10 kg: 100 mL/kg. Peso 11-20 kg: 1.000 mL + 50 mL/kg por cada kg >10 kg Peso >20 kg: 1.500 mL + 20 mL/kg por cada kg >20 kg. Ritmo de infusión: Peso 0-10 kg: 4 mL/kg/h Peso 11-20 kg: 40 mL/h + 2 mL/kg/h por cada kg >10 kg Peso >20 kg: 60 mL/h + 1 mL/kg/h por cada kg >20 kg.",
     "options": [
       "2.100 mL; 88,5 mL/h.",
       "1.700 mL; 70 mL/h.",
@@ -963,10 +968,10 @@
     "id": 81,
     "question": "Señale la respuesta INCORRECTA respecto a la enfermedad pulmonar obstructiva crónica (EPOC):",
     "options": [
-      "La deficiencia grave de alfa1-antitripsina es un factor de riesgo para el desarrollo de la enfermedad.",
+      "La deficiencia grave de alfa1antitripsina es un factor de riesgo para el desarrollo de la enfermedad.",
       "El recuento de eosinófilos en sangre periférica se usa como biomarcador para determinar el tratamiento en exacerbaciones.",
       "El tiotropio tiene una semivida más corta que el ipratropio, por lo que se administra 2 veces al día.",
-      "La triple terapia inhalada con un broncodilatador beta-agonista de larga duración, un broncodilatador antagonista muscarinico de larga duración y un corticoide, puede ser adecuada en determinados pacientes."
+      "La triple terapia inhalada con un broncodilatador beta-agonista de larga duración, un broncodilatador antagonista muscarínico de larga duración y un corticoide, puede ser adecuada en determinados pacientes."
     ],
     "answer": 3,
     "hasImage": false
@@ -985,7 +990,7 @@
   },
   {
     "id": 83,
-    "question": "Señale la respuesta INCORRECTA en relación con el caso de un paciente diagnosticado de meningoencefalitis criptococócica sin inmunodepresión concomitante...",
+    "question": "Señale la respuesta INCORRECTA en relación con el caso de un paciente diagnosticado de meningoencefalitis criptococócica sin inmunodepresión concomitante, que presenta cefalea, fiebre, letargo, déficit sensorial y de memoria, paresia de pares craneales, deficiencia visual y signos meníngeos de varias semanas de evolución:",
     "options": [
       "El tratamiento de inducción consiste en la combinación de anfotericina B liposomal y flucitosina debido a la sinergia de los fármacos.",
       "La penetración de flucitosina en el líquido cefalorraquídeo produce un descenso rápido de la carga de criptococos.",
@@ -1009,12 +1014,12 @@
   },
   {
     "id": 85,
-    "question": "Indique la relación correcta fármaco - mecanismo de acción:",
+    "question": "Indique la relación correcta fármaco – mecanismo de acción:",
     "options": [
-      "Everólimus - inhibidor de la calcineurina.",
-      "Tacrólimus - inhibidor de la calcineurina.",
-      "Ciclosporina - inhibidor de la mTOR.",
-      "Azatioprina - inhibidor de la mTOR."
+      "Everólimus – inhibidor de la calcineurina.",
+      "Tacrólimus – inhibidor de la calcineurina.",
+      "Ciclosporina – inhibidor de la mTOR.",
+      "Azatioprina – inhibidor de la mTOR."
     ],
     "answer": 2,
     "hasImage": false
@@ -1057,7 +1062,7 @@
   },
   {
     "id": 89,
-    "question": "Qué tratamiento sería más indicado prescribir a un paciente diagnosticado de asma grave no controlado con glucocorticoides inhalados (GCI) a dosis altas + agonista adrenérgico de acción larga (LABA) + montelukast, que además tiene dermatitis atópica refractaria?:",
+    "question": "¿Qué tratamiento sería más indicado prescribir a un paciente diagnosticado de asma grave no controlado con glucocorticoides inhalados (GCI) a dosis altas + agonista adrenérgico de acción larga (LABA) + montelukast, que además tiene dermatitis atópica refractaria?:",
     "options": [
       "Dupilumab, ya que también tiene la indicación en ficha técnica para el tratamiento de la dermatitis atópica.",
       "Reslizumab, ya que también tiene la indicación en ficha técnica para el tratamiento de la dermatitis atópica.",
@@ -1072,7 +1077,7 @@
     "question": "Una paciente fumadora de 70 años padece psoriasis en placas de carácter moderado-grave. Ha fracasado el tratamiento con ciclosporina, metotrexato y PUVA. Simultáneamente es diagnosticada de tuberculosis pulmonar. ¿Cuál de las siguientes opciones de tratamiento es correcta?:",
     "options": [
       "Deberá iniciar inmediatamente tratamiento con un fármaco inhibidor de la quinasa janus (JAK) debido a su mejor perfil de seguridad.",
-      "Deberá iniciar inmediatamente tratamiento con certolizumab ya que es el único anti-TNF que no está contraindicado en caso de tuberculosis activa.",
+      "Deberá iniciar inmediatamente tratamiento con certolizumab ya que es el (--FARMACIA-0--12/28) único anti-TNF que no está contraindicado en caso de tuberculosis activa.",
       "Deberá realizar primero tratamiento para la tuberculosis y luego iniciar tratamiento para la psoriasis con un fármaco biológico, por ejemplo, adalimumab.",
       "Deberá realizar profilaxis antituberculosa con isoniazida + rifampicina antes de iniciar un tratamiento biológico."
     ],
@@ -1083,10 +1088,10 @@
     "id": 91,
     "question": "Con relación al tratamiento de la enfermedad por el VIH, indique la asociación INCORRECTA:",
     "options": [
-      "Bictegravir - inhibidor de la integrasa.",
-      "Lamivudina - inhibidor de la transcriptasa inversa.",
-      "Cabotegravir - inhibidor de la proteasa.",
-      "Lopinavir - inhibidor de la proteasa."
+      "Bictegravir – inhibidor de la integrasa.",
+      "Lamivudina – inhibidor de la transcriptasa inversa.",
+      "Cabotegravir – inhibidor de la proteasa.",
+      "Lopinavir – inhibidor de la proteasa."
     ],
     "answer": 3,
     "hasImage": false
@@ -1117,7 +1122,7 @@
   },
   {
     "id": 94,
-    "question": "Indique la relación INCORRECTA entre fármaco - utilidad terapéutica:",
+    "question": "Indique la relación INCORRECTA entre fármaco – utilidad terapéutica:",
     "options": [
       "Suplementos de sulfato de cobre - enfermedad de Wilson.",
       "Deferoxamina - intoxicación por hierro.",
@@ -1141,7 +1146,7 @@
   },
   {
     "id": 96,
-    "question": "Indique la respuesta FALSA sobre Ado-trastuzumab emtansina:",
+    "question": "Indique la respuesta FALSA sobre Adotrastuzumab emtansina:",
     "options": [
       "Es un anticuerpo conjugado.",
       "Su diana de acción es Trop-2.",
@@ -1168,7 +1173,7 @@
     "question": "¿Qué característica define a un fármaco agonista parcial?:",
     "options": [
       "El efecto máximo que produce siempre es inferior al que produce un agonista puro en el sistema de estudio (órgano, organismo, etc.).",
-      "Su eficacia relativa (a) tiene un valor en torno a 1.",
+      "Su eficacia relativa (α) tiene un valor en torno a 1.",
       "Sus efectos no pueden ser bloqueados por un fármaco antagonista competitivo del mismo receptor.",
       "Su efecto farmacológico viene determinado por su afinidad al receptor."
     ],
@@ -1189,11 +1194,11 @@
   },
   {
     "id": 100,
-    "question": "De las siguientes afirmaciones, ¿cuál caracteriza a la Kd (constante de disociación de un fármaco por su diana)?:",
+    "question": "De las siguientes afirmaciones, ¿cuál caracteriza a la Kd (constante de disociación de un fármaco por su diana) ?:",
     "options": [
       "Se corresponde con un valor de concentración del fármaco en estudio, que ocupa más de la mitad de los receptores.",
       "Su valor depende del efecto que produzca el fármaco sobre su diana.",
-      "Su valor será menor cuanto mayor sea la afinidad del fármaco por el receptor.",
+      "Su valor será menor cuanto mayor sea la afinidad del fármaco por el receptor. (--FARMACIA-0--13/28)",
       "Su valor es independiente de la pendiente según la representación gráfica de Scatchard."
     ],
     "answer": 3,
@@ -1201,7 +1206,7 @@
   },
   {
     "id": 101,
-    "question": "¿Cuál de las siguientes dianas farmacológicas pertenece al grupo de receptores catalíticos con actividad enzimática intrínseca?:",
+    "question": "¿Cuál de las siguientes dianas farmacológicas pertenece al grupo de receptores catalíticos o con actividad enzimática intrínseca?:",
     "options": [
       "El receptor muscarínico para acetilcolina.",
       "El receptor de GABA tipo A (GABAA).",
@@ -1240,7 +1245,7 @@
     "question": "En relación con la carbamazepina, señale la opción INCORRECTA:",
     "options": [
       "Los metabolizadores rápidos, portadores de algunos polimorfismos genéticos del CYP2D6, presentan mayor riesgo de reacciones adversas al fármaco.",
-      "Los portadores de algunos polimorfismos genéticos del antígeno leucocitario HLA-B presentan un riesgo aumentado de reacciones dermatológicas severas cuando son tratados con este fármaco.",
+      "Los portadores de algunos polimorfismos genéticos del antígeno leucocitario HLAB presentan un riesgo aumentado de reacciones dermatológicas severas cuando son tratados con este fármaco.",
       "Es un inductor del CYP3A4.",
       "La semivida plasmática de la carbamazepina disminuye paulatinamente durante las etapas iniciales del tratamiento."
     ],
@@ -1261,7 +1266,7 @@
   },
   {
     "id": 106,
-    "question": "¿Cuál de los siguientes es un medicamento con mecanismo de acción agonista α-adrenérgico?:",
+    "question": "¿Cuál de los siguientes es un medicamento con mecanismo de acción agonista α1-adrenérgico?:",
     "options": [
       "Oximetazolina.",
       "Isoproterenol.",
@@ -1314,7 +1319,7 @@
       "La vincamina es un diterpeno nitrogenado con acción antimitótica.",
       "El paclitaxel/taxol se encuentra en la raíz de Taxus brevifolia.",
       "La efedrina es un alcaloide que carece de nitrógeno heterocíclico.",
-      "La artemisinina es una lactona sesquiterpénica con propiedades antitusivas."
+      "La artemisinina es una lactona sesqui- (--FARMACIA-0--14/28) terpénica con propiedades antitusivas."
     ],
     "answer": 3,
     "hasImage": false
@@ -1357,12 +1362,12 @@
   },
   {
     "id": 114,
-    "question": "Elija cuál de las siguientes parejas fármaco-parámetro farmacocinético utilizaría para realizar una monitorización adecuada del tratamiento:",
+    "question": "Elija cuál de las siguientes parejas fármacoparámetro farmacocinético utilizaría para realizar una monitorización adecuada del tratamiento:",
     "options": [
-      "Amikacina >80% de tiempo entre dosis con concentración superior a la concentración mínima inhibitoria (CMI).",
-      "Vancomicina área bajo la curva (AUC)/CMI objetivo entre 400-600 mg*h/L.",
-      "Ceftazidima/avibactam concentración pico > de 40 mcg/mL para determinar su eficacia.",
-      "Fosfomicina concentración valle entre 20-40 mcg/mL para determinar su seguridad."
+      "Amikacina - >80% de tiempo entre dosis con concentración superior a la concentración mínima inhibitoria (CMI).",
+      "Vancomicina - área bajo la curva (AUC)/CMI objetivo entre 400-600 mg*h/L.",
+      "Ceftazidima/avibactam - concentración pico > de 40 mcg/mL para determinar su eficacia.",
+      "Fosfomicina - concentración valle entre 20-40 mcg/mL para determinar su seguridad."
     ],
     "answer": 2,
     "hasImage": false
@@ -1386,7 +1391,7 @@
       "En un paciente que desarrollase una insuficiencia cardiaca aguda, su aclaramiento hepático se vería reducido significativamente.",
       "En un paciente que estuviera malnutrido, desarrollando hipoalbuminemia, su aclaramiento hepático se vería reducido significativamente.",
       "En un paciente que presentase por algún motivo un aumento del flujo hepático, su tasa de extracción hepática también se vería incrementada significativamente.",
-      "En un paciente con que tomase rifampicina (inductor enzimático potente), desde hace 3 meses, su aclaramiento hepático se vería incrementado significativamente."
+      "En un paciente con que tomase rifampicina (inductor enzimático potente), desde hace 3 meses, su aclaramiento hepático se vería incrementado significativamente. (--FARMACIA-0--15/28)"
     ],
     "answer": 1,
     "hasImage": false
@@ -1405,7 +1410,7 @@
   },
   {
     "id": 118,
-    "question": "Un fármaco con estructura de antibiótico beta-lactámico como amoxicilina, se absorbe prioritariamente tras su administración oral por:",
+    "question": "Un fármaco con estructura de antibiótico betalactámico como amoxicilina, se absorbe prioritariamente tras su administración oral por:",
     "options": [
       "Transporte activo.",
       "Difusión por poros.",
@@ -1448,12 +1453,12 @@
       "La asociación con fenobarbital puede aumentar las concentraciones plasmáticas del fármaco por lo que aumenta el riesgo de toxicidad por ácido valproico.",
       "El porcentaje de unión a proteínas plasmáticas depende de la concentración del fármaco, alcanzando un porcentaje de unión de aproximadamente el 90% a concentraciones plasmáticas mayores de 75 mcg/mL."
     ],
-    "answer": 3,
+    "answer": 4,
     "hasImage": false
   },
   {
     "id": 122,
-    "question": "En la siguiente imagen se representa el perfil concentración-tiempo de dos diferentes situaciones para un mismo fármaco... ¿qué parámetros farmacocinéticos son similares en los dos casos?:",
+    "question": "En la siguiente imagen se representa el perfil concentración-tiempo de dos diferentes situaciones para un mismo fármaco de administración oral con proceso de absorción y eliminación siguiendo una cinética de orden uno. Siendo la dosis la misma para los dos casos y asumiendo que ambas situaciones presentan el mismo volumen de distribución (Vd) y biodisponibilidad (F), ¿qué parámetros farmacocinéticos son similares en los dos casos?:",
     "options": [
       "Tiempo hasta alcanzar la concentración max (Tmax) y concentración máxima (Cmax).",
       "Tiempo hasta alcanzar la concentración max (Tmax) y constante de absorción (Ka).",
@@ -1461,14 +1466,15 @@
       "Semivida de eliminación (t1/2) y área bajo la curva (AUC)."
     ],
     "answer": 4,
-    "hasImage": true
+    "hasImage": true,
+    "image": "FIR2023/images/122.JPG"
   },
   {
     "id": 123,
     "question": "En cuanto a la degradación de los esqueletos carbonados de los aminoácidos, es cierto que:",
     "options": [
       "La treonina es un ejemplo de aminoácido exclusivamente cetogénico.",
-      "El tetrahidrofolato y la S-adenosilmetionina son dos de los más importantes cofactores de enzimas que participan en la transferencia de grupos amino.",
+      "El tetrahidrofolato y la Sadenosilmetionina son dos de los más importantes cofactores de enzimas que participan en la transferencia de grupos amino.",
       "Los aminoácidos que provienen de la degradación de proteínas y acaban produciendo fumarato, se consideran cetogénicos.",
       "En condiciones de ayuno, la leucina contribuye de manera importante a la cetosis."
     ],
@@ -1480,11 +1486,11 @@
     "question": "MLS es una paciente que requiere del uso de nutrición parenteral domiciliaria por presentar un síndrome de intestino corto postquirúrgico. ¿Qué elemento NO esperaría añadir a su nutrición parenteral, si no se conociesen más datos de la paciente?:",
     "options": [
       "Calcio.",
-      "Zinc.",
       "Bromo.",
+      "Zinc.",
       "Magnesio."
     ],
-    "answer": 3,
+    "answer": 2,
     "hasImage": false
   },
   {
@@ -1503,12 +1509,12 @@
     "id": 126,
     "question": "Señale la respuesta correcta en relación con las siguientes patologías relacionadas con los proteoglucanos:",
     "options": [
-      "El síndrome de Hunter y el síndrome de Scheie son debidos al déficit de a-1-iduronidasa, aunque el primero es más grave que el segundo.",
+      "El síndrome de Hunter y el síndrome de Scheie son debidos al déficit de α-1iduronidasa, aunque el primero es más grave que el segundo.",
       "Las tradicionalmente conocidas como mucopolisacaridosis, son enfermedades producidas por el déficit de enzimas de síntesis de proteoglucanos.",
       "Las patologías que cursan con depósitos de proteoglucanos afectan al crecimiento normal del paciente, pero no alteran su desarrollo cognitivo.",
       "El síndrome de Hunter está causado por un déficit en una sulfatasa que degrada el ácido hialurónico, haciendo que este se acumule en exceso en diferentes tejidos."
     ],
-    "answer": 4,
+    "answer": 0,
     "hasImage": false
   },
   {
@@ -1564,7 +1570,7 @@
     "question": "Un paciente varón acaba de ser diagnosticado de una glucogenosis tipo 1 (enfermedad de Von Gierke). ¿Cuál de las siguientes afirmaciones le parece coherente con respecto a su diagnóstico?:",
     "options": [
       "Es bastante probable que su descendencia presente esta misma patología, al estar ligada al sexo de forma dominante.",
-      "Se espera que los niveles de glucemia basal del paciente sean muy elevados por la hiperactivación de glucógeno fosforilasa que presenta.",
+      "Se espera que los niveles de glucemia basal del paciente sean muy elevados por la (--FARMACIA-0--17/28) hiperactivación de glucógeno fosforilasa que presenta.",
       "Aunque prácticamente cualquier órgano puede verse afectado por esta patología, el principal defecto ocurre a nivel muscular.",
       "Aunque se llame glucogenosis, la enzima afectada en esta patología actúa sobre unidades aisladas de glucosa, en forma de monosacárido."
     ],
@@ -1587,7 +1593,7 @@
     "id": 133,
     "question": "La síntesis de ADN se lleva a cabo de forma semiconservativa durante la replicación, y se caracteriza por:",
     "options": [
-      "Llevarse a cabo siempre en dirección 3' -> 5' tanto en eucariotas como en procariotas.",
+      "Llevarse a cabo siempre en dirección 3’ → 5’ tanto en eucariotas como en procariotas.",
       "Dar lugar a una molécula de ADN mediante la rotura de las hebras de origen que se reordenan de una forma intercalada de fragmentos nuevos y viejos.",
       "Originar dos moléculas de ADN, cada una de ellas compuesta de una hebra del ADN original y de una hebra complementaria nueva.",
       "Generar dos moléculas de ADN, donde cada molécula recién sintetizada está formada por dos cadenas de novo."
@@ -1624,7 +1630,7 @@
     "question": "En el análisis molecular de hibridación de los ácidos nucleicos mediante la técnica de hibridación in situ fluorescente pueden combinarse:",
     "options": [
       "Cultivo celular y microscopía.",
-      "Southern-blot y autorradiografia.",
+      "Southern-blot y autorradiografía.",
       "PCR y secuenciación.",
       "RT-PCR y electroforesis."
     ],
@@ -1638,19 +1644,19 @@
       "Corrección de alteraciones que causan distorsión en la doble hélice, y eliminación de diversos daños voluminosos.",
       "Reparación de daños por hidrólisis (desaminación o pérdida de base), oxidación por radicales libres de oxígeno, alquilación, y derivados no voluminosos.",
       "Corrección de errores cometidos en la replicación o errores que la impiden.",
-      "Reparación de la rotura fisica del ADN que puede ocurrir por exposición a radiación ionizante."
+      "Reparación de la rotura física del ADN que puede ocurrir por exposición a radiación ionizante."
     ],
     "answer": 1,
     "hasImage": false
   },
   {
     "id": 138,
-    "question": "¿Cuál de las siguientes enzimas NO está implicada en el proceso de modificación del extremo 5' del ARN mensajero eucariótico que ocurre poco después de iniciarse la transcripción?:",
+    "question": "¿Cuál de las siguientes enzimas NO está implicada en el proceso de modificación del extremo 5’ del ARN mensajero eucariótico que ocurre poco después de iniciarse la transcripción?:",
     "options": [
       "Fosfatasa.",
       "Guanililtransferasa.",
       "Topoisomerasa.",
-      "Metilasa."
+      "Metilasa. (--FARMACIA-0--18/28)"
     ],
     "answer": 3,
     "hasImage": false
@@ -1671,7 +1677,7 @@
     "id": 140,
     "question": "La supresión, en ciertos casos, de la expresión de uno de los dos alelos de un gen en cromosomas homólogos (ya sea de la madre o del padre) es un fenómeno conocido como:",
     "options": [
-      "Aneuploidia genómica.",
+      "Aneuploidía genómica.",
       "Impronta genómica.",
       "Recombinación genómica.",
       "Silenciamiento génico."
@@ -1684,7 +1690,7 @@
     "question": "Una enzima de restricción es aquella que puede reconocer una secuencia característica de nucleótidos dentro de una molécula de ADN. En relación con esto, señale la respuesta FALSA de las siguientes opciones:",
     "options": [
       "Los isoesquizómeros son dos enzimas con la misma secuencia de reconocimiento, aunque puede que no corten en la misma posición.",
-      "EI ADN recombinante se obtiene mediante enzimas de restricción.",
+      "El ADN recombinante se obtiene mediante enzimas de restricción.",
       "El corte de ADN se realiza a través de la ruptura de los enlaces fosfodiéster sólo en la hebra de cadena simple.",
       "Corta el ADN en un punto en concreto o sito diana generando extremos romos y cohesivos."
     ],
@@ -1697,7 +1703,7 @@
     "options": [
       "El valor de discriminante.",
       "El sesgo o inexactitud.",
-      "El indice de individualidad bioquímica.",
+      "El índice de individualidad bioquímica.",
       "La variabilidad biológica intersujetos."
     ],
     "answer": 3,
@@ -1761,7 +1767,8 @@
       "Deficiencia de alfa-1-antitripsina."
     ],
     "answer": 4,
-    "hasImage": true
+    "hasImage": true,
+    "image": "FIR2023/images/147.JPG"
   },
   {
     "id": 148,
@@ -1827,17 +1834,17 @@
     "id": 153,
     "question": "Siendo ci y zi, respectivamente, la concentración y la carga de los iones presentes en una disolución, la fuerza iónica (I) de dicha disolución se calcula como:",
     "options": [
-      "I = Σ(ci^2 × zi)",
-      "I = 1/2 Σ(ci^2 × zi)",
-      "I = Σ^2(ci × zi^2)",
-      "I = 1/2 Σ(ci × zi^2)"
+      "𝐼\u0001 ∑\u0002𝑐\u0003 \u0004 \u0005 𝑧\u0003\u0006. \u0007 \u0004 \u0005 𝑧\u0003\u0006.",
+      "𝐼\u0001 \u0004 ∑\u0002𝑐\u0003",
+      "𝐼\u0001 ∑\u0002𝑐\u0003 \u0005 𝑧\u0003 \u0004\u0006. \u0007 \u0004\u0006.",
+      "𝐼\u0001 \u0004 ∑\u0002𝑐\u0003 \u0005 𝑧\u0003"
     ],
     "answer": 4,
     "hasImage": false
   },
   {
     "id": 154,
-    "question": "Teniendo en cuenta que los valores de pKa del ácido carbónico son: pKa1(H2CO3) = 6,35; pKa2(HCO3-) = 10,33, ¿qué puede afirmarse respecto al pH de una disolución 0,01 M de monohidrógeno carbonato de sodio (bicarbonato de sodio)?:",
+    "question": "Teniendo en cuenta que los valores de pKa del ácido carbónico son: pKa1 (H2CO3) = 6,35; pKa2 (HCO3-) = 10,33, ¿qué puede afirmarse respecto al pH de una disolución 0,01 M de monohidrógeno carbonato de sodio (bicarbonato de sodio) ?:",
     "options": [
       "Es menor de 3,0.",
       "Está entre 3,0 y 5,0.",
@@ -1849,10 +1856,10 @@
   },
   {
     "id": 155,
-    "question": "Teniendo en cuenta que las constantes de formación metal-EDTA son: log Kf(HgY^2-) = 21,7; log Kf(MgY^2-) = 8,79 indique la afirmación correcta referente a una valoración complexométrica de una disolución de Hg^2+ mediante el procedimiento de valoración por desplazamiento:",
+    "question": "Teniendo en cuenta que las constantes de formación metal-EDTA son: log Kf (HgY2-) = 21,7; log Kf (MgY2-) = 8,79, indique la afirmación correcta referente a una valoración complejométrica de una disolución de Hg2+ mediante el procedimiento de valoración por desplazamiento:",
     "options": [
       "Se añade un exceso de EDTA como reactivo desplazante.",
-      "Se añade un exceso de Mg^2+ como reactivo desplazante.",
+      "Se añade un exceso de Mg2+ como reactivo desplazante.",
       "El magnesio liberado en la reacción de desplazamiento se valora con EDTA.",
       "El EDTA liberado en la reacción de desplazamiento se valora con magnesio."
     ],
@@ -1863,13 +1870,14 @@
     "id": 156,
     "question": "El espectro recogido en la imagen, correspondiente al fármaco antidiabético tolbutamida, se ha obtenido mediante la siguiente técnica analítica:",
     "options": [
-      "Espectrometría de absorción ultravioleta-visible.",
+      "Espectrometría de absorción ultravioletavisible.",
       "Espectrometría de absorción infrarroja.",
       "Espectrometría de emisión atómica.",
-      "Espectrofotometría de absorción atómica."
+      "Espectrofotometría de absorción atómica. (--FARMACIA-0--20/28)"
     ],
     "answer": 2,
-    "hasImage": true
+    "hasImage": true,
+    "image": "FIR2023/images/156.JPG"
   },
   {
     "id": 157,
@@ -1881,7 +1889,8 @@
       "Hipsocrómico."
     ],
     "answer": 4,
-    "hasImage": true
+    "hasImage": true,
+    "image": "FIR2023/images/157.JPG"
   },
   {
     "id": 158,
@@ -1897,7 +1906,7 @@
   },
   {
     "id": 159,
-    "question": "Se realiza la valoración fotométrica de un compuesto X con un agente valorador V para dar un producto P según la reacción X + V -> P. Al representar la absorción frente al volumen de valorante añadido, la absorción se mantiene constante hasta el punto de equivalencia, comenzando a aumentar manteniendo una pendiente constante desde entonces. ¿Cuál de las siguientes afirmaciones es cierta?:",
+    "question": "Se realiza la valoración fotométrica de un compuesto X con un agente valorador V para dar un producto P según la reacción X+V⥂P. Al representar la absorción frente al volumen de valorante añadido, la absorción se mantiene constante hasta el punto de equivalencia, comenzando a aumentar manteniendo una pendiente constante desde entonces. ¿Cuál de las siguientes afirmaciones es cierta?:",
     "options": [
       "La única especie absorbente es el valorante.",
       "La única especie absorbente es el analito.",
@@ -1929,7 +1938,8 @@
       "Sea mayor en el caso del fluoreno debido a que la energía del segundo estado de singulete excitado es mayor que en el bifenilo."
     ],
     "answer": 1,
-    "hasImage": true
+    "hasImage": true,
+    "image": "FIR2023/images/161.JPG"
   },
   {
     "id": 162,
@@ -1948,7 +1958,7 @@
     "question": "El índice de retención de Kovats se utiliza en cromatografía de:",
     "options": [
       "Líquidos y permite cuantificar solutos a partir de los cromatogramas.",
-      "Liquidos y permite identificar solutos a partir de los cromatogramas.",
+      "Líquidos y permite identificar solutos a partir de los cromatogramas.",
       "Gases y permite cuantificar solutos a partir de los cromatogramas.",
       "Gases y permite identificar solutos a partir de los cromatogramas."
     ],
@@ -1969,7 +1979,7 @@
   },
   {
     "id": 165,
-    "question": "Se está llevando a cabo la separación de dos solutos por cromatografía de líquidos (HPLC) mediante elución en fase inversa en una columna de octadecilsilano (C18) y una fase móvil metanol:agua 70:30. Tras modificar la composición de la fase móvil a metanol:agua 50:50, ¿qué comportamento debe esperarse?",
+    "question": "Se está llevando a cabo la separación de dos solutos por cromatografía de líquidos (HPLC) mediante elución en fase inversa en una columna de octadecilsilano (C18) y una fase móvil metanol:agua 70:30. Tras modificar la composición de la fase móvil a metanol:agua 50:50, ¿qué comportamiento debe esperarse?",
     "options": [
       "Una disminución del tiempo de retención de los dos solutos.",
       "Un aumento del tiempo de retención de los dos solutos.",
@@ -1995,10 +2005,10 @@
     "id": 167,
     "question": "El tiempo de vida medio en una reacción de orden 0 es:",
     "options": [
-      "Proporcional a la constante cinética de la reacción (k) e inversamente proporcional a la concentración inicial de reactivo [Ao].",
+      "Proporcional a la constante cinética de la reacción (k) e inversamente proporcional a la concentración inicial de reactivo [A0].",
       "Independiente de la concentración inicial de reactivo [A0] e inversamente proporcional a la constate cinética de la reacción (k).",
       "Proporcional a la concentración inicial de reactivo [A0] e inversamente proporcional a la constante cinética de la reacción (k).",
-      "Inversamente proporcional a la constante cinética de la reacción (k) e independiente de la concentración inicial de reactivo [Ao]."
+      "Inversamente proporcional a la constante cinética de la reacción (k) e independiente de la concentración inicial de reactivo [A0]."
     ],
     "answer": 3,
     "hasImage": false
@@ -2008,9 +2018,9 @@
     "question": "El tiempo requerido para que la difusión de un principio activo a través de una membrana alcance el estado estacionario es proporcional:",
     "options": [
       "A la anchura promedio de la membrana <h> y el coeficiente de difusión (D).",
-      "Al cuadrado de la anchura promedio de la membrana <h^2> e inversamente proporcional al coeficiente de difusión (D).",
-      "Al cuadrado de la anchura promedio de la membrana <h^2> y al coeficiente de difusión (D).",
-      "A la anchura promedio de la membrana <h> e inversamente proporcional al cuadrado del coeficiente de difusión (D^2)."
+      "Al cuadrado de la anchura promedio de la membrana <h2> e inversamente proporcional al coeficiente de difusión (D).",
+      "Al cuadrado de la anchura promedio de la membrana <h2> y al coeficiente de difusión (D).",
+      "A la anchura promedio de la membrana <h> e inversamente proporcional al cuadrado del coeficiente de difusión (D2)."
     ],
     "answer": 2,
     "hasImage": false
@@ -2046,7 +2056,7 @@
       "Se produce cuando el ser humano ingiere peces grandes que han acumulado la toxina.",
       "Produce un envenenamiento amnésico tras la ingesta de mejillones.",
       "Produce parálisis tras la picadura de algunas especies de pulpos venenosos.",
-      "Es una toxina producida por corales que produce obstrucción en las vías respiratorias."
+      "Es una toxina producida por corales que produce obstrucción en las vías respiratorias. (--FARMACIA-0--22/28)"
     ],
     "answer": 1,
     "hasImage": false
@@ -2065,7 +2075,7 @@
   },
   {
     "id": 173,
-    "question": "En Toxicología, ¿qué se conoce como 'dosis del nivel sin efecto adverso observable' o NOAEL?:",
+    "question": "En Toxicología, ¿qué se conoce como “dosis del nivel sin efecto adverso observable” o NOAEL?:",
     "options": [
       "Es una medida de toxicidad aguda de un agente químico en la que se espera letalidad.",
       "Es la dosis por debajo de la cual no se producirá un determinado efecto tóxico.",
@@ -2096,8 +2106,9 @@
       "I.",
       "IV."
     ],
-    "answer": 3,
-    "hasImage": true
+    "answer": 2,
+    "hasImage": true,
+    "image": "FIR2023/images/175.JPG"
   },
   {
     "id": 176,
@@ -2117,7 +2128,7 @@
     "options": [
       "Ácido orto-metilbenzoico.",
       "Ácido para-nitrobenzoico.",
-      "Acido meta-metoxibenzoico.",
+      "Ácido meta-metoxibenzoico.",
       "Ácido para-clorobenzoico."
     ],
     "answer": 2,
@@ -2137,7 +2148,7 @@
   },
   {
     "id": 179,
-    "question": "En la técnica de datación con carbono radiactivo el 14/6C se desintegra para dar 14/7N emitiendo una partícula:",
+    "question": "En la técnica de datación con carbono radiactivo el 𝟏𝟒 se desintegra para dar 𝐂 𝟏𝟒, emitiendo 𝐍 𝟔 𝟕 una partícula:",
     "options": [
       "Beta negativa.",
       "Beta positiva.",
@@ -2151,12 +2162,12 @@
     "id": 180,
     "question": "La hibridación del átomo central y la geometría molecular de FCl3 es:",
     "options": [
-      "sp³/pirámide trigonal.",
-      "sp²/trigonal plana.",
-      "sp³d/forma de T.",
-      "sp³d/pirámide trigonal."
+      "sp3/pirámide trigonal.",
+      "sp2/trigonal plana.",
+      "sp3d/forma de T.",
+      "sp3d/pirámide trigonal."
     ],
-    "answer": 3,
+    "answer": 0,
     "hasImage": false
   },
   {
@@ -2175,7 +2186,7 @@
     "id": 182,
     "question": "¿Cuál de las siguientes moléculas NO es lineal?",
     "options": [
-      "SO2",
+      "SO2.",
       "CO2.",
       "HCN.",
       "NO."
@@ -2190,7 +2201,7 @@
       "1.",
       "7.",
       "9.",
-      "16."
+      "16. (--FARMACIA-0--23/28)"
     ],
     "answer": 2,
     "hasImage": false
@@ -2274,7 +2285,7 @@
       "Medicamentos de uso hospitalario, medicamentos de diagnóstico hospitalario y medicamentos de especial control médico.",
       "Medicamentos de uso hospitalario, medicamentos de diagnóstico hospitalario, estupefacientes y medicamentos de especial control médico.",
       "Medicamentos de uso hospitalario, medicamentos de diagnóstico hospitalario, medicamentos extranjeros y medicamentos de especial control médico.",
-      "Medicamentos de uso hospitalario, medicamentos de diagnóstico hospitalario, fórmulas magistrales y medicamentos de especial control médico."
+      "Medicamentos de uso hospitalario, medicamentos de diagnóstico hospitalario, fórmulas magistrales y medicamentos de especial control médico. (--FARMACIA-0--24/28)"
     ],
     "answer": 0,
     "hasImage": false
@@ -2305,7 +2316,7 @@
   },
   {
     "id": 193,
-    "question": "¿Para cuál de las siguientes sustancias la prescripción y dispensación... NO siendo precisa la receta oficial de estupefacientes?:",
+    "question": "¿Para cuál de las siguientes sustancias la prescripción y dispensación, según la Convención Única sobre Estupefacientes de 1961, se realizará en la correspondiente receta médica, NO siendo precisa la receta oficial de estupefacientes?:",
     "options": [
       "Petidina, ampollas de 50 mg/mL.",
       "Oxicodona, comprimidos de 40 mg.",
@@ -2355,10 +2366,10 @@
     "id": 197,
     "question": "En la maduración de los linfocitos B se pueden distinguir:",
     "options": [
-      "La etapa antigeno-independiente, que tiene lugar en el linfonodo, y promueve la expansión clonal.",
-      "La fase antigeno-dependiente, que tiene lugar en la médula ósea, y permite el cambio de isotipo.",
-      "La fase antígeno-independiente, que tiene lugar en la médula ósea, y la antigeno-dependiente en los órganos linfoides secundarios.",
-      "La etapa antigeno-dependiente, que tiene lugar en el timo, e implica la clonalidad de los linfocitos."
+      "La etapa antígeno-independiente, que tiene lugar en el linfonodo, y promueve la expansión clonal.",
+      "La fase antígeno-dependiente, que tiene lugar en la médula ósea, y permite el cambio de isotipo.",
+      "La fase antígeno-independiente, que tiene lugar en la médula ósea, y la antígenodependiente en los órganos linfoides secundarios.",
+      "La etapa antígeno-dependiente, que tiene lugar en el timo, e implica la clonalidad de los linfocitos."
     ],
     "answer": 3,
     "hasImage": false
@@ -2369,7 +2380,7 @@
     "options": [
       "El TCR se dispone sobre el complejo péptido-MHC, de manera que las regiones CDR1 interaccionan con la parte central del péptido y las CDR2 interaccionan con las hélices alfa del MHC.",
       "La afinidad del TCR por el complejo péptido-MHC no es suficiente para activar un linfocito T virgen y por ello se necesitan interacciones accesorias entre la APC y el linfocito T.",
-      "Los correceptores que acompañan al TCR, CD4 CD8, están formados por cadenas alfa; el CD4 es monomérico pero el CD8 puede formar homodímeros alfa/alfa.",
+      "Los correceptores que acompañan al TCR, CD4 o CD8, están formados por cadenas alfa; el CD4 es monomérico pero el CD8 puede formar homodímeros alfa/alfa.",
       "El correceptor CD4, que interacciona con un dominio polimórfico de la molécula de MHC de clase II, estabiliza la interacción TCR-péptido/MHC."
     ],
     "answer": 2,
@@ -2381,7 +2392,7 @@
     "options": [
       "CXCL13 contribuye a la entrada de los linfocitos T colaboradores foliculares (THF) a los folículos linfoides.",
       "CXCL5 dirige el movimiento de los linfocitos B a través del paracórtex hasta los folículos.",
-      "CXCL8 es una quimiocina implicada en la quimiotaxis de los neutrófilos.",
+      "CXCL8 es una quimiocina implicada en la quimiotaxis de los neutrófilos. (--FARMACIA-0--25/28)",
       "CCR7 participa en la migración de los linfocitos T y B al paracórtex del linfonodo."
     ],
     "answer": 2,
@@ -2389,7 +2400,7 @@
   },
   {
     "id": 200,
-    "question": "El componente farmacológico de ARN monocatenario (ssARN) conocido como imiquimod... ¿Sobre qué receptores de tipo Toll (TLR) actúa?:",
+    "question": "El componente farmacológico de ARN monocatenario (ssARN) conocido como imiquimod, es usado de forma tópica en dermatología para tratar las verrugas genitales y el carcinoma basocelular superficial de piel. ¿Sobre qué receptores de tipo Toll (TLR) actúa?:",
     "options": [
       "TLR2 y TLR4.",
       "TLR1 y TLR5.",
@@ -2404,7 +2415,7 @@
     "question": "En cuanto a la artritis reumatoide:",
     "options": [
       "Una de las principales citocinas implicadas en su patogénesis es la Il-23, por lo que existen fármacos que actúan sobre ella indicados en esta patología.",
-      "Las articulaciones más comúnmente afectadas en estos pacientes son las sacroiliacas.",
+      "Las articulaciones más comúnmente afectadas en estos pacientes son las sacroilíacas.",
       "Para diagnosticar una artritis reumatoide, no es necesario detectar siempre la presencia del anticuerpo Factor Reumatoide en el individuo.",
       "Es indiferente para el pronóstico de la enfermedad comenzar a usar FAMES (fármacos modificadores de la enfermedad) de forma temprana o cuando esta esté más desarrollada, al ser capaces de revertir el daño articular."
     ],
@@ -2418,7 +2429,7 @@
       "Uno de los síntomas de la intoxicación es la presencia de proteinuria.",
       "La excreción del cadmio es muy lenta, por lo que su semivida puede ser hasta de años.",
       "El principal órgano diana de la intoxicación crónica por cadmio por vía digestiva es el estómago.",
-      "Puede tratarse con fármacos quelantes como el edetato Na₂-Ca tras la exposición al cadmio."
+      "Puede tratarse con fármacos quelantes como el edetato Na2-Ca tras la exposición al cadmio."
     ],
     "answer": 3,
     "hasImage": false
@@ -2475,10 +2486,10 @@
     "id": 207,
     "question": "¿Cuál es la asociación correcta entre hormona y zona de la corteza suprarrenal donde se sintetiza?:",
     "options": [
-      "Aldosterona - zona fasciculada.",
-      "Dehidroepiandrosterona (DHEA) zona estriada.",
-      "Cortisol zona reticular.",
-      "Desoxicorticosterona - zona glomerular."
+      "Aldosterona – zona fasciculada.",
+      "Dehidroepiandrosterona (DHEA) – zona estriada.",
+      "Cortisol – zona reticular.",
+      "Desoxicorticosterona – zona glomerular."
     ],
     "answer": 4,
     "hasImage": false
@@ -2490,7 +2501,7 @@
       "Que el valor predictivo positivo de la prueba disminuye.",
       "Que disminuyen en valor absoluto los falsos negativos.",
       "Que el valor predictivo negativo de la prueba disminuye.",
-      "No quedan afectados los valores predictivos de la prueba."
+      "No quedan afectados los valores predictivos de la prueba. (--FARMACIA-0--26/28)"
     ],
     "answer": 3,
     "hasImage": false

@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simulador Oficial Exámenes FIR (2020-2025) | Farmacéutico Interno Residente</title>
+  <title>Simulador Oficial Exámenes FIR (2020-2025) | 2627 QFDOS Structural Affinity</title>
   
   <!-- Meta tags SEO & PWA -->
-  <meta name="description" content="Plataforma interactiva gratuita de simulacros y preparación de exámenes oficiales FIR (Farmacéutico Interno Residente) de 2020 a 2025 con imágenes de alta resolución, baremo oficial del Ministerio de Sanidad y modo estudio.">
-  <meta name="theme-color" content="#2563eb">
+  <meta name="description" content="Plataforma interactiva de simulacros y preparación de exámenes oficiales FIR (Farmacéutico Interno Residente) con el Sistema de Afinidad Estructural 2627 QFDOS. Convocatorias 2020 a 2025, baremo oficial del Ministerio de Sanidad (+3/-1/0) y modo estudio.">
+  <meta name="theme-color" content="#1e3a8a">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -16,155 +16,263 @@
       darkMode: 'class',
       theme: {
         extend: {
+          fontFamily: {
+            sans: ['Montserrat', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            mono: ['"Roboto Mono"', 'Fira Code', 'monospace'],
+          },
           colors: {
-            brand: {
-              50: '#eff6ff',
-              100: '#dbeafe',
-              500: '#3b82f6',
-              600: '#2563eb',
-              700: '#1d4ed8',
-              800: '#1e40af',
-              900: '#1e3a8a'
+            qfdos: {
+              primary: '#1e3a8a',
+              'primary-dark': '#172554',
+              'primary-light': '#3b82f6',
+              secondary: '#0d9488',
+              'secondary-dark': '#0f766e',
+              'secondary-light': '#14b8a6',
+              tertiary: '#2dd4bf',
+              'tertiary-light': '#5eead4',
+              'neutral-bg': '#f8fafc',
+              surface: '#ffffff',
+              'text-main': '#000000',
+              'text-muted': '#64748b',
+              'dark-bg': '#090e1a',
+              'dark-surface': '#131d33',
+              'dark-raised': '#1c2b4c',
+              'dark-text': '#f8fafc',
+              'dark-muted': '#94a3b8',
             }
+          },
+          borderRadius: {
+            'qf-sm': '4px',
+            'qf-md': '8px',
+            'qf-lg': '12px',
+            'qf-xl': '16px',
+          },
+          boxShadow: {
+            'qf-sm': '0 2px 4px -1px rgba(30, 58, 138, 0.05)',
+            'qf-md': '0 8px 12px -3px rgba(30, 58, 138, 0.08)',
+            'qf-hover': '0 15px 20px -5px rgba(30, 58, 138, 0.12), 0 8px 8px -5px rgba(30, 58, 138, 0.06)',
           }
         }
       }
-    }
+    };
   </script>
   
-  <!-- Google Fonts: Inter -->
+  <!-- Google Fonts: Montserrat & Roboto Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   
   <style>
+    :root {
+      /* Core Brand Colors */
+      --color-primary: #1e3a8a;
+      --color-primary-dark: #172554;
+      --color-primary-light: #3b82f6;
+      --color-primary-bg: rgba(30, 58, 138, 0.05);
+
+      --color-secondary: #0d9488;
+      --color-secondary-light: #14b8a6;
+      --color-secondary-dark: #0f766e;
+
+      --color-tertiary: #2dd4bf;
+      --color-tertiary-light: #5eead4;
+
+      --color-neutral-bg: #f8fafc;
+      --color-surface: #ffffff;
+
+      --color-text-main: #000000;
+      --color-text-muted: #64748b;
+      --color-text-on-dark: #ffffff;
+
+      /* Dark Mode Tokens */
+      --color-neutral-bg-dark: #090e1a;
+      --color-surface-dark: #131d33;
+      --color-surface-raised-dark: #1c2b4c;
+      --color-text-main-dark: #f8fafc;
+      --color-text-muted-dark: #94a3b8;
+
+      /* Gradients */
+      --gradient-affinity-hero: linear-gradient(135deg, #1e3a8a 0%, #0d9488 100%);
+      --gradient-pocket-highlight: linear-gradient(180deg, rgba(30,58,138,0.08) 0%, rgba(13,148,136,0.02) 100%);
+      --gradient-mint-glow: linear-gradient(90deg, #2dd4bf 0%, #14b8a6 100%);
+      --gradient-progress: linear-gradient(90deg, #2dd4bf 0%, #0d9488 100%);
+
+      /* Typography */
+      --font-primary: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-technical: 'Roboto Mono', 'Fira Code', monospace;
+
+      /* Shapes & Radii */
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --radius-xl: 16px;
+
+      /* Motion */
+      --ease-binding: cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-binding: 200ms var(--ease-binding);
+    }
+
     body {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-family: var(--font-primary);
       touch-action: manipulation;
     }
+
+    .font-technical, .font-mono {
+      font-family: var(--font-technical);
+    }
+
     .custom-scrollbar::-webkit-scrollbar {
       width: 6px;
       height: 6px;
     }
     .custom-scrollbar::-webkit-scrollbar-track {
-      background: rgba(0, 0, 0, 0.05);
+      background: rgba(30, 58, 138, 0.04);
     }
     .custom-scrollbar::-webkit-scrollbar-thumb {
-      background: rgba(156, 163, 175, 0.5);
+      background: rgba(13, 148, 136, 0.35);
       border-radius: 4px;
     }
-    /* Estilos de opciones */
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: rgba(13, 148, 136, 0.7);
+    }
+
+    /* Estilos de opciones con alta afinidad cinemática */
     .opt-btn {
-      transition: all 0.15s ease-in-out;
+      transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
     }
     .opt-btn:hover {
-      transform: translateY(-1px);
+      transform: translateY(-2px);
     }
+
     .opt-selected-exam {
-      background-color: #dbeafe !important;
-      border-color: #2563eb !important;
-      color: #1e40af !important;
-      font-weight: 600;
+      background-color: rgba(30, 58, 138, 0.08) !important;
+      border-color: #1e3a8a !important;
+      color: #1e3a8a !important;
+      font-weight: 700;
     }
     .dark .opt-selected-exam {
-      background-color: #1e3a8a !important;
-      border-color: #60a5fa !important;
-      color: #eff6ff !important;
+      background-color: rgba(45, 212, 191, 0.12) !important;
+      border-color: #2dd4bf !important;
+      color: #5eead4 !important;
+      font-weight: 700;
     }
+
     .opt-correct {
-      background-color: #16a34a !important;
-      border-color: #15803d !important;
+      background-color: #0d9488 !important;
+      border-color: #0f766e !important;
       color: #ffffff !important;
-      font-weight: 600;
+      font-weight: 700;
     }
+    .dark .opt-correct {
+      background-color: #0f766e !important;
+      border-color: #14b8a6 !important;
+      color: #ffffff !important;
+      font-weight: 700;
+    }
+
     .opt-incorrect {
-      background-color: #dc2626 !important;
-      border-color: #b91c1c !important;
+      background-color: #e11d48 !important;
+      border-color: #be123c !important;
       color: #ffffff !important;
+      font-weight: 700;
     }
+    .dark .opt-incorrect {
+      background-color: #9f1239 !important;
+      border-color: #fb7185 !important;
+      color: #ffffff !important;
+      font-weight: 700;
+    }
+
     .opt-revealed {
-      border: 2px solid #2563eb !important;
-      background-color: #eff6ff !important;
-      color: #1e40af !important;
-      font-weight: 600;
+      border: 2px solid #0d9488 !important;
+      background-color: rgba(13, 148, 136, 0.08) !important;
+      color: #0f766e !important;
+      font-weight: 700;
     }
     .dark .opt-revealed {
-      background-color: #1e293b !important;
-      border-color: #3b82f6 !important;
-      color: #93c5fd !important;
+      background-color: #1c2b4c !important;
+      border-color: #2dd4bf !important;
+      color: #5eead4 !important;
+      font-weight: 700;
     }
+
     .opt-annulled {
       background-color: #fef3c7 !important;
       border-color: #f59e0b !important;
       color: #92400e !important;
+      font-weight: 700;
     }
     .dark .opt-annulled {
       background-color: #78350f !important;
       border-color: #d97706 !important;
       color: #fef3c7 !important;
+      font-weight: 700;
     }
   </style>
 
   <!-- Pre-cargador de datos oficial -->
   <script src="data/exams.js"></script>
 </head>
-<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
+<body class="bg-[#f8fafc] dark:bg-[#090e1a] text-black dark:text-[#f8fafc] min-h-screen flex flex-col transition-colors duration-200">
 
-  <!-- NAVBAR PRINCIPAL -->
-  <header class="sticky top-0 z-40 bg-white/90 dark:bg-slate-800/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-700 shadow-sm">
+  <!-- NAVBAR PRINCIPAL QFDOS STRUCTURAL AFFINITY -->
+  <header class="sticky top-0 z-40 bg-white/95 dark:bg-[#131d33]/95 backdrop-blur-md border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c] shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
       
-      <!-- Logo & Título -->
+      <!-- Logo & Título con Gradiente Affinity Hero -->
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 text-white flex items-center justify-center font-bold text-xl shadow-md">
+        <div class="w-10 h-10 rounded-[10px] bg-gradient-to-br from-[#1e3a8a] to-[#0d9488] text-white flex items-center justify-center font-black text-xl shadow-md border border-white/20 tracking-wider">
           FIR
         </div>
         <div>
-          <h1 class="text-lg font-bold text-slate-900 dark:text-white leading-tight flex items-center gap-2">
+          <h1 class="text-base sm:text-lg font-extrabold text-[#1e3a8a] dark:text-white leading-tight flex items-center gap-2">
             Simulador Oficial FIR
-            <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900/60 dark:text-blue-300">
+            <span class="font-mono text-[11px] font-bold px-2 py-0.5 rounded-[4px] bg-[#0d9488]/10 text-[#0d9488] dark:bg-[#2dd4bf]/20 dark:text-[#2dd4bf] border border-[#0d9488]/20">
               2020 - 2025
             </span>
+            <span class="hidden xl:inline-block font-mono text-[10px] font-semibold px-2 py-0.5 rounded-[4px] bg-[#1e3a8a]/10 text-[#1e3a8a] dark:bg-[#3b82f6]/20 dark:text-[#93c5fd]">
+              2627 QFDOS
+            </span>
           </h1>
-          <p class="text-xs text-slate-500 dark:text-slate-400 hidden sm:block">
-            Ministerio de Sanidad · Cuadernos y Plantillas Oficiales
+          <p class="text-xs text-[#64748b] dark:text-[#94a3b8] font-medium hidden sm:block">
+            Ministerio de Sanidad · Cuadernos y Plantillas Oficiales · Baremo (+3 / -1 / 0)
           </p>
         </div>
       </div>
 
-      <!-- Selectores de Examen y Modo -->
-      <div class="flex items-center gap-2 sm:gap-4">
-        <!-- Selector de Año -->
-        <div class="flex items-center bg-slate-100 dark:bg-slate-700 rounded-lg p-1">
-          <label for="year-select" class="text-xs font-medium text-slate-500 dark:text-slate-300 px-2 hidden md:inline">Año:</label>
-          <select id="year-select" class="bg-transparent text-sm font-semibold text-slate-800 dark:text-slate-100 focus:outline-none cursor-pointer py-1 px-2 rounded-md">
-            <option value="2025">FIR 2025</option>
-            <option value="2024">FIR 2024</option>
-            <option value="2023">FIR 2023</option>
-            <option value="2022">FIR 2022</option>
-            <option value="2021">FIR 2021</option>
-            <option value="2020">FIR 2020</option>
-            <option value="random">Mega-Mix Aleatorio</option>
+      <!-- Selectores de Examen, Modo y Configuración -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Selector de Año Oficial -->
+        <div class="flex items-center bg-[#1e3a8a]/5 dark:bg-[#1c2b4c] border border-[#1e3a8a]/10 dark:border-[#2dd4bf]/20 rounded-[8px] p-1">
+          <label for="year-select" class="text-xs font-bold font-mono text-[#1e3a8a] dark:text-[#2dd4bf] px-2 hidden md:inline">AÑO:</label>
+          <select id="year-select" class="bg-transparent text-xs sm:text-sm font-mono font-bold text-slate-900 dark:text-slate-100 focus:outline-none cursor-pointer py-1 px-1.5 rounded-[6px]">
+            <option value="2025" class="bg-white dark:bg-[#131d33] text-black dark:text-white">FIR 2025</option>
+            <option value="2024" class="bg-white dark:bg-[#131d33] text-black dark:text-white">FIR 2024</option>
+            <option value="2023" class="bg-white dark:bg-[#131d33] text-black dark:text-white">FIR 2023</option>
+            <option value="2022" class="bg-white dark:bg-[#131d33] text-black dark:text-white">FIR 2022</option>
+            <option value="2021" class="bg-white dark:bg-[#131d33] text-black dark:text-white">FIR 2021</option>
+            <option value="2020" class="bg-white dark:bg-[#131d33] text-black dark:text-white">FIR 2020</option>
+            <option value="random" class="bg-white dark:bg-[#131d33] text-black dark:text-white">Mega-Mix Aleatorio</option>
           </select>
         </div>
 
-        <!-- Selector de Modo -->
-        <div class="hidden lg:flex items-center bg-slate-100 dark:bg-slate-700 rounded-lg p-1 text-xs font-medium">
-          <button id="mode-study-btn" class="px-3 py-1.5 rounded-md transition-all text-slate-600 dark:text-slate-300 hover:text-slate-900">
+        <!-- Selector de Modo (Estudio vs Simulacro Real) -->
+        <div class="hidden lg:flex items-center bg-[#1e3a8a]/5 dark:bg-[#1c2b4c] border border-[#1e3a8a]/10 dark:border-[#2dd4bf]/20 rounded-[8px] p-1 text-xs font-semibold">
+          <button id="mode-study-btn" class="px-3 py-1.5 rounded-[6px] transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] text-[#64748b] dark:text-[#94a3b8] hover:text-black dark:hover:text-white font-medium">
             Modo Estudio
           </button>
-          <button id="mode-exam-btn" class="px-3 py-1.5 rounded-md transition-all bg-white dark:bg-slate-600 shadow-sm font-semibold text-blue-600 dark:text-blue-300">
+          <button id="mode-exam-btn" class="px-3 py-1.5 rounded-[6px] transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] bg-[#1e3a8a] text-white shadow-sm font-bold">
             Simulacro Real
           </button>
         </div>
 
         <!-- Botón Rejilla Móvil -->
-        <button id="toggle-grid-mobile-btn" class="lg:hidden p-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200" title="Ver hoja de respuestas">
+        <button id="toggle-grid-mobile-btn" class="lg:hidden p-2 rounded-[8px] bg-[#1e3a8a]/5 dark:bg-[#1c2b4c] border border-[#1e3a8a]/10 dark:border-[#2dd4bf]/20 text-[#1e3a8a] dark:text-[#2dd4bf] hover:bg-[#1e3a8a]/10 transition-colors" title="Ver hoja de respuestas">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>
         </button>
 
         <!-- Dark Mode Toggle -->
-        <button id="dark-mode-toggle" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors" title="Cambiar tema">
+        <button id="dark-mode-toggle" class="p-2 rounded-[8px] bg-[#1e3a8a]/5 dark:bg-[#1c2b4c] border border-[#1e3a8a]/10 dark:border-[#2dd4bf]/20 text-[#1e3a8a] dark:text-[#2dd4bf] hover:bg-[#1e3a8a]/10 dark:hover:bg-[#1c2b4c]/80 transition-colors" title="Cambiar tema">
           <svg id="sun-icon" class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg>
           <svg id="moon-icon" class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
         </button>
@@ -173,84 +281,100 @@
     </div>
   </header>
 
+  <!-- BARRA DE PROGRESO GLOBAL QFDOS (Mint to Teal Gradient) -->
+  <div class="sticky top-16 z-30 w-full bg-slate-200/80 dark:bg-[#1c2b4c] h-1.5 overflow-hidden">
+    <div id="progress-bar-fill" class="h-full transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]" style="width: 0%; background: linear-gradient(90deg, #2dd4bf 0%, #0d9488 100%);"></div>
+  </div>
+
   <!-- CONTENEDOR PRINCIPAL -->
   <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col lg:flex-row gap-6">
 
     <!-- COLUMNA PRINCIPAL (PREGUNTA ACTIVA) -->
     <section class="flex-1 flex flex-col gap-4">
 
-      <!-- Barra de Estado Superior -->
-      <div class="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-wrap items-center justify-between gap-3">
+      <!-- Barra de Estado Superior de la Pregunta -->
+      <div class="bg-white dark:bg-[#131d33] rounded-[12px] p-4 shadow-sm border border-[#1e3a8a]/10 dark:border-[#1c2b4c] flex flex-wrap items-center justify-between gap-3">
         <div class="flex items-center gap-3">
-          <span id="current-q-badge" class="bg-blue-600 text-white font-bold px-3 py-1 rounded-lg text-sm shadow-sm">
+          <span id="current-q-badge" class="bg-[#1e3a8a] text-white font-mono font-bold px-3 py-1 rounded-[8px] text-sm shadow-sm tracking-tight">
             Pregunta 1
           </span>
-          <span id="exam-progress-text" class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400">
+          <span id="exam-progress-text" class="font-mono text-xs sm:text-sm font-semibold text-[#64748b] dark:text-[#94a3b8]">
             1 de 210
           </span>
-          <span id="status-flag-badge" class="hidden text-xs px-2.5 py-0.5 rounded-full font-semibold bg-amber-100 text-amber-800 dark:bg-amber-900/60 dark:text-amber-200">
+          <span id="status-flag-badge" class="hidden font-mono text-xs px-2.5 py-0.5 rounded-[6px] font-bold bg-amber-100 text-amber-800 dark:bg-amber-900/60 dark:text-amber-200 border border-amber-300 dark:border-amber-700">
             Revisar ⚑
           </span>
-          <span id="status-annulled-badge" class="hidden text-xs px-2.5 py-0.5 rounded-full font-semibold bg-red-100 text-red-800 dark:bg-red-900/60 dark:text-red-200">
+          <span id="status-annulled-badge" class="hidden font-mono text-xs px-2.5 py-0.5 rounded-[6px] font-bold bg-rose-100 text-rose-800 dark:bg-rose-900/60 dark:text-rose-200 border border-rose-300 dark:border-rose-700">
             Anulada Oficial
           </span>
         </div>
 
         <div class="flex items-center gap-3">
-          <!-- Temporizador Oficial (Modo Examen) -->
-          <div id="timer-container" class="flex items-center gap-2 bg-slate-100 dark:bg-slate-700/80 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-mono font-bold text-slate-700 dark:text-slate-200">
-            <svg class="w-4 h-4 text-blue-600 dark:text-blue-400 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <!-- Temporizador Oficial (Modo Examen - 4h 30m) -->
+          <div id="timer-container" class="flex items-center gap-2 bg-[#172554] text-[#2dd4bf] px-3.5 py-1.5 rounded-[8px] text-xs sm:text-sm font-mono font-bold border-l-4 border-[#2dd4bf] shadow-sm">
+            <svg class="w-4 h-4 text-[#2dd4bf] animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
             <span id="timer-display">04:30:00</span>
           </div>
 
-          <!-- Puntuación rápida (Modo Estudio) -->
-          <div id="study-score-display" class="hidden text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-300">
-            Aciertos: <span id="score-correct-num" class="text-emerald-600 dark:text-emerald-400 font-bold">0</span> | Fallos: <span id="score-wrong-num" class="text-rose-600 dark:text-rose-400 font-bold">0</span>
+          <!-- Puntuación Rápida en Vivo (Modo Estudio) -->
+          <div id="study-score-display" class="hidden font-mono text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200 bg-[#1e3a8a]/5 dark:bg-[#1c2b4c] px-3.5 py-1.5 rounded-[8px] border border-[#1e3a8a]/10 dark:border-[#2dd4bf]/20">
+            Aciertos: <span id="score-correct-num" class="text-[#0d9488] dark:text-[#2dd4bf] font-bold">0</span> | Fallos: <span id="score-wrong-num" class="text-rose-600 dark:text-rose-400 font-bold">0</span>
           </div>
         </div>
       </div>
 
-      <!-- TARJETA DE PREGUNTA -->
-      <article class="bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col flex-1">
+      <!-- TARJETA PRINCIPAL DE LA PREGUNTA (12px Radius, 4px Navy Accent) -->
+      <article class="bg-white dark:bg-[#131d33] rounded-[12px] p-6 sm:p-8 shadow-md border-t-4 border-[#1e3a8a] border-x border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c] flex flex-col flex-1 transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)]">
         
-        <!-- Enunciado de la Pregunta -->
+        <!-- Enunciado de la Pregunta (Pure Black para máxima legibilidad) -->
         <div class="mb-6">
-          <p id="question-text" class="text-base sm:text-lg lg:text-xl font-medium text-slate-900 dark:text-slate-100 leading-relaxed">
+          <p id="question-text" class="text-base sm:text-lg lg:text-xl font-bold text-black dark:text-[#f8fafc] leading-relaxed">
             Cargando pregunta...
           </p>
         </div>
 
         <!-- Contenedor de Imagen de Estructura / Figura Oficial -->
-        <div id="image-container" class="hidden mb-6 p-4 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700 flex flex-col items-center justify-center">
-          <div class="flex items-center gap-2 mb-2 text-xs font-semibold text-slate-500 dark:text-slate-400">
-            <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-            Figura / Estructura Oficial (clic para ampliar)
+        <div id="image-container" class="hidden mb-6 p-4 rounded-[12px] bg-[#1e3a8a]/5 dark:bg-[#1c2b4c]/50 border border-[#1e3a8a]/15 dark:border-[#2dd4bf]/20 flex flex-col items-center justify-center">
+          <div class="flex items-center gap-2 mb-2.5 font-mono text-xs font-bold text-[#1e3a8a] dark:text-[#2dd4bf]">
+            <svg class="w-4 h-4 text-[#0d9488] dark:text-[#2dd4bf]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            Figura / Estructura Química Oficial (clic para ampliar)
           </div>
-          <img id="question-image" src="" alt="Estructura química oficial" class="max-h-72 max-w-full rounded-lg shadow-sm cursor-zoom-in hover:opacity-95 transition-opacity bg-white p-2 border border-slate-200 dark:border-slate-600">
+          <img id="question-image" src="" alt="Estructura química oficial" class="max-h-72 max-w-full rounded-[8px] shadow-sm cursor-zoom-in hover:opacity-95 transition-opacity bg-white p-2 border border-slate-200 dark:border-[#1c2b4c]">
         </div>
 
-        <!-- Contenedor de Opciones (1, 2, 3, 4) -->
-        <div id="options-container" class="grid grid-cols-1 gap-3 sm:gap-4 my-2">
+        <!-- Contenedor de Opciones (1, 2, 3, 4) con radio 12px y hover lift -->
+        <div id="options-container" class="grid grid-cols-1 gap-3 sm:gap-3.5 my-2">
           <!-- Opciones inyectadas dinámicamente -->
         </div>
 
-        <!-- Feedback Mensaje (Modo Estudio) -->
-        <div id="feedback-container" class="mt-6 hidden p-4 rounded-xl text-center font-bold text-base transition-all">
+        <!-- Feedback Mensaje (Modo Estudio) con llamada técnica QFDOS -->
+        <div id="feedback-container" class="mt-6 hidden p-4 rounded-[8px] font-mono text-sm sm:text-base font-bold text-center border-l-4 transition-all">
           <span id="feedback-text"></span>
         </div>
 
       </article>
 
+      <!-- CALLOUT TÉCNICO QFDOS (Parámetros y Atajos de Teclado) -->
+      <div class="bg-[#172554] text-white p-3.5 sm:p-4 rounded-[8px] font-mono text-xs sm:text-sm border-l-4 border-[#2dd4bf] shadow-sm flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-2">
+          <span class="text-[#2dd4bf] text-xs uppercase tracking-wider font-bold">// Control FIR</span>
+          <span class="text-slate-300 hidden sm:inline">| Baremo Oficial: +3 (acierto) / -1 (fallo) / 0 (blanco)</span>
+        </div>
+        <div class="flex items-center gap-2 text-xs text-slate-300">
+          <span>Atajos: <kbd class="bg-[#1e3a8a] text-white px-1.5 py-0.5 rounded text-[11px] font-mono font-semibold">1-4</kbd> <kbd class="bg-[#1e3a8a] text-white px-1.5 py-0.5 rounded text-[11px] font-mono font-semibold">← / →</kbd> <kbd class="bg-[#1e3a8a] text-white px-1.5 py-0.5 rounded text-[11px] font-mono font-semibold">M</kbd></span>
+        </div>
+      </div>
+
       <!-- BARRA DE ACCIÓN Y NAVEGACIÓN INFERIOR -->
-      <footer class="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-wrap items-center justify-between gap-3">
+      <footer class="bg-white dark:bg-[#131d33] rounded-[12px] p-4 shadow-sm border border-[#1e3a8a]/10 dark:border-[#1c2b4c] flex flex-wrap items-center justify-between gap-3">
         
         <div class="flex items-center gap-2">
-          <button id="prev-btn" class="px-4 py-2.5 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 font-semibold text-sm transition-colors flex items-center gap-1.5">
+          <button id="prev-btn" class="px-4 py-2.5 rounded-[8px] bg-slate-100 hover:bg-slate-200 dark:bg-[#1c2b4c] dark:hover:bg-[#1c2b4c]/80 text-[#1e3a8a] dark:text-[#f8fafc] font-bold text-sm transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 flex items-center gap-1.5">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
             Anterior
           </button>
 
-          <button id="flag-btn" class="px-3.5 py-2.5 rounded-lg bg-amber-50 hover:bg-amber-100 dark:bg-amber-900/30 dark:hover:bg-amber-900/50 text-amber-700 dark:text-amber-300 font-medium text-sm transition-colors flex items-center gap-1.5" title="Marcar para revisar (Atajo: M)">
+          <button id="flag-btn" class="px-3.5 py-2.5 rounded-[8px] bg-amber-50 hover:bg-amber-100 dark:bg-amber-950/30 dark:hover:bg-amber-900/50 text-amber-800 dark:text-amber-300 font-bold text-sm transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 flex items-center gap-1.5" title="Marcar para revisar (Atajo: M)">
             <span>⚑</span>
             <span class="hidden sm:inline">Duda</span>
           </button>
@@ -258,22 +382,22 @@
 
         <div class="flex items-center gap-2">
           <!-- Botón Ver Respuesta (Modo Estudio) -->
-          <button id="show-answer-btn" class="hidden px-4 py-2.5 rounded-lg bg-indigo-50 hover:bg-indigo-100 dark:bg-indigo-900/30 dark:hover:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 font-semibold text-sm transition-colors">
+          <button id="show-answer-btn" class="hidden px-4 py-2.5 rounded-[8px] bg-[#0d9488]/15 hover:bg-[#0d9488]/25 dark:bg-[#0d9488]/25 dark:hover:bg-[#0d9488]/35 text-[#0d9488] dark:text-[#2dd4bf] font-bold text-sm transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5">
             Ver Respuesta
           </button>
 
           <!-- Botón Borrar Respuesta Seleccionada -->
-          <button id="clear-ans-btn" class="hidden px-3 py-2.5 rounded-lg text-slate-500 hover:text-rose-600 dark:text-slate-400 dark:hover:text-rose-400 font-medium text-xs transition-colors" title="Dejar en blanco">
+          <button id="clear-ans-btn" class="hidden px-3 py-2.5 rounded-[8px] text-[#64748b] hover:text-rose-600 dark:text-[#94a3b8] dark:hover:text-rose-400 font-semibold text-xs transition-colors" title="Dejar en blanco">
             Dejar en blanco
           </button>
 
           <!-- Botón Finalizar Examen (Modo Simulacro) -->
-          <button id="finish-exam-btn" class="px-4 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm shadow-sm transition-colors">
+          <button id="finish-exam-btn" class="px-4 py-2.5 rounded-[8px] bg-gradient-to-r from-[#0d9488] to-[#0f766e] hover:from-[#14b8a6] hover:to-[#0d9488] text-white font-bold text-sm shadow-md transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5">
             Finalizar Examen
           </button>
 
           <!-- Botón Siguiente -->
-          <button id="next-btn" class="px-5 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm shadow-md transition-colors flex items-center gap-1.5">
+          <button id="next-btn" class="px-5 py-2.5 rounded-[8px] bg-[#1e3a8a] hover:bg-[#172554] dark:bg-[#1e3a8a] dark:hover:bg-[#3b82f6] text-white font-bold text-sm shadow-md transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 flex items-center gap-1.5">
             Siguiente
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
           </button>
@@ -283,56 +407,56 @@
 
     </section>
 
-    <!-- COLUMNA LATERAL: HOJA DE RESPUESTAS OFICIAL (REJILLA DE 210) -->
+    <!-- COLUMNA LATERAL: HOJA DE RESPUESTAS OFICIAL (REJILLA DE 210 PREGUNTAS) -->
     <aside id="grid-sidebar" class="lg:w-84 xl:w-96 flex flex-col gap-4">
 
-      <!-- Panel Hoja de Respuestas -->
-      <div class="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-slate-200 dark:border-slate-700 flex flex-col h-[calc(100vh-8.5rem)] sticky top-20">
+      <!-- Panel Hoja de Respuestas (12px Radius, 4px Navy Accent) -->
+      <div class="bg-white dark:bg-[#131d33] rounded-[12px] p-5 shadow-md border-t-4 border-[#1e3a8a] border-x border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c] flex flex-col h-[calc(100vh-8.5rem)] sticky top-20">
         
-        <div class="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-700">
+        <div class="flex items-center justify-between pb-3 border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c]">
           <div>
-            <h2 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base flex items-center gap-2">
+            <h2 class="font-extrabold text-[#1e3a8a] dark:text-white text-sm sm:text-base flex items-center gap-2">
               Hoja de Respuestas
-              <span id="grid-count-badge" class="text-xs bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-0.5 rounded-full font-mono">
+              <span id="grid-count-badge" class="font-mono text-xs bg-[#0d9488]/10 text-[#0d9488] dark:bg-[#2dd4bf]/20 dark:text-[#2dd4bf] px-2 py-0.5 rounded-[4px] font-bold border border-[#0d9488]/20">
                 210
               </span>
             </h2>
-            <p class="text-xs text-slate-500 dark:text-slate-400">Plantilla oficial del aspirante</p>
+            <p class="text-xs text-[#64748b] dark:text-[#94a3b8] font-medium">Plantilla oficial del aspirante</p>
           </div>
           
-          <button id="reset-exam-btn" class="text-xs text-slate-400 hover:text-rose-600 dark:hover:text-rose-400 font-medium transition-colors" title="Reiniciar simulacro">
+          <button id="reset-exam-btn" class="font-mono text-xs text-[#64748b] hover:text-rose-600 dark:text-[#94a3b8] dark:hover:text-rose-400 font-semibold transition-colors" title="Reiniciar simulacro">
             Reiniciar
           </button>
         </div>
 
         <!-- Leyenda interactiva -->
-        <div class="grid grid-cols-3 gap-2 py-3 text-xs border-b border-slate-200 dark:border-slate-700">
-          <div class="flex items-center gap-1.5 text-slate-600 dark:text-slate-400">
-            <span class="w-3 h-3 rounded-full bg-blue-600"></span> Respondidas (<span id="count-answered">0</span>)
+        <div class="grid grid-cols-3 gap-2 py-3 text-xs font-mono border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c]">
+          <div class="flex items-center gap-1.5 text-slate-700 dark:text-slate-300">
+            <span class="w-3 h-3 rounded-[3px] bg-[#1e3a8a]"></span> Resp. (<span id="count-answered">0</span>)
           </div>
-          <div class="flex items-center gap-1.5 text-slate-600 dark:text-slate-400">
-            <span class="w-3 h-3 rounded-full bg-amber-400"></span> Dudas (<span id="count-flagged">0</span>)
+          <div class="flex items-center gap-1.5 text-slate-700 dark:text-slate-300">
+            <span class="w-3 h-3 rounded-[3px] bg-amber-400"></span> Duda (<span id="count-flagged">0</span>)
           </div>
-          <div class="flex items-center gap-1.5 text-slate-600 dark:text-slate-400">
-            <span class="w-3 h-3 rounded-full bg-slate-200 dark:bg-slate-600"></span> Blancos (<span id="count-unanswered">210</span>)
+          <div class="flex items-center gap-1.5 text-slate-700 dark:text-slate-300">
+            <span class="w-3 h-3 rounded-[3px] bg-slate-200 dark:bg-[#1c2b4c]"></span> Blan. (<span id="count-unanswered">210</span>)
           </div>
         </div>
 
-        <!-- Rejilla de Números con scroll suave -->
+        <!-- Rejilla de Números con scroll suave y font-mono -->
         <div id="questions-grid" class="flex-1 overflow-y-auto custom-scrollbar p-1 grid grid-cols-5 sm:grid-cols-6 gap-2 my-2 content-start">
           <!-- Botones inyectados dinámicamente -->
         </div>
 
-        <!-- Documentos Oficiales en PDF -->
-        <div class="pt-3 border-t border-slate-200 dark:border-slate-700 flex flex-col gap-2">
-          <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">Documentación Oficial del Ministerio:</span>
+        <!-- Documentos Oficiales en PDF del Ministerio -->
+        <div class="pt-3 border-t border-[#1e3a8a]/10 dark:border-[#1c2b4c] flex flex-col gap-2">
+          <span class="text-xs font-bold text-[#1e3a8a] dark:text-[#2dd4bf]">Documentos Oficiales del Ministerio:</span>
           <div class="flex items-center gap-2">
-            <a id="download-booklet-link" href="#" target="_blank" class="flex-1 text-center py-2 px-3 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 transition-colors flex items-center justify-center gap-1.5">
+            <a id="download-booklet-link" href="#" target="_blank" class="flex-1 text-center py-2 px-3 rounded-[8px] text-xs font-bold bg-[#1e3a8a]/5 hover:bg-[#1e3a8a]/10 dark:bg-[#1c2b4c] dark:hover:bg-[#1c2b4c]/80 text-[#1e3a8a] dark:text-[#f8fafc] border border-[#1e3a8a]/10 dark:border-[#1c2b4c] transition-all duration-200 hover:-translate-y-0.5 flex items-center justify-center gap-1.5">
               <svg class="w-3.5 h-3.5 text-rose-500" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"></path></svg>
               Cuaderno PDF
             </a>
-            <a id="download-answers-link" href="#" target="_blank" class="flex-1 text-center py-2 px-3 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 transition-colors flex items-center justify-center gap-1.5">
-              <svg class="w-3.5 h-3.5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+            <a id="download-answers-link" href="#" target="_blank" class="flex-1 text-center py-2 px-3 rounded-[8px] text-xs font-bold bg-[#0d9488]/10 hover:bg-[#0d9488]/20 dark:bg-[#0d9488]/20 dark:hover:bg-[#0d9488]/30 text-[#0d9488] dark:text-[#2dd4bf] border border-[#0d9488]/20 dark:border-[#2dd4bf]/20 transition-all duration-200 hover:-translate-y-0.5 flex items-center justify-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-[#0d9488] dark:text-[#2dd4bf]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
               Plantilla PDF
             </a>
           </div>
@@ -345,85 +469,85 @@
   </main>
 
   <!-- MODAL DE PANTALLA COMPLETA PARA ZOOM DE ESTRUCTURA QUÍMICA / FIGURA -->
-  <div id="image-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden flex items-center justify-center p-4">
-    <div class="relative max-w-4xl w-full bg-white dark:bg-slate-800 rounded-2xl shadow-2xl overflow-hidden flex flex-col border border-slate-200 dark:border-slate-700 animate-in fade-in zoom-in duration-200">
-      <div class="p-4 bg-slate-100 dark:bg-slate-700/60 flex items-center justify-between border-b border-slate-200 dark:border-slate-600">
-        <h3 id="modal-title" class="font-bold text-slate-800 dark:text-slate-100 text-sm sm:text-base">
-          Estructura Química en Alta Resolución
+  <div id="image-modal" class="fixed inset-0 z-50 bg-[#090e1a]/85 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="relative max-w-4xl w-full bg-white dark:bg-[#131d33] rounded-[12px] shadow-2xl overflow-hidden flex flex-col border-t-4 border-[#1e3a8a] border-x border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c] animate-in fade-in zoom-in duration-200">
+      <div class="p-4 bg-slate-50 dark:bg-[#1c2b4c]/60 flex items-center justify-between border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c]">
+        <h3 id="modal-title" class="font-extrabold text-[#1e3a8a] dark:text-white text-sm sm:text-base">
+          Estructura Química en Alta Resolución · Cuaderno Oficial
         </h3>
-        <button id="close-modal-btn" class="p-1.5 rounded-lg text-slate-500 hover:text-slate-800 dark:hover:text-white bg-white dark:bg-slate-800 shadow-sm transition-colors">
+        <button id="close-modal-btn" class="p-1.5 rounded-[8px] text-[#64748b] hover:text-[#1e3a8a] dark:hover:text-white bg-white dark:bg-[#131d33] border border-slate-200 dark:border-[#1c2b4c] shadow-sm transition-colors">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
       </div>
       <div class="p-6 flex items-center justify-center bg-white min-h-[300px]">
         <img id="modal-image" src="" alt="Estructura oficial" class="max-h-[75vh] max-w-full object-contain">
       </div>
-      <div class="p-3 bg-slate-50 dark:bg-slate-900/60 text-center text-xs text-slate-500 dark:text-slate-400">
-        Presione <kbd class="px-1.5 py-0.5 rounded bg-slate-200 dark:bg-slate-700 font-mono">Esc</kbd> o haga clic fuera para cerrar
+      <div class="p-3 bg-slate-50 dark:bg-[#1c2b4c]/40 text-center font-mono text-xs text-[#64748b] dark:text-[#94a3b8]">
+        Presione <kbd class="px-1.5 py-0.5 rounded bg-slate-200 dark:bg-[#131d33] font-mono font-bold">Esc</kbd> o haga clic fuera para cerrar
       </div>
     </div>
   </div>
 
   <!-- MODAL DE RESULTADOS FINALES DEL SIMULACRO FIR -->
-  <div id="results-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden flex items-center justify-center p-4 overflow-y-auto">
-    <div class="relative max-w-2xl w-full bg-white dark:bg-slate-800 rounded-3xl shadow-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700 animate-in zoom-in-95 duration-200 my-8">
+  <div id="results-modal" class="fixed inset-0 z-50 bg-[#090e1a]/85 backdrop-blur-md hidden flex items-center justify-center p-4 overflow-y-auto">
+    <div class="relative max-w-2xl w-full bg-white dark:bg-[#131d33] rounded-[16px] shadow-2xl p-6 sm:p-8 border-t-4 border-[#0d9488] border-x border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c] animate-in zoom-in-95 duration-200 my-8">
       
       <div class="text-center mb-6">
-        <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-500 text-white flex items-center justify-center text-3xl font-extrabold mx-auto mb-3 shadow-lg">
+        <div class="w-16 h-16 rounded-[12px] bg-gradient-to-tr from-[#1e3a8a] to-[#0d9488] text-white flex items-center justify-center text-3xl font-black mx-auto mb-3 shadow-lg">
           ✓
         </div>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-[#1e3a8a] dark:text-white">
           Resultados Oficiales del Simulacro
         </h2>
-        <p id="results-subtitle" class="text-sm text-slate-500 dark:text-slate-400 mt-1">
+        <p id="results-subtitle" class="font-mono text-sm text-[#64748b] dark:text-[#94a3b8] mt-1">
           Examen FIR Convocatoria 2025 · Baremo Ministerio de Sanidad
         </p>
       </div>
 
-      <!-- Cuadro Principal de Puntuación FIR -->
-      <div class="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-slate-700/60 dark:to-slate-800/80 rounded-2xl p-6 mb-6 border border-blue-100 dark:border-slate-600 text-center">
-        <span class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">
+      <!-- Cuadro Principal de Puntuación FIR con Pocket Highlight Gradient -->
+      <div class="bg-gradient-to-br from-[#1e3a8a]/5 to-[#0d9488]/10 dark:from-[#172554] dark:to-[#1c2b4c] rounded-[12px] p-6 mb-6 border border-[#1e3a8a]/15 dark:border-[#2dd4bf]/20 text-center">
+        <span class="font-mono text-xs font-bold uppercase tracking-wider text-[#1e3a8a] dark:text-[#2dd4bf]">
           Puntuación Neta Oficial FIR (+3 / -1)
         </span>
         <div class="flex items-baseline justify-center gap-2 mt-2">
-          <span id="results-net-score" class="text-5xl sm:text-6xl font-black text-slate-900 dark:text-white tracking-tight">
+          <span id="results-net-score" class="font-mono text-5xl sm:text-6xl font-black text-[#1e3a8a] dark:text-[#2dd4bf] tracking-tight">
             0
           </span>
-          <span id="results-max-score" class="text-xl sm:text-2xl font-bold text-slate-400 dark:text-slate-500">
+          <span id="results-max-score" class="font-mono text-xl sm:text-2xl font-bold text-[#64748b] dark:text-[#94a3b8]">
             / 600 pts
           </span>
         </div>
-        <p id="results-percent-text" class="text-sm font-semibold text-slate-600 dark:text-slate-300 mt-1">
+        <p id="results-percent-text" class="font-mono text-sm font-semibold text-slate-700 dark:text-slate-200 mt-1">
           Efectividad neta: 0.0%
         </p>
       </div>
 
-      <!-- Desglose de Respuestas -->
+      <!-- Desglose de Respuestas con Números en Roboto Mono -->
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-        <div class="bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 rounded-xl p-3 text-center">
-          <span class="text-xs font-bold text-emerald-700 dark:text-emerald-300 block">Aciertos (+3)</span>
-          <span id="results-correct" class="text-2xl font-black text-emerald-600 dark:text-emerald-400">0</span>
+        <div class="bg-[#0d9488]/10 border border-[#0d9488]/30 rounded-[12px] p-3 text-center">
+          <span class="font-mono text-xs font-bold text-[#0d9488] dark:text-[#2dd4bf] block">Aciertos (+3)</span>
+          <span id="results-correct" class="font-mono text-2xl font-black text-[#0d9488] dark:text-[#2dd4bf]">0</span>
         </div>
-        <div class="bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-800 rounded-xl p-3 text-center">
-          <span class="text-xs font-bold text-rose-700 dark:text-rose-300 block">Fallos (-1)</span>
-          <span id="results-wrong" class="text-2xl font-black text-rose-600 dark:text-rose-400">0</span>
+        <div class="bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-800 rounded-[12px] p-3 text-center">
+          <span class="font-mono text-xs font-bold text-rose-700 dark:text-rose-300 block">Fallos (-1)</span>
+          <span id="results-wrong" class="font-mono text-2xl font-black text-rose-600 dark:text-rose-400">0</span>
         </div>
-        <div class="bg-slate-100 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600 rounded-xl p-3 text-center">
-          <span class="text-xs font-bold text-slate-600 dark:text-slate-300 block">En Blanco (0)</span>
-          <span id="results-blank" class="text-2xl font-black text-slate-700 dark:text-slate-200">0</span>
+        <div class="bg-slate-100 dark:bg-[#1c2b4c] border border-slate-200 dark:border-[#1c2b4c] rounded-[12px] p-3 text-center">
+          <span class="font-mono text-xs font-bold text-slate-700 dark:text-slate-300 block">En Blanco (0)</span>
+          <span id="results-blank" class="font-mono text-2xl font-black text-slate-700 dark:text-slate-200">0</span>
         </div>
-        <div class="bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 rounded-xl p-3 text-center">
-          <span class="text-xs font-bold text-amber-700 dark:text-amber-300 block">Anuladas (0)</span>
-          <span id="results-annulled" class="text-2xl font-black text-amber-600 dark:text-amber-400">0</span>
+        <div class="bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 rounded-[12px] p-3 text-center">
+          <span class="font-mono text-xs font-bold text-amber-700 dark:text-amber-300 block">Anuladas (0)</span>
+          <span id="results-annulled" class="font-mono text-2xl font-black text-amber-600 dark:text-amber-400">0</span>
         </div>
       </div>
 
-      <!-- Botones de Acción de Resultados -->
+      <!-- Botones de Acción de Resultados con Alta Afinidad -->
       <div class="flex flex-col sm:flex-row gap-3">
-        <button id="results-review-btn" class="flex-1 py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-md transition-colors text-center">
+        <button id="results-review-btn" class="flex-1 py-3 px-4 rounded-[8px] bg-[#1e3a8a] hover:bg-[#172554] text-white font-bold text-sm shadow-md transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 text-center">
           Revisar Respuestas y Fallos
         </button>
-        <button id="results-restart-btn" class="flex-1 py-3 px-4 rounded-xl bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-800 dark:text-slate-200 font-bold text-sm transition-colors text-center">
+        <button id="results-restart-btn" class="flex-1 py-3 px-4 rounded-[8px] bg-slate-100 dark:bg-[#1c2b4c] hover:bg-slate-200 dark:hover:bg-[#1c2b4c]/80 text-[#1e3a8a] dark:text-[#f8fafc] font-bold text-sm transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 text-center border border-[#1e3a8a]/10 dark:border-[#1c2b4c]">
           Hacer Otro Examen
         </button>
       </div>
@@ -431,7 +555,7 @@
     </div>
   </div>
 
-  <!-- SCRIPT LOGIC DE LA APLICACIÓN -->
+  <!-- SCRIPT LOGIC DE LA APLICACIÓN (100% PRESERVADO Y POTENCIADO) -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       // --- ESTADO DE LA APLICACIÓN ---
@@ -456,12 +580,14 @@
       const yearSelect = document.getElementById('year-select');
       const modeStudyBtn = document.getElementById('mode-study-btn');
       const modeExamBtn = document.getElementById('mode-exam-btn');
+      const toggleGridMobileBtn = document.getElementById('toggle-grid-mobile-btn');
       const darkModeToggle = document.getElementById('dark-mode-toggle');
 
       const currentQBadge = document.getElementById('current-q-badge');
       const examProgressText = document.getElementById('exam-progress-text');
       const statusFlagBadge = document.getElementById('status-flag-badge');
       const statusAnnulledBadge = document.getElementById('status-annulled-badge');
+      const progressBarFill = document.getElementById('progress-bar-fill');
 
       const timerContainer = document.getElementById('timer-container');
       const timerDisplay = document.getElementById('timer-display');
@@ -484,6 +610,7 @@
       const finishExamBtn = document.getElementById('finish-exam-btn');
       const resetExamBtn = document.getElementById('reset-exam-btn');
 
+      const gridSidebar = document.getElementById('grid-sidebar');
       const questionsGrid = document.getElementById('questions-grid');
       const gridCountBadge = document.getElementById('grid-count-badge');
       const countAnswered = document.getElementById('count-answered');
@@ -523,6 +650,16 @@
         localStorage.setItem('fir_theme', isDark ? 'dark' : 'light');
       });
 
+      // --- TOGGLE REJILLA EN DISPOSITIVOS MÓVILES ---
+      if (toggleGridMobileBtn && gridSidebar) {
+        toggleGridMobileBtn.addEventListener('click', () => {
+          gridSidebar.classList.toggle('hidden');
+          if (!gridSidebar.classList.contains('hidden')) {
+            gridSidebar.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      }
+
       // --- GESTIÓN DE EXÁMENES ---
       const bookletPaths = {
         '2020': { booklet: 'FIR2020/Cuaderno_2020_FARMACIA_0_C.pdf', answers: 'FIR2020/respuestas_2020.pdf' },
@@ -536,7 +673,7 @@
       function loadExam(year, resetState = true) {
         currentYear = year;
         if (year === 'random') {
-          // Generar mega-mix de 100 preguntas aleatorias de todos los años
+          // Generar mega-mix de 100 preguntas aleatorias de todos los años disponibles
           const allQs = [];
           for (const y of ['2020', '2021', '2022', '2023', '2024', '2025']) {
             if (window.FIR_EXAMS_DATA && window.FIR_EXAMS_DATA[y]) {
@@ -545,7 +682,7 @@
               });
             }
           }
-          // Shuffle
+          // Mezcla aleatoria uniforme
           allQs.sort(() => Math.random() - 0.5);
           examQuestions = allQs.slice(0, 100);
         } else {
@@ -565,11 +702,10 @@
           remainingSeconds = TOTAL_TIME_SECONDS;
           localStorage.removeItem(`fir_progress_${year}`);
         } else {
-          // Recuperar progreso de localStorage
           loadSavedProgress();
         }
 
-        // Actualizar links de descarga
+        // Actualizar links de descarga oficial
         const docInfo = bookletPaths[year] || bookletPaths['2025'];
         downloadBookletLink.href = docInfo.booklet;
         downloadAnswersLink.href = docInfo.answers;
@@ -586,7 +722,7 @@
         }
       }
 
-      // --- TEMPORIZADOR ---
+      // --- TEMPORIZADOR DE SIMULACRO OFICIAL (4h 30m) ---
       function startTimer() {
         stopTimer();
         timerContainer.classList.remove('hidden');
@@ -601,7 +737,7 @@
             saveProgress();
           } else {
             stopTimer();
-            alert('¡Tiempo oficial concluido! El examen se corregirá automáticamente.');
+            alert('¡Tiempo oficial concluido! El simulacro FIR se corregirá automáticamente.');
             finishExam();
           }
         }, 1000);
@@ -624,21 +760,19 @@
           String(minutes).padStart(2, '0') + ':' +
           String(seconds).padStart(2, '0');
 
-        if (remainingSeconds <= 900) { // últimos 15 min
-          timerContainer.classList.add('text-rose-600', 'animate-pulse');
+        if (remainingSeconds <= 900) { // Últimos 15 minutos
+          timerContainer.classList.add('text-rose-400', 'border-rose-500', 'animate-pulse');
         } else {
-          timerContainer.classList.remove('text-rose-600', 'animate-pulse');
+          timerContainer.classList.remove('text-rose-400', 'border-rose-500', 'animate-pulse');
         }
       }
 
-      // --- CAMBIO DE MODO ---
+      // --- CAMBIO DE MODO: SIMULACRO REAL vs ESTUDIO ---
       function setMode(mode) {
         currentMode = mode;
         if (mode === 'study') {
-          modeStudyBtn.classList.add('bg-white', 'dark:bg-slate-600', 'shadow-sm', 'font-semibold', 'text-blue-600', 'dark:text-blue-300');
-          modeStudyBtn.classList.remove('text-slate-600', 'dark:text-slate-300');
-          modeExamBtn.classList.remove('bg-white', 'dark:bg-slate-600', 'shadow-sm', 'font-semibold', 'text-blue-600', 'dark:text-blue-300');
-          modeExamBtn.classList.add('text-slate-600', 'dark:text-slate-300');
+          modeStudyBtn.className = 'px-3 py-1.5 rounded-[6px] transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] bg-[#1e3a8a] text-white shadow-sm font-bold';
+          modeExamBtn.className = 'px-3 py-1.5 rounded-[6px] transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] text-[#64748b] dark:text-[#94a3b8] hover:text-black dark:hover:text-white font-medium';
 
           timerContainer.classList.add('hidden');
           studyScoreDisplay.classList.remove('hidden');
@@ -646,10 +780,13 @@
           finishExamBtn.classList.add('hidden');
           stopTimer();
         } else {
-          modeExamBtn.classList.add('bg-white', 'dark:bg-slate-600', 'shadow-sm', 'font-semibold', 'text-blue-600', 'dark:text-blue-300');
-          modeExamBtn.classList.remove('text-slate-600', 'dark:text-slate-300');
-          modeStudyBtn.classList.remove('bg-white', 'dark:bg-slate-600', 'shadow-sm', 'font-semibold', 'text-blue-600', 'dark:text-blue-300');
-          modeStudyBtn.classList.add('text-slate-600', 'dark:text-slate-300');
+          modeExamBtn.className = 'px-3 py-1.5 rounded-[6px] transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] bg-[#1e3a8a] text-white shadow-sm font-bold';
+          modeStudyBtn.className = 'px-3 py-1.5 rounded-[6px] transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] text-[#64748b] dark:text-[#94a3b8] hover:text-black dark:hover:text-white font-medium';
+
+          timerContainer.classList.remove('hidden');
+          studyScoreDisplay.classList.add('hidden');
+          showAnswerBtn.classList.add('hidden');
+          finishExamBtn.classList.remove('hidden');
 
           startTimer();
         }
@@ -660,16 +797,22 @@
       modeStudyBtn.addEventListener('click', () => setMode('study'));
       modeExamBtn.addEventListener('click', () => setMode('exam'));
 
-      // --- RENDERIZADO DE PREGUNTA ---
+      // --- RENDERIZADO DE LA PREGUNTA ACTIVA ---
       function renderQuestion() {
         if (!examQuestions || examQuestions.length === 0) return;
         const q = examQuestions[currentIndex];
         const qId = q.id;
         const yearOrigin = q.originalYear || currentYear;
 
-        // Badges
+        // Badges de estado
         currentQBadge.textContent = `Pregunta ${qId}`;
         examProgressText.textContent = `${currentIndex + 1} de ${examQuestions.length}`;
+
+        // Barra de progreso QFDOS
+        if (progressBarFill) {
+          const progressPercent = ((currentIndex + 1) / examQuestions.length) * 100;
+          progressBarFill.style.width = `${progressPercent}%`;
+        }
 
         // Estado Anulada
         if (q.answer === 0) {
@@ -681,21 +824,20 @@
         // Estado Duda
         if (flaggedQuestions.has(qId)) {
           statusFlagBadge.classList.remove('hidden');
-          flagBtn.classList.add('bg-amber-200', 'dark:bg-amber-800');
+          flagBtn.classList.add('bg-amber-200', 'dark:bg-amber-900/80', 'text-amber-900', 'dark:text-amber-100');
         } else {
           statusFlagBadge.classList.add('hidden');
-          flagBtn.classList.remove('bg-amber-200', 'dark:bg-amber-800');
+          flagBtn.classList.remove('bg-amber-200', 'dark:bg-amber-900/80', 'text-amber-900', 'dark:text-amber-100');
         }
 
-        // Enunciado
+        // Enunciado (Pure Black en modo claro para máxima legibilidad según norma QFDOS)
         questionTextEl.textContent = `${qId}. ${q.question}`;
 
-        // Imagen
+        // Imagen o Figura Oficial
         if (q.hasImage) {
           const imgSrc = `FIR${yearOrigin}/images/${qId}.JPG`;
           questionImage.src = imgSrc;
           questionImage.onerror = () => {
-            // fallback a minúscula .jpg
             questionImage.src = `FIR${yearOrigin}/images/${qId}.jpg`;
           };
           imageContainer.classList.remove('hidden');
@@ -704,7 +846,7 @@
           questionImage.src = '';
         }
 
-        // Opciones
+        // Generación dinámica de Opciones (1, 2, 3, 4)
         optionsContainer.innerHTML = '';
         const userSelected = userAnswers[qId];
         const isAnswered = userSelected !== undefined;
@@ -712,49 +854,53 @@
         q.options.forEach((optText, index) => {
           const optNum = index + 1;
           const btn = document.createElement('button');
-          btn.className = 'opt-btn w-full text-left p-4 rounded-xl border-2 transition-all flex items-start gap-3 bg-white dark:bg-slate-800/80 border-slate-200 dark:border-slate-700 hover:border-blue-400 dark:hover:border-blue-500 shadow-sm';
+          btn.className = 'opt-btn w-full text-left p-4 rounded-[12px] border transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-start gap-3.5 bg-white dark:bg-[#131d33] border-slate-200 dark:border-[#1c2b4c] text-black dark:text-[#f8fafc] hover:-translate-y-0.5 hover:shadow-md hover:border-[#0d9488] dark:hover:border-[#2dd4bf] shadow-sm cursor-pointer';
           btn.dataset.optNum = optNum;
 
-          // Indicador circular (1, 2, 3, 4)
+          // Indicador numérico en Roboto Mono
           const numSpan = document.createElement('span');
-          numSpan.className = 'w-7 h-7 rounded-lg flex-shrink-0 flex items-center justify-center font-bold text-xs bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200';
+          numSpan.className = 'w-7 h-7 rounded-[8px] flex-shrink-0 flex items-center justify-center font-mono font-bold text-xs bg-[#1e3a8a]/5 dark:bg-[#1c2b4c] text-[#1e3a8a] dark:text-[#2dd4bf] border border-[#1e3a8a]/10 dark:border-[#2dd4bf]/20';
           numSpan.textContent = optNum;
 
           const textSpan = document.createElement('span');
-          textSpan.className = 'flex-1 text-sm sm:text-base leading-relaxed';
+          textSpan.className = 'flex-1 text-sm sm:text-base font-medium leading-relaxed';
           textSpan.textContent = optText;
 
           btn.appendChild(numSpan);
           btn.appendChild(textSpan);
 
-          // Estilo según modo y selección
+          // Estilo de estados según Modo y Selección
           if (currentMode === 'study') {
             if (isAnswered) {
               if (q.answer === 0) {
                 // Pregunta anulada
                 btn.classList.add('opt-annulled');
+                numSpan.className = 'w-7 h-7 rounded-[8px] flex-shrink-0 flex items-center justify-center font-mono font-bold text-xs bg-amber-200 text-amber-900';
               } else if (optNum === q.answer) {
                 btn.classList.add('opt-correct');
-                numSpan.className = 'w-7 h-7 rounded-lg flex-shrink-0 flex items-center justify-center font-bold text-xs bg-white text-emerald-700';
+                numSpan.className = 'w-7 h-7 rounded-[8px] flex-shrink-0 flex items-center justify-center font-mono font-bold text-xs bg-white text-[#0d9488]';
               } else if (optNum === userSelected) {
                 btn.classList.add('opt-incorrect');
-                numSpan.className = 'w-7 h-7 rounded-lg flex-shrink-0 flex items-center justify-center font-bold text-xs bg-white text-rose-700';
+                numSpan.className = 'w-7 h-7 rounded-[8px] flex-shrink-0 flex items-center justify-center font-mono font-bold text-xs bg-white text-rose-700';
               }
             }
           } else {
-            // Modo Examen
+            // Modo Examen Simulacro
             if (isExamSubmitted) {
               if (q.answer === 0) {
                 btn.classList.add('opt-annulled');
+                numSpan.className = 'w-7 h-7 rounded-[8px] flex-shrink-0 flex items-center justify-center font-mono font-bold text-xs bg-amber-200 text-amber-900';
               } else if (optNum === q.answer) {
                 btn.classList.add('opt-correct');
+                numSpan.className = 'w-7 h-7 rounded-[8px] flex-shrink-0 flex items-center justify-center font-mono font-bold text-xs bg-white text-[#0d9488]';
               } else if (optNum === userSelected) {
                 btn.classList.add('opt-incorrect');
+                numSpan.className = 'w-7 h-7 rounded-[8px] flex-shrink-0 flex items-center justify-center font-mono font-bold text-xs bg-white text-rose-700';
               }
             } else {
               if (optNum === userSelected) {
                 btn.classList.add('opt-selected-exam');
-                numSpan.className = 'w-7 h-7 rounded-lg flex-shrink-0 flex items-center justify-center font-bold text-xs bg-blue-600 text-white';
+                numSpan.className = 'w-7 h-7 rounded-[8px] flex-shrink-0 flex items-center justify-center font-mono font-bold text-xs bg-[#1e3a8a] text-white dark:bg-[#2dd4bf] dark:text-[#131d33]';
               }
             }
           }
@@ -763,36 +909,36 @@
           optionsContainer.appendChild(btn);
         });
 
-        // Botón limpiar respuesta
+        // Botón limpiar respuesta (dejar en blanco)
         if (userSelected !== undefined && (!isExamSubmitted || currentMode === 'study')) {
           clearAnsBtn.classList.remove('hidden');
         } else {
           clearAnsBtn.classList.add('hidden');
         }
 
-        // Feedback
-        feedbackContainer.className = 'mt-6 p-4 rounded-xl text-center font-bold text-base transition-all hidden';
+        // Feedback interactivo en Modo Estudio (con diseño de callout técnico)
+        feedbackContainer.className = 'mt-6 p-4 rounded-[8px] font-mono text-sm sm:text-base font-bold text-center border-l-4 transition-all hidden';
         if (currentMode === 'study' && isAnswered) {
           feedbackContainer.classList.remove('hidden');
           if (q.answer === 0) {
-            feedbackContainer.classList.add('bg-amber-100', 'text-amber-800', 'dark:bg-amber-900/60', 'dark:text-amber-200');
-            feedbackText.textContent = '¡PREGUNTA ANULADA POR LA COMISIÓN OFICIAL!';
+            feedbackContainer.classList.add('bg-amber-100', 'text-amber-900', 'border-amber-500', 'dark:bg-amber-950/60', 'dark:text-amber-200');
+            feedbackText.textContent = '¡PREGUNTA ANULADA POR LA COMISIÓN OFICIAL DEL MINISTERIO!';
           } else if (userSelected === q.answer) {
-            feedbackContainer.classList.add('bg-emerald-100', 'text-emerald-800', 'dark:bg-emerald-900/60', 'dark:text-emerald-200');
-            feedbackText.textContent = '¡RESPUESTA CORRECTA! (+3 puntos)';
+            feedbackContainer.classList.add('bg-[#0d9488]/15', 'text-[#0f766e]', 'border-[#0d9488]', 'dark:bg-[#0d9488]/25', 'dark:text-[#2dd4bf]');
+            feedbackText.textContent = '¡RESPUESTA CORRECTA! (+3 puntos oficiales)';
           } else {
-            feedbackContainer.classList.add('bg-rose-100', 'text-rose-800', 'dark:bg-rose-900/60', 'dark:text-rose-200');
-            feedbackText.textContent = `INCORRECTO (-1 punto). La opción oficial es la ${q.answer}.`;
+            feedbackContainer.classList.add('bg-rose-100', 'text-rose-900', 'border-rose-600', 'dark:bg-rose-950/60', 'dark:text-rose-200');
+            feedbackText.textContent = `INCORRECTO (-1 punto oficial). La opción correcta oficial es la ${q.answer}.`;
           }
         }
 
-        // Estado de botones de navegación
+        // Estado de botones Anterior / Siguiente
         prevBtn.disabled = currentIndex === 0;
         prevBtn.classList.toggle('opacity-50', currentIndex === 0);
         nextBtn.disabled = currentIndex === examQuestions.length - 1;
         nextBtn.classList.toggle('opacity-50', currentIndex === examQuestions.length - 1);
 
-        // Actualizar casilla activa en la rejilla
+        // Actualizar selección en la rejilla
         updateGridSelection();
       }
 
@@ -808,12 +954,9 @@
         renderQuestion();
         updateGridItem(qId);
         updateStats();
-
-        // En modo examen, avanzar automáticamente después de responder si el usuario lo desea
-        // (comentado para evitar saltos bruscos involuntarios)
       }
 
-      // --- DEJAR EN BLANCO ---
+      // --- DEJAR PREGUNTA EN BLANCO ---
       clearAnsBtn.addEventListener('click', () => {
         const q = examQuestions[currentIndex];
         delete userAnswers[q.id];
@@ -823,7 +966,7 @@
         updateStats();
       });
 
-      // --- REVISAR / MARCAR PREGUNTA ---
+      // --- MARCAR PREGUNTA PARA REVISAR (DUDA) ---
       flagBtn.addEventListener('click', () => {
         const q = examQuestions[currentIndex];
         if (flaggedQuestions.has(q.id)) {
@@ -841,7 +984,6 @@
       showAnswerBtn.addEventListener('click', () => {
         const q = examQuestions[currentIndex];
         if (userAnswers[q.id] === undefined) {
-          // Si no la ha respondido, la revelamos
           userAnswers[q.id] = q.answer;
         }
         renderQuestion();
@@ -864,13 +1006,13 @@
         }
       });
 
-      // --- HOJA DE RESPUESTAS (REJILLA) ---
+      // --- HOJA DE RESPUESTAS (REJILLA DE 210) ---
       function renderGrid() {
         questionsGrid.innerHTML = '';
         examQuestions.forEach((q, idx) => {
           const btn = document.createElement('button');
           btn.id = `grid-btn-${q.id}`;
-          btn.className = 'w-full aspect-square rounded-lg text-xs font-bold transition-all flex items-center justify-center relative border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:scale-105';
+          btn.className = 'w-full aspect-square rounded-[8px] font-mono text-xs font-semibold transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center relative border border-slate-200 dark:border-[#1c2b4c] bg-[#f8fafc] dark:bg-[#131d33] text-slate-700 dark:text-[#f8fafc] hover:-translate-y-0.5 hover:border-[#0d9488]';
           btn.textContent = q.id;
 
           btn.addEventListener('click', () => {
@@ -891,34 +1033,34 @@
         const isFlagged = flaggedQuestions.has(qId);
         const q = examQuestions.find(item => item.id === qId);
 
-        // Reset base classes
-        btn.className = 'w-full aspect-square rounded-lg text-xs font-bold transition-all flex items-center justify-center relative border hover:scale-105 ';
+        // Clases base: 8px radius, font-mono, alta afinidad
+        btn.className = 'w-full aspect-square rounded-[8px] font-mono text-xs font-semibold transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center relative border hover:-translate-y-0.5 ';
 
         if (isExamSubmitted || (currentMode === 'study' && isAnswered)) {
           if (q.answer === 0) {
-            // Anulada
-            btn.className += 'bg-amber-100 border-amber-400 text-amber-900 dark:bg-amber-900/60 dark:text-amber-200';
+            // Pregunta anulada
+            btn.className += 'bg-amber-100 border-amber-400 text-amber-900 dark:bg-amber-900/60 dark:border-amber-700 dark:text-amber-200';
           } else if (userAnswers[qId] === q.answer) {
-            btn.className += 'bg-emerald-600 border-emerald-700 text-white shadow-sm';
+            btn.className += 'bg-[#0d9488] border-[#0f766e] text-white shadow-sm';
           } else if (isAnswered) {
             btn.className += 'bg-rose-600 border-rose-700 text-white shadow-sm';
           } else {
-            btn.className += 'bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-400';
+            btn.className += 'bg-slate-100 dark:bg-[#1c2b4c] border-slate-200 dark:border-[#1c2b4c] text-[#64748b] dark:text-[#94a3b8]';
           }
         } else {
           if (isAnswered) {
-            btn.className += 'bg-blue-600 border-blue-700 text-white shadow-sm';
+            btn.className += 'bg-[#1e3a8a] border-[#172554] dark:bg-[#1e3a8a] dark:border-[#3b82f6]/40 text-white shadow-sm';
           } else {
-            btn.className += 'bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300';
+            btn.className += 'bg-[#f8fafc] dark:bg-[#131d33] border-slate-200 dark:border-[#1c2b4c] text-slate-700 dark:text-[#f8fafc]';
           }
         }
 
-        // Banderita si está en duda
+        // Banderita en duda
         if (isFlagged) {
           let dot = btn.querySelector('.flag-dot');
           if (!dot) {
             dot = document.createElement('span');
-            dot.className = 'flag-dot absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-amber-400 ring-2 ring-white dark:ring-slate-900';
+            dot.className = 'flag-dot absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-amber-400 ring-2 ring-white dark:ring-[#131d33]';
             btn.appendChild(dot);
           }
         } else {
@@ -931,16 +1073,16 @@
         const q = examQuestions[currentIndex];
         if (!q) return;
         document.querySelectorAll('#questions-grid button').forEach(b => {
-          b.classList.remove('ring-2', 'ring-offset-2', 'ring-blue-500');
+          b.classList.remove('ring-2', 'ring-offset-2', 'ring-[#0d9488]', 'dark:ring-[#2dd4bf]', 'dark:ring-offset-[#131d33]');
         });
         const currentBtn = document.getElementById(`grid-btn-${q.id}`);
         if (currentBtn) {
-          currentBtn.classList.add('ring-2', 'ring-offset-2', 'ring-blue-500');
+          currentBtn.classList.add('ring-2', 'ring-offset-2', 'ring-[#0d9488]', 'dark:ring-[#2dd4bf]', 'dark:ring-offset-[#131d33]');
           currentBtn.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
         }
       }
 
-      // --- ESTADÍSTICAS Y BAREMO OFICIAL (+3 / -1) ---
+      // --- ESTADÍSTICAS Y BAREMO OFICIAL (+3 / -1 / 0) ---
       function updateStats() {
         const total = examQuestions.length;
         const answeredCount = Object.keys(userAnswers).length;
@@ -951,7 +1093,7 @@
         countFlagged.textContent = flaggedCount;
         countUnanswered.textContent = unansweredCount;
 
-        // Calcular aciertos/fallos en modo estudio
+        // Calcular aciertos/fallos para el modo estudio
         let correctCount = 0;
         let wrongCount = 0;
         for (const [qidStr, opt] of Object.entries(userAnswers)) {
@@ -994,7 +1136,7 @@
           }
         });
 
-        // Fórmula Oficial FIR del Ministerio de Sanidad: Net = 3 * Correct - Wrong
+        // Baremo Oficial del Ministerio de Sanidad: Puntos Netos = (3 * Aciertos) - Fallos
         const netScore = (correct * 3) - wrong;
         const maxPossibleScore = (examQuestions.length - annulled) * 3;
         const percentage = maxPossibleScore > 0 ? ((netScore / maxPossibleScore) * 100).toFixed(1) : 0;
@@ -1010,7 +1152,7 @@
 
         resultsModal.classList.remove('hidden');
 
-        // Actualizar todos los botones de la rejilla con los colores definitivos
+        // Actualizar todos los botones de la rejilla con la corrección oficial
         examQuestions.forEach(q => updateGridItem(q.id));
         renderQuestion();
       }
@@ -1020,7 +1162,7 @@
         const answered = Object.keys(userAnswers).length;
         const unanswered = total - answered;
 
-        let confirmMsg = '¿Desea entregar el examen y calcular su puntuación oficial FIR?';
+        let confirmMsg = '¿Desea entregar el simulacro y calcular su puntuación oficial FIR (+3 / -1 / 0)?';
         if (unanswered > 0) {
           confirmMsg = `Tiene ${unanswered} preguntas sin responder de un total de ${total}.\n¿Desea entregar y corregir el simulacro de todos modos?`;
         }
@@ -1130,7 +1272,7 @@
             remainingSeconds = data.remainingSeconds !== undefined ? data.remainingSeconds : TOTAL_TIME_SECONDS;
             isExamSubmitted = Boolean(data.isSubmitted);
           } catch (e) {
-            console.error('Error cargando progreso:', e);
+            console.error('Error cargando progreso guardado:', e);
           }
         }
       }
