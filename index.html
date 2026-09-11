@@ -3,6 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SPNFCRGCLG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-SPNFCRGCLG');
+  </script>
+
   <title>Simulador Oficial Exámenes FIR (2020-2025) | Facultad de Farmacia · Universidad de Granada</title>
   
   <!-- Meta tags SEO & PWA -->
@@ -1670,6 +1681,13 @@
 
         setMode(currentMode);
         window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        if (typeof gtag === 'function') {
+          gtag('event', 'page_view', {
+            page_path: location.hash || '#/home',
+            page_title: document.title
+          });
+        }
       }
 
       window.addEventListener('hashchange', handleRoute);
@@ -2436,7 +2454,7 @@
       function openTelemetryModal() {
         if (!checkAdminAccess()) return;
         webhookUrlInput.value = localStorage.getItem('fir_telemetry_webhook_url') || DEFAULT_GLOBAL_WEBHOOK_URL;
-        ga4IdInput.value = localStorage.getItem('fir_ga4_id') || '';
+        ga4IdInput.value = localStorage.getItem('fir_ga4_id') || 'G-SPNFCRGCLG';
         webhookStatusMsg.classList.add('hidden');
         telemetryModal.classList.remove('hidden');
       }
@@ -2548,6 +2566,21 @@
               body: JSON.stringify(payload)
             }).catch(() => {});
           } catch (e) {}
+        }
+
+        // Registro de evento analítico personalizado en Google Analytics 4
+        if (typeof gtag === 'function') {
+          gtag('event', 'simulacro_finalizado', {
+            event_category: 'Simulacro FIR',
+            convocatoria: payload.examTitle || payload.year,
+            modo: payload.mode,
+            puntos_netos: payload.netScore,
+            aciertos: payload.correct,
+            fallos: payload.wrong,
+            blancos: payload.blank,
+            duracion_seg: payload.durationSeconds,
+            porcentaje: payload.percentage
+          });
         }
       }
 
