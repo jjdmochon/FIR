@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simulador Oficial Exámenes FIR (2020-2025) | 2627 QFDOS Structural Affinity</title>
+  <title>Simulador Oficial Exámenes FIR (2020-2025) | Facultad de Farmacia · Universidad de Granada</title>
   
   <!-- Meta tags SEO & PWA -->
-  <meta name="description" content="Plataforma interactiva de simulacros y preparación de exámenes oficiales FIR (Farmacéutico Interno Residente) con el Sistema de Afinidad Estructural 2627 QFDOS. Convocatorias 2020 a 2025, baremo oficial del Ministerio de Sanidad (+3/-1/0) y modo estudio.">
+  <meta name="description" content="Plataforma oficial interactiva de simulacros y preparación de exámenes FIR (Farmacéutico Interno Residente). Facultad de Farmacia de la Universidad de Granada y Nexus Lab. Convocatorias 2020 a 2025, baremo oficial del Ministerio de Sanidad (+3/-1/0) y modo estudio.">
   <meta name="theme-color" content="#1e3a8a">
   
   <!-- Tailwind CSS CDN -->
@@ -21,7 +21,7 @@
             mono: ['"Roboto Mono"', 'Fira Code', 'monospace'],
           },
           colors: {
-            qfdos: {
+            fir: {
               primary: '#1e3a8a',
               'primary-dark': '#172554',
               'primary-light': '#3b82f6',
@@ -39,6 +39,17 @@
               'dark-raised': '#1c2b4c',
               'dark-text': '#f8fafc',
               'dark-muted': '#94a3b8',
+            },
+            // Mantener compatibilidad qfdos
+            qfdos: {
+              primary: '#1e3a8a',
+              'primary-dark': '#172554',
+              'primary-light': '#3b82f6',
+              secondary: '#0d9488',
+              'secondary-dark': '#0f766e',
+              'secondary-light': '#14b8a6',
+              tertiary: '#2dd4bf',
+              'tertiary-light': '#5eead4',
             }
           },
           borderRadius: {
@@ -92,24 +103,14 @@
       --color-text-muted-dark: #94a3b8;
 
       /* Gradients */
-      --gradient-affinity-hero: linear-gradient(135deg, #1e3a8a 0%, #0d9488 100%);
-      --gradient-pocket-highlight: linear-gradient(180deg, rgba(30,58,138,0.08) 0%, rgba(13,148,136,0.02) 100%);
+      --gradient-hero: linear-gradient(135deg, #1e3a8a 0%, #0d9488 100%);
+      --gradient-card: linear-gradient(180deg, rgba(30,58,138,0.06) 0%, rgba(13,148,136,0.02) 100%);
       --gradient-mint-glow: linear-gradient(90deg, #2dd4bf 0%, #14b8a6 100%);
       --gradient-progress: linear-gradient(90deg, #2dd4bf 0%, #0d9488 100%);
 
       /* Typography */
       --font-primary: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-technical: 'Roboto Mono', 'Fira Code', monospace;
-
-      /* Shapes & Radii */
-      --radius-sm: 4px;
-      --radius-md: 8px;
-      --radius-lg: 12px;
-      --radius-xl: 16px;
-
-      /* Motion */
-      --ease-binding: cubic-bezier(0.16, 1, 0.3, 1);
-      --transition-binding: 200ms var(--ease-binding);
     }
 
     body {
@@ -136,9 +137,9 @@
       background: rgba(13, 148, 136, 0.7);
     }
 
-    /* Estilos de opciones con alta afinidad cinemática */
+    /* Estilos de opciones de respuesta */
     .opt-btn {
-      transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 180ms cubic-bezier(0.16, 1, 0.3, 1);
     }
     .opt-btn:hover {
       transform: translateY(-2px);
@@ -208,6 +209,30 @@
       color: #fef3c7 !important;
       font-weight: 700;
     }
+
+    /* Estilos de Impresión Oficial (@media print) */
+    @media print {
+      body * {
+        visibility: hidden !important;
+      }
+      #print-report-container, #print-report-container * {
+        visibility: visible !important;
+      }
+      #print-report-container {
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 24px !important;
+        background: #ffffff !important;
+        color: #000000 !important;
+        display: block !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
   </style>
 
   <!-- Pre-cargador de datos oficial -->
@@ -215,13 +240,13 @@
 </head>
 <body class="bg-[#f8fafc] dark:bg-[#090e1a] text-black dark:text-[#f8fafc] min-h-screen flex flex-col transition-colors duration-200">
 
-  <!-- NAVBAR PRINCIPAL QFDOS STRUCTURAL AFFINITY -->
-  <header class="sticky top-0 z-40 bg-white/95 dark:bg-[#131d33]/95 backdrop-blur-md border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c] shadow-sm">
+  <!-- NAVBAR PRINCIPAL -->
+  <header class="sticky top-0 z-40 bg-white/95 dark:bg-[#131d33]/95 backdrop-blur-md border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c] shadow-xs">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
       
-      <!-- Logo & Título con Gradiente Affinity Hero -->
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-[10px] bg-gradient-to-br from-[#1e3a8a] to-[#0d9488] text-white flex items-center justify-center font-black text-xl shadow-md border border-white/20 tracking-wider">
+      <!-- Logo & Título Institucional (Clic vuelve a Home) -->
+      <a href="#/home" id="nav-brand-link" class="flex items-center gap-3 cursor-pointer group select-none">
+        <div class="w-10 h-10 rounded-[10px] bg-gradient-to-br from-[#1e3a8a] to-[#0d9488] text-white flex items-center justify-center font-black text-xl shadow-md border border-white/20 tracking-wider transition-transform group-hover:scale-105">
           FIR
         </div>
         <div>
@@ -230,252 +255,805 @@
             <span class="font-mono text-[11px] font-bold px-2 py-0.5 rounded-[4px] bg-[#0d9488]/10 text-[#0d9488] dark:bg-[#2dd4bf]/20 dark:text-[#2dd4bf] border border-[#0d9488]/20">
               2020 - 2025
             </span>
-            <span class="hidden xl:inline-block font-mono text-[10px] font-semibold px-2 py-0.5 rounded-[4px] bg-[#1e3a8a]/10 text-[#1e3a8a] dark:bg-[#3b82f6]/20 dark:text-[#93c5fd]">
-              2627 QFDOS
+            <span class="hidden xl:inline-flex items-center gap-1 font-mono text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-[#1e3a8a]/10 text-[#1e3a8a] dark:bg-[#3b82f6]/20 dark:text-[#93c5fd] border border-[#1e3a8a]/20">
+              Facultad de Farmacia · UGR
             </span>
           </h1>
           <p class="text-xs text-[#64748b] dark:text-[#94a3b8] font-medium hidden sm:block">
             Ministerio de Sanidad · Cuadernos y Plantillas Oficiales · Baremo (+3 / -1 / 0)
           </p>
         </div>
-      </div>
+      </a>
 
-      <!-- Selectores de Examen, Modo y Configuración -->
-      <div class="flex items-center gap-2 sm:gap-3">
-        <!-- Selector de Año Oficial -->
-        <div class="flex items-center bg-[#1e3a8a]/5 dark:bg-[#1c2b4c] border border-[#1e3a8a]/10 dark:border-[#2dd4bf]/20 rounded-[8px] p-1">
-          <label for="year-select" class="text-xs font-bold font-mono text-[#1e3a8a] dark:text-[#2dd4bf] px-2 hidden md:inline">AÑO:</label>
-          <select id="year-select" class="bg-transparent text-xs sm:text-sm font-mono font-bold text-slate-900 dark:text-slate-100 focus:outline-none cursor-pointer py-1 px-1.5 rounded-[6px]">
-            <option value="2025" class="bg-white dark:bg-[#131d33] text-black dark:text-white">FIR 2025</option>
-            <option value="2024" class="bg-white dark:bg-[#131d33] text-black dark:text-white">FIR 2024</option>
-            <option value="2023" class="bg-white dark:bg-[#131d33] text-black dark:text-white">FIR 2023</option>
-            <option value="2022" class="bg-white dark:bg-[#131d33] text-black dark:text-white">FIR 2022</option>
-            <option value="2021" class="bg-white dark:bg-[#131d33] text-black dark:text-white">FIR 2021</option>
-            <option value="2020" class="bg-white dark:bg-[#131d33] text-black dark:text-white">FIR 2020</option>
-            <option value="random" class="bg-white dark:bg-[#131d33] text-black dark:text-white">Mega-Mix Aleatorio</option>
-          </select>
-        </div>
+      <!-- Botones de Navegación & Control -->
+      <div class="flex items-center gap-2 sm:gap-2.5">
 
-        <!-- Selector de Modo (Estudio vs Simulacro Real) -->
-        <div class="hidden lg:flex items-center bg-[#1e3a8a]/5 dark:bg-[#1c2b4c] border border-[#1e3a8a]/10 dark:border-[#2dd4bf]/20 rounded-[8px] p-1 text-xs font-semibold">
-          <button id="mode-study-btn" class="px-3 py-1.5 rounded-[6px] transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] text-[#64748b] dark:text-[#94a3b8] hover:text-black dark:hover:text-white font-medium">
-            Modo Estudio
-          </button>
-          <button id="mode-exam-btn" class="px-3 py-1.5 rounded-[6px] transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] bg-[#1e3a8a] text-white shadow-sm font-bold">
-            Simulacro Real
-          </button>
-        </div>
+        <!-- Botón Volver a Inicio (Visible solo en Modo Examen) -->
+        <a href="#/home" id="nav-home-btn" class="hidden items-center gap-1.5 px-3 py-1.5 rounded-[8px] bg-[#1e3a8a]/5 hover:bg-[#1e3a8a]/10 dark:bg-[#1c2b4c] dark:hover:bg-[#1c2b4c]/80 text-[#1e3a8a] dark:text-[#2dd4bf] font-bold text-xs transition-all border border-[#1e3a8a]/10 dark:border-[#2dd4bf]/20">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+          <span class="hidden md:inline">Inicio</span>
+        </a>
 
-        <!-- Botón Rejilla Móvil -->
-        <button id="toggle-grid-mobile-btn" class="lg:hidden p-2 rounded-[8px] bg-[#1e3a8a]/5 dark:bg-[#1c2b4c] border border-[#1e3a8a]/10 dark:border-[#2dd4bf]/20 text-[#1e3a8a] dark:text-[#2dd4bf] hover:bg-[#1e3a8a]/10 transition-colors" title="Ver hoja de respuestas">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>
+        <!-- Botón Historial de Simulacros -->
+        <a href="#/historial" id="nav-history-btn" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-[8px] bg-[#1e3a8a]/5 hover:bg-[#1e3a8a]/10 dark:bg-[#1c2b4c] dark:hover:bg-[#1c2b4c]/80 text-[#1e3a8a] dark:text-[#f8fafc] font-bold text-xs transition-all border border-[#1e3a8a]/10 dark:border-[#1c2b4c]" title="Historial de intentos">
+          <svg class="w-4 h-4 text-[#0d9488] dark:text-[#2dd4bf]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <span class="hidden sm:inline">Historial</span>
+          <span id="nav-history-badge" class="hidden ml-0.5 px-1.5 py-0.2 rounded-full text-[10px] font-mono font-bold bg-[#1e3a8a] text-white dark:bg-[#2dd4bf] dark:text-slate-900">0</span>
+        </a>
+
+        <!-- Botón Telemetría / Configuración Prof. Juanjo -->
+        <button id="nav-telemetry-btn" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-[8px] bg-[#0d9488]/10 hover:bg-[#0d9488]/20 dark:bg-[#0d9488]/20 dark:hover:bg-[#0d9488]/30 text-[#0f766e] dark:text-[#2dd4bf] font-bold text-xs transition-all border border-[#0d9488]/20" title="Configuración de Telemetría (Prof. Juanjo)">
+          <svg class="w-4 h-4 text-[#0d9488] dark:text-[#2dd4bf]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+          <span class="hidden lg:inline">Telemetría</span>
         </button>
+
+        <!-- Selector de Convocatoria (Visible en vista de examen) -->
+        <div id="nav-exam-controls" class="hidden items-center gap-2">
+          <div class="flex items-center bg-[#1e3a8a]/5 dark:bg-[#1c2b4c] border border-[#1e3a8a]/10 dark:border-[#2dd4bf]/20 rounded-[8px] p-1">
+            <label for="year-select" class="text-xs font-bold font-mono text-[#1e3a8a] dark:text-[#2dd4bf] px-2 hidden lg:inline">EXAMEN:</label>
+            <select id="year-select" class="bg-transparent text-xs sm:text-sm font-mono font-bold text-slate-900 dark:text-slate-100 focus:outline-none cursor-pointer py-1 px-1.5 rounded-[6px]">
+              <option value="2025" class="bg-white dark:bg-[#131d33] text-black dark:text-white">FIR 2025 (Ene 2026)</option>
+              <option value="2024" class="bg-white dark:bg-[#131d33] text-black dark:text-white">FIR 2024 (Ene 2025)</option>
+              <option value="2023" class="bg-white dark:bg-[#131d33] text-black dark:text-white">FIR 2023 (Ene 2024)</option>
+              <option value="2022" class="bg-white dark:bg-[#131d33] text-black dark:text-white">FIR 2022 (Ene 2023)</option>
+              <option value="2021" class="bg-white dark:bg-[#131d33] text-black dark:text-white">FIR 2021 (Ene 2022)</option>
+              <option value="2020" class="bg-white dark:bg-[#131d33] text-black dark:text-white">FIR 2020 (Mar 2021)</option>
+              <option value="quimica" class="bg-white dark:bg-[#131d33] text-black dark:text-white">Especial Química (136 P)</option>
+              <option value="random" class="bg-white dark:bg-[#131d33] text-black dark:text-white">Mega-Mix Aleatorio (100 P)</option>
+            </select>
+          </div>
+
+          <!-- Selector de Modo (Estudio vs Simulacro) -->
+          <div class="hidden xl:flex items-center bg-[#1e3a8a]/5 dark:bg-[#1c2b4c] border border-[#1e3a8a]/10 dark:border-[#2dd4bf]/20 rounded-[8px] p-1 text-xs font-semibold">
+            <button id="mode-study-btn" class="px-3 py-1.5 rounded-[6px] transition-all duration-200 text-[#64748b] dark:text-[#94a3b8] hover:text-black dark:hover:text-white font-medium">
+              Modo Estudio
+            </button>
+            <button id="mode-exam-btn" class="px-3 py-1.5 rounded-[6px] transition-all duration-200 bg-[#1e3a8a] text-white shadow-sm font-bold">
+              Simulacro Real
+            </button>
+          </div>
+
+          <!-- Botón Rejilla Móvil -->
+          <button id="toggle-grid-mobile-btn" class="lg:hidden p-2 rounded-[8px] bg-[#1e3a8a]/5 dark:bg-[#1c2b4c] border border-[#1e3a8a]/10 dark:border-[#2dd4bf]/20 text-[#1e3a8a] dark:text-[#2dd4bf] hover:bg-[#1e3a8a]/10 transition-colors" title="Ver hoja de respuestas">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>
+          </button>
+        </div>
 
         <!-- Dark Mode Toggle -->
         <button id="dark-mode-toggle" class="p-2 rounded-[8px] bg-[#1e3a8a]/5 dark:bg-[#1c2b4c] border border-[#1e3a8a]/10 dark:border-[#2dd4bf]/20 text-[#1e3a8a] dark:text-[#2dd4bf] hover:bg-[#1e3a8a]/10 dark:hover:bg-[#1c2b4c]/80 transition-colors" title="Cambiar tema">
           <svg id="sun-icon" class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg>
           <svg id="moon-icon" class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
         </button>
+
       </div>
 
     </div>
   </header>
 
-  <!-- BARRA DE PROGRESO GLOBAL QFDOS (Mint to Teal Gradient) -->
-  <div class="sticky top-16 z-30 w-full bg-slate-200/80 dark:bg-[#1c2b4c] h-1.5 overflow-hidden">
-    <div id="progress-bar-fill" class="h-full transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]" style="width: 0%; background: linear-gradient(90deg, #2dd4bf 0%, #0d9488 100%);"></div>
-  </div>
-
-  <!-- CONTENEDOR PRINCIPAL -->
-  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col lg:flex-row gap-6">
-
-    <!-- COLUMNA PRINCIPAL (PREGUNTA ACTIVA) -->
-    <section class="flex-1 flex flex-col gap-4">
-
-      <!-- Barra de Estado Superior de la Pregunta -->
-      <div class="bg-white dark:bg-[#131d33] rounded-[12px] p-4 shadow-sm border border-[#1e3a8a]/10 dark:border-[#1c2b4c] flex flex-wrap items-center justify-between gap-3">
-        <div class="flex items-center gap-3">
-          <span id="current-q-badge" class="bg-[#1e3a8a] text-white font-mono font-bold px-3 py-1 rounded-[8px] text-sm shadow-sm tracking-tight">
-            Pregunta 1
-          </span>
-          <span id="exam-progress-text" class="font-mono text-xs sm:text-sm font-semibold text-[#64748b] dark:text-[#94a3b8]">
-            1 de 210
-          </span>
-          <span id="status-flag-badge" class="hidden font-mono text-xs px-2.5 py-0.5 rounded-[6px] font-bold bg-amber-100 text-amber-800 dark:bg-amber-900/60 dark:text-amber-200 border border-amber-300 dark:border-amber-700">
-            Revisar ⚑
-          </span>
-          <span id="status-annulled-badge" class="hidden font-mono text-xs px-2.5 py-0.5 rounded-[6px] font-bold bg-rose-100 text-rose-800 dark:bg-rose-900/60 dark:text-rose-200 border border-rose-300 dark:border-rose-700">
-            Anulada Oficial
-          </span>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <!-- Temporizador Oficial (Modo Examen - 4h 30m) -->
-          <div id="timer-container" class="flex items-center gap-2 bg-[#172554] text-[#2dd4bf] px-3.5 py-1.5 rounded-[8px] text-xs sm:text-sm font-mono font-bold border-l-4 border-[#2dd4bf] shadow-sm">
-            <svg class="w-4 h-4 text-[#2dd4bf] animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-            <span id="timer-display">04:30:00</span>
-          </div>
-
-          <!-- Puntuación Rápida en Vivo (Modo Estudio) -->
-          <div id="study-score-display" class="hidden font-mono text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200 bg-[#1e3a8a]/5 dark:bg-[#1c2b4c] px-3.5 py-1.5 rounded-[8px] border border-[#1e3a8a]/10 dark:border-[#2dd4bf]/20">
-            Aciertos: <span id="score-correct-num" class="text-[#0d9488] dark:text-[#2dd4bf] font-bold">0</span> | Fallos: <span id="score-wrong-num" class="text-rose-600 dark:text-rose-400 font-bold">0</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- TARJETA PRINCIPAL DE LA PREGUNTA (12px Radius, 4px Navy Accent) -->
-      <article class="bg-white dark:bg-[#131d33] rounded-[12px] p-6 sm:p-8 shadow-md border-t-4 border-[#1e3a8a] border-x border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c] flex flex-col flex-1 transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)]">
+  <!-- ================================================================= -->
+  <!-- VISTA 1: HOME LANDING PAGE (#home-view)                            -->
+  <!-- ================================================================= -->
+  <div id="home-view" class="w-full flex-1 flex flex-col">
+    
+    <!-- Hero Banner Principal -->
+    <section class="relative bg-gradient-to-b from-[#1e3a8a]/10 via-[#0d9488]/5 to-transparent dark:from-[#172554]/40 dark:via-[#131d33]/60 dark:to-transparent py-10 sm:py-14 border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <!-- Enunciado de la Pregunta (Pure Black para máxima legibilidad) -->
-        <div class="mb-6">
-          <p id="question-text" class="text-base sm:text-lg lg:text-xl font-bold text-black dark:text-[#f8fafc] leading-relaxed">
-            Cargando pregunta...
+        <!-- Badge Institucional Superior -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1e3a8a]/10 text-[#1e3a8a] dark:bg-[#2dd4bf]/20 dark:text-[#2dd4bf] font-mono text-xs font-bold border border-[#1e3a8a]/20 dark:border-[#2dd4bf]/30 mb-4 shadow-xs">
+          <span class="w-2 h-2 rounded-full bg-[#0d9488] dark:bg-[#2dd4bf] animate-pulse"></span>
+          Facultad de Farmacia · Universidad de Granada & Nexus Lab
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1e3a8a] dark:text-white tracking-tight leading-tight mb-3">
+          Simulador Oficial de Exámenes FIR
+        </h1>
+        <p class="text-base sm:text-lg lg:text-xl font-medium text-slate-700 dark:text-slate-300 max-w-3xl leading-relaxed mb-6">
+          Plataforma oficial de preparación para las pruebas selectivas de Farmacéutico Interno Residente (Ministerio de Sanidad).
+        </p>
+
+        <!-- Banner de Crédito Institucional -->
+        <div class="p-4 sm:p-5 rounded-[12px] bg-white dark:bg-[#131d33] border-l-4 border-[#0d9488] border-y border-r border-[#1e3a8a]/10 dark:border-[#1c2b4c] shadow-sm mb-6 flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-full bg-[#0d9488]/10 text-[#0d9488] dark:bg-[#2dd4bf]/20 dark:text-[#2dd4bf] flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+          </div>
+          <div>
+            <p class="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-100">
+              Plataforma preparada por Nexus Lab en colaboración con el Prof. Juan J. Díaz Mochón de la Facultad de Farmacia de la Universidad de Granada.
+            </p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+              Material docente oficial y software interactivo para el alumnado y aspirantes FIR.
+            </p>
+          </div>
+        </div>
+
+        <!-- Nota Oficial sobre la Denominación de los Exámenes (Callout Destacado) -->
+        <div class="p-4 sm:p-5 rounded-[12px] bg-amber-50 dark:bg-amber-950/40 border-l-4 border-amber-500 border-y border-r border-amber-200 dark:border-amber-900/60 shadow-xs mb-8">
+          <div class="flex items-start gap-3">
+            <span class="text-amber-600 dark:text-amber-400 font-bold text-lg leading-none mt-0.5">ℹ</span>
+            <div class="text-xs sm:text-sm text-amber-950 dark:text-amber-200 leading-relaxed">
+              <strong class="font-extrabold text-amber-900 dark:text-amber-100">Nota Oficial sobre la denominación de los exámenes:</strong>
+              El año que identifica a cada examen corresponde a la convocatoria oficial aprobada y publicada por el Ministerio de Sanidad. La prueba presencial se realiza a principios del año natural siguiente (por ejemplo, el examen FIR 2025 se celebró en enero de 2026, el FIR 2024 en enero de 2025, y así sucesivamente en todas las convocatorias).
+            </div>
+          </div>
+        </div>
+
+        <!-- Métricas Rápidas de la Plataforma -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 font-mono text-center">
+          <div class="bg-white dark:bg-[#131d33] p-3.5 rounded-[10px] border border-[#1e3a8a]/10 dark:border-[#1c2b4c] shadow-xs">
+            <div class="text-2xl sm:text-3xl font-black text-[#1e3a8a] dark:text-[#2dd4bf]">7</div>
+            <div class="text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">Módulos Oficiales</div>
+          </div>
+          <div class="bg-white dark:bg-[#131d33] p-3.5 rounded-[10px] border border-[#1e3a8a]/10 dark:border-[#1c2b4c] shadow-xs">
+            <div class="text-2xl sm:text-3xl font-black text-[#0d9488] dark:text-[#2dd4bf]">1.370+</div>
+            <div class="text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">Preguntas Reales</div>
+          </div>
+          <div class="bg-white dark:bg-[#131d33] p-3.5 rounded-[10px] border border-[#1e3a8a]/10 dark:border-[#1c2b4c] shadow-xs">
+            <div class="text-2xl sm:text-3xl font-black text-[#1e3a8a] dark:text-[#3b82f6]">80+</div>
+            <div class="text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">Figuras Químicas HD</div>
+          </div>
+          <div class="bg-white dark:bg-[#131d33] p-3.5 rounded-[10px] border border-[#1e3a8a]/10 dark:border-[#1c2b4c] shadow-xs">
+            <div class="text-2xl sm:text-3xl font-black text-[#0d9488] dark:text-[#2dd4bf]">+3 / -1</div>
+            <div class="text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">Baremo Sanidad</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Catálogo de Exámenes Disponibles -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full flex-1">
+      
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-8">
+        <div>
+          <h2 class="text-xl sm:text-2xl font-extrabold text-[#1e3a8a] dark:text-white">
+            Catálogo Oficial de Convocatorias
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+            Selecciona un examen para simular la prueba en condiciones reales o en modo estudio guiado.
           </p>
         </div>
-
-        <!-- Contenedor de Imagen de Estructura / Figura Oficial -->
-        <div id="image-container" class="hidden mb-6 p-4 rounded-[12px] bg-[#1e3a8a]/5 dark:bg-[#1c2b4c]/50 border border-[#1e3a8a]/15 dark:border-[#2dd4bf]/20 flex flex-col items-center justify-center">
-          <div class="flex items-center gap-2 mb-2.5 font-mono text-xs font-bold text-[#1e3a8a] dark:text-[#2dd4bf]">
-            <svg class="w-4 h-4 text-[#0d9488] dark:text-[#2dd4bf]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-            Figura / Estructura Química Oficial (clic para ampliar)
-          </div>
-          <img id="question-image" src="" alt="Estructura química oficial" class="max-h-72 max-w-full rounded-[8px] shadow-sm cursor-zoom-in hover:opacity-95 transition-opacity bg-white p-2 border border-slate-200 dark:border-[#1c2b4c]">
-        </div>
-
-        <!-- Contenedor de Opciones (1, 2, 3, 4) con radio 12px y hover lift -->
-        <div id="options-container" class="grid grid-cols-1 gap-3 sm:gap-3.5 my-2">
-          <!-- Opciones inyectadas dinámicamente -->
-        </div>
-
-        <!-- Feedback Mensaje (Modo Estudio) con llamada técnica QFDOS -->
-        <div id="feedback-container" class="mt-6 hidden p-4 rounded-[8px] font-mono text-sm sm:text-base font-bold text-center border-l-4 transition-all">
-          <span id="feedback-text"></span>
-        </div>
-
-      </article>
-
-      <!-- CALLOUT TÉCNICO QFDOS (Parámetros y Atajos de Teclado) -->
-      <div class="bg-[#172554] text-white p-3.5 sm:p-4 rounded-[8px] font-mono text-xs sm:text-sm border-l-4 border-[#2dd4bf] shadow-sm flex flex-wrap items-center justify-between gap-3">
         <div class="flex items-center gap-2">
-          <span class="text-[#2dd4bf] text-xs uppercase tracking-wider font-bold">// Control FIR</span>
-          <span class="text-slate-300 hidden sm:inline">| Baremo Oficial: +3 (acierto) / -1 (fallo) / 0 (blanco)</span>
-        </div>
-        <div class="flex items-center gap-2 text-xs text-slate-300">
-          <span>Atajos: <kbd class="bg-[#1e3a8a] text-white px-1.5 py-0.5 rounded text-[11px] font-mono font-semibold">1-4</kbd> <kbd class="bg-[#1e3a8a] text-white px-1.5 py-0.5 rounded text-[11px] font-mono font-semibold">← / →</kbd> <kbd class="bg-[#1e3a8a] text-white px-1.5 py-0.5 rounded text-[11px] font-mono font-semibold">M</kbd></span>
+          <a href="#/historial" class="px-3.5 py-2 rounded-[8px] bg-white dark:bg-[#131d33] border border-[#1e3a8a]/10 dark:border-[#1c2b4c] text-xs font-bold text-[#1e3a8a] dark:text-[#2dd4bf] hover:bg-slate-50 dark:hover:bg-[#1c2b4c] transition-all flex items-center gap-1.5 shadow-xs">
+            <svg class="w-4 h-4 text-[#0d9488]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+            Ver Historial de Intentos
+          </a>
         </div>
       </div>
 
-      <!-- BARRA DE ACCIÓN Y NAVEGACIÓN INFERIOR -->
-      <footer class="bg-white dark:bg-[#131d33] rounded-[12px] p-4 shadow-sm border border-[#1e3a8a]/10 dark:border-[#1c2b4c] flex flex-wrap items-center justify-between gap-3">
+      <!-- Tarjeta Destacada: Especial Química (QO + QF) -->
+      <div class="mb-8 p-6 sm:p-8 rounded-[16px] bg-gradient-to-br from-[#1e3a8a]/10 via-[#0d9488]/10 to-transparent dark:from-[#172554]/70 dark:via-[#1c2b4c]/60 dark:to-[#131d33] border-2 border-[#0d9488] shadow-md relative overflow-hidden">
+        <div class="absolute top-0 right-0 transform translate-x-8 -translate-y-8 w-44 h-44 bg-[#2dd4bf]/10 rounded-full blur-2xl pointer-events-none"></div>
         
-        <div class="flex items-center gap-2">
-          <button id="prev-btn" class="px-4 py-2.5 rounded-[8px] bg-slate-100 hover:bg-slate-200 dark:bg-[#1c2b4c] dark:hover:bg-[#1c2b4c]/80 text-[#1e3a8a] dark:text-[#f8fafc] font-bold text-sm transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 flex items-center gap-1.5">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-            Anterior
-          </button>
-
-          <button id="flag-btn" class="px-3.5 py-2.5 rounded-[8px] bg-amber-50 hover:bg-amber-100 dark:bg-amber-950/30 dark:hover:bg-amber-900/50 text-amber-800 dark:text-amber-300 font-bold text-sm transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 flex items-center gap-1.5" title="Marcar para revisar (Atajo: M)">
-            <span>⚑</span>
-            <span class="hidden sm:inline">Duda</span>
-          </button>
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="font-mono text-xs font-black uppercase px-3 py-1 rounded-full bg-[#0d9488] text-white shadow-xs tracking-wider">
+              ★ MÓDULO ESPECIALIZADO DESTACADO
+            </span>
+            <span class="font-mono text-xs font-bold px-2.5 py-1 rounded-full bg-teal-100 text-teal-800 dark:bg-teal-950/80 dark:text-teal-200 border border-teal-300 dark:border-teal-700">
+              136 Preguntas Curadas
+            </span>
+            <span class="font-mono text-xs font-bold px-2.5 py-1 rounded-full bg-[#1e3a8a]/10 text-[#1e3a8a] dark:bg-[#3b82f6]/20 dark:text-[#93c5fd] border border-[#1e3a8a]/20">
+              34 Estructuras Químicas HD
+            </span>
+          </div>
+          <span class="font-mono text-xs text-slate-500 dark:text-slate-400">
+            Convocatorias 2020 a 2025
+          </span>
         </div>
 
-        <div class="flex items-center gap-2">
-          <!-- Botón Ver Respuesta (Modo Estudio) -->
-          <button id="show-answer-btn" class="hidden px-4 py-2.5 rounded-[8px] bg-[#0d9488]/15 hover:bg-[#0d9488]/25 dark:bg-[#0d9488]/25 dark:hover:bg-[#0d9488]/35 text-[#0d9488] dark:text-[#2dd4bf] font-bold text-sm transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5">
-            Ver Respuesta
-          </button>
+        <h3 class="text-2xl sm:text-3xl font-black text-[#1e3a8a] dark:text-white mb-2">
+          Especial Química: Química Orgánica + Química Farmacéutica (I y II)
+        </h3>
+        <p class="text-sm sm:text-base text-slate-700 dark:text-slate-300 max-w-4xl mb-6 leading-relaxed">
+          Recopilación exhaustiva y curada de las 136 preguntas de Química Orgánica y Farmacéutica planteadas por el Ministerio de Sanidad en los exámenes oficiales FIR de los últimos seis años. Incluye todas las estructuras químicas en alta definición, categorización por asignatura y baremo oficial.
+        </p>
 
-          <!-- Botón Borrar Respuesta Seleccionada -->
-          <button id="clear-ans-btn" class="hidden px-3 py-2.5 rounded-[8px] text-[#64748b] hover:text-rose-600 dark:text-[#94a3b8] dark:hover:text-rose-400 font-semibold text-xs transition-colors" title="Dejar en blanco">
-            Dejar en blanco
+        <div class="flex flex-wrap items-center gap-3">
+          <button onclick="startExamFromHome('quimica', 'exam')" class="px-5 py-2.5 rounded-[8px] bg-[#1e3a8a] hover:bg-[#172554] text-white font-bold text-sm shadow-md transition-all hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer">
+            <svg class="w-4 h-4 text-[#2dd4bf]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            Iniciar Modo Examen
           </button>
-
-          <!-- Botón Finalizar Examen (Modo Simulacro) -->
-          <button id="finish-exam-btn" class="px-4 py-2.5 rounded-[8px] bg-gradient-to-r from-[#0d9488] to-[#0f766e] hover:from-[#14b8a6] hover:to-[#0d9488] text-white font-bold text-sm shadow-md transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5">
-            Finalizar Examen
-          </button>
-
-          <!-- Botón Siguiente -->
-          <button id="next-btn" class="px-5 py-2.5 rounded-[8px] bg-[#1e3a8a] hover:bg-[#172554] dark:bg-[#1e3a8a] dark:hover:bg-[#3b82f6] text-white font-bold text-sm shadow-md transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 flex items-center gap-1.5">
-            Siguiente
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+          <button onclick="startExamFromHome('quimica', 'study')" class="px-5 py-2.5 rounded-[8px] bg-white dark:bg-[#131d33] hover:bg-slate-50 dark:hover:bg-[#1c2b4c] text-[#0d9488] dark:text-[#2dd4bf] font-bold text-sm border-2 border-[#0d9488] shadow-xs transition-all hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+            Modo Estudio Guiado
           </button>
         </div>
+      </div>
 
-      </footer>
+      <!-- Rejilla de Tarjetas de Exámenes Oficiales -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- CARD: FIR 2025 -->
+        <article class="bg-white dark:bg-[#131d33] rounded-[14px] p-6 shadow-md border-t-4 border-[#1e3a8a] border-x border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c] flex flex-col justify-between transition-all hover:-translate-y-1 hover:shadow-lg">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2.5">
+              <span class="font-mono text-xs font-black px-2.5 py-0.5 rounded-[6px] bg-[#0d9488]/15 text-[#0d9488] dark:bg-[#2dd4bf]/20 dark:text-[#2dd4bf] border border-[#0d9488]/20">
+                Última Convocatoria
+              </span>
+              <span class="font-mono text-xs text-slate-500 dark:text-slate-400">4h 30m</span>
+            </div>
+            <h3 class="text-xl font-black text-[#1e3a8a] dark:text-white mb-1">
+              FIR 2025
+            </h3>
+            <p class="text-xs font-semibold text-[#0d9488] dark:text-[#2dd4bf] mb-3">
+              Convocatoria 2025 · Realizado en enero 2026
+            </p>
+            <div class="space-y-1.5 font-mono text-xs text-slate-600 dark:text-slate-300 mb-6">
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#1e3a8a]"></span>
+                <strong>210</strong> preguntas oficiales (200 + 10 reserva)
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#0d9488]"></span>
+                <strong>15</strong> figuras HD de estructuras químicas
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                Baremo oficial (+3 acierto / -1 fallo / 0 blanco)
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <button onclick="startExamFromHome('2025', 'exam')" class="flex-1 py-2 px-3 rounded-[8px] bg-[#1e3a8a] hover:bg-[#172554] text-white font-bold text-xs shadow-xs transition-all text-center">
+                Modo Examen
+              </button>
+              <button onclick="startExamFromHome('2025', 'study')" class="flex-1 py-2 px-3 rounded-[8px] bg-slate-100 dark:bg-[#1c2b4c] hover:bg-slate-200 dark:hover:bg-[#1c2b4c]/80 text-[#1e3a8a] dark:text-[#f8fafc] font-bold text-xs transition-all text-center border border-slate-200 dark:border-[#1c2b4c]">
+                Modo Estudio
+              </button>
+            </div>
+            <div class="pt-2.5 border-t border-slate-100 dark:border-[#1c2b4c] flex items-center justify-between text-[11px] font-mono">
+              <a href="FIR2025/Cuaderno_2025_F_0_C.pdf" target="_blank" class="text-[#1e3a8a] dark:text-[#3b82f6] hover:underline flex items-center gap-1">
+                📄 Cuaderno PDF
+              </a>
+              <a href="FIR2025/respuestascorrectas 2025.pdf" target="_blank" class="text-[#0d9488] dark:text-[#2dd4bf] hover:underline flex items-center gap-1">
+                ✓ Plantilla PDF
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD: FIR 2024 -->
+        <article class="bg-white dark:bg-[#131d33] rounded-[14px] p-6 shadow-md border-t-4 border-[#1e3a8a] border-x border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c] flex flex-col justify-between transition-all hover:-translate-y-1 hover:shadow-lg">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2.5">
+              <span class="font-mono text-xs font-bold px-2.5 py-0.5 rounded-[6px] bg-slate-100 text-slate-700 dark:bg-[#1c2b4c] dark:text-slate-300">
+                Oficial Ministerio
+              </span>
+              <span class="font-mono text-xs text-slate-500 dark:text-slate-400">4h 30m</span>
+            </div>
+            <h3 class="text-xl font-black text-[#1e3a8a] dark:text-white mb-1">
+              FIR 2024
+            </h3>
+            <p class="text-xs font-semibold text-[#0d9488] dark:text-[#2dd4bf] mb-3">
+              Convocatoria 2024 · Realizado en enero 2025
+            </p>
+            <div class="space-y-1.5 font-mono text-xs text-slate-600 dark:text-slate-300 mb-6">
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#1e3a8a]"></span>
+                <strong>210</strong> preguntas oficiales (200 + 10 reserva)
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#0d9488]"></span>
+                <strong>19</strong> figuras HD de estructuras químicas
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                Baremo oficial (+3 acierto / -1 fallo / 0 blanco)
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <button onclick="startExamFromHome('2024', 'exam')" class="flex-1 py-2 px-3 rounded-[8px] bg-[#1e3a8a] hover:bg-[#172554] text-white font-bold text-xs shadow-xs transition-all text-center">
+                Modo Examen
+              </button>
+              <button onclick="startExamFromHome('2024', 'study')" class="flex-1 py-2 px-3 rounded-[8px] bg-slate-100 dark:bg-[#1c2b4c] hover:bg-slate-200 dark:hover:bg-[#1c2b4c]/80 text-[#1e3a8a] dark:text-[#f8fafc] font-bold text-xs transition-all text-center border border-slate-200 dark:border-[#1c2b4c]">
+                Modo Estudio
+              </button>
+            </div>
+            <div class="pt-2.5 border-t border-slate-100 dark:border-[#1c2b4c] flex items-center justify-between text-[11px] font-mono">
+              <a href="FIR2024/Cuaderno_2024_FARMACIA_0_C.pdf" target="_blank" class="text-[#1e3a8a] dark:text-[#3b82f6] hover:underline flex items-center gap-1">
+                📄 Cuaderno PDF
+              </a>
+              <a href="FIR2024/respuestasCorrectas 024.pdf" target="_blank" class="text-[#0d9488] dark:text-[#2dd4bf] hover:underline flex items-center gap-1">
+                ✓ Plantilla PDF
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD: FIR 2023 -->
+        <article class="bg-white dark:bg-[#131d33] rounded-[14px] p-6 shadow-md border-t-4 border-[#1e3a8a] border-x border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c] flex flex-col justify-between transition-all hover:-translate-y-1 hover:shadow-lg">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2.5">
+              <span class="font-mono text-xs font-bold px-2.5 py-0.5 rounded-[6px] bg-slate-100 text-slate-700 dark:bg-[#1c2b4c] dark:text-slate-300">
+                Oficial Ministerio
+              </span>
+              <span class="font-mono text-xs text-slate-500 dark:text-slate-400">4h 30m</span>
+            </div>
+            <h3 class="text-xl font-black text-[#1e3a8a] dark:text-white mb-1">
+              FIR 2023
+            </h3>
+            <p class="text-xs font-semibold text-[#0d9488] dark:text-[#2dd4bf] mb-3">
+              Convocatoria 2023 · Realizado en enero 2024
+            </p>
+            <div class="space-y-1.5 font-mono text-xs text-slate-600 dark:text-slate-300 mb-6">
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#1e3a8a]"></span>
+                <strong>210</strong> preguntas oficiales (200 + 10 reserva)
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#0d9488]"></span>
+                <strong>11</strong> figuras HD de estructuras químicas
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                Baremo oficial (+3 acierto / -1 fallo / 0 blanco)
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <button onclick="startExamFromHome('2023', 'exam')" class="flex-1 py-2 px-3 rounded-[8px] bg-[#1e3a8a] hover:bg-[#172554] text-white font-bold text-xs shadow-xs transition-all text-center">
+                Modo Examen
+              </button>
+              <button onclick="startExamFromHome('2023', 'study')" class="flex-1 py-2 px-3 rounded-[8px] bg-slate-100 dark:bg-[#1c2b4c] hover:bg-slate-200 dark:hover:bg-[#1c2b4c]/80 text-[#1e3a8a] dark:text-[#f8fafc] font-bold text-xs transition-all text-center border border-slate-200 dark:border-[#1c2b4c]">
+                Modo Estudio
+              </button>
+            </div>
+            <div class="pt-2.5 border-t border-slate-100 dark:border-[#1c2b4c] flex items-center justify-between text-[11px] font-mono">
+              <a href="FIR2023/Cuaderno_2023_FARMACIA_0_C.pdf" target="_blank" class="text-[#1e3a8a] dark:text-[#3b82f6] hover:underline flex items-center gap-1">
+                📄 Cuaderno PDF
+              </a>
+              <a href="FIR2023/Respuestas correctas 2023 examen 0.pdf" target="_blank" class="text-[#0d9488] dark:text-[#2dd4bf] hover:underline flex items-center gap-1">
+                ✓ Plantilla PDF
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD: FIR 2022 -->
+        <article class="bg-white dark:bg-[#131d33] rounded-[14px] p-6 shadow-md border-t-4 border-[#1e3a8a] border-x border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c] flex flex-col justify-between transition-all hover:-translate-y-1 hover:shadow-lg">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2.5">
+              <span class="font-mono text-xs font-bold px-2.5 py-0.5 rounded-[6px] bg-slate-100 text-slate-700 dark:bg-[#1c2b4c] dark:text-slate-300">
+                Oficial Ministerio
+              </span>
+              <span class="font-mono text-xs text-slate-500 dark:text-slate-400">4h 30m</span>
+            </div>
+            <h3 class="text-xl font-black text-[#1e3a8a] dark:text-white mb-1">
+              FIR 2022
+            </h3>
+            <p class="text-xs font-semibold text-[#0d9488] dark:text-[#2dd4bf] mb-3">
+              Convocatoria 2022 · Realizado en enero 2023
+            </p>
+            <div class="space-y-1.5 font-mono text-xs text-slate-600 dark:text-slate-300 mb-6">
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#1e3a8a]"></span>
+                <strong>210</strong> preguntas oficiales (200 + 10 reserva)
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#0d9488]"></span>
+                <strong>2</strong> figuras HD de estructuras químicas
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                Baremo oficial (+3 acierto / -1 fallo / 0 blanco)
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <button onclick="startExamFromHome('2022', 'exam')" class="flex-1 py-2 px-3 rounded-[8px] bg-[#1e3a8a] hover:bg-[#172554] text-white font-bold text-xs shadow-xs transition-all text-center">
+                Modo Examen
+              </button>
+              <button onclick="startExamFromHome('2022', 'study')" class="flex-1 py-2 px-3 rounded-[8px] bg-slate-100 dark:bg-[#1c2b4c] hover:bg-slate-200 dark:hover:bg-[#1c2b4c]/80 text-[#1e3a8a] dark:text-[#f8fafc] font-bold text-xs transition-all text-center border border-slate-200 dark:border-[#1c2b4c]">
+                Modo Estudio
+              </button>
+            </div>
+            <div class="pt-2.5 border-t border-slate-100 dark:border-[#1c2b4c] flex items-center justify-between text-[11px] font-mono">
+              <a href="FIR2022/Cuaderno_2022_FARMACIA_0_C.pdf" target="_blank" class="text-[#1e3a8a] dark:text-[#3b82f6] hover:underline flex items-center gap-1">
+                📄 Cuaderno PDF
+              </a>
+              <a href="FIR2022/respuestas_2022.pdf" target="_blank" class="text-[#0d9488] dark:text-[#2dd4bf] hover:underline flex items-center gap-1">
+                ✓ Plantilla PDF
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD: FIR 2021 -->
+        <article class="bg-white dark:bg-[#131d33] rounded-[14px] p-6 shadow-md border-t-4 border-[#1e3a8a] border-x border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c] flex flex-col justify-between transition-all hover:-translate-y-1 hover:shadow-lg">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2.5">
+              <span class="font-mono text-xs font-bold px-2.5 py-0.5 rounded-[6px] bg-slate-100 text-slate-700 dark:bg-[#1c2b4c] dark:text-slate-300">
+                Oficial Ministerio
+              </span>
+              <span class="font-mono text-xs text-slate-500 dark:text-slate-400">4h 30m</span>
+            </div>
+            <h3 class="text-xl font-black text-[#1e3a8a] dark:text-white mb-1">
+              FIR 2021
+            </h3>
+            <p class="text-xs font-semibold text-[#0d9488] dark:text-[#2dd4bf] mb-3">
+              Convocatoria 2021 · Realizado en enero 2022
+            </p>
+            <div class="space-y-1.5 font-mono text-xs text-slate-600 dark:text-slate-300 mb-6">
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#1e3a8a]"></span>
+                <strong>210</strong> preguntas oficiales (200 + 10 reserva)
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#0d9488]"></span>
+                Formato completo del Ministerio
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                Baremo oficial (+3 acierto / -1 fallo / 0 blanco)
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <button onclick="startExamFromHome('2021', 'exam')" class="flex-1 py-2 px-3 rounded-[8px] bg-[#1e3a8a] hover:bg-[#172554] text-white font-bold text-xs shadow-xs transition-all text-center">
+                Modo Examen
+              </button>
+              <button onclick="startExamFromHome('2021', 'study')" class="flex-1 py-2 px-3 rounded-[8px] bg-slate-100 dark:bg-[#1c2b4c] hover:bg-slate-200 dark:hover:bg-[#1c2b4c]/80 text-[#1e3a8a] dark:text-[#f8fafc] font-bold text-xs transition-all text-center border border-slate-200 dark:border-[#1c2b4c]">
+                Modo Estudio
+              </button>
+            </div>
+            <div class="pt-2.5 border-t border-slate-100 dark:border-[#1c2b4c] flex items-center justify-between text-[11px] font-mono">
+              <a href="FIR2021/Cuaderno_2021_FARMACIA_0_C.pdf" target="_blank" class="text-[#1e3a8a] dark:text-[#3b82f6] hover:underline flex items-center gap-1">
+                📄 Cuaderno PDF
+              </a>
+              <a href="FIR2021/respuestas_2021.pdf" target="_blank" class="text-[#0d9488] dark:text-[#2dd4bf] hover:underline flex items-center gap-1">
+                ✓ Plantilla PDF
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD: FIR 2020 -->
+        <article class="bg-white dark:bg-[#131d33] rounded-[14px] p-6 shadow-md border-t-4 border-[#1e3a8a] border-x border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c] flex flex-col justify-between transition-all hover:-translate-y-1 hover:shadow-lg">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2.5">
+              <span class="font-mono text-xs font-bold px-2.5 py-0.5 rounded-[6px] bg-amber-100 text-amber-800 dark:bg-amber-950/60 dark:text-amber-200 border border-amber-300 dark:border-amber-800">
+                Formato COVID
+              </span>
+              <span class="font-mono text-xs text-slate-500 dark:text-slate-400">4h 00m</span>
+            </div>
+            <h3 class="text-xl font-black text-[#1e3a8a] dark:text-white mb-1">
+              FIR 2020
+            </h3>
+            <p class="text-xs font-semibold text-[#0d9488] dark:text-[#2dd4bf] mb-3">
+              Convocatoria 2020 · Realizado en marzo 2021
+            </p>
+            <div class="space-y-1.5 font-mono text-xs text-slate-600 dark:text-slate-300 mb-6">
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#1e3a8a]"></span>
+                <strong>185</strong> preguntas (175 + 10 reserva formato COVID)
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#0d9488]"></span>
+                Cuaderno oficial y plantilla definitiva
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                Baremo oficial (+3 acierto / -1 fallo / 0 blanco)
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <button onclick="startExamFromHome('2020', 'exam')" class="flex-1 py-2 px-3 rounded-[8px] bg-[#1e3a8a] hover:bg-[#172554] text-white font-bold text-xs shadow-xs transition-all text-center">
+                Modo Examen
+              </button>
+              <button onclick="startExamFromHome('2020', 'study')" class="flex-1 py-2 px-3 rounded-[8px] bg-slate-100 dark:bg-[#1c2b4c] hover:bg-slate-200 dark:hover:bg-[#1c2b4c]/80 text-[#1e3a8a] dark:text-[#f8fafc] font-bold text-xs transition-all text-center border border-slate-200 dark:border-[#1c2b4c]">
+                Modo Estudio
+              </button>
+            </div>
+            <div class="pt-2.5 border-t border-slate-100 dark:border-[#1c2b4c] flex items-center justify-between text-[11px] font-mono">
+              <a href="FIR2020/Cuaderno_2020_FARMACIA_0_C.pdf" target="_blank" class="text-[#1e3a8a] dark:text-[#3b82f6] hover:underline flex items-center gap-1">
+                📄 Cuaderno PDF
+              </a>
+              <a href="FIR2020/respuestas_2020.pdf" target="_blank" class="text-[#0d9488] dark:text-[#2dd4bf] hover:underline flex items-center gap-1">
+                ✓ Plantilla PDF
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD: Mega-Mix Aleatorio -->
+        <article class="bg-white dark:bg-[#131d33] rounded-[14px] p-6 shadow-md border-t-4 border-[#0d9488] border-x border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c] flex flex-col justify-between transition-all hover:-translate-y-1 hover:shadow-lg">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2.5">
+              <span class="font-mono text-xs font-bold px-2.5 py-0.5 rounded-[6px] bg-[#0d9488]/10 text-[#0d9488] dark:bg-[#2dd4bf]/20 dark:text-[#2dd4bf] border border-[#0d9488]/20">
+                Transversal Dinámico
+              </span>
+              <span class="font-mono text-xs text-slate-500 dark:text-slate-400">Variado</span>
+            </div>
+            <h3 class="text-xl font-black text-[#1e3a8a] dark:text-white mb-1">
+              Mega-Mix Aleatorio
+            </h3>
+            <p class="text-xs font-semibold text-[#0d9488] dark:text-[#2dd4bf] mb-3">
+              100 preguntas aleatorias de todos los años
+            </p>
+            <div class="space-y-1.5 font-mono text-xs text-slate-600 dark:text-slate-300 mb-6">
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#1e3a8a]"></span>
+                Extracción aleatoria balanceada
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#0d9488]"></span>
+                Banco de más de 1.200 preguntas oficiales
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                Ideal para repasos ágiles y diagnósticos
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <button onclick="startExamFromHome('random', 'exam')" class="flex-1 py-2 px-3 rounded-[8px] bg-[#0d9488] hover:bg-[#0f766e] text-white font-bold text-xs shadow-xs transition-all text-center">
+                Iniciar Mix (Examen)
+              </button>
+              <button onclick="startExamFromHome('random', 'study')" class="flex-1 py-2 px-3 rounded-[8px] bg-slate-100 dark:bg-[#1c2b4c] hover:bg-slate-200 dark:hover:bg-[#1c2b4c]/80 text-[#1e3a8a] dark:text-[#f8fafc] font-bold text-xs transition-all text-center border border-slate-200 dark:border-[#1c2b4c]">
+                Mix (Estudio)
+              </button>
+            </div>
+            <div class="pt-2.5 border-t border-slate-100 dark:border-[#1c2b4c] text-center text-[11px] font-mono text-slate-500 dark:text-slate-400">
+              Genera una combinación nueva cada vez
+            </div>
+          </div>
+        </article>
+
+      </div>
 
     </section>
 
-    <!-- COLUMNA LATERAL: HOJA DE RESPUESTAS OFICIAL (REJILLA DE 210 PREGUNTAS) -->
-    <aside id="grid-sidebar" class="lg:w-84 xl:w-96 flex flex-col gap-4">
-
-      <!-- Panel Hoja de Respuestas (12px Radius, 4px Navy Accent) -->
-      <div class="bg-white dark:bg-[#131d33] rounded-[12px] p-5 shadow-md border-t-4 border-[#1e3a8a] border-x border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c] flex flex-col h-[calc(100vh-8.5rem)] sticky top-20">
-        
-        <div class="flex items-center justify-between pb-3 border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c]">
-          <div>
-            <h2 class="font-extrabold text-[#1e3a8a] dark:text-white text-sm sm:text-base flex items-center gap-2">
-              Hoja de Respuestas
-              <span id="grid-count-badge" class="font-mono text-xs bg-[#0d9488]/10 text-[#0d9488] dark:bg-[#2dd4bf]/20 dark:text-[#2dd4bf] px-2 py-0.5 rounded-[4px] font-bold border border-[#0d9488]/20">
-                210
-              </span>
-            </h2>
-            <p class="text-xs text-[#64748b] dark:text-[#94a3b8] font-medium">Plantilla oficial del aspirante</p>
-          </div>
-          
-          <button id="reset-exam-btn" class="font-mono text-xs text-[#64748b] hover:text-rose-600 dark:text-[#94a3b8] dark:hover:text-rose-400 font-semibold transition-colors" title="Reiniciar simulacro">
-            Reiniciar
-          </button>
+    <!-- Footer de Home -->
+    <footer class="mt-auto border-t border-[#1e3a8a]/10 dark:border-[#1c2b4c] bg-white dark:bg-[#131d33] py-6">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
+        <div>
+          Facultad de Farmacia · Universidad de Granada · Prof. Juan J. Díaz Mochón & Nexus Lab
         </div>
-
-        <!-- Leyenda interactiva -->
-        <div class="grid grid-cols-3 gap-2 py-3 text-xs font-mono border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c]">
-          <div class="flex items-center gap-1.5 text-slate-700 dark:text-slate-300">
-            <span class="w-3 h-3 rounded-[3px] bg-[#1e3a8a]"></span> Resp. (<span id="count-answered">0</span>)
-          </div>
-          <div class="flex items-center gap-1.5 text-slate-700 dark:text-slate-300">
-            <span class="w-3 h-3 rounded-[3px] bg-amber-400"></span> Duda (<span id="count-flagged">0</span>)
-          </div>
-          <div class="flex items-center gap-1.5 text-slate-700 dark:text-slate-300">
-            <span class="w-3 h-3 rounded-[3px] bg-slate-200 dark:bg-[#1c2b4c]"></span> Blan. (<span id="count-unanswered">210</span>)
-          </div>
+        <div class="flex items-center gap-4">
+          <a href="#/historial" class="hover:text-[#1e3a8a] dark:hover:text-[#2dd4bf] transition-colors">Historial</a>
+          <button onclick="document.getElementById('nav-telemetry-btn').click()" class="hover:text-[#1e3a8a] dark:hover:text-[#2dd4bf] transition-colors cursor-pointer">Telemetría</button>
+          <span>Baremo Oficial Sanidad (+3 / -1 / 0)</span>
         </div>
-
-        <!-- Rejilla de Números con scroll suave y font-mono -->
-        <div id="questions-grid" class="flex-1 overflow-y-auto custom-scrollbar p-1 grid grid-cols-5 sm:grid-cols-6 gap-2 my-2 content-start">
-          <!-- Botones inyectados dinámicamente -->
-        </div>
-
-        <!-- Documentos Oficiales en PDF del Ministerio -->
-        <div class="pt-3 border-t border-[#1e3a8a]/10 dark:border-[#1c2b4c] flex flex-col gap-2">
-          <span class="text-xs font-bold text-[#1e3a8a] dark:text-[#2dd4bf]">Documentos Oficiales del Ministerio:</span>
-          <div class="flex items-center gap-2">
-            <a id="download-booklet-link" href="#" target="_blank" class="flex-1 text-center py-2 px-3 rounded-[8px] text-xs font-bold bg-[#1e3a8a]/5 hover:bg-[#1e3a8a]/10 dark:bg-[#1c2b4c] dark:hover:bg-[#1c2b4c]/80 text-[#1e3a8a] dark:text-[#f8fafc] border border-[#1e3a8a]/10 dark:border-[#1c2b4c] transition-all duration-200 hover:-translate-y-0.5 flex items-center justify-center gap-1.5">
-              <svg class="w-3.5 h-3.5 text-rose-500" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"></path></svg>
-              Cuaderno PDF
-            </a>
-            <a id="download-answers-link" href="#" target="_blank" class="flex-1 text-center py-2 px-3 rounded-[8px] text-xs font-bold bg-[#0d9488]/10 hover:bg-[#0d9488]/20 dark:bg-[#0d9488]/20 dark:hover:bg-[#0d9488]/30 text-[#0d9488] dark:text-[#2dd4bf] border border-[#0d9488]/20 dark:border-[#2dd4bf]/20 transition-all duration-200 hover:-translate-y-0.5 flex items-center justify-center gap-1.5">
-              <svg class="w-3.5 h-3.5 text-[#0d9488] dark:text-[#2dd4bf]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-              Plantilla PDF
-            </a>
-          </div>
-        </div>
-
       </div>
+    </footer>
 
-    </aside>
+  </div>
 
-  </main>
+  <!-- ================================================================= -->
+  <!-- VISTA 2: EXAMEN INTERACTIVO (#exam-view)                          -->
+  <!-- ================================================================= -->
+  <div id="exam-view" class="w-full flex-1 flex flex-col hidden">
 
-  <!-- MODAL DE PANTALLA COMPLETA PARA ZOOM DE ESTRUCTURA QUÍMICA / FIGURA -->
+    <!-- BARRA DE PROGRESO GLOBAL (Mint to Teal Gradient) -->
+    <div class="sticky top-16 z-30 w-full bg-slate-200/80 dark:bg-[#1c2b4c] h-1.5 overflow-hidden">
+      <div id="progress-bar-fill" class="h-full transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]" style="width: 0%; background: linear-gradient(90deg, #2dd4bf 0%, #0d9488 100%);"></div>
+    </div>
+
+    <!-- Banner Especial para el Módulo de Química -->
+    <div id="chemistry-exam-banner" class="hidden bg-gradient-to-r from-[#1e3a8a] to-[#0d9488] text-white py-2 px-4 text-center font-mono text-xs sm:text-sm font-bold shadow-xs">
+      🧪 Módulo Especializado: Química Orgánica y Farmacéutica (QO + QF I y II) · 136 Preguntas Curadas (2020-2025)
+    </div>
+
+    <!-- CONTENEDOR PRINCIPAL DEL EXAMEN -->
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col lg:flex-row gap-6">
+
+      <!-- COLUMNA PRINCIPAL (PREGUNTA ACTIVA) -->
+      <section class="flex-1 flex flex-col gap-4">
+
+        <!-- Barra de Estado Superior de la Pregunta -->
+        <div class="bg-white dark:bg-[#131d33] rounded-[12px] p-4 shadow-sm border border-[#1e3a8a]/10 dark:border-[#1c2b4c] flex flex-wrap items-center justify-between gap-3">
+          <div class="flex items-center gap-2 sm:gap-3 flex-wrap">
+            <span id="current-q-badge" class="bg-[#1e3a8a] text-white font-mono font-bold px-3 py-1 rounded-[8px] text-sm shadow-sm tracking-tight">
+              Pregunta 1
+            </span>
+            <span id="exam-progress-text" class="font-mono text-xs sm:text-sm font-semibold text-[#64748b] dark:text-[#94a3b8]">
+              1 de 210
+            </span>
+            <span id="status-flag-badge" class="hidden font-mono text-xs px-2.5 py-0.5 rounded-[6px] font-bold bg-amber-100 text-amber-800 dark:bg-amber-900/60 dark:text-amber-200 border border-amber-300 dark:border-amber-700">
+              Revisar ⚑
+            </span>
+            <span id="status-annulled-badge" class="hidden font-mono text-xs px-2.5 py-0.5 rounded-[6px] font-bold bg-rose-100 text-rose-800 dark:bg-rose-900/60 dark:text-rose-200 border border-rose-300 dark:border-rose-700">
+              Anulada Oficial
+            </span>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <!-- Temporizador Oficial (Modo Examen - 4h 30m) -->
+            <div id="timer-container" class="flex items-center gap-2 bg-[#172554] text-[#2dd4bf] px-3.5 py-1.5 rounded-[8px] text-xs sm:text-sm font-mono font-bold border-l-4 border-[#2dd4bf] shadow-sm">
+              <svg class="w-4 h-4 text-[#2dd4bf] animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              <span id="timer-display">04:30:00</span>
+            </div>
+
+            <!-- Puntuación Rápida en Vivo (Modo Estudio) -->
+            <div id="study-score-display" class="hidden font-mono text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200 bg-[#1e3a8a]/5 dark:bg-[#1c2b4c] px-3.5 py-1.5 rounded-[8px] border border-[#1e3a8a]/10 dark:border-[#2dd4bf]/20">
+              Aciertos: <span id="score-correct-num" class="text-[#0d9488] dark:text-[#2dd4bf] font-bold">0</span> | Fallos: <span id="score-wrong-num" class="text-rose-600 dark:text-rose-400 font-bold">0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- TARJETA PRINCIPAL DE LA PREGUNTA (12px Radius, 4px Navy Accent) -->
+        <article class="bg-white dark:bg-[#131d33] rounded-[12px] p-6 sm:p-8 shadow-md border-t-4 border-[#1e3a8a] border-x border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c] flex flex-col flex-1 transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)]">
+          
+          <!-- Badge de Especialidad / Categoría Oficial (Especial Química o Pregunta con Metadatos) -->
+          <div id="question-badge-container" class="hidden mb-4">
+            <span id="question-badge-pill" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#0d9488]/10 text-[#0d9488] dark:bg-[#2dd4bf]/20 dark:text-[#2dd4bf] border border-[#0d9488]/20 shadow-2xs">
+              <!-- e.g. FIR 2025 · P1 · Química Farmacéutica -->
+            </span>
+          </div>
+
+          <!-- Enunciado de la Pregunta -->
+          <div class="mb-6">
+            <p id="question-text" class="text-base sm:text-lg lg:text-xl font-bold text-black dark:text-[#f8fafc] leading-relaxed">
+              Cargando pregunta...
+            </p>
+          </div>
+
+          <!-- Contenedor de Imagen de Estructura / Figura Oficial -->
+          <div id="image-container" class="hidden mb-6 p-4 rounded-[12px] bg-[#1e3a8a]/5 dark:bg-[#1c2b4c]/50 border border-[#1e3a8a]/15 dark:border-[#2dd4bf]/20 flex flex-col items-center justify-center">
+            <div class="flex items-center gap-2 mb-2.5 font-mono text-xs font-bold text-[#1e3a8a] dark:text-[#2dd4bf]">
+              <svg class="w-4 h-4 text-[#0d9488] dark:text-[#2dd4bf]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+              Figura / Estructura Química Oficial (clic para ampliar)
+            </div>
+            <img id="question-image" src="" alt="Estructura química oficial" class="max-h-72 max-w-full rounded-[8px] shadow-sm cursor-zoom-in hover:opacity-95 transition-opacity bg-white p-2 border border-slate-200 dark:border-[#1c2b4c]">
+          </div>
+
+          <!-- Contenedor de Opciones (1, 2, 3, 4) -->
+          <div id="options-container" class="grid grid-cols-1 gap-3 sm:gap-3.5 my-2">
+            <!-- Opciones inyectadas dinámicamente -->
+          </div>
+
+          <!-- Feedback Mensaje (Modo Estudio) -->
+          <div id="feedback-container" class="mt-6 hidden p-4 rounded-[8px] font-mono text-sm sm:text-base font-bold text-center border-l-4 transition-all">
+            <span id="feedback-text"></span>
+          </div>
+
+        </article>
+
+        <!-- CALLOUT TÉCNICO (Baremo y Atajos de Teclado) -->
+        <div class="bg-[#172554] text-white p-3.5 sm:p-4 rounded-[8px] font-mono text-xs sm:text-sm border-l-4 border-[#2dd4bf] shadow-sm flex flex-wrap items-center justify-between gap-3">
+          <div class="flex items-center gap-2">
+            <span class="text-[#2dd4bf] text-xs uppercase tracking-wider font-bold">// Control FIR</span>
+            <span class="text-slate-300 hidden sm:inline">| Baremo Oficial: +3 (acierto) / -1 (fallo) / 0 (blanco)</span>
+          </div>
+          <div class="flex items-center gap-2 text-xs text-slate-300">
+            <span>Atajos: <kbd class="bg-[#1e3a8a] text-white px-1.5 py-0.5 rounded text-[11px] font-mono font-semibold">1-4</kbd> <kbd class="bg-[#1e3a8a] text-white px-1.5 py-0.5 rounded text-[11px] font-mono font-semibold">← / →</kbd> <kbd class="bg-[#1e3a8a] text-white px-1.5 py-0.5 rounded text-[11px] font-mono font-semibold">M</kbd></span>
+          </div>
+        </div>
+
+        <!-- BARRA DE ACCIÓN Y NAVEGACIÓN INFERIOR -->
+        <footer class="bg-white dark:bg-[#131d33] rounded-[12px] p-4 shadow-sm border border-[#1e3a8a]/10 dark:border-[#1c2b4c] flex flex-wrap items-center justify-between gap-3">
+          
+          <div class="flex items-center gap-2">
+            <button id="prev-btn" class="px-4 py-2.5 rounded-[8px] bg-slate-100 hover:bg-slate-200 dark:bg-[#1c2b4c] dark:hover:bg-[#1c2b4c]/80 text-[#1e3a8a] dark:text-[#f8fafc] font-bold text-sm transition-all hover:-translate-y-0.5 flex items-center gap-1.5 cursor-pointer">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+              Anterior
+            </button>
+
+            <button id="flag-btn" class="px-3.5 py-2.5 rounded-[8px] bg-amber-50 hover:bg-amber-100 dark:bg-amber-950/30 dark:hover:bg-amber-900/50 text-amber-800 dark:text-amber-300 font-bold text-sm transition-all hover:-translate-y-0.5 flex items-center gap-1.5 cursor-pointer" title="Marcar para revisar (Atajo: M)">
+              <span>⚑</span>
+              <span class="hidden sm:inline">Duda</span>
+            </button>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <!-- Botón Ver Respuesta (Modo Estudio) -->
+            <button id="show-answer-btn" class="hidden px-4 py-2.5 rounded-[8px] bg-[#0d9488]/15 hover:bg-[#0d9488]/25 dark:bg-[#0d9488]/25 dark:hover:bg-[#0d9488]/35 text-[#0d9488] dark:text-[#2dd4bf] font-bold text-sm transition-all hover:-translate-y-0.5 cursor-pointer">
+              Ver Respuesta
+            </button>
+
+            <!-- Botón Borrar Respuesta Seleccionada -->
+            <button id="clear-ans-btn" class="hidden px-3 py-2.5 rounded-[8px] text-[#64748b] hover:text-rose-600 dark:text-[#94a3b8] dark:hover:text-rose-400 font-semibold text-xs transition-colors cursor-pointer" title="Dejar en blanco">
+              Dejar en blanco
+            </button>
+
+            <!-- Botón Finalizar Examen (Modo Simulacro) -->
+            <button id="finish-exam-btn" class="px-4 py-2.5 rounded-[8px] bg-gradient-to-r from-[#0d9488] to-[#0f766e] hover:from-[#14b8a6] hover:to-[#0d9488] text-white font-bold text-sm shadow-md transition-all hover:-translate-y-0.5 cursor-pointer">
+              Finalizar Examen
+            </button>
+
+            <!-- Botón Siguiente -->
+            <button id="next-btn" class="px-5 py-2.5 rounded-[8px] bg-[#1e3a8a] hover:bg-[#172554] dark:bg-[#1e3a8a] dark:hover:bg-[#3b82f6] text-white font-bold text-sm shadow-md transition-all hover:-translate-y-0.5 flex items-center gap-1.5 cursor-pointer">
+              Siguiente
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+          </div>
+
+        </footer>
+
+      </section>
+
+      <!-- COLUMNA LATERAL: HOJA DE RESPUESTAS (REDISEÑADA SIN ERRORES DE ENVOLTURA) -->
+      <aside id="grid-sidebar" class="lg:w-84 xl:w-96 flex flex-col gap-4">
+
+        <!-- Panel Hoja de Respuestas -->
+        <div class="bg-white dark:bg-[#131d33] rounded-[12px] p-5 shadow-md border-t-4 border-[#1e3a8a] border-x border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c] flex flex-col h-[calc(100vh-8.5rem)] sticky top-20">
+          
+          <div class="flex items-center justify-between pb-3 border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c]">
+            <div>
+              <h2 class="font-extrabold text-[#1e3a8a] dark:text-white text-sm sm:text-base flex items-center gap-2">
+                Hoja de Respuestas
+                <span id="grid-count-badge" class="font-mono text-xs bg-[#0d9488]/10 text-[#0d9488] dark:bg-[#2dd4bf]/20 dark:text-[#2dd4bf] px-2 py-0.5 rounded-[4px] font-bold border border-[#0d9488]/20">
+                  210
+                </span>
+              </h2>
+              <p class="text-xs text-[#64748b] dark:text-[#94a3b8] font-medium">Plantilla oficial del aspirante</p>
+            </div>
+            
+            <button id="reset-exam-btn" class="font-mono text-xs text-[#64748b] hover:text-rose-600 dark:text-[#94a3b8] dark:hover:text-rose-400 font-semibold transition-colors cursor-pointer" title="Reiniciar simulacro">
+              Reiniciar
+            </button>
+          </div>
+
+          <!-- LEYENDA REDISEÑADA: Stat Pills con whitespace-nowrap inquebrantables -->
+          <div class="flex flex-wrap items-center justify-between gap-1.5 py-3 border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c]">
+            <!-- Pill Respondidas (Navy) -->
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-[#1e3a8a]/10 text-[#1e3a8a] dark:bg-[#1e3a8a]/30 dark:text-[#93c5fd] border border-[#1e3a8a]/20 whitespace-nowrap shadow-2xs">
+              <span class="w-2 h-2 rounded-full bg-[#1e3a8a] dark:bg-[#3b82f6] shrink-0"></span>
+              <span>Resp:</span>
+              <span id="count-answered">0</span>
+            </div>
+            <!-- Pill Duda (Amber) -->
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-amber-100 text-amber-900 dark:bg-amber-950/60 dark:text-amber-200 border border-amber-300 dark:border-amber-700 whitespace-nowrap shadow-2xs">
+              <span class="w-2 h-2 rounded-full bg-amber-500 shrink-0"></span>
+              <span>Duda:</span>
+              <span id="count-flagged">0</span>
+            </div>
+            <!-- Pill Blanco (Slate) -->
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-slate-100 text-slate-700 dark:bg-[#1c2b4c] dark:text-slate-300 border border-slate-200 dark:border-slate-700 whitespace-nowrap shadow-2xs">
+              <span class="w-2 h-2 rounded-full bg-slate-400 dark:bg-slate-500 shrink-0"></span>
+              <span>Blanco:</span>
+              <span id="count-unanswered">210</span>
+            </div>
+          </div>
+
+          <!-- Rejilla de Números -->
+          <div id="questions-grid" class="flex-1 overflow-y-auto custom-scrollbar p-1 grid grid-cols-5 sm:grid-cols-6 gap-2 my-2 content-start">
+            <!-- Botones inyectados dinámicamente -->
+          </div>
+
+          <!-- Documentos Oficiales en PDF del Ministerio -->
+          <div id="sidebar-docs-container" class="pt-3 border-t border-[#1e3a8a]/10 dark:border-[#1c2b4c] flex flex-col gap-2">
+            <span class="text-xs font-bold text-[#1e3a8a] dark:text-[#2dd4bf]">Documentos Oficiales del Ministerio:</span>
+            <div class="flex items-center gap-2">
+              <a id="download-booklet-link" href="#" target="_blank" class="flex-1 text-center py-2 px-3 rounded-[8px] text-xs font-bold bg-[#1e3a8a]/5 hover:bg-[#1e3a8a]/10 dark:bg-[#1c2b4c] dark:hover:bg-[#1c2b4c]/80 text-[#1e3a8a] dark:text-[#f8fafc] border border-[#1e3a8a]/10 dark:border-[#1c2b4c] transition-all hover:-translate-y-0.5 flex items-center justify-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-rose-500 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"></path></svg>
+                <span class="truncate">Cuaderno PDF</span>
+              </a>
+              <a id="download-answers-link" href="#" target="_blank" class="flex-1 text-center py-2 px-3 rounded-[8px] text-xs font-bold bg-[#0d9488]/10 hover:bg-[#0d9488]/20 dark:bg-[#0d9488]/20 dark:hover:bg-[#0d9488]/30 text-[#0d9488] dark:text-[#2dd4bf] border border-[#0d9488]/20 dark:border-[#2dd4bf]/20 transition-all hover:-translate-y-0.5 flex items-center justify-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-[#0d9488] dark:text-[#2dd4bf] shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                <span class="truncate">Plantilla PDF</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </aside>
+
+    </main>
+
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- MODAL ZOOM ESTRUCTURAS QUÍMICAS                                   -->
+  <!-- ================================================================= -->
   <div id="image-modal" class="fixed inset-0 z-50 bg-[#090e1a]/85 backdrop-blur-md hidden flex items-center justify-center p-4">
     <div class="relative max-w-4xl w-full bg-white dark:bg-[#131d33] rounded-[12px] shadow-2xl overflow-hidden flex flex-col border-t-4 border-[#1e3a8a] border-x border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c] animate-in fade-in zoom-in duration-200">
       <div class="p-4 bg-slate-50 dark:bg-[#1c2b4c]/60 flex items-center justify-between border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c]">
         <h3 id="modal-title" class="font-extrabold text-[#1e3a8a] dark:text-white text-sm sm:text-base">
           Estructura Química en Alta Resolución · Cuaderno Oficial
         </h3>
-        <button id="close-modal-btn" class="p-1.5 rounded-[8px] text-[#64748b] hover:text-[#1e3a8a] dark:hover:text-white bg-white dark:bg-[#131d33] border border-slate-200 dark:border-[#1c2b4c] shadow-sm transition-colors">
+        <button id="close-modal-btn" class="p-1.5 rounded-[8px] text-[#64748b] hover:text-[#1e3a8a] dark:hover:text-white bg-white dark:bg-[#131d33] border border-slate-200 dark:border-[#1c2b4c] shadow-sm transition-colors cursor-pointer">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
       </div>
@@ -488,7 +1066,9 @@
     </div>
   </div>
 
-  <!-- MODAL DE RESULTADOS FINALES DEL SIMULACRO FIR -->
+  <!-- ================================================================= -->
+  <!-- MODAL DE RESULTADOS FINALES DEL SIMULACRO                         -->
+  <!-- ================================================================= -->
   <div id="results-modal" class="fixed inset-0 z-50 bg-[#090e1a]/85 backdrop-blur-md hidden flex items-center justify-center p-4 overflow-y-auto">
     <div class="relative max-w-2xl w-full bg-white dark:bg-[#131d33] rounded-[16px] shadow-2xl p-6 sm:p-8 border-t-4 border-[#0d9488] border-x border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c] animate-in zoom-in-95 duration-200 my-8">
       
@@ -504,7 +1084,7 @@
         </p>
       </div>
 
-      <!-- Cuadro Principal de Puntuación FIR con Pocket Highlight Gradient -->
+      <!-- Cuadro Principal de Puntuación FIR -->
       <div class="bg-gradient-to-br from-[#1e3a8a]/5 to-[#0d9488]/10 dark:from-[#172554] dark:to-[#1c2b4c] rounded-[12px] p-6 mb-6 border border-[#1e3a8a]/15 dark:border-[#2dd4bf]/20 text-center">
         <span class="font-mono text-xs font-bold uppercase tracking-wider text-[#1e3a8a] dark:text-[#2dd4bf]">
           Puntuación Neta Oficial FIR (+3 / -1)
@@ -522,7 +1102,7 @@
         </p>
       </div>
 
-      <!-- Desglose de Respuestas con Números en Roboto Mono -->
+      <!-- Desglose de Respuestas -->
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
         <div class="bg-[#0d9488]/10 border border-[#0d9488]/30 rounded-[12px] p-3 text-center">
           <span class="font-mono text-xs font-bold text-[#0d9488] dark:text-[#2dd4bf] block">Aciertos (+3)</span>
@@ -542,41 +1122,307 @@
         </div>
       </div>
 
-      <!-- Botones de Acción de Resultados con Alta Afinidad -->
+      <!-- Botones de Acción -->
       <div class="flex flex-col sm:flex-row gap-3">
-        <button id="results-review-btn" class="flex-1 py-3 px-4 rounded-[8px] bg-[#1e3a8a] hover:bg-[#172554] text-white font-bold text-sm shadow-md transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 text-center">
+        <button id="results-review-btn" class="flex-1 py-3 px-4 rounded-[8px] bg-[#1e3a8a] hover:bg-[#172554] text-white font-bold text-sm shadow-md transition-all hover:-translate-y-0.5 text-center cursor-pointer">
           Revisar Respuestas y Fallos
         </button>
-        <button id="results-restart-btn" class="flex-1 py-3 px-4 rounded-[8px] bg-slate-100 dark:bg-[#1c2b4c] hover:bg-slate-200 dark:hover:bg-[#1c2b4c]/80 text-[#1e3a8a] dark:text-[#f8fafc] font-bold text-sm transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 text-center border border-[#1e3a8a]/10 dark:border-[#1c2b4c]">
-          Hacer Otro Examen
+        <button id="results-print-btn" class="flex-1 py-3 px-4 rounded-[8px] bg-teal-600 hover:bg-teal-700 text-white font-bold text-sm shadow-md transition-all hover:-translate-y-0.5 text-center flex items-center justify-center gap-1.5 cursor-pointer">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+          Imprimir / Guardar PDF
+        </button>
+        <button id="results-restart-btn" class="flex-1 py-3 px-4 rounded-[8px] bg-slate-100 dark:bg-[#1c2b4c] hover:bg-slate-200 dark:hover:bg-[#1c2b4c]/80 text-[#1e3a8a] dark:text-[#f8fafc] font-bold text-sm transition-all hover:-translate-y-0.5 text-center border border-[#1e3a8a]/10 dark:border-[#1c2b4c] cursor-pointer">
+          Catálogo de Exámenes
         </button>
       </div>
 
     </div>
   </div>
 
-  <!-- SCRIPT LOGIC DE LA APLICACIÓN (100% PRESERVADO Y POTENCIADO) -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // --- ESTADO DE LA APLICACIÓN ---
-      let currentYear = '2025';
-      let currentMode = 'exam'; // 'exam' (simulacro) o 'study' (práctica)
-      let examQuestions = [];
-      let currentIndex = 0;
+  <!-- ================================================================= -->
+  <!-- MODAL HISTORIAL DE SIMULACROS                                     -->
+  <!-- ================================================================= -->
+  <div id="history-modal" class="fixed inset-0 z-50 bg-[#090e1a]/85 backdrop-blur-md hidden flex items-center justify-center p-4 overflow-y-auto">
+    <div class="relative max-w-4xl w-full bg-white dark:bg-[#131d33] rounded-[16px] shadow-2xl p-6 sm:p-8 border-t-4 border-[#1e3a8a] border-x border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c] animate-in zoom-in-95 duration-200 my-8">
       
-      // Respuestas del usuario: { [questionId]: selectedOption (1..4) }
-      let userAnswers = {};
-      // Preguntas marcadas para revisar: Set<number>
-      let flaggedQuestions = new Set();
-      // Examen finalizado
-      let isExamSubmitted = false;
+      <div class="flex items-center justify-between pb-4 mb-6 border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c]">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-[10px] bg-[#1e3a8a]/10 dark:bg-[#2dd4bf]/20 text-[#1e3a8a] dark:text-[#2dd4bf] flex items-center justify-center">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-extrabold text-[#1e3a8a] dark:text-white">
+              Historial de Simulacros Guardados
+            </h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400">
+              Registro local de tus evaluaciones oficiales FIR con baremo (+3 / -1 / 0)
+            </p>
+          </div>
+        </div>
+        <button id="history-close-btn" class="p-1.5 rounded-[8px] text-slate-500 hover:text-slate-800 dark:hover:text-white border border-slate-200 dark:border-[#1c2b4c] cursor-pointer">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
 
-      // Temporizador (4 horas y media = 270 minutos = 16200 segundos)
-      const TOTAL_TIME_SECONDS = 16200;
-      let remainingSeconds = TOTAL_TIME_SECONDS;
-      let timerInterval = null;
+      <!-- Resumen Estadístico de Historial -->
+      <div id="history-summary-bar" class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6 font-mono text-center">
+        <div class="p-3 rounded-[10px] bg-slate-50 dark:bg-[#1c2b4c] border border-slate-200 dark:border-slate-700">
+          <span class="text-xs text-slate-500 dark:text-slate-400 block">Total Simulacros</span>
+          <span id="hist-stat-count" class="text-xl font-bold text-[#1e3a8a] dark:text-white">0</span>
+        </div>
+        <div class="p-3 rounded-[10px] bg-slate-50 dark:bg-[#1c2b4c] border border-slate-200 dark:border-slate-700">
+          <span class="text-xs text-slate-500 dark:text-slate-400 block">Mejor Puntuación</span>
+          <span id="hist-stat-best" class="text-xl font-bold text-[#0d9488] dark:text-[#2dd4bf]">0 pts</span>
+        </div>
+        <div class="p-3 rounded-[10px] bg-slate-50 dark:bg-[#1c2b4c] border border-slate-200 dark:border-slate-700">
+          <span class="text-xs text-slate-500 dark:text-slate-400 block">Media Neta</span>
+          <span id="hist-stat-avg" class="text-xl font-bold text-[#1e3a8a] dark:text-[#3b82f6]">0 pts</span>
+        </div>
+        <div class="p-3 rounded-[10px] bg-slate-50 dark:bg-[#1c2b4c] border border-slate-200 dark:border-slate-700">
+          <span class="text-xs text-slate-500 dark:text-slate-400 block">Efectividad Media</span>
+          <span id="hist-stat-eff" class="text-xl font-bold text-amber-600 dark:text-amber-400">0%</span>
+        </div>
+      </div>
+
+      <!-- Lista de Intentos Guardados -->
+      <div id="history-list-container" class="space-y-3 max-h-[50vh] overflow-y-auto custom-scrollbar pr-1 mb-6">
+        <!-- Inyectado dinámicamente -->
+      </div>
+
+      <!-- Botones de Acción de Historial -->
+      <div class="flex items-center justify-between pt-4 border-t border-[#1e3a8a]/10 dark:border-[#1c2b4c]">
+        <button id="clear-all-history-btn" class="text-xs font-mono text-rose-600 hover:text-rose-800 dark:text-rose-400 dark:hover:text-rose-300 font-bold transition-colors cursor-pointer">
+          🗑 Borrar Todo el Historial
+        </button>
+        <button id="history-close-btn-footer" class="py-2 px-4 rounded-[8px] bg-[#1e3a8a] text-white font-bold text-xs hover:bg-[#172554] transition-all cursor-pointer">
+          Cerrar
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- MODAL TELEMETRÍA Y SEGUIMIENTO (PROF. JUANJO)                     -->
+  <!-- ================================================================= -->
+  <div id="telemetry-modal" class="fixed inset-0 z-50 bg-[#090e1a]/85 backdrop-blur-md hidden flex items-center justify-center p-4 overflow-y-auto">
+    <div class="relative max-w-2xl w-full bg-white dark:bg-[#131d33] rounded-[16px] shadow-2xl p-6 sm:p-8 border-t-4 border-[#0d9488] border-x border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c] animate-in zoom-in-95 duration-200 my-8">
+      
+      <div class="flex items-center justify-between pb-4 mb-4 border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c]">
+        <div>
+          <h3 class="text-xl font-extrabold text-[#1e3a8a] dark:text-white flex items-center gap-2">
+            Seguimiento de Uso y Telemetría
+            <span class="font-mono text-xs font-bold px-2 py-0.5 rounded bg-[#0d9488]/10 text-[#0d9488] dark:bg-[#2dd4bf]/20 dark:text-[#2dd4bf]">
+              Prof. Juanjo
+            </span>
+          </h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400">
+            Conectores para registrar intentos de simulacros en Google Sheets (Apps Script) y Google Analytics 4
+          </p>
+        </div>
+        <button id="telemetry-close-btn" class="p-1.5 rounded-[8px] text-slate-500 hover:text-slate-800 dark:hover:text-white border border-slate-200 dark:border-[#1c2b4c] cursor-pointer">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- Sección 1: Webhook de Google Apps Script -->
+      <div class="mb-6 bg-[#1e3a8a]/5 dark:bg-[#1c2b4c]/50 p-4 rounded-[12px] border border-[#1e3a8a]/10 dark:border-[#2dd4bf]/20">
+        <label for="webhook-url-input" class="block font-bold text-xs text-slate-800 dark:text-slate-100 mb-1">
+          URL del Webhook de Google Apps Script:
+        </label>
+        <p class="text-[11px] text-slate-500 dark:text-slate-400 mb-2.5">
+          Cada simulacro finalizado enviará automáticamente fecha, examen, nota neta, aciertos, fallos y duración a tu Google Sheet.
+        </p>
+        <div class="flex gap-2">
+          <input type="url" id="webhook-url-input" placeholder="https://script.google.com/macros/s/.../exec" class="flex-1 font-mono text-xs p-2.5 rounded-[8px] border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#131d33] text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#0d9488]">
+          <button id="save-webhook-btn" class="px-4 py-2.5 rounded-[8px] bg-[#0d9488] hover:bg-[#0f766e] text-white font-bold text-xs transition-all shrink-0 cursor-pointer">
+            Guardar
+          </button>
+          <button id="test-webhook-btn" class="px-3 py-2.5 rounded-[8px] bg-[#1e3a8a] hover:bg-[#172554] text-white font-bold text-xs transition-all shrink-0 cursor-pointer" title="Probar conexión">
+            Probar
+          </button>
+        </div>
+        <div id="webhook-status-msg" class="text-xs font-mono mt-2 hidden"></div>
+      </div>
+
+      <!-- Sección 2: Código Apps Script Listo para Pegar -->
+      <div class="mb-6">
+        <div class="flex items-center justify-between mb-1.5">
+          <span class="font-bold text-xs text-slate-800 dark:text-slate-100">Código de Google Apps Script (1 clic):</span>
+          <button id="copy-gas-code-btn" class="text-[11px] font-mono text-[#0d9488] dark:text-[#2dd4bf] hover:underline font-bold cursor-pointer">
+            Copiar Código
+          </button>
+        </div>
+        <pre class="bg-slate-900 text-slate-100 p-3 rounded-[8px] font-mono text-[11px] overflow-x-auto max-h-36 custom-scrollbar"><code>function doPost(e) {
+  try {
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    var data = JSON.parse(e.postData.contents);
+    if (sheet.getLastRow() === 0) {
+      sheet.appendRow(["Timestamp", "Fecha", "Examen", "Modo", "Puntos Netos", "Puntos Max", "Efectividad %", "Aciertos", "Fallos", "Blancos", "Anuladas", "Tiempo (seg)"]);
+    }
+    sheet.appendRow([
+      new Date(),
+      data.formattedDate || new Date().toLocaleString(),
+      data.examTitle || data.year,
+      data.mode,
+      data.netScore,
+      data.maxScore,
+      data.percentage + "%",
+      data.correct,
+      data.wrong,
+      data.blank,
+      data.annulled,
+      data.durationSeconds
+    ]);
+    return ContentService.createTextOutput(JSON.stringify({ status: "success" })).setMimeType(ContentService.MimeType.JSON);
+  } catch(err) {
+    return ContentService.createTextOutput(JSON.stringify({ status: "error", message: err.toString() })).setMimeType(ContentService.MimeType.JSON);
+  }
+}</code></pre>
+      </div>
+
+      <!-- Sección 3: Google Analytics 4 -->
+      <div class="mb-6">
+        <label for="ga4-id-input" class="block font-bold text-xs text-slate-800 dark:text-slate-100 mb-1">
+          ID de Medición de Google Analytics 4 (Opcional):
+        </label>
+        <div class="flex gap-2">
+          <input type="text" id="ga4-id-input" placeholder="G-XXXXXXXXXX" class="flex-1 font-mono text-xs p-2 rounded-[8px] border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#131d33] text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#0d9488]">
+          <button id="save-ga4-btn" class="px-4 py-2 rounded-[8px] bg-slate-200 dark:bg-[#1c2b4c] hover:bg-slate-300 dark:hover:bg-[#1c2b4c]/80 text-slate-800 dark:text-white font-bold text-xs transition-all shrink-0 cursor-pointer">
+            Guardar
+          </button>
+        </div>
+      </div>
+
+      <div class="text-right">
+        <button id="telemetry-close-btn-footer" class="py-2 px-4 rounded-[8px] bg-[#1e3a8a] text-white font-bold text-xs hover:bg-[#172554] transition-all cursor-pointer">
+          Cerrar
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- CONTENEDOR INFORME OFICIAL DE IMPRESIÓN / PDF (@media print)       -->
+  <!-- ================================================================= -->
+  <div id="print-report-container" class="hidden">
+    <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 12px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: flex-end;">
+      <div>
+        <h1 style="font-size: 20px; font-weight: 900; color: #1e3a8a; margin: 0; text-transform: uppercase;">
+          UNIVERSIDAD DE GRANADA · FACULTAD DE FARMACIA
+        </h1>
+        <p style="font-size: 13px; color: #475569; margin: 4px 0 0 0; font-weight: 600;">
+          Simulador Oficial de Exámenes FIR | Plataforma Docente Nexus Lab
+        </p>
+      </div>
+      <div style="text-align: right; font-family: monospace; font-size: 12px; color: #64748b;">
+        <div id="print-date"></div>
+        <div>Baremo Oficial Ministerio (+3 / -1 / 0)</div>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 24px;">
+      <h2 style="font-size: 17px; font-weight: 800; color: #0f172a; margin: 0 0 6px 0;">
+        CERTIFICADO OFICIAL DE RESULTADOS DEL SIMULACRO
+      </h2>
+      <div id="print-exam-title" style="font-size: 14px; color: #0d9488; font-weight: 700; font-family: monospace;"></div>
+    </div>
+
+    <div style="background-color: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 16px; margin-bottom: 24px;">
+      <table style="width: 100%; border-collapse: collapse; font-family: monospace; font-size: 13px;">
+        <tbody>
+          <tr style="border-bottom: 1px solid #e2e8f0;">
+            <td style="padding: 8px 0; font-weight: bold; color: #1e3a8a;">Puntuación Neta Oficial:</td>
+            <td id="print-net-score" style="padding: 8px 0; text-align: right; font-size: 18px; font-weight: 900; color: #1e3a8a;"></td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e2e8f0;">
+            <td style="padding: 8px 0; color: #475569;">Efectividad Neta:</td>
+            <td id="print-percentage" style="padding: 8px 0; text-align: right; font-weight: bold;"></td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e2e8f0;">
+            <td style="padding: 8px 0; color: #475569;">Aciertos (+3 puntos):</td>
+            <td id="print-correct" style="padding: 8px 0; text-align: right; font-weight: bold; color: #0d9488;"></td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e2e8f0;">
+            <td style="padding: 8px 0; color: #475569;">Fallos (-1 punto):</td>
+            <td id="print-wrong" style="padding: 8px 0; text-align: right; font-weight: bold; color: #e11d48;"></td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e2e8f0;">
+            <td style="padding: 8px 0; color: #475569;">En Blanco (0 puntos):</td>
+            <td id="print-blank" style="padding: 8px 0; text-align: right; font-weight: bold;"></td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e2e8f0;">
+            <td style="padding: 8px 0; color: #475569;">Anuladas Oficiales (0 puntos):</td>
+            <td id="print-annulled" style="padding: 8px 0; text-align: right; font-weight: bold; color: #d97706;"></td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 0; color: #475569;">Tiempo de Evaluación:</td>
+            <td id="print-duration" style="padding: 8px 0; text-align: right; font-weight: bold;"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="font-size: 11px; color: #64748b; line-height: 1.5; border-top: 1px solid #e2e8f0; padding-top: 12px;">
+      <p style="margin: 0 0 6px 0;">
+        <strong>Nota informativa:</strong> Este informe acredita la realización de la prueba en la plataforma del Simulador Oficial FIR desarrollada por Nexus Lab en colaboración con el Prof. Juan J. Díaz Mochón de la Facultad de Farmacia de la Universidad de Granada.
+      </p>
+      <p style="margin: 0;">
+        El baremo aplicado (+3 / -1 / 0) reproduce fielmente la corrección del Ministerio de Sanidad del Gobierno de España.
+      </p>
+    </div>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- JAVASCRIPT: SPA ROUTER, LÓGICA DE EXAMEN Y PERSISTENCIA           -->
+  <!-- ================================================================= -->
+  <script>
+    // --- MÓDULO GLOBAL DE NAVEGACIÓN Y EXÁMENES ---
+    let currentYear = '2025';
+    let currentMode = 'exam'; // 'exam' (simulacro) o 'study' (práctica)
+    let examQuestions = [];
+    let currentIndex = 0;
+    
+    // Respuestas del usuario: { [questionId]: selectedOption (1..4) }
+    let userAnswers = {};
+    // Preguntas marcadas para revisar: Set<number>
+    let flaggedQuestions = new Set();
+    // Examen finalizado
+    let isExamSubmitted = false;
+
+    // Temporizador (4 horas y media = 270 minutos = 16200 segundos)
+    const TOTAL_TIME_SECONDS = 16200;
+    let remainingSeconds = TOTAL_TIME_SECONDS;
+    let timerInterval = null;
+
+    // Rutas oficiales a cuadernos y plantillas PDF
+    const bookletPaths = {
+      '2020': { booklet: 'FIR2020/Cuaderno_2020_FARMACIA_0_C.pdf', answers: 'FIR2020/respuestas_2020.pdf' },
+      '2021': { booklet: 'FIR2021/Cuaderno_2021_FARMACIA_0_C.pdf', answers: 'FIR2021/respuestas_2021.pdf' },
+      '2022': { booklet: 'FIR2022/Cuaderno_2022_FARMACIA_0_C.pdf', answers: 'FIR2022/respuestas_2022.pdf' },
+      '2023': { booklet: 'FIR2023/Cuaderno_2023_FARMACIA_0_C.pdf', answers: 'FIR2023/Respuestas correctas 2023 examen 0.pdf' },
+      '2024': { booklet: 'FIR2024/Cuaderno_2024_FARMACIA_0_C.pdf', answers: 'FIR2024/respuestasCorrectas 024.pdf' },
+      '2025': { booklet: 'FIR2025/Cuaderno_2025_F_0_C.pdf', answers: 'FIR2025/respuestascorrectas 2025.pdf' },
+      'quimica': { booklet: 'FIR2025/Cuaderno_2025_F_0_C.pdf', answers: 'FIR2025/respuestascorrectas 2025.pdf' }
+    };
+
+    // Función auxiliar para iniciar examen desde las tarjetas de Home
+    window.startExamFromHome = function(year, mode) {
+      currentMode = mode;
+      window.location.hash = `#/examen/${year}/p/1`;
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
 
       // --- ELEMENTOS DEL DOM ---
+      const homeView = document.getElementById('home-view');
+      const examView = document.getElementById('exam-view');
+      const navHomeBtn = document.getElementById('nav-home-btn');
+      const navExamControls = document.getElementById('nav-exam-controls');
+      const chemistryExamBanner = document.getElementById('chemistry-exam-banner');
+      const navHistoryBadge = document.getElementById('nav-history-badge');
+
       const yearSelect = document.getElementById('year-select');
       const modeStudyBtn = document.getElementById('mode-study-btn');
       const modeExamBtn = document.getElementById('mode-exam-btn');
@@ -588,6 +1434,8 @@
       const statusFlagBadge = document.getElementById('status-flag-badge');
       const statusAnnulledBadge = document.getElementById('status-annulled-badge');
       const progressBarFill = document.getElementById('progress-bar-fill');
+      const questionBadgeContainer = document.getElementById('question-badge-container');
+      const questionBadgePill = document.getElementById('question-badge-pill');
 
       const timerContainer = document.getElementById('timer-container');
       const timerDisplay = document.getElementById('timer-display');
@@ -616,10 +1464,12 @@
       const countAnswered = document.getElementById('count-answered');
       const countFlagged = document.getElementById('count-flagged');
       const countUnanswered = document.getElementById('count-unanswered');
+      const sidebarDocsContainer = document.getElementById('sidebar-docs-container');
 
       const downloadBookletLink = document.getElementById('download-booklet-link');
       const downloadAnswersLink = document.getElementById('download-answers-link');
 
+      // Modales
       const imageModal = document.getElementById('image-modal');
       const modalImage = document.getElementById('modal-image');
       const closeModalBtn = document.getElementById('close-modal-btn');
@@ -635,6 +1485,26 @@
       const resultsAnnulled = document.getElementById('results-annulled');
       const resultsReviewBtn = document.getElementById('results-review-btn');
       const resultsRestartBtn = document.getElementById('results-restart-btn');
+      const resultsPrintBtn = document.getElementById('results-print-btn');
+
+      const historyModal = document.getElementById('history-modal');
+      const historyCloseBtn = document.getElementById('history-close-btn');
+      const historyCloseBtnFooter = document.getElementById('history-close-btn-footer');
+      const clearAllHistoryBtn = document.getElementById('clear-all-history-btn');
+      const historyListContainer = document.getElementById('history-list-container');
+      const navHistoryBtn = document.getElementById('nav-history-btn');
+
+      const telemetryModal = document.getElementById('telemetry-modal');
+      const telemetryCloseBtn = document.getElementById('telemetry-close-btn');
+      const telemetryCloseBtnFooter = document.getElementById('telemetry-close-btn-footer');
+      const navTelemetryBtn = document.getElementById('nav-telemetry-btn');
+      const webhookUrlInput = document.getElementById('webhook-url-input');
+      const saveWebhookBtn = document.getElementById('save-webhook-btn');
+      const testWebhookBtn = document.getElementById('test-webhook-btn');
+      const webhookStatusMsg = document.getElementById('webhook-status-msg');
+      const ga4IdInput = document.getElementById('ga4-id-input');
+      const saveGa4Btn = document.getElementById('save-ga4-btn');
+      const copyGasCodeBtn = document.getElementById('copy-gas-code-btn');
 
       // --- GESTIÓN DE TEMA (DARK / LIGHT) ---
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -650,7 +1520,7 @@
         localStorage.setItem('fir_theme', isDark ? 'dark' : 'light');
       });
 
-      // --- TOGGLE REJILLA EN DISPOSITIVOS MÓVILES ---
+      // --- TOGGLE REJILLA EN MÓVIL ---
       if (toggleGridMobileBtn && gridSidebar) {
         toggleGridMobileBtn.addEventListener('click', () => {
           gridSidebar.classList.toggle('hidden');
@@ -660,18 +1530,75 @@
         });
       }
 
-      // --- GESTIÓN DE EXÁMENES ---
-      const bookletPaths = {
-        '2020': { booklet: 'FIR2020/Cuaderno_2020_FARMACIA_0_C.pdf', answers: 'FIR2020/respuestas_2020.pdf' },
-        '2021': { booklet: 'FIR2021/Cuaderno_2021_FARMACIA_0_C.pdf', answers: 'FIR2021/respuestas_2021.pdf' },
-        '2022': { booklet: 'FIR2022/Cuaderno_2022_FARMACIA_0_C.pdf', answers: 'FIR2022/respuestas_2022.pdf' },
-        '2023': { booklet: 'FIR2023/Cuaderno_2023_FARMACIA_0_C.pdf', answers: 'FIR2023/Respuestas correctas 2023 examen 0.pdf' },
-        '2024': { booklet: 'FIR2024/Cuaderno_2024_FARMACIA_0_C.pdf', answers: 'FIR2024/respuestasCorrectas 024.pdf' },
-        '2025': { booklet: 'FIR2025/Cuaderno_2025_F_0_C.pdf', answers: 'FIR2025/respuestascorrectas 2025.pdf' }
-      };
+      // --- ENRUTADOR SPA (HASH ROUTING CON SOPORTE DEL BOTÓN ATRÁS) ---
+      function handleRoute() {
+        const hash = window.location.hash || '#/home';
 
+        if (hash === '#/' || hash === '#/home' || hash === '') {
+          showHomeView();
+        } else if (hash.startsWith('#/examen/')) {
+          // Parsear #/examen/:year o #/examen/:year/p/:num
+          const clean = hash.replace('#/examen/', '');
+          const parts = clean.split('/p/');
+          const year = parts[0] || '2025';
+          const qNum = parts.length > 1 ? parseInt(parts[1], 10) : null;
+          showExamView(year, qNum);
+        } else if (hash === '#/historial') {
+          openHistoryModal();
+        } else {
+          showHomeView();
+        }
+      }
+
+      function showHomeView() {
+        homeView.classList.remove('hidden');
+        examView.classList.add('hidden');
+        navHomeBtn.classList.add('hidden');
+        navExamControls.classList.add('hidden');
+        stopTimer();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        updateHistoryBadge();
+      }
+
+      function showExamView(year, qNum) {
+        homeView.classList.add('hidden');
+        examView.classList.remove('hidden');
+        navHomeBtn.classList.remove('hidden');
+        navExamControls.classList.remove('hidden');
+
+        // Mostrar / ocultar banner especial de química
+        if (year === 'quimica') {
+          chemistryExamBanner.classList.remove('hidden');
+        } else {
+          chemistryExamBanner.classList.add('hidden');
+        }
+
+        // Si cambia el examen cargado, recargar
+        if (currentYear !== year || examQuestions.length === 0) {
+          yearSelect.value = year;
+          loadExam(year, false);
+        }
+
+        // Si se especificó número de pregunta en la URL
+        if (qNum !== null && !isNaN(qNum) && qNum >= 1 && qNum <= examQuestions.length) {
+          const targetIndex = qNum - 1;
+          if (currentIndex !== targetIndex) {
+            currentIndex = targetIndex;
+            renderQuestion();
+          }
+        }
+
+        setMode(currentMode);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      window.addEventListener('hashchange', handleRoute);
+
+      // --- CARGA DE EXÁMENES ---
       function loadExam(year, resetState = true) {
         currentYear = year;
+        yearSelect.value = year;
+
         if (year === 'random') {
           // Generar mega-mix de 100 preguntas aleatorias de todos los años disponibles
           const allQs = [];
@@ -684,7 +1611,14 @@
           }
           // Mezcla aleatoria uniforme
           allQs.sort(() => Math.random() - 0.5);
-          examQuestions = allQs.slice(0, 100);
+          examQuestions = allQs.slice(0, 100).map((q, idx) => ({ ...q, id: idx + 1, originalId: q.id }));
+        } else if (year === 'quimica') {
+          if (window.FIR_EXAMS_DATA && window.FIR_EXAMS_DATA['quimica']) {
+            examQuestions = window.FIR_EXAMS_DATA['quimica'].map(q => ({ ...q, originalYear: q.orig_year || '2025' }));
+          } else {
+            alert('No se encontraron los datos para el módulo de Química.');
+            return;
+          }
         } else {
           if (window.FIR_EXAMS_DATA && window.FIR_EXAMS_DATA[year]) {
             examQuestions = window.FIR_EXAMS_DATA[year].map(q => ({ ...q, originalYear: year }));
@@ -722,7 +1656,7 @@
         }
       }
 
-      // --- TEMPORIZADOR DE SIMULACRO OFICIAL (4h 30m) ---
+      // --- TEMPORIZADOR DE SIMULACRO OFICIAL ---
       function startTimer() {
         stopTimer();
         timerContainer.classList.remove('hidden');
@@ -771,8 +1705,8 @@
       function setMode(mode) {
         currentMode = mode;
         if (mode === 'study') {
-          modeStudyBtn.className = 'px-3 py-1.5 rounded-[6px] transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] bg-[#1e3a8a] text-white shadow-sm font-bold';
-          modeExamBtn.className = 'px-3 py-1.5 rounded-[6px] transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] text-[#64748b] dark:text-[#94a3b8] hover:text-black dark:hover:text-white font-medium';
+          modeStudyBtn.className = 'px-3 py-1.5 rounded-[6px] transition-all duration-200 bg-[#1e3a8a] text-white shadow-sm font-bold';
+          modeExamBtn.className = 'px-3 py-1.5 rounded-[6px] transition-all duration-200 text-[#64748b] dark:text-[#94a3b8] hover:text-black dark:hover:text-white font-medium';
 
           timerContainer.classList.add('hidden');
           studyScoreDisplay.classList.remove('hidden');
@@ -780,15 +1714,15 @@
           finishExamBtn.classList.add('hidden');
           stopTimer();
         } else {
-          modeExamBtn.className = 'px-3 py-1.5 rounded-[6px] transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] bg-[#1e3a8a] text-white shadow-sm font-bold';
-          modeStudyBtn.className = 'px-3 py-1.5 rounded-[6px] transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] text-[#64748b] dark:text-[#94a3b8] hover:text-black dark:hover:text-white font-medium';
+          modeExamBtn.className = 'px-3 py-1.5 rounded-[6px] transition-all duration-200 bg-[#1e3a8a] text-white shadow-sm font-bold';
+          modeStudyBtn.className = 'px-3 py-1.5 rounded-[6px] transition-all duration-200 text-[#64748b] dark:text-[#94a3b8] hover:text-black dark:hover:text-white font-medium';
 
           timerContainer.classList.remove('hidden');
           studyScoreDisplay.classList.add('hidden');
           showAnswerBtn.classList.add('hidden');
           finishExamBtn.classList.remove('hidden');
 
-          startTimer();
+          if (!isExamSubmitted) startTimer();
         }
         renderQuestion();
         updateStats();
@@ -802,13 +1736,14 @@
         if (!examQuestions || examQuestions.length === 0) return;
         const q = examQuestions[currentIndex];
         const qId = q.id;
-        const yearOrigin = q.originalYear || currentYear;
+        const yearOrigin = q.orig_year || q.originalYear || currentYear;
+        const imageId = q.orig_id !== undefined ? q.orig_id : (q.originalId || q.id);
 
-        // Badges de estado
+        // Badges de estado superior
         currentQBadge.textContent = `Pregunta ${qId}`;
         examProgressText.textContent = `${currentIndex + 1} de ${examQuestions.length}`;
 
-        // Barra de progreso QFDOS
+        // Barra de progreso
         if (progressBarFill) {
           const progressPercent = ((currentIndex + 1) / examQuestions.length) * 100;
           progressBarFill.style.width = `${progressPercent}%`;
@@ -830,15 +1765,29 @@
           flagBtn.classList.remove('bg-amber-200', 'dark:bg-amber-900/80', 'text-amber-900', 'dark:text-amber-100');
         }
 
-        // Enunciado (Pure Black en modo claro para máxima legibilidad según norma QFDOS)
+        // Badge de Especialidad / Categoría (Química o Convocatoria)
+        if (q.badge) {
+          questionBadgeContainer.classList.remove('hidden');
+          questionBadgePill.textContent = q.badge;
+        } else if (q.category) {
+          questionBadgeContainer.classList.remove('hidden');
+          questionBadgePill.textContent = `FIR ${yearOrigin} · P${imageId} · ${q.category}`;
+        } else if (currentYear === 'random' && q.originalYear) {
+          questionBadgeContainer.classList.remove('hidden');
+          questionBadgePill.textContent = `Convocatoria Oficial FIR ${q.originalYear} · P${imageId}`;
+        } else {
+          questionBadgeContainer.classList.add('hidden');
+        }
+
+        // Enunciado
         questionTextEl.textContent = `${qId}. ${q.question}`;
 
-        // Imagen o Figura Oficial
+        // Imagen o Estructura Química Oficial
         if (q.hasImage) {
-          const imgSrc = `FIR${yearOrigin}/images/${qId}.JPG`;
+          const imgSrc = `FIR${yearOrigin}/images/${imageId}.JPG`;
           questionImage.src = imgSrc;
           questionImage.onerror = () => {
-            questionImage.src = `FIR${yearOrigin}/images/${qId}.jpg`;
+            questionImage.src = `FIR${yearOrigin}/images/${imageId}.jpg`;
           };
           imageContainer.classList.remove('hidden');
         } else {
@@ -854,12 +1803,12 @@
         q.options.forEach((optText, index) => {
           const optNum = index + 1;
           const btn = document.createElement('button');
-          btn.className = 'opt-btn w-full text-left p-4 rounded-[12px] border transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-start gap-3.5 bg-white dark:bg-[#131d33] border-slate-200 dark:border-[#1c2b4c] text-black dark:text-[#f8fafc] hover:-translate-y-0.5 hover:shadow-md hover:border-[#0d9488] dark:hover:border-[#2dd4bf] shadow-sm cursor-pointer';
+          btn.className = 'opt-btn w-full text-left p-4 rounded-[12px] border transition-all duration-180 flex items-start gap-3.5 bg-white dark:bg-[#131d33] border-slate-200 dark:border-[#1c2b4c] text-black dark:text-[#f8fafc] hover:-translate-y-0.5 hover:shadow-md hover:border-[#0d9488] dark:hover:border-[#2dd4bf] shadow-xs cursor-pointer';
           btn.dataset.optNum = optNum;
 
-          // Indicador numérico en Roboto Mono
+          // Indicador numérico
           const numSpan = document.createElement('span');
-          numSpan.className = 'w-7 h-7 rounded-[8px] flex-shrink-0 flex items-center justify-center font-mono font-bold text-xs bg-[#1e3a8a]/5 dark:bg-[#1c2b4c] text-[#1e3a8a] dark:text-[#2dd4bf] border border-[#1e3a8a]/10 dark:border-[#2dd4bf]/20';
+          numSpan.className = 'w-7 h-7 rounded-[8px] shrink-0 flex items-center justify-center font-mono font-bold text-xs bg-[#1e3a8a]/5 dark:bg-[#1c2b4c] text-[#1e3a8a] dark:text-[#2dd4bf] border border-[#1e3a8a]/10 dark:border-[#2dd4bf]/20';
           numSpan.textContent = optNum;
 
           const textSpan = document.createElement('span');
@@ -873,15 +1822,14 @@
           if (currentMode === 'study') {
             if (isAnswered) {
               if (q.answer === 0) {
-                // Pregunta anulada
                 btn.classList.add('opt-annulled');
-                numSpan.className = 'w-7 h-7 rounded-[8px] flex-shrink-0 flex items-center justify-center font-mono font-bold text-xs bg-amber-200 text-amber-900';
+                numSpan.className = 'w-7 h-7 rounded-[8px] shrink-0 flex items-center justify-center font-mono font-bold text-xs bg-amber-200 text-amber-900';
               } else if (optNum === q.answer) {
                 btn.classList.add('opt-correct');
-                numSpan.className = 'w-7 h-7 rounded-[8px] flex-shrink-0 flex items-center justify-center font-mono font-bold text-xs bg-white text-[#0d9488]';
+                numSpan.className = 'w-7 h-7 rounded-[8px] shrink-0 flex items-center justify-center font-mono font-bold text-xs bg-white text-[#0d9488]';
               } else if (optNum === userSelected) {
                 btn.classList.add('opt-incorrect');
-                numSpan.className = 'w-7 h-7 rounded-[8px] flex-shrink-0 flex items-center justify-center font-mono font-bold text-xs bg-white text-rose-700';
+                numSpan.className = 'w-7 h-7 rounded-[8px] shrink-0 flex items-center justify-center font-mono font-bold text-xs bg-white text-rose-700';
               }
             }
           } else {
@@ -889,18 +1837,18 @@
             if (isExamSubmitted) {
               if (q.answer === 0) {
                 btn.classList.add('opt-annulled');
-                numSpan.className = 'w-7 h-7 rounded-[8px] flex-shrink-0 flex items-center justify-center font-mono font-bold text-xs bg-amber-200 text-amber-900';
+                numSpan.className = 'w-7 h-7 rounded-[8px] shrink-0 flex items-center justify-center font-mono font-bold text-xs bg-amber-200 text-amber-900';
               } else if (optNum === q.answer) {
                 btn.classList.add('opt-correct');
-                numSpan.className = 'w-7 h-7 rounded-[8px] flex-shrink-0 flex items-center justify-center font-mono font-bold text-xs bg-white text-[#0d9488]';
+                numSpan.className = 'w-7 h-7 rounded-[8px] shrink-0 flex items-center justify-center font-mono font-bold text-xs bg-white text-[#0d9488]';
               } else if (optNum === userSelected) {
                 btn.classList.add('opt-incorrect');
-                numSpan.className = 'w-7 h-7 rounded-[8px] flex-shrink-0 flex items-center justify-center font-mono font-bold text-xs bg-white text-rose-700';
+                numSpan.className = 'w-7 h-7 rounded-[8px] shrink-0 flex items-center justify-center font-mono font-bold text-xs bg-white text-rose-700';
               }
             } else {
               if (optNum === userSelected) {
                 btn.classList.add('opt-selected-exam');
-                numSpan.className = 'w-7 h-7 rounded-[8px] flex-shrink-0 flex items-center justify-center font-mono font-bold text-xs bg-[#1e3a8a] text-white dark:bg-[#2dd4bf] dark:text-[#131d33]';
+                numSpan.className = 'w-7 h-7 rounded-[8px] shrink-0 flex items-center justify-center font-mono font-bold text-xs bg-[#1e3a8a] text-white dark:bg-[#2dd4bf] dark:text-[#131d33]';
               }
             }
           }
@@ -916,7 +1864,7 @@
           clearAnsBtn.classList.add('hidden');
         }
 
-        // Feedback interactivo en Modo Estudio (con diseño de callout técnico)
+        // Feedback en Modo Estudio
         feedbackContainer.className = 'mt-6 p-4 rounded-[8px] font-mono text-sm sm:text-base font-bold text-center border-l-4 transition-all hidden';
         if (currentMode === 'study' && isAnswered) {
           feedbackContainer.classList.remove('hidden');
@@ -942,7 +1890,18 @@
         updateGridSelection();
       }
 
-      // --- SELECCIÓN DE OPCIÓN ---
+      // --- NAVEGACIÓN Y SINCRONIZACIÓN CON EL HASH ROUTER ---
+      function goToQuestion(newIdx) {
+        if (newIdx < 0 || newIdx >= examQuestions.length) return;
+        currentIndex = newIdx;
+        const targetHash = `#/examen/${currentYear}/p/${currentIndex + 1}`;
+        if (window.location.hash !== targetHash) {
+          window.location.hash = targetHash;
+        } else {
+          renderQuestion();
+        }
+      }
+
       function handleOptionSelect(optNum) {
         if (isExamSubmitted && currentMode === 'exam') return;
 
@@ -956,7 +1915,6 @@
         updateStats();
       }
 
-      // --- DEJAR PREGUNTA EN BLANCO ---
       clearAnsBtn.addEventListener('click', () => {
         const q = examQuestions[currentIndex];
         delete userAnswers[q.id];
@@ -966,7 +1924,6 @@
         updateStats();
       });
 
-      // --- MARCAR PREGUNTA PARA REVISAR (DUDA) ---
       flagBtn.addEventListener('click', () => {
         const q = examQuestions[currentIndex];
         if (flaggedQuestions.has(q.id)) {
@@ -980,7 +1937,6 @@
         updateStats();
       });
 
-      // --- VER RESPUESTA OFICIAL (MODO ESTUDIO) ---
       showAnswerBtn.addEventListener('click', () => {
         const q = examQuestions[currentIndex];
         if (userAnswers[q.id] === undefined) {
@@ -991,33 +1947,25 @@
         updateStats();
       });
 
-      // --- NAVEGACIÓN ---
       prevBtn.addEventListener('click', () => {
-        if (currentIndex > 0) {
-          currentIndex--;
-          renderQuestion();
-        }
+        if (currentIndex > 0) goToQuestion(currentIndex - 1);
       });
 
       nextBtn.addEventListener('click', () => {
-        if (currentIndex < examQuestions.length - 1) {
-          currentIndex++;
-          renderQuestion();
-        }
+        if (currentIndex < examQuestions.length - 1) goToQuestion(currentIndex + 1);
       });
 
-      // --- HOJA DE RESPUESTAS (REJILLA DE 210) ---
+      // --- HOJA DE RESPUESTAS (REJILLA) ---
       function renderGrid() {
         questionsGrid.innerHTML = '';
         examQuestions.forEach((q, idx) => {
           const btn = document.createElement('button');
           btn.id = `grid-btn-${q.id}`;
-          btn.className = 'w-full aspect-square rounded-[8px] font-mono text-xs font-semibold transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center relative border border-slate-200 dark:border-[#1c2b4c] bg-[#f8fafc] dark:bg-[#131d33] text-slate-700 dark:text-[#f8fafc] hover:-translate-y-0.5 hover:border-[#0d9488]';
+          btn.className = 'w-full aspect-square rounded-[8px] font-mono text-xs font-semibold transition-all flex items-center justify-center relative border border-slate-200 dark:border-[#1c2b4c] bg-[#f8fafc] dark:bg-[#131d33] text-slate-700 dark:text-[#f8fafc] hover:-translate-y-0.5 hover:border-[#0d9488] cursor-pointer';
           btn.textContent = q.id;
 
           btn.addEventListener('click', () => {
-            currentIndex = idx;
-            renderQuestion();
+            goToQuestion(idx);
           });
 
           questionsGrid.appendChild(btn);
@@ -1032,30 +1980,29 @@
         const isAnswered = userAnswers[qId] !== undefined;
         const isFlagged = flaggedQuestions.has(qId);
         const q = examQuestions.find(item => item.id === qId);
+        if (!q) return;
 
-        // Clases base: 8px radius, font-mono, alta afinidad
-        btn.className = 'w-full aspect-square rounded-[8px] font-mono text-xs font-semibold transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center relative border hover:-translate-y-0.5 ';
+        btn.className = 'w-full aspect-square rounded-[8px] font-mono text-xs font-semibold transition-all flex items-center justify-center relative border hover:-translate-y-0.5 cursor-pointer ';
 
         if (isExamSubmitted || (currentMode === 'study' && isAnswered)) {
           if (q.answer === 0) {
-            // Pregunta anulada
             btn.className += 'bg-amber-100 border-amber-400 text-amber-900 dark:bg-amber-900/60 dark:border-amber-700 dark:text-amber-200';
           } else if (userAnswers[qId] === q.answer) {
-            btn.className += 'bg-[#0d9488] border-[#0f766e] text-white shadow-sm';
+            btn.className += 'bg-[#0d9488] border-[#0f766e] text-white shadow-xs';
           } else if (isAnswered) {
-            btn.className += 'bg-rose-600 border-rose-700 text-white shadow-sm';
+            btn.className += 'bg-rose-600 border-rose-700 text-white shadow-xs';
           } else {
             btn.className += 'bg-slate-100 dark:bg-[#1c2b4c] border-slate-200 dark:border-[#1c2b4c] text-[#64748b] dark:text-[#94a3b8]';
           }
         } else {
           if (isAnswered) {
-            btn.className += 'bg-[#1e3a8a] border-[#172554] dark:bg-[#1e3a8a] dark:border-[#3b82f6]/40 text-white shadow-sm';
+            btn.className += 'bg-[#1e3a8a] border-[#172554] dark:bg-[#1e3a8a] dark:border-[#3b82f6]/40 text-white shadow-xs';
           } else {
             btn.className += 'bg-[#f8fafc] dark:bg-[#131d33] border-slate-200 dark:border-[#1c2b4c] text-slate-700 dark:text-[#f8fafc]';
           }
         }
 
-        // Banderita en duda
+        // Indicador de duda (banderita)
         if (isFlagged) {
           let dot = btn.querySelector('.flag-dot');
           if (!dot) {
@@ -1082,7 +2029,7 @@
         }
       }
 
-      // --- ESTADÍSTICAS Y BAREMO OFICIAL (+3 / -1 / 0) ---
+      // --- ESTADÍSTICAS Y BAREMO OFICIAL ---
       function updateStats() {
         const total = examQuestions.length;
         const answeredCount = Object.keys(userAnswers).length;
@@ -1093,7 +2040,6 @@
         countFlagged.textContent = flaggedCount;
         countUnanswered.textContent = unansweredCount;
 
-        // Calcular aciertos/fallos para el modo estudio
         let correctCount = 0;
         let wrongCount = 0;
         for (const [qidStr, opt] of Object.entries(userAnswers)) {
@@ -1113,7 +2059,7 @@
         scoreWrongNum.textContent = wrongCount;
       }
 
-      // --- FINALIZAR Y CALIFICAR SIMULACRO OFICIAL ---
+      // --- FINALIZAR, CORREGIR Y GUARDAR INTENTO ---
       function finishExam() {
         isExamSubmitted = true;
         stopTimer();
@@ -1136,12 +2082,17 @@
           }
         });
 
-        // Baremo Oficial del Ministerio de Sanidad: Puntos Netos = (3 * Aciertos) - Fallos
+        // Baremo Oficial: Puntos Netos = (3 * Aciertos) - Fallos
         const netScore = (correct * 3) - wrong;
         const maxPossibleScore = (examQuestions.length - annulled) * 3;
-        const percentage = maxPossibleScore > 0 ? ((netScore / maxPossibleScore) * 100).toFixed(1) : 0;
+        const percentage = maxPossibleScore > 0 ? ((netScore / maxPossibleScore) * 100).toFixed(1) : '0.0';
+        const durationSeconds = TOTAL_TIME_SECONDS - remainingSeconds;
 
-        resultsSubtitle.textContent = `Examen FIR Convocatoria ${currentYear} · ${examQuestions.length} preguntas oficiales`;
+        let examTitle = `FIR ${currentYear}`;
+        if (currentYear === 'quimica') examTitle = 'Especial Química: QO + QF';
+        if (currentYear === 'random') examTitle = 'Mega-Mix Aleatorio';
+
+        resultsSubtitle.textContent = `Examen ${examTitle} · ${examQuestions.length} preguntas oficiales`;
         resultsNetScore.textContent = netScore;
         resultsMaxScore.textContent = `/ ${maxPossibleScore} pts`;
         resultsPercentText.textContent = `Efectividad neta: ${percentage}% (Aciertos: ${correct} · Fallos: ${wrong})`;
@@ -1151,6 +2102,27 @@
         resultsAnnulled.textContent = annulled;
 
         resultsModal.classList.remove('hidden');
+
+        // Guardar automáticamente en historial local
+        const attempt = {
+          id: Date.now().toString(),
+          timestamp: new Date().toISOString(),
+          formattedDate: new Date().toLocaleDateString('es-ES', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' }),
+          year: currentYear,
+          examTitle,
+          mode: currentMode,
+          netScore,
+          maxScore: maxPossibleScore,
+          percentage,
+          correct,
+          wrong,
+          blank,
+          annulled,
+          totalQuestions: examQuestions.length,
+          durationSeconds
+        };
+        saveAttemptToHistory(attempt);
+        dispatchTelemetry(attempt);
 
         // Actualizar todos los botones de la rejilla con la corrección oficial
         examQuestions.forEach(q => updateGridItem(q.id));
@@ -1177,7 +2149,7 @@
 
       resultsRestartBtn.addEventListener('click', () => {
         resultsModal.classList.add('hidden');
-        loadExam(currentYear, true);
+        window.location.hash = '#/home';
       });
 
       resetExamBtn.addEventListener('click', () => {
@@ -1185,6 +2157,292 @@
           loadExam(currentYear, true);
         }
       });
+
+      // --- IMPRIMIR / GUARDAR INFORME PDF ---
+      function printExamReport(data) {
+        const d = data || {
+          formattedDate: new Date().toLocaleString(),
+          examTitle: currentYear === 'quimica' ? 'Especial Química: QO + QF' : (currentYear === 'random' ? 'Mega-Mix Aleatorio' : `FIR ${currentYear}`),
+          netScore: resultsNetScore.textContent,
+          maxScore: resultsMaxScore.textContent,
+          percentage: resultsPercentText.textContent,
+          correct: resultsCorrect.textContent,
+          wrong: resultsWrong.textContent,
+          blank: resultsBlank.textContent,
+          annulled: resultsAnnulled.textContent,
+          durationSeconds: TOTAL_TIME_SECONDS - remainingSeconds
+        };
+
+        const hours = Math.floor((d.durationSeconds || 0) / 3600);
+        const minutes = Math.floor(((d.durationSeconds || 0) % 3600) / 60);
+        const timeStr = `${hours}h ${minutes}m`;
+
+        document.getElementById('print-date').textContent = d.formattedDate || new Date().toLocaleString();
+        document.getElementById('print-exam-title').textContent = d.examTitle || `Examen FIR ${currentYear}`;
+        document.getElementById('print-net-score').textContent = `${d.netScore} ${d.maxScore || ''}`;
+        document.getElementById('print-percentage').textContent = `${d.percentage}%`;
+        document.getElementById('print-correct').textContent = d.correct;
+        document.getElementById('print-wrong').textContent = d.wrong;
+        document.getElementById('print-blank').textContent = d.blank;
+        document.getElementById('print-annulled').textContent = d.annulled;
+        document.getElementById('print-duration').textContent = timeStr;
+
+        window.print();
+      }
+
+      resultsPrintBtn.addEventListener('click', () => {
+        printExamReport();
+      });
+
+      // --- GESTIÓN DE HISTORIAL (LOCALSTORAGE) ---
+      function getHistory() {
+        try {
+          return JSON.parse(localStorage.getItem('fir_exam_history') || '[]');
+        } catch (e) {
+          return [];
+        }
+      }
+
+      function saveAttemptToHistory(attempt) {
+        const history = getHistory();
+        history.unshift(attempt);
+        // Mantener hasta 50 simulacros
+        if (history.length > 50) history.pop();
+        localStorage.setItem('fir_exam_history', JSON.stringify(history));
+        updateHistoryBadge();
+      }
+
+      function updateHistoryBadge() {
+        const history = getHistory();
+        if (history.length > 0) {
+          navHistoryBadge.textContent = history.length;
+          navHistoryBadge.classList.remove('hidden');
+        } else {
+          navHistoryBadge.classList.add('hidden');
+        }
+      }
+
+      function openHistoryModal() {
+        renderHistoryList();
+        historyModal.classList.remove('hidden');
+      }
+
+      function closeHistoryModal() {
+        historyModal.classList.add('hidden');
+        if (window.location.hash === '#/historial') {
+          window.location.hash = homeView.classList.contains('hidden') ? `#/examen/${currentYear}` : '#/home';
+        }
+      }
+
+      historyCloseBtn.addEventListener('click', closeHistoryModal);
+      historyCloseBtnFooter.addEventListener('click', closeHistoryModal);
+      navHistoryBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openHistoryModal();
+      });
+
+      clearAllHistoryBtn.addEventListener('click', () => {
+        if (confirm('¿Eliminar todos los registros de simulacros guardados en este navegador?')) {
+          localStorage.removeItem('fir_exam_history');
+          renderHistoryList();
+          updateHistoryBadge();
+        }
+      });
+
+      function renderHistoryList() {
+        const history = getHistory();
+        historyListContainer.innerHTML = '';
+
+        // Calcular resumen
+        const count = history.length;
+        document.getElementById('hist-stat-count').textContent = count;
+
+        if (count === 0) {
+          document.getElementById('hist-stat-best').textContent = '0 pts';
+          document.getElementById('hist-stat-avg').textContent = '0 pts';
+          document.getElementById('hist-stat-eff').textContent = '0%';
+          historyListContainer.innerHTML = `
+            <div class="text-center py-10 font-mono text-xs text-slate-500 dark:text-slate-400">
+              No tienes simulacros guardados aún.<br>
+              ¡Realiza un simulacro oficial para registrar tu progreso!
+            </div>
+          `;
+          return;
+        }
+
+        let best = -9999;
+        let sumNet = 0;
+        let sumEff = 0;
+
+        history.forEach(item => {
+          if (item.netScore > best) best = item.netScore;
+          sumNet += item.netScore;
+          sumEff += parseFloat(item.percentage) || 0;
+        });
+
+        document.getElementById('hist-stat-best').textContent = `${best} pts`;
+        document.getElementById('hist-stat-avg').textContent = `${(sumNet / count).toFixed(0)} pts`;
+        document.getElementById('hist-stat-eff').textContent = `${(sumEff / count).toFixed(1)}%`;
+
+        history.forEach(item => {
+          const hours = Math.floor((item.durationSeconds || 0) / 3600);
+          const minutes = Math.floor(((item.durationSeconds || 0) % 3600) / 60);
+          const timeStr = `${hours}h ${minutes}m`;
+
+          const row = document.createElement('div');
+          row.className = 'p-4 rounded-[12px] bg-slate-50 dark:bg-[#1c2b4c]/70 border border-slate-200 dark:border-slate-700 flex flex-col sm:flex-row sm:items-center justify-between gap-3';
+          row.innerHTML = `
+            <div>
+              <div class="flex items-center gap-2 flex-wrap mb-1">
+                <span class="font-extrabold text-sm text-[#1e3a8a] dark:text-white">${item.examTitle || 'Examen FIR'}</span>
+                <span class="font-mono text-[10px] font-bold px-2 py-0.5 rounded bg-[#0d9488]/10 text-[#0d9488] dark:bg-[#2dd4bf]/20 dark:text-[#2dd4bf] border border-[#0d9488]/20">${item.mode === 'study' ? 'Modo Estudio' : 'Simulacro'}</span>
+                <span class="font-mono text-xs text-slate-500 dark:text-slate-400">${item.formattedDate || ''}</span>
+              </div>
+              <div class="flex items-center gap-3 font-mono text-xs text-slate-600 dark:text-slate-300">
+                <span>Neto: <strong class="text-[#1e3a8a] dark:text-[#2dd4bf]">${item.netScore} pts</strong> (${item.percentage}%)</span>
+                <span>✓ ${item.correct}</span>
+                <span>✗ ${item.wrong}</span>
+                <span>⚪ ${item.blank}</span>
+                <span>⏱ ${timeStr}</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              <button class="print-item-btn px-2.5 py-1.5 rounded-[6px] bg-teal-600 hover:bg-teal-700 text-white font-mono text-xs font-bold transition-colors cursor-pointer" title="Imprimir informe PDF">
+                🖨️ PDF
+              </button>
+              <button class="delete-item-btn p-1.5 rounded-[6px] text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/40 transition-colors cursor-pointer" title="Eliminar intento">
+                ✕
+              </button>
+            </div>
+          `;
+
+          row.querySelector('.print-item-btn').addEventListener('click', () => {
+            printExamReport(item);
+          });
+
+          row.querySelector('.delete-item-btn').addEventListener('click', () => {
+            if (confirm('¿Eliminar este registro del historial?')) {
+              const updated = getHistory().filter(h => h.id !== item.id);
+              localStorage.setItem('fir_exam_history', JSON.stringify(updated));
+              renderHistoryList();
+              updateHistoryBadge();
+            }
+          });
+
+          historyListContainer.appendChild(row);
+        });
+      }
+
+      // --- MODAL Y TELEMETRÍA (PROF. JUANJO) ---
+      navTelemetryBtn.addEventListener('click', () => {
+        webhookUrlInput.value = localStorage.getItem('fir_telemetry_webhook_url') || '';
+        ga4IdInput.value = localStorage.getItem('fir_ga4_id') || '';
+        webhookStatusMsg.classList.add('hidden');
+        telemetryModal.classList.remove('hidden');
+      });
+
+      telemetryCloseBtn.addEventListener('click', () => telemetryModal.classList.add('hidden'));
+      telemetryCloseBtnFooter.addEventListener('click', () => telemetryModal.classList.add('hidden'));
+
+      saveWebhookBtn.addEventListener('click', () => {
+        const val = webhookUrlInput.value.trim();
+        localStorage.setItem('fir_telemetry_webhook_url', val);
+        webhookStatusMsg.textContent = '✓ URL de Webhook guardada correctamente.';
+        webhookStatusMsg.className = 'text-xs font-mono mt-2 text-emerald-600 dark:text-emerald-400 block';
+      });
+
+      testWebhookBtn.addEventListener('click', () => {
+        const url = webhookUrlInput.value.trim();
+        if (!url) {
+          alert('Por favor introduce primero la URL del Webhook.');
+          return;
+        }
+        webhookStatusMsg.textContent = 'Enviando prueba de conexión...';
+        webhookStatusMsg.className = 'text-xs font-mono mt-2 text-slate-500 block';
+
+        const testPayload = {
+          test: true,
+          formattedDate: new Date().toLocaleString(),
+          examTitle: 'Prueba de Conexión Webhook',
+          mode: 'test',
+          netScore: 450,
+          maxScore: 600,
+          percentage: '75.0',
+          correct: 160,
+          wrong: 30,
+          blank: 20,
+          annulled: 0,
+          durationSeconds: 3600
+        };
+
+        fetch(url, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(testPayload)
+        })
+        .then(() => {
+          webhookStatusMsg.textContent = '✓ Prueba enviada con éxito. Comprueba tu Google Sheet.';
+          webhookStatusMsg.className = 'text-xs font-mono mt-2 text-emerald-600 dark:text-emerald-400 block';
+        })
+        .catch(err => {
+          webhookStatusMsg.textContent = '✗ Error enviando prueba: ' + err.message;
+          webhookStatusMsg.className = 'text-xs font-mono mt-2 text-rose-600 dark:text-rose-400 block';
+        });
+      });
+
+      saveGa4Btn.addEventListener('click', () => {
+        const val = ga4IdInput.value.trim();
+        localStorage.setItem('fir_ga4_id', val);
+        alert('ID de Google Analytics 4 guardado: ' + val);
+      });
+
+      copyGasCodeBtn.addEventListener('click', () => {
+        const code = `function doPost(e) {
+  try {
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    var data = JSON.parse(e.postData.contents);
+    if (sheet.getLastRow() === 0) {
+      sheet.appendRow(["Timestamp", "Fecha", "Examen", "Modo", "Puntos Netos", "Puntos Max", "Efectividad %", "Aciertos", "Fallos", "Blancos", "Anuladas", "Tiempo (seg)"]);
+    }
+    sheet.appendRow([
+      new Date(),
+      data.formattedDate || new Date().toLocaleString(),
+      data.examTitle || data.year,
+      data.mode,
+      data.netScore,
+      data.maxScore,
+      data.percentage + "%",
+      data.correct,
+      data.wrong,
+      data.blank,
+      data.annulled,
+      data.durationSeconds
+    ]);
+    return ContentService.createTextOutput(JSON.stringify({ status: "success" })).setMimeType(ContentService.MimeType.JSON);
+  } catch(err) {
+    return ContentService.createTextOutput(JSON.stringify({ status: "error", message: err.toString() })).setMimeType(ContentService.MimeType.JSON);
+  }
+}`;
+        navigator.clipboard.writeText(code).then(() => {
+          copyGasCodeBtn.textContent = '✓ ¡Copiado!';
+          setTimeout(() => { copyGasCodeBtn.textContent = 'Copiar Código'; }, 2000);
+        });
+      });
+
+      function dispatchTelemetry(payload) {
+        const webhookUrl = localStorage.getItem('fir_telemetry_webhook_url');
+        if (webhookUrl) {
+          try {
+            fetch(webhookUrl, {
+              method: 'POST',
+              mode: 'no-cors',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload)
+            }).catch(() => {});
+          } catch (e) {}
+        }
+      }
 
       // --- ZOOM MODAL DE ESTRUCTURAS QUÍMICAS ---
       questionImage.addEventListener('click', () => {
@@ -1202,7 +2460,7 @@
         }
       });
 
-      // --- CAMBIO DE AÑO EN SELECTOR ---
+      // --- SELECTOR DE CONVOCATORIA ---
       yearSelect.addEventListener('change', (e) => {
         const newYear = e.target.value;
         if (Object.keys(userAnswers).length > 0 && !isExamSubmitted) {
@@ -1211,7 +2469,7 @@
             return;
           }
         }
-        loadExam(newYear, false);
+        window.location.hash = `#/examen/${newYear}/p/1`;
       });
 
       // --- ATAJOS DE TECLADO ---
@@ -1224,17 +2482,22 @@
           if (e.key === 'Escape') resultsModal.classList.add('hidden');
           return;
         }
+        if (!historyModal.classList.contains('hidden')) {
+          if (e.key === 'Escape') closeHistoryModal();
+          return;
+        }
+        if (!telemetryModal.classList.contains('hidden')) {
+          if (e.key === 'Escape') telemetryModal.classList.add('hidden');
+          return;
+        }
+
+        // Solo procesar si estamos en la vista de examen
+        if (examView.classList.contains('hidden')) return;
 
         if (e.key === 'ArrowRight' || e.key === 'j' || e.key === 'J') {
-          if (currentIndex < examQuestions.length - 1) {
-            currentIndex++;
-            renderQuestion();
-          }
+          if (currentIndex < examQuestions.length - 1) goToQuestion(currentIndex + 1);
         } else if (e.key === 'ArrowLeft' || e.key === 'k' || e.key === 'K') {
-          if (currentIndex > 0) {
-            currentIndex--;
-            renderQuestion();
-          }
+          if (currentIndex > 0) goToQuestion(currentIndex - 1);
         } else if (['1', '2', '3', '4'].includes(e.key)) {
           handleOptionSelect(Number(e.key));
         } else if (e.key === 'm' || e.key === 'M') {
@@ -1277,8 +2540,9 @@
         }
       }
 
-      // --- INICIALIZACIÓN ---
-      loadExam('2025', false);
+      // --- INICIALIZACIÓN DE LA APLICACIÓN ---
+      updateHistoryBadge();
+      handleRoute();
     });
   </script>
 
