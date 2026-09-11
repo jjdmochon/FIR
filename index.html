@@ -68,10 +68,10 @@
     };
   </script>
   
-  <!-- Google Fonts: Montserrat & Roboto Mono -->
+  <!-- Google Fonts: Montserrat (Completo) & Roboto Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <style>
     :root {
@@ -91,7 +91,7 @@
       --color-neutral-bg: #f8fafc;
       --color-surface: #ffffff;
 
-      --color-text-main: #000000;
+      --color-text-main: #0f172a;
       --color-text-muted: #64748b;
       --color-text-on-dark: #ffffff;
 
@@ -109,8 +109,12 @@
       --gradient-progress: linear-gradient(90deg, #2dd4bf 0%, #0d9488 100%);
 
       /* Typography */
-      --font-primary: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-primary: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       --font-technical: 'Roboto Mono', 'Fira Code', monospace;
+    }
+
+    * {
+      font-family: var(--font-primary);
     }
 
     body {
@@ -118,8 +122,8 @@
       touch-action: manipulation;
     }
 
-    .font-technical, .font-mono {
-      font-family: var(--font-technical);
+    .font-technical, .font-mono, [class*="font-mono"], kbd, code, pre, #timer-display {
+      font-family: var(--font-technical) !important;
     }
 
     .custom-scrollbar::-webkit-scrollbar {
@@ -149,39 +153,44 @@
       background-color: rgba(30, 58, 138, 0.08) !important;
       border-color: #1e3a8a !important;
       color: #1e3a8a !important;
-      font-weight: 700;
+      font-weight: 600;
+      box-shadow: 0 0 0 2px rgba(30, 58, 138, 0.25) !important;
     }
     .dark .opt-selected-exam {
       background-color: rgba(45, 212, 191, 0.12) !important;
       border-color: #2dd4bf !important;
-      color: #5eead4 !important;
-      font-weight: 700;
+      color: #ffffff !important;
+      box-shadow: 0 0 0 2px rgba(45, 212, 191, 0.3) !important;
     }
 
     .opt-correct {
-      background-color: #0d9488 !important;
-      border-color: #0f766e !important;
-      color: #ffffff !important;
+      background-color: #ecfdf5 !important;
+      border-color: #10b981 !important;
+      color: #065f46 !important;
       font-weight: 700;
+      box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2) !important;
     }
     .dark .opt-correct {
-      background-color: #0f766e !important;
-      border-color: #14b8a6 !important;
-      color: #ffffff !important;
+      background-color: #064e3b !important;
+      border-color: #34d399 !important;
+      color: #ecfdf5 !important;
       font-weight: 700;
+      box-shadow: 0 0 0 2px rgba(52, 211, 153, 0.25) !important;
     }
 
     .opt-incorrect {
-      background-color: #e11d48 !important;
-      border-color: #be123c !important;
-      color: #ffffff !important;
+      background-color: #fff1f2 !important;
+      border-color: #f43f5e !important;
+      color: #9f1239 !important;
       font-weight: 700;
+      box-shadow: 0 0 0 2px rgba(244, 63, 94, 0.2) !important;
     }
     .dark .opt-incorrect {
-      background-color: #9f1239 !important;
+      background-color: #4c0519 !important;
       border-color: #fb7185 !important;
-      color: #ffffff !important;
+      color: #fff1f2 !important;
       font-weight: 700;
+      box-shadow: 0 0 0 2px rgba(251, 113, 133, 0.25) !important;
     }
 
     .opt-revealed {
@@ -242,56 +251,58 @@
 
   <!-- NAVBAR PRINCIPAL -->
   <header class="sticky top-0 z-40 bg-white/95 dark:bg-[#131d33]/95 backdrop-blur-md border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c] shadow-xs">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[4.25rem] py-2.5 flex items-center justify-between gap-3 lg:gap-4">
       
       <!-- Logo & Título Institucional (Clic vuelve a Home) -->
-      <a href="#/home" id="nav-brand-link" class="flex items-center gap-3 cursor-pointer group select-none">
-        <div class="w-10 h-10 rounded-[10px] bg-gradient-to-br from-[#1e3a8a] to-[#0d9488] text-white flex items-center justify-center font-black text-xl shadow-md border border-white/20 tracking-wider transition-transform group-hover:scale-105">
+      <a href="#/home" id="nav-brand-link" class="flex items-center gap-3 cursor-pointer group select-none shrink-0">
+        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-[12px] bg-gradient-to-br from-[#1e3a8a] to-[#0d9488] text-white flex items-center justify-center font-black text-lg sm:text-xl shadow-md border border-white/20 tracking-wider transition-transform group-hover:scale-105 shrink-0">
           FIR
         </div>
-        <div>
-          <h1 class="text-base sm:text-lg font-extrabold text-[#1e3a8a] dark:text-white leading-tight flex items-center gap-2">
-            Simulador Oficial FIR
-            <span class="font-mono text-[11px] font-bold px-2 py-0.5 rounded-[4px] bg-[#0d9488]/10 text-[#0d9488] dark:bg-[#2dd4bf]/20 dark:text-[#2dd4bf] border border-[#0d9488]/20">
-              2020 - 2025
+        <div class="flex flex-col justify-center">
+          <div class="flex items-center gap-2">
+            <span class="text-base sm:text-lg font-black text-[#1e3a8a] dark:text-white tracking-tight leading-none whitespace-nowrap">
+              Simulador Oficial FIR
             </span>
-            <span class="hidden xl:inline-flex items-center gap-1 font-mono text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-[#1e3a8a]/10 text-[#1e3a8a] dark:bg-[#3b82f6]/20 dark:text-[#93c5fd] border border-[#1e3a8a]/20">
+            <span class="whitespace-nowrap font-mono text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded-full bg-[#0d9488]/10 text-[#0d9488] dark:bg-[#2dd4bf]/20 dark:text-[#2dd4bf] border border-[#0d9488]/30 shrink-0">
+              2020–2025
+            </span>
+            <span class="hidden 2xl:inline-flex whitespace-nowrap items-center font-mono text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#1e3a8a]/10 text-[#1e3a8a] dark:bg-[#3b82f6]/20 dark:text-[#93c5fd] border border-[#1e3a8a]/20 shrink-0">
               Facultad de Farmacia · UGR
             </span>
-          </h1>
-          <p class="text-xs text-[#64748b] dark:text-[#94a3b8] font-medium hidden sm:block">
-            Ministerio de Sanidad · Cuadernos y Plantillas Oficiales · Baremo (+3 / -1 / 0)
+          </div>
+          <p class="text-[11px] text-[#64748b] dark:text-[#94a3b8] font-semibold hidden md:block whitespace-nowrap mt-1 leading-none">
+            Facultad de Farmacia · Universidad de Granada & Nexus Lab
           </p>
         </div>
       </a>
 
       <!-- Botones de Navegación & Control -->
-      <div class="flex items-center gap-2 sm:gap-2.5">
+      <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
 
         <!-- Botón Volver a Inicio (Visible solo en Modo Examen) -->
-        <a href="#/home" id="nav-home-btn" class="hidden items-center gap-1.5 px-3 py-1.5 rounded-[8px] bg-[#1e3a8a]/5 hover:bg-[#1e3a8a]/10 dark:bg-[#1c2b4c] dark:hover:bg-[#1c2b4c]/80 text-[#1e3a8a] dark:text-[#2dd4bf] font-bold text-xs transition-all border border-[#1e3a8a]/10 dark:border-[#2dd4bf]/20">
+        <a href="#/home" id="nav-home-btn" class="hidden items-center gap-1.5 px-3 py-1.5 rounded-[8px] bg-[#1e3a8a]/5 hover:bg-[#1e3a8a]/10 dark:bg-[#1c2b4c] dark:hover:bg-[#1c2b4c]/80 text-[#1e3a8a] dark:text-[#2dd4bf] font-bold text-xs transition-all border border-[#1e3a8a]/10 dark:border-[#2dd4bf]/20 whitespace-nowrap cursor-pointer">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
           <span class="hidden md:inline">Inicio</span>
         </a>
 
         <!-- Botón Historial de Simulacros -->
-        <a href="#/historial" id="nav-history-btn" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-[8px] bg-[#1e3a8a]/5 hover:bg-[#1e3a8a]/10 dark:bg-[#1c2b4c] dark:hover:bg-[#1c2b4c]/80 text-[#1e3a8a] dark:text-[#f8fafc] font-bold text-xs transition-all border border-[#1e3a8a]/10 dark:border-[#1c2b4c]" title="Historial de intentos">
+        <a href="#/historial" id="nav-history-btn" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-[8px] bg-[#1e3a8a]/5 hover:bg-[#1e3a8a]/10 dark:bg-[#1c2b4c] dark:hover:bg-[#1c2b4c]/80 text-[#1e3a8a] dark:text-[#f8fafc] font-bold text-xs transition-all border border-[#1e3a8a]/10 dark:border-[#1c2b4c] whitespace-nowrap cursor-pointer" title="Historial de intentos">
           <svg class="w-4 h-4 text-[#0d9488] dark:text-[#2dd4bf]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
           <span class="hidden sm:inline">Historial</span>
           <span id="nav-history-badge" class="hidden ml-0.5 px-1.5 py-0.2 rounded-full text-[10px] font-mono font-bold bg-[#1e3a8a] text-white dark:bg-[#2dd4bf] dark:text-slate-900">0</span>
         </a>
 
         <!-- Botón Telemetría / Configuración Prof. Juanjo -->
-        <button id="nav-telemetry-btn" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-[8px] bg-[#0d9488]/10 hover:bg-[#0d9488]/20 dark:bg-[#0d9488]/20 dark:hover:bg-[#0d9488]/30 text-[#0f766e] dark:text-[#2dd4bf] font-bold text-xs transition-all border border-[#0d9488]/20" title="Configuración de Telemetría (Prof. Juanjo)">
+        <button id="nav-telemetry-btn" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-[8px] bg-[#0d9488]/10 hover:bg-[#0d9488]/20 dark:bg-[#0d9488]/20 dark:hover:bg-[#0d9488]/30 text-[#0f766e] dark:text-[#2dd4bf] font-bold text-xs transition-all border border-[#0d9488]/20 whitespace-nowrap cursor-pointer" title="Configuración de Telemetría (Prof. Juanjo)">
           <svg class="w-4 h-4 text-[#0d9488] dark:text-[#2dd4bf]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-          <span class="hidden lg:inline">Telemetría</span>
+          <span class="hidden xl:inline">Telemetría</span>
         </button>
 
         <!-- Selector de Convocatoria (Visible en vista de examen) -->
         <div id="nav-exam-controls" class="hidden items-center gap-2">
-          <div class="flex items-center bg-[#1e3a8a]/5 dark:bg-[#1c2b4c] border border-[#1e3a8a]/10 dark:border-[#2dd4bf]/20 rounded-[8px] p-1">
-            <label for="year-select" class="text-xs font-bold font-mono text-[#1e3a8a] dark:text-[#2dd4bf] px-2 hidden lg:inline">EXAMEN:</label>
-            <select id="year-select" class="bg-transparent text-xs sm:text-sm font-mono font-bold text-slate-900 dark:text-slate-100 focus:outline-none cursor-pointer py-1 px-1.5 rounded-[6px]">
+          <div class="flex items-center bg-[#1e3a8a]/5 dark:bg-[#1c2b4c] border border-[#1e3a8a]/10 dark:border-[#2dd4bf]/20 rounded-[8px] p-1 shrink-0">
+            <label for="year-select" class="text-xs font-bold font-mono text-[#1e3a8a] dark:text-[#2dd4bf] px-1.5 hidden 2xl:inline whitespace-nowrap">EXAMEN:</label>
+            <select id="year-select" class="bg-transparent text-xs sm:text-sm font-mono font-bold text-slate-900 dark:text-slate-100 focus:outline-none cursor-pointer py-1 px-1.5 rounded-[6px] max-w-[170px] sm:max-w-none">
               <option value="2025" class="bg-white dark:bg-[#131d33] text-black dark:text-white">FIR 2025 (Ene 2026)</option>
               <option value="2024" class="bg-white dark:bg-[#131d33] text-black dark:text-white">FIR 2024 (Ene 2025)</option>
               <option value="2023" class="bg-white dark:bg-[#131d33] text-black dark:text-white">FIR 2023 (Ene 2024)</option>
@@ -304,23 +315,23 @@
           </div>
 
           <!-- Selector de Modo (Estudio vs Simulacro) -->
-          <div class="hidden xl:flex items-center bg-[#1e3a8a]/5 dark:bg-[#1c2b4c] border border-[#1e3a8a]/10 dark:border-[#2dd4bf]/20 rounded-[8px] p-1 text-xs font-semibold">
-            <button id="mode-study-btn" class="px-3 py-1.5 rounded-[6px] transition-all duration-200 text-[#64748b] dark:text-[#94a3b8] hover:text-black dark:hover:text-white font-medium">
+          <div class="hidden xl:flex items-center bg-[#1e3a8a]/5 dark:bg-[#1c2b4c] border border-[#1e3a8a]/10 dark:border-[#2dd4bf]/20 rounded-[8px] p-1 text-xs font-semibold shrink-0">
+            <button id="mode-study-btn" class="px-2.5 py-1.5 rounded-[6px] transition-all duration-200 text-[#64748b] dark:text-[#94a3b8] hover:text-black dark:hover:text-white font-medium whitespace-nowrap cursor-pointer">
               Modo Estudio
             </button>
-            <button id="mode-exam-btn" class="px-3 py-1.5 rounded-[6px] transition-all duration-200 bg-[#1e3a8a] text-white shadow-sm font-bold">
+            <button id="mode-exam-btn" class="px-2.5 py-1.5 rounded-[6px] transition-all duration-200 bg-[#1e3a8a] text-white shadow-sm font-bold whitespace-nowrap cursor-pointer">
               Simulacro Real
             </button>
           </div>
 
           <!-- Botón Rejilla Móvil -->
-          <button id="toggle-grid-mobile-btn" class="lg:hidden p-2 rounded-[8px] bg-[#1e3a8a]/5 dark:bg-[#1c2b4c] border border-[#1e3a8a]/10 dark:border-[#2dd4bf]/20 text-[#1e3a8a] dark:text-[#2dd4bf] hover:bg-[#1e3a8a]/10 transition-colors" title="Ver hoja de respuestas">
+          <button id="toggle-grid-mobile-btn" class="lg:hidden p-2 rounded-[8px] bg-[#1e3a8a]/5 dark:bg-[#1c2b4c] border border-[#1e3a8a]/10 dark:border-[#2dd4bf]/20 text-[#1e3a8a] dark:text-[#2dd4bf] hover:bg-[#1e3a8a]/10 transition-colors cursor-pointer" title="Ver hoja de respuestas">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>
           </button>
         </div>
 
         <!-- Dark Mode Toggle -->
-        <button id="dark-mode-toggle" class="p-2 rounded-[8px] bg-[#1e3a8a]/5 dark:bg-[#1c2b4c] border border-[#1e3a8a]/10 dark:border-[#2dd4bf]/20 text-[#1e3a8a] dark:text-[#2dd4bf] hover:bg-[#1e3a8a]/10 dark:hover:bg-[#1c2b4c]/80 transition-colors" title="Cambiar tema">
+        <button id="dark-mode-toggle" class="p-2 rounded-[8px] bg-[#1e3a8a]/5 dark:bg-[#1c2b4c] border border-[#1e3a8a]/10 dark:border-[#2dd4bf]/20 text-[#1e3a8a] dark:text-[#2dd4bf] hover:bg-[#1e3a8a]/10 dark:hover:bg-[#1c2b4c]/80 transition-colors shrink-0 cursor-pointer" title="Cambiar tema">
           <svg id="sun-icon" class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg>
           <svg id="moon-icon" class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
         </button>
@@ -881,39 +892,58 @@
           </div>
         </div>
 
-        <!-- TARJETA PRINCIPAL DE LA PREGUNTA (12px Radius, 4px Navy Accent) -->
-        <article class="bg-white dark:bg-[#131d33] rounded-[12px] p-6 sm:p-8 shadow-md border-t-4 border-[#1e3a8a] border-x border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c] flex flex-col flex-1 transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)]">
+        <!-- TARJETA PRINCIPAL DE LA PREGUNTA (16px Radius, 4px Navy Accent) -->
+        <article class="bg-white dark:bg-[#131d33] rounded-[16px] p-6 sm:p-8 shadow-md border-t-4 border-[#1e3a8a] border-x border-b border-[#1e3a8a]/10 dark:border-[#1c2b4c] flex flex-col flex-1 transition-all">
           
-          <!-- Badge de Especialidad / Categoría Oficial (Especial Química o Pregunta con Metadatos) -->
-          <div id="question-badge-container" class="hidden mb-4">
-            <span id="question-badge-pill" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#0d9488]/10 text-[#0d9488] dark:bg-[#2dd4bf]/20 dark:text-[#2dd4bf] border border-[#0d9488]/20 shadow-2xs">
-              <!-- e.g. FIR 2025 · P1 · Química Farmacéutica -->
-            </span>
-          </div>
-
-          <!-- Enunciado de la Pregunta -->
-          <div class="mb-6">
-            <p id="question-text" class="text-base sm:text-lg lg:text-xl font-bold text-black dark:text-[#f8fafc] leading-relaxed">
-              Cargando pregunta...
-            </p>
-          </div>
-
-          <!-- Contenedor de Imagen de Estructura / Figura Oficial -->
-          <div id="image-container" class="hidden mb-6 p-4 rounded-[12px] bg-[#1e3a8a]/5 dark:bg-[#1c2b4c]/50 border border-[#1e3a8a]/15 dark:border-[#2dd4bf]/20 flex flex-col items-center justify-center">
-            <div class="flex items-center gap-2 mb-2.5 font-mono text-xs font-bold text-[#1e3a8a] dark:text-[#2dd4bf]">
-              <svg class="w-4 h-4 text-[#0d9488] dark:text-[#2dd4bf]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-              Figura / Estructura Química Oficial (clic para ampliar)
+          <!-- Encabezado de la Tarjeta: Badges y Selector de Disposición en Cuadrícula -->
+          <div class="flex items-center justify-between gap-3 mb-5 flex-wrap">
+            <!-- Badge de Especialidad / Categoría Oficial -->
+            <div id="question-badge-container" class="hidden">
+              <span id="question-badge-pill" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#0d9488]/10 text-[#0d9488] dark:bg-[#2dd4bf]/20 dark:text-[#2dd4bf] border border-[#0d9488]/20 shadow-2xs">
+                <!-- e.g. FIR 2025 · P1 · Química Farmacéutica -->
+              </span>
             </div>
-            <img id="question-image" src="" alt="Estructura química oficial" class="max-h-72 max-w-full rounded-[8px] shadow-sm cursor-zoom-in hover:opacity-95 transition-opacity bg-white p-2 border border-slate-200 dark:border-[#1c2b4c]">
+
+            <!-- Selector de Disposición en Grid (2x2 vs 1 Columna) -->
+            <div class="flex items-center gap-1 bg-slate-100 dark:bg-[#1c2b4c] p-1 rounded-lg border border-slate-200 dark:border-slate-700 text-xs font-semibold ml-auto">
+              <span class="text-[11px] text-slate-500 dark:text-slate-400 px-1.5 font-mono hidden sm:inline">Disposición:</span>
+              <button id="btn-grid-2col" class="px-2.5 py-1 rounded-md transition-all flex items-center gap-1.5 bg-white dark:bg-[#131d33] text-[#1e3a8a] dark:text-[#2dd4bf] shadow-xs font-bold cursor-pointer" title="Ver opciones en cuadrícula 2x2">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+                <span>Cuadrícula 2x2</span>
+              </button>
+              <button id="btn-grid-1col" class="px-2.5 py-1 rounded-md transition-all flex items-center gap-1.5 text-slate-600 dark:text-slate-400 hover:text-black dark:hover:text-white cursor-pointer" title="Ver opciones en lista">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Lista</span>
+              </button>
+            </div>
           </div>
 
-          <!-- Contenedor de Opciones (1, 2, 3, 4) -->
-          <div id="options-container" class="grid grid-cols-1 gap-3 sm:gap-3.5 my-2">
-            <!-- Opciones inyectadas dinámicamente -->
+          <!-- Enunciado de la Pregunta con Tipografía Montserrat -->
+          <div class="mb-6">
+            <h2 id="question-text" class="text-lg sm:text-xl md:text-[21px] font-bold text-slate-900 dark:text-white leading-relaxed tracking-tight">
+              Cargando pregunta...
+            </h2>
+          </div>
+
+          <!-- CONTENIDO DE LA PREGUNTA (FIGURA QUÍMICA & OPCIONES EN CUADRÍCULA) -->
+          <div id="question-content-grid" class="flex flex-col gap-6">
+            <!-- Contenedor de Imagen de Estructura / Figura Oficial -->
+            <div id="image-container" class="hidden p-4 rounded-[14px] bg-[#1e3a8a]/5 dark:bg-[#1c2b4c]/50 border border-[#1e3a8a]/15 dark:border-[#2dd4bf]/20 flex flex-col items-center justify-center">
+              <div class="flex items-center gap-2 mb-2.5 font-mono text-xs font-bold text-[#1e3a8a] dark:text-[#2dd4bf]">
+                <svg class="w-4 h-4 text-[#0d9488] dark:text-[#2dd4bf]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                Figura / Estructura Química Oficial (clic para ampliar)
+              </div>
+              <img id="question-image" src="" alt="Estructura química oficial" class="max-h-72 max-w-full rounded-[8px] shadow-sm cursor-zoom-in hover:opacity-95 transition-opacity bg-white p-2 border border-slate-200 dark:border-[#1c2b4c]">
+            </div>
+
+            <!-- Contenedor de Opciones (1, 2, 3, 4) en Cuadrícula -->
+            <div id="options-container" class="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4 my-1">
+              <!-- Opciones inyectadas dinámicamente -->
+            </div>
           </div>
 
           <!-- Feedback Mensaje (Modo Estudio) -->
-          <div id="feedback-container" class="mt-6 hidden p-4 rounded-[8px] font-mono text-sm sm:text-base font-bold text-center border-l-4 transition-all">
+          <div id="feedback-container" class="mt-6 hidden p-4 rounded-[10px] font-mono text-sm sm:text-base font-bold text-center border-l-4 transition-all">
             <span id="feedback-text"></span>
           </div>
 
@@ -1444,9 +1474,12 @@
       const scoreWrongNum = document.getElementById('score-wrong-num');
 
       const questionTextEl = document.getElementById('question-text');
+      const questionContentGrid = document.getElementById('question-content-grid');
       const imageContainer = document.getElementById('image-container');
       const questionImage = document.getElementById('question-image');
       const optionsContainer = document.getElementById('options-container');
+      const btnGrid2Col = document.getElementById('btn-grid-2col');
+      const btnGrid1Col = document.getElementById('btn-grid-1col');
       const feedbackContainer = document.getElementById('feedback-container');
       const feedbackText = document.getElementById('feedback-text');
 
@@ -1519,6 +1552,36 @@
         const isDark = document.documentElement.classList.toggle('dark');
         localStorage.setItem('fir_theme', isDark ? 'dark' : 'light');
       });
+
+      // --- DISPOSICIÓN DE OPCIONES (CUADRÍCULA 2x2 vs LISTA) ---
+      let optionsLayout = localStorage.getItem('fir_options_layout') || '2col';
+
+      function updateLayoutButtons() {
+        if (!btnGrid2Col || !btnGrid1Col) return;
+        if (optionsLayout === '2col') {
+          btnGrid2Col.className = 'px-2.5 py-1 rounded-md transition-all flex items-center gap-1.5 bg-white dark:bg-[#131d33] text-[#1e3a8a] dark:text-[#2dd4bf] shadow-xs font-bold cursor-pointer';
+          btnGrid1Col.className = 'px-2.5 py-1 rounded-md transition-all flex items-center gap-1.5 text-slate-600 dark:text-slate-400 hover:text-black dark:hover:text-white cursor-pointer';
+        } else {
+          btnGrid1Col.className = 'px-2.5 py-1 rounded-md transition-all flex items-center gap-1.5 bg-white dark:bg-[#131d33] text-[#1e3a8a] dark:text-[#2dd4bf] shadow-xs font-bold cursor-pointer';
+          btnGrid2Col.className = 'px-2.5 py-1 rounded-md transition-all flex items-center gap-1.5 text-slate-600 dark:text-slate-400 hover:text-black dark:hover:text-white cursor-pointer';
+        }
+      }
+
+      if (btnGrid2Col && btnGrid1Col) {
+        btnGrid2Col.addEventListener('click', () => {
+          optionsLayout = '2col';
+          localStorage.setItem('fir_options_layout', '2col');
+          updateLayoutButtons();
+          renderQuestion();
+        });
+        btnGrid1Col.addEventListener('click', () => {
+          optionsLayout = '1col';
+          localStorage.setItem('fir_options_layout', '1col');
+          updateLayoutButtons();
+          renderQuestion();
+        });
+        updateLayoutButtons();
+      }
 
       // --- TOGGLE REJILLA EN MÓVIL ---
       if (toggleGridMobileBtn && gridSidebar) {
@@ -1782,7 +1845,7 @@
         // Enunciado
         questionTextEl.textContent = `${qId}. ${q.question}`;
 
-        // Imagen o Estructura Química Oficial
+        // Imagen o Estructura Química Oficial y Disposición en Cuadrícula
         if (q.hasImage) {
           const imgSrc = `FIR${yearOrigin}/images/${imageId}.JPG`;
           questionImage.src = imgSrc;
@@ -1790,9 +1853,15 @@
             questionImage.src = `FIR${yearOrigin}/images/${imageId}.jpg`;
           };
           imageContainer.classList.remove('hidden');
+          // En pantallas grandes, colocar figura a la izquierda y opciones a la derecha
+          questionContentGrid.className = 'grid grid-cols-1 lg:grid-cols-12 gap-6 items-start';
+          imageContainer.className = 'lg:col-span-5 p-4 rounded-[14px] bg-[#1e3a8a]/5 dark:bg-[#1c2b4c]/50 border border-[#1e3a8a]/15 dark:border-[#2dd4bf]/20 flex flex-col items-center justify-center sticky top-24';
+          optionsContainer.className = 'lg:col-span-7 grid grid-cols-1 gap-3.5';
         } else {
           imageContainer.classList.add('hidden');
           questionImage.src = '';
+          questionContentGrid.className = 'flex flex-col gap-6';
+          optionsContainer.className = optionsLayout === '1col' ? 'grid grid-cols-1 gap-3.5 sm:gap-4 my-1' : 'grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4 my-1';
         }
 
         // Generación dinámica de Opciones (1, 2, 3, 4)
@@ -1803,16 +1872,16 @@
         q.options.forEach((optText, index) => {
           const optNum = index + 1;
           const btn = document.createElement('button');
-          btn.className = 'opt-btn w-full text-left p-4 rounded-[12px] border transition-all duration-180 flex items-start gap-3.5 bg-white dark:bg-[#131d33] border-slate-200 dark:border-[#1c2b4c] text-black dark:text-[#f8fafc] hover:-translate-y-0.5 hover:shadow-md hover:border-[#0d9488] dark:hover:border-[#2dd4bf] shadow-xs cursor-pointer';
+          btn.className = 'opt-btn w-full text-left p-4 sm:p-4.5 rounded-[14px] border transition-all duration-180 flex items-start gap-3.5 bg-white dark:bg-[#131d33] border-slate-200 dark:border-[#1c2b4c] text-slate-800 dark:text-[#f8fafc] hover:-translate-y-0.5 hover:shadow-md hover:border-[#0d9488] dark:hover:border-[#2dd4bf] shadow-xs cursor-pointer';
           btn.dataset.optNum = optNum;
 
           // Indicador numérico
           const numSpan = document.createElement('span');
-          numSpan.className = 'w-7 h-7 rounded-[8px] shrink-0 flex items-center justify-center font-mono font-bold text-xs bg-[#1e3a8a]/5 dark:bg-[#1c2b4c] text-[#1e3a8a] dark:text-[#2dd4bf] border border-[#1e3a8a]/10 dark:border-[#2dd4bf]/20';
+          numSpan.className = 'w-8 h-8 rounded-[9px] shrink-0 flex items-center justify-center font-mono font-bold text-xs sm:text-sm bg-[#1e3a8a]/5 dark:bg-[#1c2b4c] text-[#1e3a8a] dark:text-[#2dd4bf] border border-[#1e3a8a]/10 dark:border-[#2dd4bf]/20 transition-colors';
           numSpan.textContent = optNum;
 
           const textSpan = document.createElement('span');
-          textSpan.className = 'flex-1 text-sm sm:text-base font-medium leading-relaxed';
+          textSpan.className = 'flex-1 text-sm sm:text-[15px] font-medium leading-relaxed';
           textSpan.textContent = optText;
 
           btn.appendChild(numSpan);
@@ -1823,13 +1892,13 @@
             if (isAnswered) {
               if (q.answer === 0) {
                 btn.classList.add('opt-annulled');
-                numSpan.className = 'w-7 h-7 rounded-[8px] shrink-0 flex items-center justify-center font-mono font-bold text-xs bg-amber-200 text-amber-900';
+                numSpan.className = 'w-8 h-8 rounded-[9px] shrink-0 flex items-center justify-center font-mono font-bold text-xs sm:text-sm bg-amber-200 text-amber-900';
               } else if (optNum === q.answer) {
                 btn.classList.add('opt-correct');
-                numSpan.className = 'w-7 h-7 rounded-[8px] shrink-0 flex items-center justify-center font-mono font-bold text-xs bg-white text-[#0d9488]';
+                numSpan.className = 'w-8 h-8 rounded-[9px] shrink-0 flex items-center justify-center font-mono font-bold text-xs sm:text-sm bg-emerald-600 text-white shadow-xs';
               } else if (optNum === userSelected) {
                 btn.classList.add('opt-incorrect');
-                numSpan.className = 'w-7 h-7 rounded-[8px] shrink-0 flex items-center justify-center font-mono font-bold text-xs bg-white text-rose-700';
+                numSpan.className = 'w-8 h-8 rounded-[9px] shrink-0 flex items-center justify-center font-mono font-bold text-xs sm:text-sm bg-rose-600 text-white shadow-xs';
               }
             }
           } else {
@@ -1837,18 +1906,18 @@
             if (isExamSubmitted) {
               if (q.answer === 0) {
                 btn.classList.add('opt-annulled');
-                numSpan.className = 'w-7 h-7 rounded-[8px] shrink-0 flex items-center justify-center font-mono font-bold text-xs bg-amber-200 text-amber-900';
+                numSpan.className = 'w-8 h-8 rounded-[9px] shrink-0 flex items-center justify-center font-mono font-bold text-xs sm:text-sm bg-amber-200 text-amber-900';
               } else if (optNum === q.answer) {
                 btn.classList.add('opt-correct');
-                numSpan.className = 'w-7 h-7 rounded-[8px] shrink-0 flex items-center justify-center font-mono font-bold text-xs bg-white text-[#0d9488]';
+                numSpan.className = 'w-8 h-8 rounded-[9px] shrink-0 flex items-center justify-center font-mono font-bold text-xs sm:text-sm bg-emerald-600 text-white shadow-xs';
               } else if (optNum === userSelected) {
                 btn.classList.add('opt-incorrect');
-                numSpan.className = 'w-7 h-7 rounded-[8px] shrink-0 flex items-center justify-center font-mono font-bold text-xs bg-white text-rose-700';
+                numSpan.className = 'w-8 h-8 rounded-[9px] shrink-0 flex items-center justify-center font-mono font-bold text-xs sm:text-sm bg-rose-600 text-white shadow-xs';
               }
             } else {
               if (optNum === userSelected) {
                 btn.classList.add('opt-selected-exam');
-                numSpan.className = 'w-7 h-7 rounded-[8px] shrink-0 flex items-center justify-center font-mono font-bold text-xs bg-[#1e3a8a] text-white dark:bg-[#2dd4bf] dark:text-[#131d33]';
+                numSpan.className = 'w-8 h-8 rounded-[9px] shrink-0 flex items-center justify-center font-mono font-bold text-xs sm:text-sm bg-[#1e3a8a] text-white dark:bg-[#2dd4bf] dark:text-[#131d33] shadow-xs';
               }
             }
           }
@@ -1961,7 +2030,7 @@
         examQuestions.forEach((q, idx) => {
           const btn = document.createElement('button');
           btn.id = `grid-btn-${q.id}`;
-          btn.className = 'w-full aspect-square rounded-[8px] font-mono text-xs font-semibold transition-all flex items-center justify-center relative border border-slate-200 dark:border-[#1c2b4c] bg-[#f8fafc] dark:bg-[#131d33] text-slate-700 dark:text-[#f8fafc] hover:-translate-y-0.5 hover:border-[#0d9488] cursor-pointer';
+          btn.className = 'w-full aspect-square rounded-[9px] font-mono text-xs sm:text-sm font-bold transition-all flex items-center justify-center relative border border-slate-200 dark:border-[#1c2b4c] bg-[#f8fafc] dark:bg-[#131d33] text-slate-700 dark:text-[#f8fafc] hover:-translate-y-0.5 hover:border-[#0d9488] shadow-2xs cursor-pointer';
           btn.textContent = q.id;
 
           btn.addEventListener('click', () => {
@@ -1982,7 +2051,7 @@
         const q = examQuestions.find(item => item.id === qId);
         if (!q) return;
 
-        btn.className = 'w-full aspect-square rounded-[8px] font-mono text-xs font-semibold transition-all flex items-center justify-center relative border hover:-translate-y-0.5 cursor-pointer ';
+        btn.className = 'w-full aspect-square rounded-[9px] font-mono text-xs sm:text-sm font-bold transition-all flex items-center justify-center relative border hover:-translate-y-0.5 cursor-pointer ';
 
         if (isExamSubmitted || (currentMode === 'study' && isAnswered)) {
           if (q.answer === 0) {
@@ -1998,7 +2067,7 @@
           if (isAnswered) {
             btn.className += 'bg-[#1e3a8a] border-[#172554] dark:bg-[#1e3a8a] dark:border-[#3b82f6]/40 text-white shadow-xs';
           } else {
-            btn.className += 'bg-[#f8fafc] dark:bg-[#131d33] border-slate-200 dark:border-[#1c2b4c] text-slate-700 dark:text-[#f8fafc]';
+            btn.className += 'bg-[#f8fafc] dark:bg-[#131d33] border-slate-200 dark:border-[#1c2b4c] text-slate-800 dark:text-[#f8fafc]';
           }
         }
 
