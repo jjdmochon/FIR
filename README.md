@@ -1,6 +1,6 @@
 # Simulador Oficial de Exámenes FIR (2020-2025)
 
-[![GitHub Pages Deployment](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-blue?style=for-the-badge&logo=github)](https://jjdmochon.github.io/FIR-Examenes-Oficiales/)
+[![GitHub Pages Deployment](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-blue?style=for-the-badge&logo=github)](https://jjdmochon.github.io/FIR/)
 [![Licencia](https://img.shields.io/badge/Licencia-Educativa-green?style=for-the-badge)](LICENSE)
 [![Ministerio de Sanidad](https://img.shields.io/badge/Datos-Ministerio%20de%20Sanidad-red?style=for-the-badge)](https://fse.mscbs.gob.es/)
 
@@ -13,7 +13,7 @@ Incluye los **6 exámenes oficiales completos (2020 a 2025)** con todas sus preg
 ## 🚀 Acceso Rápido y Demostración en Línea
 
 La aplicación está diseñada para desplegarse directamente en **GitHub Pages**:
-🔗 **[https://jjdmochon.github.io/FIR-Examenes-Oficiales/](https://jjdmochon.github.io/FIR-Examenes-Oficiales/)**
+🔗 **[https://jjdmochon.github.io/FIR/](https://jjdmochon.github.io/FIR/)**
 
 ---
 
@@ -106,19 +106,15 @@ FIR/
 
 ## 🛠️ Despliegue en GitHub Pages
 
-Para alojar la web de forma gratuita y permanente en GitHub:
+Para alojar la web de forma gratuita y permanente en GitHub Pages:
 
-1. Crear el repositorio en GitHub (p. ej., `FIR-Examenes-Oficiales`).
-2. Vincular el repositorio local y subir la rama principal:
-   ```bash
-   git remote add origin https://github.com/jjdmochon/FIR-Examenes-Oficiales.git
-   git branch -M main
-   git push -u origin main
-   ```
-3. En GitHub, acceder a **Settings** > **Pages**.
-4. En **Build and deployment** > **Branch**, seleccionar `main` y la carpeta `/(root)`.
-5. Guardar. En pocos segundos, la web estará disponible en:
-   `https://<usuario>.github.io/FIR-Examenes-Oficiales/`
+1. El repositorio está configurado y sincronizado en:
+   `https://github.com/jjdmochon/FIR`
+2. En GitHub, acceder a **Settings** > **Pages** (`https://github.com/jjdmochon/FIR/settings/pages`).
+3. En **Build and deployment** > **Source**, seleccionar `Deploy from a branch`.
+4. En **Branch**, seleccionar `main` y la carpeta `/ (root)`.
+5. Pulsar **Save**. En un minuto, la web estará disponible en:
+   **`https://jjdmochon.github.io/FIR/`**
 
 ---
 
